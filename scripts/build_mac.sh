@@ -11,7 +11,7 @@ git apply ../upstream_patches/*
 popd
 
 # TODO: the env var can be omitted once geos 3.11 is released: https://github.com/libgeos/geos/issues/500
-cmake -B upstream/build -S upstream/ -DCMAKE_OSX_DEPLOYMENT_TARGET=10.15 -DENABLE_CCACHE=OFF -DBUILD_SHARED_LIBS=OFF -DENABLE_BENCHMARKS=OFF -DENABLE_PYTHON_BINDINGS=ON -DENABLE_TESTS=OFF -DENABLE_TOOLS=OFF -DENABLE_DATA_TOOLS=OFF -DENABLE_SERVICES=OFF -DENABLE_HTTP=OFF -DENABLE_CCACHE=OFF -DCMAKE_BUILD_TYPE=Release || exit 1
+cmake -B upstream/build -S upstream/ -DCMAKE_OSX_ARCHITECTURES="arm64" -DCMAKE_OSX_DEPLOYMENT_TARGET=11.0 -DENABLE_CCACHE=OFF -DBUILD_SHARED_LIBS=OFF -DENABLE_BENCHMARKS=OFF -DENABLE_PYTHON_BINDINGS=ON -DENABLE_TESTS=OFF -DENABLE_TOOLS=OFF -DENABLE_DATA_TOOLS=OFF -DENABLE_SERVICES=OFF -DENABLE_HTTP=OFF -DENABLE_CCACHE=OFF -DCMAKE_BUILD_TYPE=Release || exit 1
 cmake --build upstream/build -- -j$(sysctl -n hw.logicalcpu) || exit 1
 
 rm -r include/darwin/*
@@ -31,14 +31,13 @@ for dep in $deps; do
   done
 done
 
-cp -rf /usr/local/include/google include/darwin
+cp -rf /opt/homebrew/include/google include/darwin
 
 # copy libvalhalla
 mkdir -p lib/darwin
 cp -f upstream/build/src/libvalhalla.a lib/darwin
 
-# copy dependencies
-cp -RL /usr/local/lib/libprotobuf-lite.dylib lib/darwin/libprotobuf-lite.32.dylib
+cp -RL /opt/homebrew/lib/libprotobuf-lite.dylib lib/darwin/libprotobuf-lite.32.dylib
 pushd lib/darwin
 ln -s libprotobuf-lite.32.dylib libprotobuf-lite.dylib
 popd

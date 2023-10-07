@@ -16,6 +16,10 @@ include_dirs = [
     str(THIS_DIR.joinpath("include", "common", "valhalla")),
     str(THIS_DIR.joinpath("include", platform.system().lower())),
 ]
+
+# For macOS ARM on homebrew
+include_dirs.append('/opt/homebrew/include')
+
 library_dirs = [str(THIS_DIR.joinpath("lib", platform.system().lower()))]
 libraries = list()
 extra_link_args = list()
