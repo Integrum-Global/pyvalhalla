@@ -4,95 +4,129 @@
 #include "incidents.pb.h"
 
 #include <algorithm>
-
-#include <google/protobuf/io/coded_stream.h>
-#include <google/protobuf/extension_set.h>
-#include <google/protobuf/wire_format_lite.h>
-#include <google/protobuf/io/zero_copy_stream_impl_lite.h>
+#include "google/protobuf/io/coded_stream.h"
+#include "google/protobuf/extension_set.h"
+#include "google/protobuf/wire_format_lite.h"
+#include "google/protobuf/io/zero_copy_stream_impl_lite.h"
+#include "google/protobuf/generated_message_tctable_impl.h"
 // @@protoc_insertion_point(includes)
-#include <google/protobuf/port_def.inc>
 
+// Must be included last.
+#include "google/protobuf/port_def.inc"
 PROTOBUF_PRAGMA_INIT_SEG
-
-namespace _pb = ::PROTOBUF_NAMESPACE_ID;
-namespace _pbi = _pb::internal;
-
+namespace _pb = ::google::protobuf;
+namespace _pbi = ::google::protobuf::internal;
+namespace _fl = ::google::protobuf::internal::field_layout;
 namespace valhalla {
-PROTOBUF_CONSTEXPR IncidentsTile_Location::IncidentsTile_Location(
-    ::_pbi::ConstantInitialized): _impl_{
-    /*decltype(_impl_.edge_index_)*/0u
-  , /*decltype(_impl_.start_offset_)*/0
-  , /*decltype(_impl_.end_offset_)*/0
-  , /*decltype(_impl_.metadata_index_)*/0u
-  , /*decltype(_impl_._cached_size_)*/{}} {}
+        template <typename>
+PROTOBUF_CONSTEXPR IncidentsTile_Location::IncidentsTile_Location(::_pbi::ConstantInitialized)
+    : _impl_{
+      /*decltype(_impl_.edge_index_)*/ 0u,
+      /*decltype(_impl_.start_offset_)*/ 0,
+      /*decltype(_impl_.end_offset_)*/ 0,
+      /*decltype(_impl_.metadata_index_)*/ 0u,
+      /*decltype(_impl_._cached_size_)*/ {},
+    } {}
 struct IncidentsTile_LocationDefaultTypeInternal {
-  PROTOBUF_CONSTEXPR IncidentsTile_LocationDefaultTypeInternal()
-      : _instance(::_pbi::ConstantInitialized{}) {}
+  PROTOBUF_CONSTEXPR IncidentsTile_LocationDefaultTypeInternal() : _instance(::_pbi::ConstantInitialized{}) {}
   ~IncidentsTile_LocationDefaultTypeInternal() {}
   union {
     IncidentsTile_Location _instance;
   };
 };
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 IncidentsTile_LocationDefaultTypeInternal _IncidentsTile_Location_default_instance_;
-PROTOBUF_CONSTEXPR IncidentsTile_Metadata_Congestion::IncidentsTile_Metadata_Congestion(
-    ::_pbi::ConstantInitialized): _impl_{
-    /*decltype(_impl_.value_)*/0u
-  , /*decltype(_impl_._cached_size_)*/{}} {}
+
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
+    PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 IncidentsTile_LocationDefaultTypeInternal _IncidentsTile_Location_default_instance_;
+        template <typename>
+PROTOBUF_CONSTEXPR IncidentsTile_Metadata_Congestion::IncidentsTile_Metadata_Congestion(::_pbi::ConstantInitialized)
+    : _impl_{
+      /*decltype(_impl_.value_)*/ 0u,
+      /*decltype(_impl_._cached_size_)*/ {},
+    } {}
 struct IncidentsTile_Metadata_CongestionDefaultTypeInternal {
-  PROTOBUF_CONSTEXPR IncidentsTile_Metadata_CongestionDefaultTypeInternal()
-      : _instance(::_pbi::ConstantInitialized{}) {}
+  PROTOBUF_CONSTEXPR IncidentsTile_Metadata_CongestionDefaultTypeInternal() : _instance(::_pbi::ConstantInitialized{}) {}
   ~IncidentsTile_Metadata_CongestionDefaultTypeInternal() {}
   union {
     IncidentsTile_Metadata_Congestion _instance;
   };
 };
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 IncidentsTile_Metadata_CongestionDefaultTypeInternal _IncidentsTile_Metadata_Congestion_default_instance_;
-PROTOBUF_CONSTEXPR IncidentsTile_Metadata::IncidentsTile_Metadata(
-    ::_pbi::ConstantInitialized): _impl_{
-    /*decltype(_impl_.alertc_codes_)*/{}
-  , /*decltype(_impl_._alertc_codes_cached_byte_size_)*/{0}
-  , /*decltype(_impl_.lanes_blocked_)*/{}
-  , /*decltype(_impl_.description_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
-  , /*decltype(_impl_.sub_type_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
-  , /*decltype(_impl_.sub_type_description_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
-  , /*decltype(_impl_.long_description_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
-  , /*decltype(_impl_.clear_lanes_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
-  , /*decltype(_impl_.iso_3166_1_alpha2_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
-  , /*decltype(_impl_.iso_3166_1_alpha3_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
-  , /*decltype(_impl_.congestion_)*/nullptr
-  , /*decltype(_impl_.type_)*/0
-  , /*decltype(_impl_.impact_)*/0
-  , /*decltype(_impl_.start_time_)*/uint64_t{0u}
-  , /*decltype(_impl_.end_time_)*/uint64_t{0u}
-  , /*decltype(_impl_.creation_time_)*/uint64_t{0u}
-  , /*decltype(_impl_.road_closed_)*/false
-  , /*decltype(_impl_.length_)*/0u
-  , /*decltype(_impl_.num_lanes_blocked_)*/uint64_t{0u}
-  , /*decltype(_impl_.id_)*/uint64_t{0u}
-  , /*decltype(_impl_._cached_size_)*/{}} {}
+
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
+    PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 IncidentsTile_Metadata_CongestionDefaultTypeInternal _IncidentsTile_Metadata_Congestion_default_instance_;
+        template <typename>
+PROTOBUF_CONSTEXPR IncidentsTile_Metadata::IncidentsTile_Metadata(::_pbi::ConstantInitialized)
+    : _impl_{
+      /*decltype(_impl_._has_bits_)*/ {},
+      /*decltype(_impl_._cached_size_)*/ {},
+      /*decltype(_impl_.alertc_codes_)*/ {},
+      /* _impl_._alertc_codes_cached_byte_size_ = */ {0},
+      /*decltype(_impl_.lanes_blocked_)*/ {},
+      /*decltype(_impl_.description_)*/ {
+          &::_pbi::fixed_address_empty_string,
+          ::_pbi::ConstantInitialized{},
+      },
+      /*decltype(_impl_.sub_type_)*/ {
+          &::_pbi::fixed_address_empty_string,
+          ::_pbi::ConstantInitialized{},
+      },
+      /*decltype(_impl_.sub_type_description_)*/ {
+          &::_pbi::fixed_address_empty_string,
+          ::_pbi::ConstantInitialized{},
+      },
+      /*decltype(_impl_.long_description_)*/ {
+          &::_pbi::fixed_address_empty_string,
+          ::_pbi::ConstantInitialized{},
+      },
+      /*decltype(_impl_.clear_lanes_)*/ {
+          &::_pbi::fixed_address_empty_string,
+          ::_pbi::ConstantInitialized{},
+      },
+      /*decltype(_impl_.iso_3166_1_alpha2_)*/ {
+          &::_pbi::fixed_address_empty_string,
+          ::_pbi::ConstantInitialized{},
+      },
+      /*decltype(_impl_.iso_3166_1_alpha3_)*/ {
+          &::_pbi::fixed_address_empty_string,
+          ::_pbi::ConstantInitialized{},
+      },
+      /*decltype(_impl_.congestion_)*/ nullptr,
+      /*decltype(_impl_.type_)*/ 0,
+      /*decltype(_impl_.impact_)*/ 0,
+      /*decltype(_impl_.start_time_)*/ ::uint64_t{0u},
+      /*decltype(_impl_.end_time_)*/ ::uint64_t{0u},
+      /*decltype(_impl_.creation_time_)*/ ::uint64_t{0u},
+      /*decltype(_impl_.road_closed_)*/ false,
+      /*decltype(_impl_.length_)*/ 0u,
+      /*decltype(_impl_.num_lanes_blocked_)*/ ::uint64_t{0u},
+      /*decltype(_impl_.id_)*/ ::uint64_t{0u},
+    } {}
 struct IncidentsTile_MetadataDefaultTypeInternal {
-  PROTOBUF_CONSTEXPR IncidentsTile_MetadataDefaultTypeInternal()
-      : _instance(::_pbi::ConstantInitialized{}) {}
+  PROTOBUF_CONSTEXPR IncidentsTile_MetadataDefaultTypeInternal() : _instance(::_pbi::ConstantInitialized{}) {}
   ~IncidentsTile_MetadataDefaultTypeInternal() {}
   union {
     IncidentsTile_Metadata _instance;
   };
 };
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 IncidentsTile_MetadataDefaultTypeInternal _IncidentsTile_Metadata_default_instance_;
-PROTOBUF_CONSTEXPR IncidentsTile::IncidentsTile(
-    ::_pbi::ConstantInitialized): _impl_{
-    /*decltype(_impl_.locations_)*/{}
-  , /*decltype(_impl_.metadata_)*/{}
-  , /*decltype(_impl_._cached_size_)*/{}} {}
+
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
+    PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 IncidentsTile_MetadataDefaultTypeInternal _IncidentsTile_Metadata_default_instance_;
+        template <typename>
+PROTOBUF_CONSTEXPR IncidentsTile::IncidentsTile(::_pbi::ConstantInitialized)
+    : _impl_{
+      /*decltype(_impl_.locations_)*/ {},
+      /*decltype(_impl_.metadata_)*/ {},
+      /*decltype(_impl_._cached_size_)*/ {},
+    } {}
 struct IncidentsTileDefaultTypeInternal {
-  PROTOBUF_CONSTEXPR IncidentsTileDefaultTypeInternal()
-      : _instance(::_pbi::ConstantInitialized{}) {}
+  PROTOBUF_CONSTEXPR IncidentsTileDefaultTypeInternal() : _instance(::_pbi::ConstantInitialized{}) {}
   ~IncidentsTileDefaultTypeInternal() {}
   union {
     IncidentsTile _instance;
   };
 };
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 IncidentsTileDefaultTypeInternal _IncidentsTile_default_instance_;
+
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
+    PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 IncidentsTileDefaultTypeInternal _IncidentsTile_default_instance_;
 }  // namespace valhalla
 namespace valhalla {
 bool IncidentsTile_Metadata_Type_IsValid(int value) {
@@ -114,79 +148,81 @@ bool IncidentsTile_Metadata_Type_IsValid(int value) {
       return false;
   }
 }
+static ::google::protobuf::internal::ExplicitlyConstructed<std::string>
+    IncidentsTile_Metadata_Type_strings[12] = {};
 
-static ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<std::string> IncidentsTile_Metadata_Type_strings[12] = {};
+static const char IncidentsTile_Metadata_Type_names[] = {
+    "ACCIDENT"
+    "CONGESTION"
+    "CONSTRUCTION"
+    "DISABLED_VEHICLE"
+    "LANE_RESTRICTION"
+    "MASS_TRANSIT"
+    "MISCELLANEOUS"
+    "OTHER_NEWS"
+    "PLANNED_EVENT"
+    "ROAD_CLOSURE"
+    "ROAD_HAZARD"
+    "WEATHER"
+};
 
-static const char IncidentsTile_Metadata_Type_names[] =
-  "ACCIDENT"
-  "CONGESTION"
-  "CONSTRUCTION"
-  "DISABLED_VEHICLE"
-  "LANE_RESTRICTION"
-  "MASS_TRANSIT"
-  "MISCELLANEOUS"
-  "OTHER_NEWS"
-  "PLANNED_EVENT"
-  "ROAD_CLOSURE"
-  "ROAD_HAZARD"
-  "WEATHER";
-
-static const ::PROTOBUF_NAMESPACE_ID::internal::EnumEntry IncidentsTile_Metadata_Type_entries[] = {
-  { {IncidentsTile_Metadata_Type_names + 0, 8}, 0 },
-  { {IncidentsTile_Metadata_Type_names + 8, 10}, 1 },
-  { {IncidentsTile_Metadata_Type_names + 18, 12}, 2 },
-  { {IncidentsTile_Metadata_Type_names + 30, 16}, 3 },
-  { {IncidentsTile_Metadata_Type_names + 46, 16}, 4 },
-  { {IncidentsTile_Metadata_Type_names + 62, 12}, 5 },
-  { {IncidentsTile_Metadata_Type_names + 74, 13}, 6 },
-  { {IncidentsTile_Metadata_Type_names + 87, 10}, 7 },
-  { {IncidentsTile_Metadata_Type_names + 97, 13}, 8 },
-  { {IncidentsTile_Metadata_Type_names + 110, 12}, 9 },
-  { {IncidentsTile_Metadata_Type_names + 122, 11}, 10 },
-  { {IncidentsTile_Metadata_Type_names + 133, 7}, 11 },
+static const ::google::protobuf::internal::EnumEntry IncidentsTile_Metadata_Type_entries[] =
+    {
+        {{&IncidentsTile_Metadata_Type_names[0], 8}, 0},
+        {{&IncidentsTile_Metadata_Type_names[8], 10}, 1},
+        {{&IncidentsTile_Metadata_Type_names[18], 12}, 2},
+        {{&IncidentsTile_Metadata_Type_names[30], 16}, 3},
+        {{&IncidentsTile_Metadata_Type_names[46], 16}, 4},
+        {{&IncidentsTile_Metadata_Type_names[62], 12}, 5},
+        {{&IncidentsTile_Metadata_Type_names[74], 13}, 6},
+        {{&IncidentsTile_Metadata_Type_names[87], 10}, 7},
+        {{&IncidentsTile_Metadata_Type_names[97], 13}, 8},
+        {{&IncidentsTile_Metadata_Type_names[110], 12}, 9},
+        {{&IncidentsTile_Metadata_Type_names[122], 11}, 10},
+        {{&IncidentsTile_Metadata_Type_names[133], 7}, 11},
 };
 
 static const int IncidentsTile_Metadata_Type_entries_by_number[] = {
-  0, // 0 -> ACCIDENT
-  1, // 1 -> CONGESTION
-  2, // 2 -> CONSTRUCTION
-  3, // 3 -> DISABLED_VEHICLE
-  4, // 4 -> LANE_RESTRICTION
-  5, // 5 -> MASS_TRANSIT
-  6, // 6 -> MISCELLANEOUS
-  7, // 7 -> OTHER_NEWS
-  8, // 8 -> PLANNED_EVENT
-  9, // 9 -> ROAD_CLOSURE
-  10, // 10 -> ROAD_HAZARD
-  11, // 11 -> WEATHER
+    0,  // 0 -> ACCIDENT
+    1,  // 1 -> CONGESTION
+    2,  // 2 -> CONSTRUCTION
+    3,  // 3 -> DISABLED_VEHICLE
+    4,  // 4 -> LANE_RESTRICTION
+    5,  // 5 -> MASS_TRANSIT
+    6,  // 6 -> MISCELLANEOUS
+    7,  // 7 -> OTHER_NEWS
+    8,  // 8 -> PLANNED_EVENT
+    9,  // 9 -> ROAD_CLOSURE
+    10,  // 10 -> ROAD_HAZARD
+    11,  // 11 -> WEATHER
 };
 
-const std::string& IncidentsTile_Metadata_Type_Name(
-    IncidentsTile_Metadata_Type value) {
-  static const bool dummy =
-      ::PROTOBUF_NAMESPACE_ID::internal::InitializeEnumStrings(
-          IncidentsTile_Metadata_Type_entries,
-          IncidentsTile_Metadata_Type_entries_by_number,
+const std::string& IncidentsTile_Metadata_Type_Name(IncidentsTile_Metadata_Type value) {
+  static const bool kDummy =
+      ::google::protobuf::internal::InitializeEnumStrings(
+          IncidentsTile_Metadata_Type_entries, IncidentsTile_Metadata_Type_entries_by_number,
           12, IncidentsTile_Metadata_Type_strings);
-  (void) dummy;
-  int idx = ::PROTOBUF_NAMESPACE_ID::internal::LookUpEnumName(
-      IncidentsTile_Metadata_Type_entries,
-      IncidentsTile_Metadata_Type_entries_by_number,
-      12, value);
-  return idx == -1 ? ::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString() :
-                     IncidentsTile_Metadata_Type_strings[idx].get();
+  (void)kDummy;
+
+  int idx = ::google::protobuf::internal::LookUpEnumName(
+      IncidentsTile_Metadata_Type_entries, IncidentsTile_Metadata_Type_entries_by_number, 12,
+      value);
+  return idx == -1 ? ::google::protobuf::internal::GetEmptyString()
+                   : IncidentsTile_Metadata_Type_strings[idx].get();
 }
-bool IncidentsTile_Metadata_Type_Parse(
-    ::PROTOBUF_NAMESPACE_ID::ConstStringParam name, IncidentsTile_Metadata_Type* value) {
+
+bool IncidentsTile_Metadata_Type_Parse(absl::string_view name, IncidentsTile_Metadata_Type* value) {
   int int_value;
-  bool success = ::PROTOBUF_NAMESPACE_ID::internal::LookUpEnumValue(
+  bool success = ::google::protobuf::internal::LookUpEnumValue(
       IncidentsTile_Metadata_Type_entries, 12, name, &int_value);
   if (success) {
     *value = static_cast<IncidentsTile_Metadata_Type>(int_value);
   }
   return success;
 }
-#if (__cplusplus < 201703) && (!defined(_MSC_VER) || (_MSC_VER >= 1900 && _MSC_VER < 1912))
+#if (__cplusplus < 201703) && \
+  (!defined(_MSC_VER) || (_MSC_VER >= 1900 && _MSC_VER < 1912))
+
 constexpr IncidentsTile_Metadata_Type IncidentsTile_Metadata::ACCIDENT;
 constexpr IncidentsTile_Metadata_Type IncidentsTile_Metadata::CONGESTION;
 constexpr IncidentsTile_Metadata_Type IncidentsTile_Metadata::CONSTRUCTION;
@@ -202,7 +238,9 @@ constexpr IncidentsTile_Metadata_Type IncidentsTile_Metadata::WEATHER;
 constexpr IncidentsTile_Metadata_Type IncidentsTile_Metadata::Type_MIN;
 constexpr IncidentsTile_Metadata_Type IncidentsTile_Metadata::Type_MAX;
 constexpr int IncidentsTile_Metadata::Type_ARRAYSIZE;
-#endif  // (__cplusplus < 201703) && (!defined(_MSC_VER) || (_MSC_VER >= 1900 && _MSC_VER < 1912))
+
+#endif  // (__cplusplus < 201703) &&
+        // (!defined(_MSC_VER) || (_MSC_VER >= 1900 && _MSC_VER < 1912))
 bool IncidentsTile_Metadata_Impact_IsValid(int value) {
   switch (value) {
     case 0:
@@ -215,58 +253,60 @@ bool IncidentsTile_Metadata_Impact_IsValid(int value) {
       return false;
   }
 }
+static ::google::protobuf::internal::ExplicitlyConstructed<std::string>
+    IncidentsTile_Metadata_Impact_strings[5] = {};
 
-static ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<std::string> IncidentsTile_Metadata_Impact_strings[5] = {};
+static const char IncidentsTile_Metadata_Impact_names[] = {
+    "CRITICAL"
+    "LOW"
+    "MAJOR"
+    "MINOR"
+    "UNKNOWN"
+};
 
-static const char IncidentsTile_Metadata_Impact_names[] =
-  "CRITICAL"
-  "LOW"
-  "MAJOR"
-  "MINOR"
-  "UNKNOWN";
-
-static const ::PROTOBUF_NAMESPACE_ID::internal::EnumEntry IncidentsTile_Metadata_Impact_entries[] = {
-  { {IncidentsTile_Metadata_Impact_names + 0, 8}, 1 },
-  { {IncidentsTile_Metadata_Impact_names + 8, 3}, 4 },
-  { {IncidentsTile_Metadata_Impact_names + 11, 5}, 2 },
-  { {IncidentsTile_Metadata_Impact_names + 16, 5}, 3 },
-  { {IncidentsTile_Metadata_Impact_names + 21, 7}, 0 },
+static const ::google::protobuf::internal::EnumEntry IncidentsTile_Metadata_Impact_entries[] =
+    {
+        {{&IncidentsTile_Metadata_Impact_names[0], 8}, 1},
+        {{&IncidentsTile_Metadata_Impact_names[8], 3}, 4},
+        {{&IncidentsTile_Metadata_Impact_names[11], 5}, 2},
+        {{&IncidentsTile_Metadata_Impact_names[16], 5}, 3},
+        {{&IncidentsTile_Metadata_Impact_names[21], 7}, 0},
 };
 
 static const int IncidentsTile_Metadata_Impact_entries_by_number[] = {
-  4, // 0 -> UNKNOWN
-  0, // 1 -> CRITICAL
-  2, // 2 -> MAJOR
-  3, // 3 -> MINOR
-  1, // 4 -> LOW
+    4,  // 0 -> UNKNOWN
+    0,  // 1 -> CRITICAL
+    2,  // 2 -> MAJOR
+    3,  // 3 -> MINOR
+    1,  // 4 -> LOW
 };
 
-const std::string& IncidentsTile_Metadata_Impact_Name(
-    IncidentsTile_Metadata_Impact value) {
-  static const bool dummy =
-      ::PROTOBUF_NAMESPACE_ID::internal::InitializeEnumStrings(
-          IncidentsTile_Metadata_Impact_entries,
-          IncidentsTile_Metadata_Impact_entries_by_number,
+const std::string& IncidentsTile_Metadata_Impact_Name(IncidentsTile_Metadata_Impact value) {
+  static const bool kDummy =
+      ::google::protobuf::internal::InitializeEnumStrings(
+          IncidentsTile_Metadata_Impact_entries, IncidentsTile_Metadata_Impact_entries_by_number,
           5, IncidentsTile_Metadata_Impact_strings);
-  (void) dummy;
-  int idx = ::PROTOBUF_NAMESPACE_ID::internal::LookUpEnumName(
-      IncidentsTile_Metadata_Impact_entries,
-      IncidentsTile_Metadata_Impact_entries_by_number,
-      5, value);
-  return idx == -1 ? ::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString() :
-                     IncidentsTile_Metadata_Impact_strings[idx].get();
+  (void)kDummy;
+
+  int idx = ::google::protobuf::internal::LookUpEnumName(
+      IncidentsTile_Metadata_Impact_entries, IncidentsTile_Metadata_Impact_entries_by_number, 5,
+      value);
+  return idx == -1 ? ::google::protobuf::internal::GetEmptyString()
+                   : IncidentsTile_Metadata_Impact_strings[idx].get();
 }
-bool IncidentsTile_Metadata_Impact_Parse(
-    ::PROTOBUF_NAMESPACE_ID::ConstStringParam name, IncidentsTile_Metadata_Impact* value) {
+
+bool IncidentsTile_Metadata_Impact_Parse(absl::string_view name, IncidentsTile_Metadata_Impact* value) {
   int int_value;
-  bool success = ::PROTOBUF_NAMESPACE_ID::internal::LookUpEnumValue(
+  bool success = ::google::protobuf::internal::LookUpEnumValue(
       IncidentsTile_Metadata_Impact_entries, 5, name, &int_value);
   if (success) {
     *value = static_cast<IncidentsTile_Metadata_Impact>(int_value);
   }
   return success;
 }
-#if (__cplusplus < 201703) && (!defined(_MSC_VER) || (_MSC_VER >= 1900 && _MSC_VER < 1912))
+#if (__cplusplus < 201703) && \
+  (!defined(_MSC_VER) || (_MSC_VER >= 1900 && _MSC_VER < 1912))
+
 constexpr IncidentsTile_Metadata_Impact IncidentsTile_Metadata::UNKNOWN;
 constexpr IncidentsTile_Metadata_Impact IncidentsTile_Metadata::CRITICAL;
 constexpr IncidentsTile_Metadata_Impact IncidentsTile_Metadata::MAJOR;
@@ -275,224 +315,211 @@ constexpr IncidentsTile_Metadata_Impact IncidentsTile_Metadata::LOW;
 constexpr IncidentsTile_Metadata_Impact IncidentsTile_Metadata::Impact_MIN;
 constexpr IncidentsTile_Metadata_Impact IncidentsTile_Metadata::Impact_MAX;
 constexpr int IncidentsTile_Metadata::Impact_ARRAYSIZE;
-#endif  // (__cplusplus < 201703) && (!defined(_MSC_VER) || (_MSC_VER >= 1900 && _MSC_VER < 1912))
 
+#endif  // (__cplusplus < 201703) &&
+        // (!defined(_MSC_VER) || (_MSC_VER >= 1900 && _MSC_VER < 1912))
 // ===================================================================
 
 class IncidentsTile_Location::_Internal {
  public:
 };
 
-IncidentsTile_Location::IncidentsTile_Location(::PROTOBUF_NAMESPACE_ID::Arena* arena,
-                         bool is_message_owned)
-  : ::PROTOBUF_NAMESPACE_ID::MessageLite(arena, is_message_owned) {
-  SharedCtor(arena, is_message_owned);
+IncidentsTile_Location::IncidentsTile_Location(::google::protobuf::Arena* arena)
+    : ::google::protobuf::MessageLite(arena) {
+  SharedCtor(arena);
   // @@protoc_insertion_point(arena_constructor:valhalla.IncidentsTile.Location)
 }
 IncidentsTile_Location::IncidentsTile_Location(const IncidentsTile_Location& from)
-  : ::PROTOBUF_NAMESPACE_ID::MessageLite() {
-  IncidentsTile_Location* const _this = this; (void)_this;
-  new (&_impl_) Impl_{
-      decltype(_impl_.edge_index_){}
-    , decltype(_impl_.start_offset_){}
-    , decltype(_impl_.end_offset_){}
-    , decltype(_impl_.metadata_index_){}
-    , /*decltype(_impl_._cached_size_)*/{}};
-
-  _internal_metadata_.MergeFrom<std::string>(from._internal_metadata_);
-  ::memcpy(&_impl_.edge_index_, &from._impl_.edge_index_,
-    static_cast<size_t>(reinterpret_cast<char*>(&_impl_.metadata_index_) -
-    reinterpret_cast<char*>(&_impl_.edge_index_)) + sizeof(_impl_.metadata_index_));
+    : ::google::protobuf::MessageLite(), _impl_(from._impl_) {
+  _internal_metadata_.MergeFrom<std::string>(
+      from._internal_metadata_);
   // @@protoc_insertion_point(copy_constructor:valhalla.IncidentsTile.Location)
 }
-
-inline void IncidentsTile_Location::SharedCtor(
-    ::_pb::Arena* arena, bool is_message_owned) {
+inline void IncidentsTile_Location::SharedCtor(::_pb::Arena* arena) {
   (void)arena;
-  (void)is_message_owned;
   new (&_impl_) Impl_{
-      decltype(_impl_.edge_index_){0u}
-    , decltype(_impl_.start_offset_){0}
-    , decltype(_impl_.end_offset_){0}
-    , decltype(_impl_.metadata_index_){0u}
-    , /*decltype(_impl_._cached_size_)*/{}
+      decltype(_impl_.edge_index_){0u},
+      decltype(_impl_.start_offset_){0},
+      decltype(_impl_.end_offset_){0},
+      decltype(_impl_.metadata_index_){0u},
+      /*decltype(_impl_._cached_size_)*/ {},
   };
 }
-
 IncidentsTile_Location::~IncidentsTile_Location() {
   // @@protoc_insertion_point(destructor:valhalla.IncidentsTile.Location)
-  if (auto *arena = _internal_metadata_.DeleteReturnArena<std::string>()) {
-  (void)arena;
-    return;
-  }
+  _internal_metadata_.Delete<std::string>();
   SharedDtor();
 }
-
 inline void IncidentsTile_Location::SharedDtor() {
-  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
+  ABSL_DCHECK(GetArenaForAllocation() == nullptr);
 }
-
 void IncidentsTile_Location::SetCachedSize(int size) const {
   _impl_._cached_size_.Set(size);
 }
 
-void IncidentsTile_Location::Clear() {
+PROTOBUF_NOINLINE void IncidentsTile_Location::Clear() {
 // @@protoc_insertion_point(message_clear_start:valhalla.IncidentsTile.Location)
-  uint32_t cached_has_bits = 0;
+  ::uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  ::memset(&_impl_.edge_index_, 0, static_cast<size_t>(
+  ::memset(&_impl_.edge_index_, 0, static_cast<::size_t>(
       reinterpret_cast<char*>(&_impl_.metadata_index_) -
       reinterpret_cast<char*>(&_impl_.edge_index_)) + sizeof(_impl_.metadata_index_));
   _internal_metadata_.Clear<std::string>();
 }
 
-const char* IncidentsTile_Location::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
-#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
-  while (!ctx->Done(&ptr)) {
-    uint32_t tag;
-    ptr = ::_pbi::ReadTag(ptr, &tag);
-    switch (tag >> 3) {
-      // uint32 edge_index = 1;
-      case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 8)) {
-          _impl_.edge_index_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
-          CHK_(ptr);
-        } else
-          goto handle_unusual;
-        continue;
-      // float start_offset = 2;
-      case 2:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 21)) {
-          _impl_.start_offset_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
-          ptr += sizeof(float);
-        } else
-          goto handle_unusual;
-        continue;
-      // float end_offset = 3;
-      case 3:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 29)) {
-          _impl_.end_offset_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
-          ptr += sizeof(float);
-        } else
-          goto handle_unusual;
-        continue;
-      // uint32 metadata_index = 4;
-      case 4:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 32)) {
-          _impl_.metadata_index_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
-          CHK_(ptr);
-        } else
-          goto handle_unusual;
-        continue;
-      default:
-        goto handle_unusual;
-    }  // switch
-  handle_unusual:
-    if ((tag == 0) || ((tag & 7) == 4)) {
-      CHK_(ptr);
-      ctx->SetLastTag(tag);
-      goto message_done;
-    }
-    ptr = UnknownFieldParse(
-        tag,
-        _internal_metadata_.mutable_unknown_fields<std::string>(),
-        ptr, ctx);
-    CHK_(ptr != nullptr);
-  }  // while
-message_done:
+const char* IncidentsTile_Location::_InternalParse(
+    const char* ptr, ::_pbi::ParseContext* ctx) {
+  ptr = ::_pbi::TcParser::ParseLoop(this, ptr, ctx, &_table_.header);
   return ptr;
-failure:
-  ptr = nullptr;
-  goto message_done;
-#undef CHK_
 }
 
-uint8_t* IncidentsTile_Location::_InternalSerialize(
-    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+
+PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1
+const ::_pbi::TcParseTable<2, 4, 0, 0, 2> IncidentsTile_Location::_table_ = {
+  {
+    0,  // no _has_bits_
+    0, // no _extensions_
+    4, 24,  // max_field_number, fast_idx_mask
+    offsetof(decltype(_table_), field_lookup_table),
+    4294967280,  // skipmap
+    offsetof(decltype(_table_), field_entries),
+    4,  // num_field_entries
+    0,  // num_aux_entries
+    offsetof(decltype(_table_), field_names),  // no aux_entries
+    &_IncidentsTile_Location_default_instance_._instance,
+    ::_pbi::TcParser::GenericFallbackLite,  // fallback
+  }, {{
+    // uint32 metadata_index = 4;
+    {::_pbi::TcParser::FastV32S1,
+     {32, 63, 0, PROTOBUF_FIELD_OFFSET(IncidentsTile_Location, _impl_.metadata_index_)}},
+    // uint32 edge_index = 1;
+    {::_pbi::TcParser::FastV32S1,
+     {8, 63, 0, PROTOBUF_FIELD_OFFSET(IncidentsTile_Location, _impl_.edge_index_)}},
+    // float start_offset = 2;
+    {::_pbi::TcParser::FastF32S1,
+     {21, 63, 0, PROTOBUF_FIELD_OFFSET(IncidentsTile_Location, _impl_.start_offset_)}},
+    // float end_offset = 3;
+    {::_pbi::TcParser::FastF32S1,
+     {29, 63, 0, PROTOBUF_FIELD_OFFSET(IncidentsTile_Location, _impl_.end_offset_)}},
+  }}, {{
+    65535, 65535
+  }}, {{
+    // uint32 edge_index = 1;
+    {PROTOBUF_FIELD_OFFSET(IncidentsTile_Location, _impl_.edge_index_), 0, 0,
+    (0 | ::_fl::kFcSingular | ::_fl::kUInt32)},
+    // float start_offset = 2;
+    {PROTOBUF_FIELD_OFFSET(IncidentsTile_Location, _impl_.start_offset_), 0, 0,
+    (0 | ::_fl::kFcSingular | ::_fl::kFloat)},
+    // float end_offset = 3;
+    {PROTOBUF_FIELD_OFFSET(IncidentsTile_Location, _impl_.end_offset_), 0, 0,
+    (0 | ::_fl::kFcSingular | ::_fl::kFloat)},
+    // uint32 metadata_index = 4;
+    {PROTOBUF_FIELD_OFFSET(IncidentsTile_Location, _impl_.metadata_index_), 0, 0,
+    (0 | ::_fl::kFcSingular | ::_fl::kUInt32)},
+  }},
+  // no aux_entries
+  {{
+  }},
+};
+
+::uint8_t* IncidentsTile_Location::_InternalSerialize(
+    ::uint8_t* target,
+    ::google::protobuf::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:valhalla.IncidentsTile.Location)
-  uint32_t cached_has_bits = 0;
-  (void) cached_has_bits;
+  ::uint32_t cached_has_bits = 0;
+  (void)cached_has_bits;
 
   // uint32 edge_index = 1;
   if (this->_internal_edge_index() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteUInt32ToArray(1, this->_internal_edge_index(), target);
+    target = ::_pbi::WireFormatLite::WriteUInt32ToArray(
+        1, this->_internal_edge_index(), target);
   }
 
   // float start_offset = 2;
-  static_assert(sizeof(uint32_t) == sizeof(float), "Code assumes uint32_t and float are the same size.");
+  static_assert(sizeof(::uint32_t) == sizeof(float),
+                "Code assumes ::uint32_t and float are the same size.");
   float tmp_start_offset = this->_internal_start_offset();
-  uint32_t raw_start_offset;
+  ::uint32_t raw_start_offset;
   memcpy(&raw_start_offset, &tmp_start_offset, sizeof(tmp_start_offset));
   if (raw_start_offset != 0) {
     target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteFloatToArray(2, this->_internal_start_offset(), target);
+    target = ::_pbi::WireFormatLite::WriteFloatToArray(
+        2, this->_internal_start_offset(), target);
   }
 
   // float end_offset = 3;
-  static_assert(sizeof(uint32_t) == sizeof(float), "Code assumes uint32_t and float are the same size.");
+  static_assert(sizeof(::uint32_t) == sizeof(float),
+                "Code assumes ::uint32_t and float are the same size.");
   float tmp_end_offset = this->_internal_end_offset();
-  uint32_t raw_end_offset;
+  ::uint32_t raw_end_offset;
   memcpy(&raw_end_offset, &tmp_end_offset, sizeof(tmp_end_offset));
   if (raw_end_offset != 0) {
     target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteFloatToArray(3, this->_internal_end_offset(), target);
+    target = ::_pbi::WireFormatLite::WriteFloatToArray(
+        3, this->_internal_end_offset(), target);
   }
 
   // uint32 metadata_index = 4;
   if (this->_internal_metadata_index() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteUInt32ToArray(4, this->_internal_metadata_index(), target);
+    target = ::_pbi::WireFormatLite::WriteUInt32ToArray(
+        4, this->_internal_metadata_index(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target = stream->WriteRaw(_internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).data(),
-        static_cast<int>(_internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).size()), target);
+    target = stream->WriteRaw(
+        _internal_metadata_.unknown_fields<std::string>(::google::protobuf::internal::GetEmptyString).data(),
+        static_cast<int>(_internal_metadata_.unknown_fields<std::string>(::google::protobuf::internal::GetEmptyString).size()), target);
   }
   // @@protoc_insertion_point(serialize_to_array_end:valhalla.IncidentsTile.Location)
   return target;
 }
 
-size_t IncidentsTile_Location::ByteSizeLong() const {
+::size_t IncidentsTile_Location::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:valhalla.IncidentsTile.Location)
-  size_t total_size = 0;
+  ::size_t total_size = 0;
 
-  uint32_t cached_has_bits = 0;
+  ::uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
   // uint32 edge_index = 1;
   if (this->_internal_edge_index() != 0) {
-    total_size += ::_pbi::WireFormatLite::UInt32SizePlusOne(this->_internal_edge_index());
+    total_size += ::_pbi::WireFormatLite::UInt32SizePlusOne(
+        this->_internal_edge_index());
   }
 
   // float start_offset = 2;
-  static_assert(sizeof(uint32_t) == sizeof(float), "Code assumes uint32_t and float are the same size.");
+  static_assert(sizeof(::uint32_t) == sizeof(float),
+                "Code assumes ::uint32_t and float are the same size.");
   float tmp_start_offset = this->_internal_start_offset();
-  uint32_t raw_start_offset;
+  ::uint32_t raw_start_offset;
   memcpy(&raw_start_offset, &tmp_start_offset, sizeof(tmp_start_offset));
   if (raw_start_offset != 0) {
-    total_size += 1 + 4;
+    total_size += 5;
   }
 
   // float end_offset = 3;
-  static_assert(sizeof(uint32_t) == sizeof(float), "Code assumes uint32_t and float are the same size.");
+  static_assert(sizeof(::uint32_t) == sizeof(float),
+                "Code assumes ::uint32_t and float are the same size.");
   float tmp_end_offset = this->_internal_end_offset();
-  uint32_t raw_end_offset;
+  ::uint32_t raw_end_offset;
   memcpy(&raw_end_offset, &tmp_end_offset, sizeof(tmp_end_offset));
   if (raw_end_offset != 0) {
-    total_size += 1 + 4;
+    total_size += 5;
   }
 
   // uint32 metadata_index = 4;
   if (this->_internal_metadata_index() != 0) {
-    total_size += ::_pbi::WireFormatLite::UInt32SizePlusOne(this->_internal_metadata_index());
+    total_size += ::_pbi::WireFormatLite::UInt32SizePlusOne(
+        this->_internal_metadata_index());
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    total_size += _internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).size();
+    total_size += _internal_metadata_.unknown_fields<std::string>(::google::protobuf::internal::GetEmptyString).size();
   }
   int cached_size = ::_pbi::ToCachedSize(total_size);
   SetCachedSize(cached_size);
@@ -500,7 +527,7 @@ size_t IncidentsTile_Location::ByteSizeLong() const {
 }
 
 void IncidentsTile_Location::CheckTypeAndMergeFrom(
-    const ::PROTOBUF_NAMESPACE_ID::MessageLite& from) {
+    const ::google::protobuf::MessageLite& from) {
   MergeFrom(*::_pbi::DownCast<const IncidentsTile_Location*>(
       &from));
 }
@@ -508,23 +535,25 @@ void IncidentsTile_Location::CheckTypeAndMergeFrom(
 void IncidentsTile_Location::MergeFrom(const IncidentsTile_Location& from) {
   IncidentsTile_Location* const _this = this;
   // @@protoc_insertion_point(class_specific_merge_from_start:valhalla.IncidentsTile.Location)
-  GOOGLE_DCHECK_NE(&from, _this);
-  uint32_t cached_has_bits = 0;
+  ABSL_DCHECK_NE(&from, _this);
+  ::uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   if (from._internal_edge_index() != 0) {
     _this->_internal_set_edge_index(from._internal_edge_index());
   }
-  static_assert(sizeof(uint32_t) == sizeof(float), "Code assumes uint32_t and float are the same size.");
+  static_assert(sizeof(::uint32_t) == sizeof(float),
+                "Code assumes ::uint32_t and float are the same size.");
   float tmp_start_offset = from._internal_start_offset();
-  uint32_t raw_start_offset;
+  ::uint32_t raw_start_offset;
   memcpy(&raw_start_offset, &tmp_start_offset, sizeof(tmp_start_offset));
   if (raw_start_offset != 0) {
     _this->_internal_set_start_offset(from._internal_start_offset());
   }
-  static_assert(sizeof(uint32_t) == sizeof(float), "Code assumes uint32_t and float are the same size.");
+  static_assert(sizeof(::uint32_t) == sizeof(float),
+                "Code assumes ::uint32_t and float are the same size.");
   float tmp_end_offset = from._internal_end_offset();
-  uint32_t raw_end_offset;
+  ::uint32_t raw_end_offset;
   memcpy(&raw_end_offset, &tmp_end_offset, sizeof(tmp_end_offset));
   if (raw_end_offset != 0) {
     _this->_internal_set_end_offset(from._internal_end_offset());
@@ -542,14 +571,14 @@ void IncidentsTile_Location::CopyFrom(const IncidentsTile_Location& from) {
   MergeFrom(from);
 }
 
-bool IncidentsTile_Location::IsInitialized() const {
+PROTOBUF_NOINLINE bool IncidentsTile_Location::IsInitialized() const {
   return true;
 }
 
 void IncidentsTile_Location::InternalSwap(IncidentsTile_Location* other) {
   using std::swap;
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
-  ::PROTOBUF_NAMESPACE_ID::internal::memswap<
+  ::google::protobuf::internal::memswap<
       PROTOBUF_FIELD_OFFSET(IncidentsTile_Location, _impl_.metadata_index_)
       + sizeof(IncidentsTile_Location::_impl_.metadata_index_)
       - PROTOBUF_FIELD_OFFSET(IncidentsTile_Location, _impl_.edge_index_)>(
@@ -561,61 +590,45 @@ std::string IncidentsTile_Location::GetTypeName() const {
   return "valhalla.IncidentsTile.Location";
 }
 
-
 // ===================================================================
 
 class IncidentsTile_Metadata_Congestion::_Internal {
  public:
 };
 
-IncidentsTile_Metadata_Congestion::IncidentsTile_Metadata_Congestion(::PROTOBUF_NAMESPACE_ID::Arena* arena,
-                         bool is_message_owned)
-  : ::PROTOBUF_NAMESPACE_ID::MessageLite(arena, is_message_owned) {
-  SharedCtor(arena, is_message_owned);
+IncidentsTile_Metadata_Congestion::IncidentsTile_Metadata_Congestion(::google::protobuf::Arena* arena)
+    : ::google::protobuf::MessageLite(arena) {
+  SharedCtor(arena);
   // @@protoc_insertion_point(arena_constructor:valhalla.IncidentsTile.Metadata.Congestion)
 }
 IncidentsTile_Metadata_Congestion::IncidentsTile_Metadata_Congestion(const IncidentsTile_Metadata_Congestion& from)
-  : ::PROTOBUF_NAMESPACE_ID::MessageLite() {
-  IncidentsTile_Metadata_Congestion* const _this = this; (void)_this;
-  new (&_impl_) Impl_{
-      decltype(_impl_.value_){}
-    , /*decltype(_impl_._cached_size_)*/{}};
-
-  _internal_metadata_.MergeFrom<std::string>(from._internal_metadata_);
-  _this->_impl_.value_ = from._impl_.value_;
+    : ::google::protobuf::MessageLite(), _impl_(from._impl_) {
+  _internal_metadata_.MergeFrom<std::string>(
+      from._internal_metadata_);
   // @@protoc_insertion_point(copy_constructor:valhalla.IncidentsTile.Metadata.Congestion)
 }
-
-inline void IncidentsTile_Metadata_Congestion::SharedCtor(
-    ::_pb::Arena* arena, bool is_message_owned) {
+inline void IncidentsTile_Metadata_Congestion::SharedCtor(::_pb::Arena* arena) {
   (void)arena;
-  (void)is_message_owned;
   new (&_impl_) Impl_{
-      decltype(_impl_.value_){0u}
-    , /*decltype(_impl_._cached_size_)*/{}
+      decltype(_impl_.value_){0u},
+      /*decltype(_impl_._cached_size_)*/ {},
   };
 }
-
 IncidentsTile_Metadata_Congestion::~IncidentsTile_Metadata_Congestion() {
   // @@protoc_insertion_point(destructor:valhalla.IncidentsTile.Metadata.Congestion)
-  if (auto *arena = _internal_metadata_.DeleteReturnArena<std::string>()) {
-  (void)arena;
-    return;
-  }
+  _internal_metadata_.Delete<std::string>();
   SharedDtor();
 }
-
 inline void IncidentsTile_Metadata_Congestion::SharedDtor() {
-  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
+  ABSL_DCHECK(GetArenaForAllocation() == nullptr);
 }
-
 void IncidentsTile_Metadata_Congestion::SetCachedSize(int size) const {
   _impl_._cached_size_.Set(size);
 }
 
-void IncidentsTile_Metadata_Congestion::Clear() {
+PROTOBUF_NOINLINE void IncidentsTile_Metadata_Congestion::Clear() {
 // @@protoc_insertion_point(message_clear_start:valhalla.IncidentsTile.Metadata.Congestion)
-  uint32_t cached_has_bits = 0;
+  ::uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
@@ -623,78 +636,82 @@ void IncidentsTile_Metadata_Congestion::Clear() {
   _internal_metadata_.Clear<std::string>();
 }
 
-const char* IncidentsTile_Metadata_Congestion::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
-#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
-  while (!ctx->Done(&ptr)) {
-    uint32_t tag;
-    ptr = ::_pbi::ReadTag(ptr, &tag);
-    switch (tag >> 3) {
-      // uint32 value = 1;
-      case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 8)) {
-          _impl_.value_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
-          CHK_(ptr);
-        } else
-          goto handle_unusual;
-        continue;
-      default:
-        goto handle_unusual;
-    }  // switch
-  handle_unusual:
-    if ((tag == 0) || ((tag & 7) == 4)) {
-      CHK_(ptr);
-      ctx->SetLastTag(tag);
-      goto message_done;
-    }
-    ptr = UnknownFieldParse(
-        tag,
-        _internal_metadata_.mutable_unknown_fields<std::string>(),
-        ptr, ctx);
-    CHK_(ptr != nullptr);
-  }  // while
-message_done:
+const char* IncidentsTile_Metadata_Congestion::_InternalParse(
+    const char* ptr, ::_pbi::ParseContext* ctx) {
+  ptr = ::_pbi::TcParser::ParseLoop(this, ptr, ctx, &_table_.header);
   return ptr;
-failure:
-  ptr = nullptr;
-  goto message_done;
-#undef CHK_
 }
 
-uint8_t* IncidentsTile_Metadata_Congestion::_InternalSerialize(
-    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+
+PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1
+const ::_pbi::TcParseTable<0, 1, 0, 0, 2> IncidentsTile_Metadata_Congestion::_table_ = {
+  {
+    0,  // no _has_bits_
+    0, // no _extensions_
+    1, 0,  // max_field_number, fast_idx_mask
+    offsetof(decltype(_table_), field_lookup_table),
+    4294967294,  // skipmap
+    offsetof(decltype(_table_), field_entries),
+    1,  // num_field_entries
+    0,  // num_aux_entries
+    offsetof(decltype(_table_), field_names),  // no aux_entries
+    &_IncidentsTile_Metadata_Congestion_default_instance_._instance,
+    ::_pbi::TcParser::GenericFallbackLite,  // fallback
+  }, {{
+    // uint32 value = 1;
+    {::_pbi::TcParser::FastV32S1,
+     {8, 63, 0, PROTOBUF_FIELD_OFFSET(IncidentsTile_Metadata_Congestion, _impl_.value_)}},
+  }}, {{
+    65535, 65535
+  }}, {{
+    // uint32 value = 1;
+    {PROTOBUF_FIELD_OFFSET(IncidentsTile_Metadata_Congestion, _impl_.value_), 0, 0,
+    (0 | ::_fl::kFcSingular | ::_fl::kUInt32)},
+  }},
+  // no aux_entries
+  {{
+  }},
+};
+
+::uint8_t* IncidentsTile_Metadata_Congestion::_InternalSerialize(
+    ::uint8_t* target,
+    ::google::protobuf::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:valhalla.IncidentsTile.Metadata.Congestion)
-  uint32_t cached_has_bits = 0;
-  (void) cached_has_bits;
+  ::uint32_t cached_has_bits = 0;
+  (void)cached_has_bits;
 
   // uint32 value = 1;
   if (this->_internal_value() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteUInt32ToArray(1, this->_internal_value(), target);
+    target = ::_pbi::WireFormatLite::WriteUInt32ToArray(
+        1, this->_internal_value(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target = stream->WriteRaw(_internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).data(),
-        static_cast<int>(_internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).size()), target);
+    target = stream->WriteRaw(
+        _internal_metadata_.unknown_fields<std::string>(::google::protobuf::internal::GetEmptyString).data(),
+        static_cast<int>(_internal_metadata_.unknown_fields<std::string>(::google::protobuf::internal::GetEmptyString).size()), target);
   }
   // @@protoc_insertion_point(serialize_to_array_end:valhalla.IncidentsTile.Metadata.Congestion)
   return target;
 }
 
-size_t IncidentsTile_Metadata_Congestion::ByteSizeLong() const {
+::size_t IncidentsTile_Metadata_Congestion::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:valhalla.IncidentsTile.Metadata.Congestion)
-  size_t total_size = 0;
+  ::size_t total_size = 0;
 
-  uint32_t cached_has_bits = 0;
+  ::uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
   // uint32 value = 1;
   if (this->_internal_value() != 0) {
-    total_size += ::_pbi::WireFormatLite::UInt32SizePlusOne(this->_internal_value());
+    total_size += ::_pbi::WireFormatLite::UInt32SizePlusOne(
+        this->_internal_value());
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    total_size += _internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).size();
+    total_size += _internal_metadata_.unknown_fields<std::string>(::google::protobuf::internal::GetEmptyString).size();
   }
   int cached_size = ::_pbi::ToCachedSize(total_size);
   SetCachedSize(cached_size);
@@ -702,7 +719,7 @@ size_t IncidentsTile_Metadata_Congestion::ByteSizeLong() const {
 }
 
 void IncidentsTile_Metadata_Congestion::CheckTypeAndMergeFrom(
-    const ::PROTOBUF_NAMESPACE_ID::MessageLite& from) {
+    const ::google::protobuf::MessageLite& from) {
   MergeFrom(*::_pbi::DownCast<const IncidentsTile_Metadata_Congestion*>(
       &from));
 }
@@ -710,8 +727,8 @@ void IncidentsTile_Metadata_Congestion::CheckTypeAndMergeFrom(
 void IncidentsTile_Metadata_Congestion::MergeFrom(const IncidentsTile_Metadata_Congestion& from) {
   IncidentsTile_Metadata_Congestion* const _this = this;
   // @@protoc_insertion_point(class_specific_merge_from_start:valhalla.IncidentsTile.Metadata.Congestion)
-  GOOGLE_DCHECK_NE(&from, _this);
-  uint32_t cached_has_bits = 0;
+  ABSL_DCHECK_NE(&from, _this);
+  ::uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   if (from._internal_value() != 0) {
@@ -727,200 +744,192 @@ void IncidentsTile_Metadata_Congestion::CopyFrom(const IncidentsTile_Metadata_Co
   MergeFrom(from);
 }
 
-bool IncidentsTile_Metadata_Congestion::IsInitialized() const {
+PROTOBUF_NOINLINE bool IncidentsTile_Metadata_Congestion::IsInitialized() const {
   return true;
 }
 
 void IncidentsTile_Metadata_Congestion::InternalSwap(IncidentsTile_Metadata_Congestion* other) {
   using std::swap;
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
-  swap(_impl_.value_, other->_impl_.value_);
+        swap(_impl_.value_, other->_impl_.value_);
 }
 
 std::string IncidentsTile_Metadata_Congestion::GetTypeName() const {
   return "valhalla.IncidentsTile.Metadata.Congestion";
 }
 
-
 // ===================================================================
 
 class IncidentsTile_Metadata::_Internal {
  public:
+  using HasBits = decltype(std::declval<IncidentsTile_Metadata>()._impl_._has_bits_);
+  static constexpr ::int32_t kHasBitsOffset =
+    8 * PROTOBUF_FIELD_OFFSET(IncidentsTile_Metadata, _impl_._has_bits_);
   static const ::valhalla::IncidentsTile_Metadata_Congestion& congestion(const IncidentsTile_Metadata* msg);
+  static void set_has_congestion(HasBits* has_bits) {
+    (*has_bits)[0] |= 1u;
+  }
 };
 
-const ::valhalla::IncidentsTile_Metadata_Congestion&
-IncidentsTile_Metadata::_Internal::congestion(const IncidentsTile_Metadata* msg) {
+const ::valhalla::IncidentsTile_Metadata_Congestion& IncidentsTile_Metadata::_Internal::congestion(const IncidentsTile_Metadata* msg) {
   return *msg->_impl_.congestion_;
 }
-IncidentsTile_Metadata::IncidentsTile_Metadata(::PROTOBUF_NAMESPACE_ID::Arena* arena,
-                         bool is_message_owned)
-  : ::PROTOBUF_NAMESPACE_ID::MessageLite(arena, is_message_owned) {
-  SharedCtor(arena, is_message_owned);
+IncidentsTile_Metadata::IncidentsTile_Metadata(::google::protobuf::Arena* arena)
+    : ::google::protobuf::MessageLite(arena) {
+  SharedCtor(arena);
   // @@protoc_insertion_point(arena_constructor:valhalla.IncidentsTile.Metadata)
 }
-IncidentsTile_Metadata::IncidentsTile_Metadata(const IncidentsTile_Metadata& from)
-  : ::PROTOBUF_NAMESPACE_ID::MessageLite() {
-  IncidentsTile_Metadata* const _this = this; (void)_this;
+IncidentsTile_Metadata::IncidentsTile_Metadata(const IncidentsTile_Metadata& from) : ::google::protobuf::MessageLite() {
+  IncidentsTile_Metadata* const _this = this;
+  (void)_this;
   new (&_impl_) Impl_{
-      decltype(_impl_.alertc_codes_){from._impl_.alertc_codes_}
-    , /*decltype(_impl_._alertc_codes_cached_byte_size_)*/{0}
-    , decltype(_impl_.lanes_blocked_){from._impl_.lanes_blocked_}
-    , decltype(_impl_.description_){}
-    , decltype(_impl_.sub_type_){}
-    , decltype(_impl_.sub_type_description_){}
-    , decltype(_impl_.long_description_){}
-    , decltype(_impl_.clear_lanes_){}
-    , decltype(_impl_.iso_3166_1_alpha2_){}
-    , decltype(_impl_.iso_3166_1_alpha3_){}
-    , decltype(_impl_.congestion_){nullptr}
-    , decltype(_impl_.type_){}
-    , decltype(_impl_.impact_){}
-    , decltype(_impl_.start_time_){}
-    , decltype(_impl_.end_time_){}
-    , decltype(_impl_.creation_time_){}
-    , decltype(_impl_.road_closed_){}
-    , decltype(_impl_.length_){}
-    , decltype(_impl_.num_lanes_blocked_){}
-    , decltype(_impl_.id_){}
-    , /*decltype(_impl_._cached_size_)*/{}};
-
-  _internal_metadata_.MergeFrom<std::string>(from._internal_metadata_);
+      decltype(_impl_._has_bits_){from._impl_._has_bits_},
+      /*decltype(_impl_._cached_size_)*/ {},
+      decltype(_impl_.alertc_codes_){from._impl_.alertc_codes_},
+      /* _impl_._alertc_codes_cached_byte_size_ = */ {0},
+      decltype(_impl_.lanes_blocked_){from._impl_.lanes_blocked_},
+      decltype(_impl_.description_){},
+      decltype(_impl_.sub_type_){},
+      decltype(_impl_.sub_type_description_){},
+      decltype(_impl_.long_description_){},
+      decltype(_impl_.clear_lanes_){},
+      decltype(_impl_.iso_3166_1_alpha2_){},
+      decltype(_impl_.iso_3166_1_alpha3_){},
+      decltype(_impl_.congestion_){nullptr},
+      decltype(_impl_.type_){},
+      decltype(_impl_.impact_){},
+      decltype(_impl_.start_time_){},
+      decltype(_impl_.end_time_){},
+      decltype(_impl_.creation_time_){},
+      decltype(_impl_.road_closed_){},
+      decltype(_impl_.length_){},
+      decltype(_impl_.num_lanes_blocked_){},
+      decltype(_impl_.id_){},
+  };
+  _internal_metadata_.MergeFrom<std::string>(
+      from._internal_metadata_);
   _impl_.description_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    _impl_.description_.Set("", GetArenaForAllocation());
-  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+        _impl_.description_.Set("", GetArenaForAllocation());
+  #endif  // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (!from._internal_description().empty()) {
-    _this->_impl_.description_.Set(from._internal_description(), 
-      _this->GetArenaForAllocation());
+    _this->_impl_.description_.Set(from._internal_description(), _this->GetArenaForAllocation());
   }
   _impl_.sub_type_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    _impl_.sub_type_.Set("", GetArenaForAllocation());
-  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+        _impl_.sub_type_.Set("", GetArenaForAllocation());
+  #endif  // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (!from._internal_sub_type().empty()) {
-    _this->_impl_.sub_type_.Set(from._internal_sub_type(), 
-      _this->GetArenaForAllocation());
+    _this->_impl_.sub_type_.Set(from._internal_sub_type(), _this->GetArenaForAllocation());
   }
   _impl_.sub_type_description_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    _impl_.sub_type_description_.Set("", GetArenaForAllocation());
-  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+        _impl_.sub_type_description_.Set("", GetArenaForAllocation());
+  #endif  // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (!from._internal_sub_type_description().empty()) {
-    _this->_impl_.sub_type_description_.Set(from._internal_sub_type_description(), 
-      _this->GetArenaForAllocation());
+    _this->_impl_.sub_type_description_.Set(from._internal_sub_type_description(), _this->GetArenaForAllocation());
   }
   _impl_.long_description_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    _impl_.long_description_.Set("", GetArenaForAllocation());
-  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+        _impl_.long_description_.Set("", GetArenaForAllocation());
+  #endif  // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (!from._internal_long_description().empty()) {
-    _this->_impl_.long_description_.Set(from._internal_long_description(), 
-      _this->GetArenaForAllocation());
+    _this->_impl_.long_description_.Set(from._internal_long_description(), _this->GetArenaForAllocation());
   }
   _impl_.clear_lanes_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    _impl_.clear_lanes_.Set("", GetArenaForAllocation());
-  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+        _impl_.clear_lanes_.Set("", GetArenaForAllocation());
+  #endif  // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (!from._internal_clear_lanes().empty()) {
-    _this->_impl_.clear_lanes_.Set(from._internal_clear_lanes(), 
-      _this->GetArenaForAllocation());
+    _this->_impl_.clear_lanes_.Set(from._internal_clear_lanes(), _this->GetArenaForAllocation());
   }
   _impl_.iso_3166_1_alpha2_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    _impl_.iso_3166_1_alpha2_.Set("", GetArenaForAllocation());
-  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+        _impl_.iso_3166_1_alpha2_.Set("", GetArenaForAllocation());
+  #endif  // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (!from._internal_iso_3166_1_alpha2().empty()) {
-    _this->_impl_.iso_3166_1_alpha2_.Set(from._internal_iso_3166_1_alpha2(), 
-      _this->GetArenaForAllocation());
+    _this->_impl_.iso_3166_1_alpha2_.Set(from._internal_iso_3166_1_alpha2(), _this->GetArenaForAllocation());
   }
   _impl_.iso_3166_1_alpha3_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    _impl_.iso_3166_1_alpha3_.Set("", GetArenaForAllocation());
-  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+        _impl_.iso_3166_1_alpha3_.Set("", GetArenaForAllocation());
+  #endif  // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (!from._internal_iso_3166_1_alpha3().empty()) {
-    _this->_impl_.iso_3166_1_alpha3_.Set(from._internal_iso_3166_1_alpha3(), 
-      _this->GetArenaForAllocation());
+    _this->_impl_.iso_3166_1_alpha3_.Set(from._internal_iso_3166_1_alpha3(), _this->GetArenaForAllocation());
   }
-  if (from._internal_has_congestion()) {
+  if ((from._impl_._has_bits_[0] & 0x00000001u) != 0) {
     _this->_impl_.congestion_ = new ::valhalla::IncidentsTile_Metadata_Congestion(*from._impl_.congestion_);
   }
   ::memcpy(&_impl_.type_, &from._impl_.type_,
-    static_cast<size_t>(reinterpret_cast<char*>(&_impl_.id_) -
+    static_cast<::size_t>(reinterpret_cast<char*>(&_impl_.id_) -
     reinterpret_cast<char*>(&_impl_.type_)) + sizeof(_impl_.id_));
+
   // @@protoc_insertion_point(copy_constructor:valhalla.IncidentsTile.Metadata)
 }
-
-inline void IncidentsTile_Metadata::SharedCtor(
-    ::_pb::Arena* arena, bool is_message_owned) {
+inline void IncidentsTile_Metadata::SharedCtor(::_pb::Arena* arena) {
   (void)arena;
-  (void)is_message_owned;
   new (&_impl_) Impl_{
-      decltype(_impl_.alertc_codes_){arena}
-    , /*decltype(_impl_._alertc_codes_cached_byte_size_)*/{0}
-    , decltype(_impl_.lanes_blocked_){arena}
-    , decltype(_impl_.description_){}
-    , decltype(_impl_.sub_type_){}
-    , decltype(_impl_.sub_type_description_){}
-    , decltype(_impl_.long_description_){}
-    , decltype(_impl_.clear_lanes_){}
-    , decltype(_impl_.iso_3166_1_alpha2_){}
-    , decltype(_impl_.iso_3166_1_alpha3_){}
-    , decltype(_impl_.congestion_){nullptr}
-    , decltype(_impl_.type_){0}
-    , decltype(_impl_.impact_){0}
-    , decltype(_impl_.start_time_){uint64_t{0u}}
-    , decltype(_impl_.end_time_){uint64_t{0u}}
-    , decltype(_impl_.creation_time_){uint64_t{0u}}
-    , decltype(_impl_.road_closed_){false}
-    , decltype(_impl_.length_){0u}
-    , decltype(_impl_.num_lanes_blocked_){uint64_t{0u}}
-    , decltype(_impl_.id_){uint64_t{0u}}
-    , /*decltype(_impl_._cached_size_)*/{}
+      decltype(_impl_._has_bits_){},
+      /*decltype(_impl_._cached_size_)*/ {},
+      decltype(_impl_.alertc_codes_){arena},
+      /* _impl_._alertc_codes_cached_byte_size_ = */ {0},
+      decltype(_impl_.lanes_blocked_){arena},
+      decltype(_impl_.description_){},
+      decltype(_impl_.sub_type_){},
+      decltype(_impl_.sub_type_description_){},
+      decltype(_impl_.long_description_){},
+      decltype(_impl_.clear_lanes_){},
+      decltype(_impl_.iso_3166_1_alpha2_){},
+      decltype(_impl_.iso_3166_1_alpha3_){},
+      decltype(_impl_.congestion_){nullptr},
+      decltype(_impl_.type_){0},
+      decltype(_impl_.impact_){0},
+      decltype(_impl_.start_time_){::uint64_t{0u}},
+      decltype(_impl_.end_time_){::uint64_t{0u}},
+      decltype(_impl_.creation_time_){::uint64_t{0u}},
+      decltype(_impl_.road_closed_){false},
+      decltype(_impl_.length_){0u},
+      decltype(_impl_.num_lanes_blocked_){::uint64_t{0u}},
+      decltype(_impl_.id_){::uint64_t{0u}},
   };
   _impl_.description_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    _impl_.description_.Set("", GetArenaForAllocation());
-  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+        _impl_.description_.Set("", GetArenaForAllocation());
+  #endif  // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   _impl_.sub_type_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    _impl_.sub_type_.Set("", GetArenaForAllocation());
-  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+        _impl_.sub_type_.Set("", GetArenaForAllocation());
+  #endif  // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   _impl_.sub_type_description_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    _impl_.sub_type_description_.Set("", GetArenaForAllocation());
-  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+        _impl_.sub_type_description_.Set("", GetArenaForAllocation());
+  #endif  // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   _impl_.long_description_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    _impl_.long_description_.Set("", GetArenaForAllocation());
-  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+        _impl_.long_description_.Set("", GetArenaForAllocation());
+  #endif  // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   _impl_.clear_lanes_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    _impl_.clear_lanes_.Set("", GetArenaForAllocation());
-  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+        _impl_.clear_lanes_.Set("", GetArenaForAllocation());
+  #endif  // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   _impl_.iso_3166_1_alpha2_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    _impl_.iso_3166_1_alpha2_.Set("", GetArenaForAllocation());
-  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+        _impl_.iso_3166_1_alpha2_.Set("", GetArenaForAllocation());
+  #endif  // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   _impl_.iso_3166_1_alpha3_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    _impl_.iso_3166_1_alpha3_.Set("", GetArenaForAllocation());
-  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+        _impl_.iso_3166_1_alpha3_.Set("", GetArenaForAllocation());
+  #endif  // PROTOBUF_FORCE_COPY_DEFAULT_STRING
 }
-
 IncidentsTile_Metadata::~IncidentsTile_Metadata() {
   // @@protoc_insertion_point(destructor:valhalla.IncidentsTile.Metadata)
-  if (auto *arena = _internal_metadata_.DeleteReturnArena<std::string>()) {
-  (void)arena;
-    return;
-  }
+  _internal_metadata_.Delete<std::string>();
   SharedDtor();
 }
-
 inline void IncidentsTile_Metadata::SharedDtor() {
-  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
+  ABSL_DCHECK(GetArenaForAllocation() == nullptr);
   _impl_.alertc_codes_.~RepeatedField();
-  _impl_.lanes_blocked_.~RepeatedPtrField();
+  _internal_mutable_lanes_blocked()->~RepeatedPtrField();
   _impl_.description_.Destroy();
   _impl_.sub_type_.Destroy();
   _impl_.sub_type_description_.Destroy();
@@ -930,19 +939,18 @@ inline void IncidentsTile_Metadata::SharedDtor() {
   _impl_.iso_3166_1_alpha3_.Destroy();
   if (this != internal_default_instance()) delete _impl_.congestion_;
 }
-
 void IncidentsTile_Metadata::SetCachedSize(int size) const {
   _impl_._cached_size_.Set(size);
 }
 
-void IncidentsTile_Metadata::Clear() {
+PROTOBUF_NOINLINE void IncidentsTile_Metadata::Clear() {
 // @@protoc_insertion_point(message_clear_start:valhalla.IncidentsTile.Metadata)
-  uint32_t cached_has_bits = 0;
+  ::uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  _impl_.alertc_codes_.Clear();
-  _impl_.lanes_blocked_.Clear();
+  _internal_mutable_alertc_codes()->Clear();
+  _internal_mutable_lanes_blocked()->Clear();
   _impl_.description_.ClearToEmpty();
   _impl_.sub_type_.ClearToEmpty();
   _impl_.sub_type_description_.ClearToEmpty();
@@ -950,530 +958,476 @@ void IncidentsTile_Metadata::Clear() {
   _impl_.clear_lanes_.ClearToEmpty();
   _impl_.iso_3166_1_alpha2_.ClearToEmpty();
   _impl_.iso_3166_1_alpha3_.ClearToEmpty();
-  if (GetArenaForAllocation() == nullptr && _impl_.congestion_ != nullptr) {
-    delete _impl_.congestion_;
+  cached_has_bits = _impl_._has_bits_[0];
+  if (cached_has_bits & 0x00000001u) {
+    ABSL_DCHECK(_impl_.congestion_ != nullptr);
+    _impl_.congestion_->Clear();
   }
-  _impl_.congestion_ = nullptr;
-  ::memset(&_impl_.type_, 0, static_cast<size_t>(
+  ::memset(&_impl_.type_, 0, static_cast<::size_t>(
       reinterpret_cast<char*>(&_impl_.id_) -
       reinterpret_cast<char*>(&_impl_.type_)) + sizeof(_impl_.id_));
+  _impl_._has_bits_.Clear();
   _internal_metadata_.Clear<std::string>();
 }
 
-const char* IncidentsTile_Metadata::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
-#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
-  while (!ctx->Done(&ptr)) {
-    uint32_t tag;
-    ptr = ::_pbi::ReadTag(ptr, &tag);
-    switch (tag >> 3) {
-      // .valhalla.IncidentsTile.Metadata.Type type = 1;
-      case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 8)) {
-          uint64_t val = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
-          CHK_(ptr);
-          _internal_set_type(static_cast<::valhalla::IncidentsTile_Metadata_Type>(val));
-        } else
-          goto handle_unusual;
-        continue;
-      // repeated uint32 alertc_codes = 2;
-      case 2:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 18)) {
-          ptr = ::PROTOBUF_NAMESPACE_ID::internal::PackedUInt32Parser(_internal_mutable_alertc_codes(), ptr, ctx);
-          CHK_(ptr);
-        } else if (static_cast<uint8_t>(tag) == 16) {
-          _internal_add_alertc_codes(::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr));
-          CHK_(ptr);
-        } else
-          goto handle_unusual;
-        continue;
-      // string description = 3;
-      case 3:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 26)) {
-          auto str = _internal_mutable_description();
-          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(ptr);
-          CHK_(::_pbi::VerifyUTF8(str, nullptr));
-        } else
-          goto handle_unusual;
-        continue;
-      // string sub_type = 4;
-      case 4:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 34)) {
-          auto str = _internal_mutable_sub_type();
-          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(ptr);
-          CHK_(::_pbi::VerifyUTF8(str, nullptr));
-        } else
-          goto handle_unusual;
-        continue;
-      // string sub_type_description = 5;
-      case 5:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 42)) {
-          auto str = _internal_mutable_sub_type_description();
-          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(ptr);
-          CHK_(::_pbi::VerifyUTF8(str, nullptr));
-        } else
-          goto handle_unusual;
-        continue;
-      // uint64 start_time = 6;
-      case 6:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 48)) {
-          _impl_.start_time_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
-          CHK_(ptr);
-        } else
-          goto handle_unusual;
-        continue;
-      // uint64 end_time = 7;
-      case 7:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 56)) {
-          _impl_.end_time_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
-          CHK_(ptr);
-        } else
-          goto handle_unusual;
-        continue;
-      // .valhalla.IncidentsTile.Metadata.Impact impact = 9;
-      case 9:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 72)) {
-          uint64_t val = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
-          CHK_(ptr);
-          _internal_set_impact(static_cast<::valhalla::IncidentsTile_Metadata_Impact>(val));
-        } else
-          goto handle_unusual;
-        continue;
-      // bool road_closed = 10;
-      case 10:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 80)) {
-          _impl_.road_closed_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
-          CHK_(ptr);
-        } else
-          goto handle_unusual;
-        continue;
-      // .valhalla.IncidentsTile.Metadata.Congestion congestion = 11;
-      case 11:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 90)) {
-          ptr = ctx->ParseMessage(_internal_mutable_congestion(), ptr);
-          CHK_(ptr);
-        } else
-          goto handle_unusual;
-        continue;
-      // repeated string lanes_blocked = 12;
-      case 12:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 98)) {
-          ptr -= 1;
-          do {
-            ptr += 1;
-            auto str = _internal_add_lanes_blocked();
-            ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
-            CHK_(ptr);
-            CHK_(::_pbi::VerifyUTF8(str, nullptr));
-            if (!ctx->DataAvailable(ptr)) break;
-          } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<98>(ptr));
-        } else
-          goto handle_unusual;
-        continue;
-      // uint64 creation_time = 13;
-      case 13:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 104)) {
-          _impl_.creation_time_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
-          CHK_(ptr);
-        } else
-          goto handle_unusual;
-        continue;
-      // string long_description = 14;
-      case 14:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 114)) {
-          auto str = _internal_mutable_long_description();
-          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(ptr);
-          CHK_(::_pbi::VerifyUTF8(str, nullptr));
-        } else
-          goto handle_unusual;
-        continue;
-      // string clear_lanes = 15;
-      case 15:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 122)) {
-          auto str = _internal_mutable_clear_lanes();
-          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(ptr);
-          CHK_(::_pbi::VerifyUTF8(str, nullptr));
-        } else
-          goto handle_unusual;
-        continue;
-      // uint64 num_lanes_blocked = 16;
-      case 16:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 128)) {
-          _impl_.num_lanes_blocked_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
-          CHK_(ptr);
-        } else
-          goto handle_unusual;
-        continue;
-      // uint32 length = 17;
-      case 17:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 136)) {
-          _impl_.length_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
-          CHK_(ptr);
-        } else
-          goto handle_unusual;
-        continue;
-      // uint64 id = 128;
-      case 128:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 0)) {
-          _impl_.id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
-          CHK_(ptr);
-        } else
-          goto handle_unusual;
-        continue;
-      // string iso_3166_1_alpha2 = 129;
-      case 129:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
-          auto str = _internal_mutable_iso_3166_1_alpha2();
-          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(ptr);
-          CHK_(::_pbi::VerifyUTF8(str, nullptr));
-        } else
-          goto handle_unusual;
-        continue;
-      // string iso_3166_1_alpha3 = 130;
-      case 130:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 18)) {
-          auto str = _internal_mutable_iso_3166_1_alpha3();
-          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(ptr);
-          CHK_(::_pbi::VerifyUTF8(str, nullptr));
-        } else
-          goto handle_unusual;
-        continue;
-      default:
-        goto handle_unusual;
-    }  // switch
-  handle_unusual:
-    if ((tag == 0) || ((tag & 7) == 4)) {
-      CHK_(ptr);
-      ctx->SetLastTag(tag);
-      goto message_done;
-    }
-    ptr = UnknownFieldParse(
-        tag,
-        _internal_metadata_.mutable_unknown_fields<std::string>(),
-        ptr, ctx);
-    CHK_(ptr != nullptr);
-  }  // while
-message_done:
+const char* IncidentsTile_Metadata::_InternalParse(
+    const char* ptr, ::_pbi::ParseContext* ctx) {
+  ptr = ::_pbi::TcParser::ParseLoop(this, ptr, ctx, &_table_.header);
   return ptr;
-failure:
-  ptr = nullptr;
-  goto message_done;
-#undef CHK_
 }
 
-uint8_t* IncidentsTile_Metadata::_InternalSerialize(
-    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+
+PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1
+const ::_pbi::TcParseTable<5, 19, 1, 169, 7> IncidentsTile_Metadata::_table_ = {
+  {
+    PROTOBUF_FIELD_OFFSET(IncidentsTile_Metadata, _impl_._has_bits_),
+    0, // no _extensions_
+    130, 248,  // max_field_number, fast_idx_mask
+    offsetof(decltype(_table_), field_lookup_table),
+    4294836352,  // skipmap
+    offsetof(decltype(_table_), field_entries),
+    19,  // num_field_entries
+    1,  // num_aux_entries
+    offsetof(decltype(_table_), aux_entries),
+    &_IncidentsTile_Metadata_default_instance_._instance,
+    ::_pbi::TcParser::GenericFallbackLite,  // fallback
+  }, {{
+    {::_pbi::TcParser::MiniParse, {}},
+    // .valhalla.IncidentsTile.Metadata.Type type = 1;
+    {::_pbi::TcParser::FastV32S1,
+     {8, 63, 0, PROTOBUF_FIELD_OFFSET(IncidentsTile_Metadata, _impl_.type_)}},
+    // repeated uint32 alertc_codes = 2;
+    {::_pbi::TcParser::FastV32P1,
+     {18, 63, 0, PROTOBUF_FIELD_OFFSET(IncidentsTile_Metadata, _impl_.alertc_codes_)}},
+    // string description = 3;
+    {::_pbi::TcParser::FastUS1,
+     {26, 63, 0, PROTOBUF_FIELD_OFFSET(IncidentsTile_Metadata, _impl_.description_)}},
+    // string sub_type = 4;
+    {::_pbi::TcParser::FastUS1,
+     {34, 63, 0, PROTOBUF_FIELD_OFFSET(IncidentsTile_Metadata, _impl_.sub_type_)}},
+    // string sub_type_description = 5;
+    {::_pbi::TcParser::FastUS1,
+     {42, 63, 0, PROTOBUF_FIELD_OFFSET(IncidentsTile_Metadata, _impl_.sub_type_description_)}},
+    // uint64 start_time = 6;
+    {::_pbi::TcParser::FastV64S1,
+     {48, 63, 0, PROTOBUF_FIELD_OFFSET(IncidentsTile_Metadata, _impl_.start_time_)}},
+    // uint64 end_time = 7;
+    {::_pbi::TcParser::FastV64S1,
+     {56, 63, 0, PROTOBUF_FIELD_OFFSET(IncidentsTile_Metadata, _impl_.end_time_)}},
+    {::_pbi::TcParser::MiniParse, {}},
+    // .valhalla.IncidentsTile.Metadata.Impact impact = 9;
+    {::_pbi::TcParser::FastV32S1,
+     {72, 63, 0, PROTOBUF_FIELD_OFFSET(IncidentsTile_Metadata, _impl_.impact_)}},
+    // bool road_closed = 10;
+    {::_pbi::TcParser::FastV8S1,
+     {80, 63, 0, PROTOBUF_FIELD_OFFSET(IncidentsTile_Metadata, _impl_.road_closed_)}},
+    // .valhalla.IncidentsTile.Metadata.Congestion congestion = 11;
+    {::_pbi::TcParser::FastMtS1,
+     {90, 0, 0, PROTOBUF_FIELD_OFFSET(IncidentsTile_Metadata, _impl_.congestion_)}},
+    // repeated string lanes_blocked = 12;
+    {::_pbi::TcParser::FastUR1,
+     {98, 63, 0, PROTOBUF_FIELD_OFFSET(IncidentsTile_Metadata, _impl_.lanes_blocked_)}},
+    // uint64 creation_time = 13;
+    {::_pbi::TcParser::FastV64S1,
+     {104, 63, 0, PROTOBUF_FIELD_OFFSET(IncidentsTile_Metadata, _impl_.creation_time_)}},
+    // string long_description = 14;
+    {::_pbi::TcParser::FastUS1,
+     {114, 63, 0, PROTOBUF_FIELD_OFFSET(IncidentsTile_Metadata, _impl_.long_description_)}},
+    // string clear_lanes = 15;
+    {::_pbi::TcParser::FastUS1,
+     {122, 63, 0, PROTOBUF_FIELD_OFFSET(IncidentsTile_Metadata, _impl_.clear_lanes_)}},
+    // uint64 num_lanes_blocked = 16;
+    {::_pbi::TcParser::FastV64S2,
+     {384, 63, 0, PROTOBUF_FIELD_OFFSET(IncidentsTile_Metadata, _impl_.num_lanes_blocked_)}},
+    // uint32 length = 17;
+    {::_pbi::TcParser::FastV32S2,
+     {392, 63, 0, PROTOBUF_FIELD_OFFSET(IncidentsTile_Metadata, _impl_.length_)}},
+    // string iso_3166_1_alpha3 = 130;
+    {::_pbi::TcParser::FastUS2,
+     {2194, 63, 0, PROTOBUF_FIELD_OFFSET(IncidentsTile_Metadata, _impl_.iso_3166_1_alpha3_)}},
+    {::_pbi::TcParser::MiniParse, {}},
+    {::_pbi::TcParser::MiniParse, {}},
+    {::_pbi::TcParser::MiniParse, {}},
+    {::_pbi::TcParser::MiniParse, {}},
+    {::_pbi::TcParser::MiniParse, {}},
+    {::_pbi::TcParser::MiniParse, {}},
+    {::_pbi::TcParser::MiniParse, {}},
+    {::_pbi::TcParser::MiniParse, {}},
+    {::_pbi::TcParser::MiniParse, {}},
+    {::_pbi::TcParser::MiniParse, {}},
+    {::_pbi::TcParser::MiniParse, {}},
+    {::_pbi::TcParser::MiniParse, {}},
+    {::_pbi::TcParser::MiniParse, {}},
+  }}, {{
+    128, 0, 1,
+    65528, 16,
+    65535, 65535
+  }}, {{
+    // .valhalla.IncidentsTile.Metadata.Type type = 1;
+    {PROTOBUF_FIELD_OFFSET(IncidentsTile_Metadata, _impl_.type_), -1, 0,
+    (0 | ::_fl::kFcSingular | ::_fl::kOpenEnum)},
+    // repeated uint32 alertc_codes = 2;
+    {PROTOBUF_FIELD_OFFSET(IncidentsTile_Metadata, _impl_.alertc_codes_), -1, 0,
+    (0 | ::_fl::kFcRepeated | ::_fl::kPackedUInt32)},
+    // string description = 3;
+    {PROTOBUF_FIELD_OFFSET(IncidentsTile_Metadata, _impl_.description_), -1, 0,
+    (0 | ::_fl::kFcSingular | ::_fl::kUtf8String | ::_fl::kRepAString)},
+    // string sub_type = 4;
+    {PROTOBUF_FIELD_OFFSET(IncidentsTile_Metadata, _impl_.sub_type_), -1, 0,
+    (0 | ::_fl::kFcSingular | ::_fl::kUtf8String | ::_fl::kRepAString)},
+    // string sub_type_description = 5;
+    {PROTOBUF_FIELD_OFFSET(IncidentsTile_Metadata, _impl_.sub_type_description_), -1, 0,
+    (0 | ::_fl::kFcSingular | ::_fl::kUtf8String | ::_fl::kRepAString)},
+    // uint64 start_time = 6;
+    {PROTOBUF_FIELD_OFFSET(IncidentsTile_Metadata, _impl_.start_time_), -1, 0,
+    (0 | ::_fl::kFcSingular | ::_fl::kUInt64)},
+    // uint64 end_time = 7;
+    {PROTOBUF_FIELD_OFFSET(IncidentsTile_Metadata, _impl_.end_time_), -1, 0,
+    (0 | ::_fl::kFcSingular | ::_fl::kUInt64)},
+    // .valhalla.IncidentsTile.Metadata.Impact impact = 9;
+    {PROTOBUF_FIELD_OFFSET(IncidentsTile_Metadata, _impl_.impact_), -1, 0,
+    (0 | ::_fl::kFcSingular | ::_fl::kOpenEnum)},
+    // bool road_closed = 10;
+    {PROTOBUF_FIELD_OFFSET(IncidentsTile_Metadata, _impl_.road_closed_), -1, 0,
+    (0 | ::_fl::kFcSingular | ::_fl::kBool)},
+    // .valhalla.IncidentsTile.Metadata.Congestion congestion = 11;
+    {PROTOBUF_FIELD_OFFSET(IncidentsTile_Metadata, _impl_.congestion_), _Internal::kHasBitsOffset + 0, 0,
+    (0 | ::_fl::kFcOptional | ::_fl::kMessage | ::_fl::kTvTable)},
+    // repeated string lanes_blocked = 12;
+    {PROTOBUF_FIELD_OFFSET(IncidentsTile_Metadata, _impl_.lanes_blocked_), -1, 0,
+    (0 | ::_fl::kFcRepeated | ::_fl::kUtf8String | ::_fl::kRepSString)},
+    // uint64 creation_time = 13;
+    {PROTOBUF_FIELD_OFFSET(IncidentsTile_Metadata, _impl_.creation_time_), -1, 0,
+    (0 | ::_fl::kFcSingular | ::_fl::kUInt64)},
+    // string long_description = 14;
+    {PROTOBUF_FIELD_OFFSET(IncidentsTile_Metadata, _impl_.long_description_), -1, 0,
+    (0 | ::_fl::kFcSingular | ::_fl::kUtf8String | ::_fl::kRepAString)},
+    // string clear_lanes = 15;
+    {PROTOBUF_FIELD_OFFSET(IncidentsTile_Metadata, _impl_.clear_lanes_), -1, 0,
+    (0 | ::_fl::kFcSingular | ::_fl::kUtf8String | ::_fl::kRepAString)},
+    // uint64 num_lanes_blocked = 16;
+    {PROTOBUF_FIELD_OFFSET(IncidentsTile_Metadata, _impl_.num_lanes_blocked_), -1, 0,
+    (0 | ::_fl::kFcSingular | ::_fl::kUInt64)},
+    // uint32 length = 17;
+    {PROTOBUF_FIELD_OFFSET(IncidentsTile_Metadata, _impl_.length_), -1, 0,
+    (0 | ::_fl::kFcSingular | ::_fl::kUInt32)},
+    // uint64 id = 128;
+    {PROTOBUF_FIELD_OFFSET(IncidentsTile_Metadata, _impl_.id_), -1, 0,
+    (0 | ::_fl::kFcSingular | ::_fl::kUInt64)},
+    // string iso_3166_1_alpha2 = 129;
+    {PROTOBUF_FIELD_OFFSET(IncidentsTile_Metadata, _impl_.iso_3166_1_alpha2_), -1, 0,
+    (0 | ::_fl::kFcSingular | ::_fl::kUtf8String | ::_fl::kRepAString)},
+    // string iso_3166_1_alpha3 = 130;
+    {PROTOBUF_FIELD_OFFSET(IncidentsTile_Metadata, _impl_.iso_3166_1_alpha3_), -1, 0,
+    (0 | ::_fl::kFcSingular | ::_fl::kUtf8String | ::_fl::kRepAString)},
+  }}, {{
+    {::_pbi::TcParser::GetTable<::valhalla::IncidentsTile_Metadata_Congestion>()},
+  }}, {{
+    "\37\0\0\13\10\24\0\0\0\0\0\15\0\20\13\0\0\0\21\21\0\0\0\0"
+    "valhalla.IncidentsTile.Metadata"
+    "description"
+    "sub_type"
+    "sub_type_description"
+    "lanes_blocked"
+    "long_description"
+    "clear_lanes"
+    "iso_3166_1_alpha2"
+    "iso_3166_1_alpha3"
+  }},
+};
+
+::uint8_t* IncidentsTile_Metadata::_InternalSerialize(
+    ::uint8_t* target,
+    ::google::protobuf::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:valhalla.IncidentsTile.Metadata)
-  uint32_t cached_has_bits = 0;
-  (void) cached_has_bits;
+  ::uint32_t cached_has_bits = 0;
+  (void)cached_has_bits;
 
   // .valhalla.IncidentsTile.Metadata.Type type = 1;
   if (this->_internal_type() != 0) {
     target = stream->EnsureSpace(target);
     target = ::_pbi::WireFormatLite::WriteEnumToArray(
-      1, this->_internal_type(), target);
+        1, this->_internal_type(), target);
   }
 
   // repeated uint32 alertc_codes = 2;
   {
-    int byte_size = _impl_._alertc_codes_cached_byte_size_.load(std::memory_order_relaxed);
+    int byte_size = _impl_._alertc_codes_cached_byte_size_.Get();
     if (byte_size > 0) {
-      target = stream->WriteUInt32Packed(
-          2, _internal_alertc_codes(), byte_size, target);
+      target = stream->WriteUInt32Packed(2, _internal_alertc_codes(),
+                                                 byte_size, target);
     }
   }
 
   // string description = 3;
   if (!this->_internal_description().empty()) {
-    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
-      this->_internal_description().data(), static_cast<int>(this->_internal_description().length()),
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "valhalla.IncidentsTile.Metadata.description");
-    target = stream->WriteStringMaybeAliased(
-        3, this->_internal_description(), target);
+    const std::string& _s = this->_internal_description();
+    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+        _s.data(), static_cast<int>(_s.length()), ::google::protobuf::internal::WireFormatLite::SERIALIZE, "valhalla.IncidentsTile.Metadata.description");
+    target = stream->WriteStringMaybeAliased(3, _s, target);
   }
 
   // string sub_type = 4;
   if (!this->_internal_sub_type().empty()) {
-    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
-      this->_internal_sub_type().data(), static_cast<int>(this->_internal_sub_type().length()),
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "valhalla.IncidentsTile.Metadata.sub_type");
-    target = stream->WriteStringMaybeAliased(
-        4, this->_internal_sub_type(), target);
+    const std::string& _s = this->_internal_sub_type();
+    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+        _s.data(), static_cast<int>(_s.length()), ::google::protobuf::internal::WireFormatLite::SERIALIZE, "valhalla.IncidentsTile.Metadata.sub_type");
+    target = stream->WriteStringMaybeAliased(4, _s, target);
   }
 
   // string sub_type_description = 5;
   if (!this->_internal_sub_type_description().empty()) {
-    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
-      this->_internal_sub_type_description().data(), static_cast<int>(this->_internal_sub_type_description().length()),
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "valhalla.IncidentsTile.Metadata.sub_type_description");
-    target = stream->WriteStringMaybeAliased(
-        5, this->_internal_sub_type_description(), target);
+    const std::string& _s = this->_internal_sub_type_description();
+    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+        _s.data(), static_cast<int>(_s.length()), ::google::protobuf::internal::WireFormatLite::SERIALIZE, "valhalla.IncidentsTile.Metadata.sub_type_description");
+    target = stream->WriteStringMaybeAliased(5, _s, target);
   }
 
   // uint64 start_time = 6;
   if (this->_internal_start_time() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteUInt64ToArray(6, this->_internal_start_time(), target);
+    target = ::_pbi::WireFormatLite::WriteUInt64ToArray(
+        6, this->_internal_start_time(), target);
   }
 
   // uint64 end_time = 7;
   if (this->_internal_end_time() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteUInt64ToArray(7, this->_internal_end_time(), target);
+    target = ::_pbi::WireFormatLite::WriteUInt64ToArray(
+        7, this->_internal_end_time(), target);
   }
 
   // .valhalla.IncidentsTile.Metadata.Impact impact = 9;
   if (this->_internal_impact() != 0) {
     target = stream->EnsureSpace(target);
     target = ::_pbi::WireFormatLite::WriteEnumToArray(
-      9, this->_internal_impact(), target);
+        9, this->_internal_impact(), target);
   }
 
   // bool road_closed = 10;
   if (this->_internal_road_closed() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteBoolToArray(10, this->_internal_road_closed(), target);
+    target = ::_pbi::WireFormatLite::WriteBoolToArray(
+        10, this->_internal_road_closed(), target);
   }
 
+  cached_has_bits = _impl_._has_bits_[0];
   // .valhalla.IncidentsTile.Metadata.Congestion congestion = 11;
-  if (this->_internal_has_congestion()) {
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
+  if (cached_has_bits & 0x00000001u) {
+    target = ::google::protobuf::internal::WireFormatLite::
       InternalWriteMessage(11, _Internal::congestion(this),
         _Internal::congestion(this).GetCachedSize(), target, stream);
   }
 
   // repeated string lanes_blocked = 12;
-  for (int i = 0, n = this->_internal_lanes_blocked_size(); i < n; i++) {
-    const auto& s = this->_internal_lanes_blocked(i);
-    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
-      s.data(), static_cast<int>(s.length()),
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "valhalla.IncidentsTile.Metadata.lanes_blocked");
+  for (int i = 0, n = this->_internal_lanes_blocked_size(); i < n; ++i) {
+    const auto& s = this->_internal_lanes_blocked().Get(i);
+    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+        s.data(), static_cast<int>(s.length()), ::google::protobuf::internal::WireFormatLite::SERIALIZE, "valhalla.IncidentsTile.Metadata.lanes_blocked");
     target = stream->WriteString(12, s, target);
   }
 
   // uint64 creation_time = 13;
   if (this->_internal_creation_time() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteUInt64ToArray(13, this->_internal_creation_time(), target);
+    target = ::_pbi::WireFormatLite::WriteUInt64ToArray(
+        13, this->_internal_creation_time(), target);
   }
 
   // string long_description = 14;
   if (!this->_internal_long_description().empty()) {
-    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
-      this->_internal_long_description().data(), static_cast<int>(this->_internal_long_description().length()),
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "valhalla.IncidentsTile.Metadata.long_description");
-    target = stream->WriteStringMaybeAliased(
-        14, this->_internal_long_description(), target);
+    const std::string& _s = this->_internal_long_description();
+    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+        _s.data(), static_cast<int>(_s.length()), ::google::protobuf::internal::WireFormatLite::SERIALIZE, "valhalla.IncidentsTile.Metadata.long_description");
+    target = stream->WriteStringMaybeAliased(14, _s, target);
   }
 
   // string clear_lanes = 15;
   if (!this->_internal_clear_lanes().empty()) {
-    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
-      this->_internal_clear_lanes().data(), static_cast<int>(this->_internal_clear_lanes().length()),
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "valhalla.IncidentsTile.Metadata.clear_lanes");
-    target = stream->WriteStringMaybeAliased(
-        15, this->_internal_clear_lanes(), target);
+    const std::string& _s = this->_internal_clear_lanes();
+    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+        _s.data(), static_cast<int>(_s.length()), ::google::protobuf::internal::WireFormatLite::SERIALIZE, "valhalla.IncidentsTile.Metadata.clear_lanes");
+    target = stream->WriteStringMaybeAliased(15, _s, target);
   }
 
   // uint64 num_lanes_blocked = 16;
   if (this->_internal_num_lanes_blocked() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteUInt64ToArray(16, this->_internal_num_lanes_blocked(), target);
+    target = ::_pbi::WireFormatLite::WriteUInt64ToArray(
+        16, this->_internal_num_lanes_blocked(), target);
   }
 
   // uint32 length = 17;
   if (this->_internal_length() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteUInt32ToArray(17, this->_internal_length(), target);
+    target = ::_pbi::WireFormatLite::WriteUInt32ToArray(
+        17, this->_internal_length(), target);
   }
 
   // uint64 id = 128;
   if (this->_internal_id() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteUInt64ToArray(128, this->_internal_id(), target);
+    target = ::_pbi::WireFormatLite::WriteUInt64ToArray(
+        128, this->_internal_id(), target);
   }
 
   // string iso_3166_1_alpha2 = 129;
   if (!this->_internal_iso_3166_1_alpha2().empty()) {
-    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
-      this->_internal_iso_3166_1_alpha2().data(), static_cast<int>(this->_internal_iso_3166_1_alpha2().length()),
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "valhalla.IncidentsTile.Metadata.iso_3166_1_alpha2");
-    target = stream->WriteStringMaybeAliased(
-        129, this->_internal_iso_3166_1_alpha2(), target);
+    const std::string& _s = this->_internal_iso_3166_1_alpha2();
+    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+        _s.data(), static_cast<int>(_s.length()), ::google::protobuf::internal::WireFormatLite::SERIALIZE, "valhalla.IncidentsTile.Metadata.iso_3166_1_alpha2");
+    target = stream->WriteStringMaybeAliased(129, _s, target);
   }
 
   // string iso_3166_1_alpha3 = 130;
   if (!this->_internal_iso_3166_1_alpha3().empty()) {
-    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
-      this->_internal_iso_3166_1_alpha3().data(), static_cast<int>(this->_internal_iso_3166_1_alpha3().length()),
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "valhalla.IncidentsTile.Metadata.iso_3166_1_alpha3");
-    target = stream->WriteStringMaybeAliased(
-        130, this->_internal_iso_3166_1_alpha3(), target);
+    const std::string& _s = this->_internal_iso_3166_1_alpha3();
+    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+        _s.data(), static_cast<int>(_s.length()), ::google::protobuf::internal::WireFormatLite::SERIALIZE, "valhalla.IncidentsTile.Metadata.iso_3166_1_alpha3");
+    target = stream->WriteStringMaybeAliased(130, _s, target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target = stream->WriteRaw(_internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).data(),
-        static_cast<int>(_internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).size()), target);
+    target = stream->WriteRaw(
+        _internal_metadata_.unknown_fields<std::string>(::google::protobuf::internal::GetEmptyString).data(),
+        static_cast<int>(_internal_metadata_.unknown_fields<std::string>(::google::protobuf::internal::GetEmptyString).size()), target);
   }
   // @@protoc_insertion_point(serialize_to_array_end:valhalla.IncidentsTile.Metadata)
   return target;
 }
 
-size_t IncidentsTile_Metadata::ByteSizeLong() const {
+::size_t IncidentsTile_Metadata::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:valhalla.IncidentsTile.Metadata)
-  size_t total_size = 0;
+  ::size_t total_size = 0;
 
-  uint32_t cached_has_bits = 0;
+  ::uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
   // repeated uint32 alertc_codes = 2;
   {
-    size_t data_size = ::_pbi::WireFormatLite::
-      UInt32Size(this->_impl_.alertc_codes_);
-    if (data_size > 0) {
-      total_size += 1 +
-        ::_pbi::WireFormatLite::Int32Size(static_cast<int32_t>(data_size));
-    }
-    int cached_size = ::_pbi::ToCachedSize(data_size);
-    _impl_._alertc_codes_cached_byte_size_.store(cached_size,
-                                    std::memory_order_relaxed);
-    total_size += data_size;
+    std::size_t data_size = ::_pbi::WireFormatLite::UInt32Size(
+        this->_internal_alertc_codes())
+    ;
+    _impl_._alertc_codes_cached_byte_size_.Set(::_pbi::ToCachedSize(data_size));
+    std::size_t tag_size = data_size == 0
+        ? 0
+        : 1 + ::_pbi::WireFormatLite::Int32Size(
+                            static_cast<int32_t>(data_size))
+    ;
+    total_size += tag_size + data_size;
   }
-
   // repeated string lanes_blocked = 12;
-  total_size += 1 *
-      ::PROTOBUF_NAMESPACE_ID::internal::FromIntSize(_impl_.lanes_blocked_.size());
-  for (int i = 0, n = _impl_.lanes_blocked_.size(); i < n; i++) {
-    total_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
-      _impl_.lanes_blocked_.Get(i));
+  total_size += 1 * ::google::protobuf::internal::FromIntSize(_internal_lanes_blocked().size());
+  for (int i = 0, n = _internal_lanes_blocked().size(); i < n; ++i) {
+    total_size += ::google::protobuf::internal::WireFormatLite::StringSize(
+        _internal_lanes_blocked().Get(i));
   }
-
   // string description = 3;
   if (!this->_internal_description().empty()) {
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
-        this->_internal_description());
+    total_size += 1 + ::google::protobuf::internal::WireFormatLite::StringSize(
+                                    this->_internal_description());
   }
 
   // string sub_type = 4;
   if (!this->_internal_sub_type().empty()) {
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
-        this->_internal_sub_type());
+    total_size += 1 + ::google::protobuf::internal::WireFormatLite::StringSize(
+                                    this->_internal_sub_type());
   }
 
   // string sub_type_description = 5;
   if (!this->_internal_sub_type_description().empty()) {
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
-        this->_internal_sub_type_description());
+    total_size += 1 + ::google::protobuf::internal::WireFormatLite::StringSize(
+                                    this->_internal_sub_type_description());
   }
 
   // string long_description = 14;
   if (!this->_internal_long_description().empty()) {
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
-        this->_internal_long_description());
+    total_size += 1 + ::google::protobuf::internal::WireFormatLite::StringSize(
+                                    this->_internal_long_description());
   }
 
   // string clear_lanes = 15;
   if (!this->_internal_clear_lanes().empty()) {
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
-        this->_internal_clear_lanes());
+    total_size += 1 + ::google::protobuf::internal::WireFormatLite::StringSize(
+                                    this->_internal_clear_lanes());
   }
 
   // string iso_3166_1_alpha2 = 129;
   if (!this->_internal_iso_3166_1_alpha2().empty()) {
-    total_size += 2 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
-        this->_internal_iso_3166_1_alpha2());
+    total_size += 2 + ::google::protobuf::internal::WireFormatLite::StringSize(
+                                    this->_internal_iso_3166_1_alpha2());
   }
 
   // string iso_3166_1_alpha3 = 130;
   if (!this->_internal_iso_3166_1_alpha3().empty()) {
-    total_size += 2 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
-        this->_internal_iso_3166_1_alpha3());
+    total_size += 2 + ::google::protobuf::internal::WireFormatLite::StringSize(
+                                    this->_internal_iso_3166_1_alpha3());
   }
 
   // .valhalla.IncidentsTile.Metadata.Congestion congestion = 11;
-  if (this->_internal_has_congestion()) {
+  cached_has_bits = _impl_._has_bits_[0];
+  if (cached_has_bits & 0x00000001u) {
     total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
+      ::google::protobuf::internal::WireFormatLite::MessageSize(
         *_impl_.congestion_);
   }
 
   // .valhalla.IncidentsTile.Metadata.Type type = 1;
   if (this->_internal_type() != 0) {
     total_size += 1 +
-      ::_pbi::WireFormatLite::EnumSize(this->_internal_type());
+                  ::_pbi::WireFormatLite::EnumSize(this->_internal_type());
   }
 
   // .valhalla.IncidentsTile.Metadata.Impact impact = 9;
   if (this->_internal_impact() != 0) {
     total_size += 1 +
-      ::_pbi::WireFormatLite::EnumSize(this->_internal_impact());
+                  ::_pbi::WireFormatLite::EnumSize(this->_internal_impact());
   }
 
   // uint64 start_time = 6;
   if (this->_internal_start_time() != 0) {
-    total_size += ::_pbi::WireFormatLite::UInt64SizePlusOne(this->_internal_start_time());
+    total_size += ::_pbi::WireFormatLite::UInt64SizePlusOne(
+        this->_internal_start_time());
   }
 
   // uint64 end_time = 7;
   if (this->_internal_end_time() != 0) {
-    total_size += ::_pbi::WireFormatLite::UInt64SizePlusOne(this->_internal_end_time());
+    total_size += ::_pbi::WireFormatLite::UInt64SizePlusOne(
+        this->_internal_end_time());
   }
 
   // uint64 creation_time = 13;
   if (this->_internal_creation_time() != 0) {
-    total_size += ::_pbi::WireFormatLite::UInt64SizePlusOne(this->_internal_creation_time());
+    total_size += ::_pbi::WireFormatLite::UInt64SizePlusOne(
+        this->_internal_creation_time());
   }
 
   // bool road_closed = 10;
   if (this->_internal_road_closed() != 0) {
-    total_size += 1 + 1;
+    total_size += 2;
   }
 
   // uint32 length = 17;
   if (this->_internal_length() != 0) {
-    total_size += 2 +
-      ::_pbi::WireFormatLite::UInt32Size(
-        this->_internal_length());
+    total_size += 2 + ::_pbi::WireFormatLite::UInt32Size(
+                                    this->_internal_length());
   }
 
   // uint64 num_lanes_blocked = 16;
   if (this->_internal_num_lanes_blocked() != 0) {
-    total_size += 2 +
-      ::_pbi::WireFormatLite::UInt64Size(
-        this->_internal_num_lanes_blocked());
+    total_size += 2 + ::_pbi::WireFormatLite::UInt64Size(
+                                    this->_internal_num_lanes_blocked());
   }
 
   // uint64 id = 128;
   if (this->_internal_id() != 0) {
-    total_size += 2 +
-      ::_pbi::WireFormatLite::UInt64Size(
-        this->_internal_id());
+    total_size += 2 + ::_pbi::WireFormatLite::UInt64Size(
+                                    this->_internal_id());
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    total_size += _internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).size();
+    total_size += _internal_metadata_.unknown_fields<std::string>(::google::protobuf::internal::GetEmptyString).size();
   }
   int cached_size = ::_pbi::ToCachedSize(total_size);
   SetCachedSize(cached_size);
@@ -1481,7 +1435,7 @@ size_t IncidentsTile_Metadata::ByteSizeLong() const {
 }
 
 void IncidentsTile_Metadata::CheckTypeAndMergeFrom(
-    const ::PROTOBUF_NAMESPACE_ID::MessageLite& from) {
+    const ::google::protobuf::MessageLite& from) {
   MergeFrom(*::_pbi::DownCast<const IncidentsTile_Metadata*>(
       &from));
 }
@@ -1489,12 +1443,12 @@ void IncidentsTile_Metadata::CheckTypeAndMergeFrom(
 void IncidentsTile_Metadata::MergeFrom(const IncidentsTile_Metadata& from) {
   IncidentsTile_Metadata* const _this = this;
   // @@protoc_insertion_point(class_specific_merge_from_start:valhalla.IncidentsTile.Metadata)
-  GOOGLE_DCHECK_NE(&from, _this);
-  uint32_t cached_has_bits = 0;
+  ABSL_DCHECK_NE(&from, _this);
+  ::uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  _this->_impl_.alertc_codes_.MergeFrom(from._impl_.alertc_codes_);
-  _this->_impl_.lanes_blocked_.MergeFrom(from._impl_.lanes_blocked_);
+  _this->_internal_mutable_alertc_codes()->MergeFrom(from._internal_alertc_codes());
+  _this->_internal_mutable_lanes_blocked()->MergeFrom(from._internal_lanes_blocked());
   if (!from._internal_description().empty()) {
     _this->_internal_set_description(from._internal_description());
   }
@@ -1516,7 +1470,7 @@ void IncidentsTile_Metadata::MergeFrom(const IncidentsTile_Metadata& from) {
   if (!from._internal_iso_3166_1_alpha3().empty()) {
     _this->_internal_set_iso_3166_1_alpha3(from._internal_iso_3166_1_alpha3());
   }
-  if (from._internal_has_congestion()) {
+  if ((from._impl_._has_bits_[0] & 0x00000001u) != 0) {
     _this->_internal_mutable_congestion()->::valhalla::IncidentsTile_Metadata_Congestion::MergeFrom(
         from._internal_congestion());
   }
@@ -1557,7 +1511,7 @@ void IncidentsTile_Metadata::CopyFrom(const IncidentsTile_Metadata& from) {
   MergeFrom(from);
 }
 
-bool IncidentsTile_Metadata::IsInitialized() const {
+PROTOBUF_NOINLINE bool IncidentsTile_Metadata::IsInitialized() const {
   return true;
 }
 
@@ -1566,37 +1520,24 @@ void IncidentsTile_Metadata::InternalSwap(IncidentsTile_Metadata* other) {
   auto* lhs_arena = GetArenaForAllocation();
   auto* rhs_arena = other->GetArenaForAllocation();
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  swap(_impl_._has_bits_[0], other->_impl_._has_bits_[0]);
   _impl_.alertc_codes_.InternalSwap(&other->_impl_.alertc_codes_);
   _impl_.lanes_blocked_.InternalSwap(&other->_impl_.lanes_blocked_);
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &_impl_.description_, lhs_arena,
-      &other->_impl_.description_, rhs_arena
-  );
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &_impl_.sub_type_, lhs_arena,
-      &other->_impl_.sub_type_, rhs_arena
-  );
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &_impl_.sub_type_description_, lhs_arena,
-      &other->_impl_.sub_type_description_, rhs_arena
-  );
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &_impl_.long_description_, lhs_arena,
-      &other->_impl_.long_description_, rhs_arena
-  );
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &_impl_.clear_lanes_, lhs_arena,
-      &other->_impl_.clear_lanes_, rhs_arena
-  );
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &_impl_.iso_3166_1_alpha2_, lhs_arena,
-      &other->_impl_.iso_3166_1_alpha2_, rhs_arena
-  );
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &_impl_.iso_3166_1_alpha3_, lhs_arena,
-      &other->_impl_.iso_3166_1_alpha3_, rhs_arena
-  );
-  ::PROTOBUF_NAMESPACE_ID::internal::memswap<
+  ::_pbi::ArenaStringPtr::InternalSwap(&_impl_.description_, lhs_arena,
+                                       &other->_impl_.description_, rhs_arena);
+  ::_pbi::ArenaStringPtr::InternalSwap(&_impl_.sub_type_, lhs_arena,
+                                       &other->_impl_.sub_type_, rhs_arena);
+  ::_pbi::ArenaStringPtr::InternalSwap(&_impl_.sub_type_description_, lhs_arena,
+                                       &other->_impl_.sub_type_description_, rhs_arena);
+  ::_pbi::ArenaStringPtr::InternalSwap(&_impl_.long_description_, lhs_arena,
+                                       &other->_impl_.long_description_, rhs_arena);
+  ::_pbi::ArenaStringPtr::InternalSwap(&_impl_.clear_lanes_, lhs_arena,
+                                       &other->_impl_.clear_lanes_, rhs_arena);
+  ::_pbi::ArenaStringPtr::InternalSwap(&_impl_.iso_3166_1_alpha2_, lhs_arena,
+                                       &other->_impl_.iso_3166_1_alpha2_, rhs_arena);
+  ::_pbi::ArenaStringPtr::InternalSwap(&_impl_.iso_3166_1_alpha3_, lhs_arena,
+                                       &other->_impl_.iso_3166_1_alpha3_, rhs_arena);
+  ::google::protobuf::internal::memswap<
       PROTOBUF_FIELD_OFFSET(IncidentsTile_Metadata, _impl_.id_)
       + sizeof(IncidentsTile_Metadata::_impl_.id_)
       - PROTOBUF_FIELD_OFFSET(IncidentsTile_Metadata, _impl_.congestion_)>(
@@ -1608,181 +1549,161 @@ std::string IncidentsTile_Metadata::GetTypeName() const {
   return "valhalla.IncidentsTile.Metadata";
 }
 
-
 // ===================================================================
 
 class IncidentsTile::_Internal {
  public:
 };
 
-IncidentsTile::IncidentsTile(::PROTOBUF_NAMESPACE_ID::Arena* arena,
-                         bool is_message_owned)
-  : ::PROTOBUF_NAMESPACE_ID::MessageLite(arena, is_message_owned) {
-  SharedCtor(arena, is_message_owned);
+IncidentsTile::IncidentsTile(::google::protobuf::Arena* arena)
+    : ::google::protobuf::MessageLite(arena) {
+  SharedCtor(arena);
   // @@protoc_insertion_point(arena_constructor:valhalla.IncidentsTile)
 }
-IncidentsTile::IncidentsTile(const IncidentsTile& from)
-  : ::PROTOBUF_NAMESPACE_ID::MessageLite() {
-  IncidentsTile* const _this = this; (void)_this;
+IncidentsTile::IncidentsTile(const IncidentsTile& from) : ::google::protobuf::MessageLite() {
+  IncidentsTile* const _this = this;
+  (void)_this;
   new (&_impl_) Impl_{
-      decltype(_impl_.locations_){from._impl_.locations_}
-    , decltype(_impl_.metadata_){from._impl_.metadata_}
-    , /*decltype(_impl_._cached_size_)*/{}};
+      decltype(_impl_.locations_){from._impl_.locations_},
+      decltype(_impl_.metadata_){from._impl_.metadata_},
+      /*decltype(_impl_._cached_size_)*/ {},
+  };
+  _internal_metadata_.MergeFrom<std::string>(
+      from._internal_metadata_);
 
-  _internal_metadata_.MergeFrom<std::string>(from._internal_metadata_);
   // @@protoc_insertion_point(copy_constructor:valhalla.IncidentsTile)
 }
-
-inline void IncidentsTile::SharedCtor(
-    ::_pb::Arena* arena, bool is_message_owned) {
+inline void IncidentsTile::SharedCtor(::_pb::Arena* arena) {
   (void)arena;
-  (void)is_message_owned;
   new (&_impl_) Impl_{
-      decltype(_impl_.locations_){arena}
-    , decltype(_impl_.metadata_){arena}
-    , /*decltype(_impl_._cached_size_)*/{}
+      decltype(_impl_.locations_){arena},
+      decltype(_impl_.metadata_){arena},
+      /*decltype(_impl_._cached_size_)*/ {},
   };
 }
-
 IncidentsTile::~IncidentsTile() {
   // @@protoc_insertion_point(destructor:valhalla.IncidentsTile)
-  if (auto *arena = _internal_metadata_.DeleteReturnArena<std::string>()) {
-  (void)arena;
-    return;
-  }
+  _internal_metadata_.Delete<std::string>();
   SharedDtor();
 }
-
 inline void IncidentsTile::SharedDtor() {
-  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
+  ABSL_DCHECK(GetArenaForAllocation() == nullptr);
   _impl_.locations_.~RepeatedPtrField();
   _impl_.metadata_.~RepeatedPtrField();
 }
-
 void IncidentsTile::SetCachedSize(int size) const {
   _impl_._cached_size_.Set(size);
 }
 
-void IncidentsTile::Clear() {
+PROTOBUF_NOINLINE void IncidentsTile::Clear() {
 // @@protoc_insertion_point(message_clear_start:valhalla.IncidentsTile)
-  uint32_t cached_has_bits = 0;
+  ::uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  _impl_.locations_.Clear();
-  _impl_.metadata_.Clear();
+  _internal_mutable_locations()->Clear();
+  _internal_mutable_metadata()->Clear();
   _internal_metadata_.Clear<std::string>();
 }
 
-const char* IncidentsTile::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
-#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
-  while (!ctx->Done(&ptr)) {
-    uint32_t tag;
-    ptr = ::_pbi::ReadTag(ptr, &tag);
-    switch (tag >> 3) {
-      // repeated .valhalla.IncidentsTile.Location locations = 1;
-      case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
-          ptr -= 1;
-          do {
-            ptr += 1;
-            ptr = ctx->ParseMessage(_internal_add_locations(), ptr);
-            CHK_(ptr);
-            if (!ctx->DataAvailable(ptr)) break;
-          } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<10>(ptr));
-        } else
-          goto handle_unusual;
-        continue;
-      // repeated .valhalla.IncidentsTile.Metadata metadata = 2;
-      case 2:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 18)) {
-          ptr -= 1;
-          do {
-            ptr += 1;
-            ptr = ctx->ParseMessage(_internal_add_metadata(), ptr);
-            CHK_(ptr);
-            if (!ctx->DataAvailable(ptr)) break;
-          } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<18>(ptr));
-        } else
-          goto handle_unusual;
-        continue;
-      default:
-        goto handle_unusual;
-    }  // switch
-  handle_unusual:
-    if ((tag == 0) || ((tag & 7) == 4)) {
-      CHK_(ptr);
-      ctx->SetLastTag(tag);
-      goto message_done;
-    }
-    ptr = UnknownFieldParse(
-        tag,
-        _internal_metadata_.mutable_unknown_fields<std::string>(),
-        ptr, ctx);
-    CHK_(ptr != nullptr);
-  }  // while
-message_done:
+const char* IncidentsTile::_InternalParse(
+    const char* ptr, ::_pbi::ParseContext* ctx) {
+  ptr = ::_pbi::TcParser::ParseLoop(this, ptr, ctx, &_table_.header);
   return ptr;
-failure:
-  ptr = nullptr;
-  goto message_done;
-#undef CHK_
 }
 
-uint8_t* IncidentsTile::_InternalSerialize(
-    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+
+PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1
+const ::_pbi::TcParseTable<1, 2, 2, 0, 2> IncidentsTile::_table_ = {
+  {
+    0,  // no _has_bits_
+    0, // no _extensions_
+    2, 8,  // max_field_number, fast_idx_mask
+    offsetof(decltype(_table_), field_lookup_table),
+    4294967292,  // skipmap
+    offsetof(decltype(_table_), field_entries),
+    2,  // num_field_entries
+    2,  // num_aux_entries
+    offsetof(decltype(_table_), aux_entries),
+    &_IncidentsTile_default_instance_._instance,
+    ::_pbi::TcParser::GenericFallbackLite,  // fallback
+  }, {{
+    // repeated .valhalla.IncidentsTile.Metadata metadata = 2;
+    {::_pbi::TcParser::FastMtR1,
+     {18, 63, 1, PROTOBUF_FIELD_OFFSET(IncidentsTile, _impl_.metadata_)}},
+    // repeated .valhalla.IncidentsTile.Location locations = 1;
+    {::_pbi::TcParser::FastMtR1,
+     {10, 63, 0, PROTOBUF_FIELD_OFFSET(IncidentsTile, _impl_.locations_)}},
+  }}, {{
+    65535, 65535
+  }}, {{
+    // repeated .valhalla.IncidentsTile.Location locations = 1;
+    {PROTOBUF_FIELD_OFFSET(IncidentsTile, _impl_.locations_), 0, 0,
+    (0 | ::_fl::kFcRepeated | ::_fl::kMessage | ::_fl::kTvTable)},
+    // repeated .valhalla.IncidentsTile.Metadata metadata = 2;
+    {PROTOBUF_FIELD_OFFSET(IncidentsTile, _impl_.metadata_), 0, 1,
+    (0 | ::_fl::kFcRepeated | ::_fl::kMessage | ::_fl::kTvTable)},
+  }}, {{
+    {::_pbi::TcParser::GetTable<::valhalla::IncidentsTile_Location>()},
+    {::_pbi::TcParser::GetTable<::valhalla::IncidentsTile_Metadata>()},
+  }}, {{
+  }},
+};
+
+::uint8_t* IncidentsTile::_InternalSerialize(
+    ::uint8_t* target,
+    ::google::protobuf::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:valhalla.IncidentsTile)
-  uint32_t cached_has_bits = 0;
-  (void) cached_has_bits;
+  ::uint32_t cached_has_bits = 0;
+  (void)cached_has_bits;
 
   // repeated .valhalla.IncidentsTile.Location locations = 1;
   for (unsigned i = 0,
       n = static_cast<unsigned>(this->_internal_locations_size()); i < n; i++) {
-    const auto& repfield = this->_internal_locations(i);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
+    const auto& repfield = this->_internal_locations().Get(i);
+    target = ::google::protobuf::internal::WireFormatLite::
         InternalWriteMessage(1, repfield, repfield.GetCachedSize(), target, stream);
   }
 
   // repeated .valhalla.IncidentsTile.Metadata metadata = 2;
   for (unsigned i = 0,
       n = static_cast<unsigned>(this->_internal_metadata_size()); i < n; i++) {
-    const auto& repfield = this->_internal_metadata(i);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
+    const auto& repfield = this->_internal_metadata().Get(i);
+    target = ::google::protobuf::internal::WireFormatLite::
         InternalWriteMessage(2, repfield, repfield.GetCachedSize(), target, stream);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target = stream->WriteRaw(_internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).data(),
-        static_cast<int>(_internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).size()), target);
+    target = stream->WriteRaw(
+        _internal_metadata_.unknown_fields<std::string>(::google::protobuf::internal::GetEmptyString).data(),
+        static_cast<int>(_internal_metadata_.unknown_fields<std::string>(::google::protobuf::internal::GetEmptyString).size()), target);
   }
   // @@protoc_insertion_point(serialize_to_array_end:valhalla.IncidentsTile)
   return target;
 }
 
-size_t IncidentsTile::ByteSizeLong() const {
+::size_t IncidentsTile::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:valhalla.IncidentsTile)
-  size_t total_size = 0;
+  ::size_t total_size = 0;
 
-  uint32_t cached_has_bits = 0;
+  ::uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
   // repeated .valhalla.IncidentsTile.Location locations = 1;
   total_size += 1UL * this->_internal_locations_size();
-  for (const auto& msg : this->_impl_.locations_) {
+  for (const auto& msg : this->_internal_locations()) {
     total_size +=
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(msg);
+      ::google::protobuf::internal::WireFormatLite::MessageSize(msg);
   }
-
   // repeated .valhalla.IncidentsTile.Metadata metadata = 2;
   total_size += 1UL * this->_internal_metadata_size();
-  for (const auto& msg : this->_impl_.metadata_) {
+  for (const auto& msg : this->_internal_metadata()) {
     total_size +=
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(msg);
+      ::google::protobuf::internal::WireFormatLite::MessageSize(msg);
   }
-
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    total_size += _internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).size();
+    total_size += _internal_metadata_.unknown_fields<std::string>(::google::protobuf::internal::GetEmptyString).size();
   }
   int cached_size = ::_pbi::ToCachedSize(total_size);
   SetCachedSize(cached_size);
@@ -1790,7 +1711,7 @@ size_t IncidentsTile::ByteSizeLong() const {
 }
 
 void IncidentsTile::CheckTypeAndMergeFrom(
-    const ::PROTOBUF_NAMESPACE_ID::MessageLite& from) {
+    const ::google::protobuf::MessageLite& from) {
   MergeFrom(*::_pbi::DownCast<const IncidentsTile*>(
       &from));
 }
@@ -1798,12 +1719,12 @@ void IncidentsTile::CheckTypeAndMergeFrom(
 void IncidentsTile::MergeFrom(const IncidentsTile& from) {
   IncidentsTile* const _this = this;
   // @@protoc_insertion_point(class_specific_merge_from_start:valhalla.IncidentsTile)
-  GOOGLE_DCHECK_NE(&from, _this);
-  uint32_t cached_has_bits = 0;
+  ABSL_DCHECK_NE(&from, _this);
+  ::uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  _this->_impl_.locations_.MergeFrom(from._impl_.locations_);
-  _this->_impl_.metadata_.MergeFrom(from._impl_.metadata_);
+  _this->_internal_mutable_locations()->MergeFrom(from._internal_locations());
+  _this->_internal_mutable_metadata()->MergeFrom(from._internal_metadata());
   _this->_internal_metadata_.MergeFrom<std::string>(from._internal_metadata_);
 }
 
@@ -1814,7 +1735,7 @@ void IncidentsTile::CopyFrom(const IncidentsTile& from) {
   MergeFrom(from);
 }
 
-bool IncidentsTile::IsInitialized() const {
+PROTOBUF_NOINLINE bool IncidentsTile::IsInitialized() const {
   return true;
 }
 
@@ -1829,27 +1750,11 @@ std::string IncidentsTile::GetTypeName() const {
   return "valhalla.IncidentsTile";
 }
 
-
 // @@protoc_insertion_point(namespace_scope)
 }  // namespace valhalla
-PROTOBUF_NAMESPACE_OPEN
-template<> PROTOBUF_NOINLINE ::valhalla::IncidentsTile_Location*
-Arena::CreateMaybeMessage< ::valhalla::IncidentsTile_Location >(Arena* arena) {
-  return Arena::CreateMessageInternal< ::valhalla::IncidentsTile_Location >(arena);
-}
-template<> PROTOBUF_NOINLINE ::valhalla::IncidentsTile_Metadata_Congestion*
-Arena::CreateMaybeMessage< ::valhalla::IncidentsTile_Metadata_Congestion >(Arena* arena) {
-  return Arena::CreateMessageInternal< ::valhalla::IncidentsTile_Metadata_Congestion >(arena);
-}
-template<> PROTOBUF_NOINLINE ::valhalla::IncidentsTile_Metadata*
-Arena::CreateMaybeMessage< ::valhalla::IncidentsTile_Metadata >(Arena* arena) {
-  return Arena::CreateMessageInternal< ::valhalla::IncidentsTile_Metadata >(arena);
-}
-template<> PROTOBUF_NOINLINE ::valhalla::IncidentsTile*
-Arena::CreateMaybeMessage< ::valhalla::IncidentsTile >(Arena* arena) {
-  return Arena::CreateMessageInternal< ::valhalla::IncidentsTile >(arena);
-}
-PROTOBUF_NAMESPACE_CLOSE
-
+namespace google {
+namespace protobuf {
+}  // namespace protobuf
+}  // namespace google
 // @@protoc_insertion_point(global_scope)
-#include <google/protobuf/port_undef.inc>
+#include "google/protobuf/port_undef.inc"

@@ -4,138 +4,198 @@
 #include "transit.pb.h"
 
 #include <algorithm>
-
-#include <google/protobuf/io/coded_stream.h>
-#include <google/protobuf/extension_set.h>
-#include <google/protobuf/wire_format_lite.h>
-#include <google/protobuf/io/zero_copy_stream_impl_lite.h>
+#include "google/protobuf/io/coded_stream.h"
+#include "google/protobuf/extension_set.h"
+#include "google/protobuf/wire_format_lite.h"
+#include "google/protobuf/io/zero_copy_stream_impl_lite.h"
+#include "google/protobuf/generated_message_tctable_impl.h"
 // @@protoc_insertion_point(includes)
-#include <google/protobuf/port_def.inc>
 
+// Must be included last.
+#include "google/protobuf/port_def.inc"
 PROTOBUF_PRAGMA_INIT_SEG
-
-namespace _pb = ::PROTOBUF_NAMESPACE_ID;
-namespace _pbi = _pb::internal;
-
+namespace _pb = ::google::protobuf;
+namespace _pbi = ::google::protobuf::internal;
+namespace _fl = ::google::protobuf::internal::field_layout;
 namespace valhalla {
 namespace mjolnir {
-PROTOBUF_CONSTEXPR Transit_Node::Transit_Node(
-    ::_pbi::ConstantInitialized): _impl_{
-    /*decltype(_impl_._has_bits_)*/{}
-  , /*decltype(_impl_._cached_size_)*/{}
-  , /*decltype(_impl_.name_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
-  , /*decltype(_impl_.onestop_id_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
-  , /*decltype(_impl_.timezone_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
-  , /*decltype(_impl_.lon_)*/0
-  , /*decltype(_impl_.lat_)*/0
-  , /*decltype(_impl_.graphid_)*/uint64_t{0u}
-  , /*decltype(_impl_.prev_type_graphid_)*/uint64_t{0u}
-  , /*decltype(_impl_.osm_connecting_way_id_)*/uint64_t{0u}
-  , /*decltype(_impl_.type_)*/0u
-  , /*decltype(_impl_.wheelchair_boarding_)*/false
-  , /*decltype(_impl_.generated_)*/false
-  , /*decltype(_impl_.osm_connecting_lon_)*/0
-  , /*decltype(_impl_.osm_connecting_lat_)*/0
-  , /*decltype(_impl_.traversability_)*/0u} {}
+        template <typename>
+PROTOBUF_CONSTEXPR Transit_Node::Transit_Node(::_pbi::ConstantInitialized)
+    : _impl_{
+      /*decltype(_impl_._has_bits_)*/ {},
+      /*decltype(_impl_._cached_size_)*/ {},
+      /*decltype(_impl_.name_)*/ {
+          &::_pbi::fixed_address_empty_string,
+          ::_pbi::ConstantInitialized{},
+      },
+      /*decltype(_impl_.onestop_id_)*/ {
+          &::_pbi::fixed_address_empty_string,
+          ::_pbi::ConstantInitialized{},
+      },
+      /*decltype(_impl_.timezone_)*/ {
+          &::_pbi::fixed_address_empty_string,
+          ::_pbi::ConstantInitialized{},
+      },
+      /*decltype(_impl_.lon_)*/ 0,
+      /*decltype(_impl_.lat_)*/ 0,
+      /*decltype(_impl_.graphid_)*/ ::uint64_t{0u},
+      /*decltype(_impl_.prev_type_graphid_)*/ ::uint64_t{0u},
+      /*decltype(_impl_.osm_connecting_way_id_)*/ ::uint64_t{0u},
+      /*decltype(_impl_.type_)*/ 0u,
+      /*decltype(_impl_.wheelchair_boarding_)*/ false,
+      /*decltype(_impl_.generated_)*/ false,
+      /*decltype(_impl_.osm_connecting_lon_)*/ 0,
+      /*decltype(_impl_.osm_connecting_lat_)*/ 0,
+      /*decltype(_impl_.traversability_)*/ 0u,
+    } {}
 struct Transit_NodeDefaultTypeInternal {
-  PROTOBUF_CONSTEXPR Transit_NodeDefaultTypeInternal()
-      : _instance(::_pbi::ConstantInitialized{}) {}
+  PROTOBUF_CONSTEXPR Transit_NodeDefaultTypeInternal() : _instance(::_pbi::ConstantInitialized{}) {}
   ~Transit_NodeDefaultTypeInternal() {}
   union {
     Transit_Node _instance;
   };
 };
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 Transit_NodeDefaultTypeInternal _Transit_Node_default_instance_;
-PROTOBUF_CONSTEXPR Transit_StopPair::Transit_StopPair(
-    ::_pbi::ConstantInitialized): _impl_{
-    /*decltype(_impl_._has_bits_)*/{}
-  , /*decltype(_impl_._cached_size_)*/{}
-  , /*decltype(_impl_.service_added_dates_)*/{}
-  , /*decltype(_impl_.service_days_of_week_)*/{}
-  , /*decltype(_impl_.service_except_dates_)*/{}
-  , /*decltype(_impl_.destination_onestop_id_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
-  , /*decltype(_impl_.operated_by_onestop_id_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
-  , /*decltype(_impl_.origin_onestop_id_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
-  , /*decltype(_impl_.trip_headsign_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
-  , /*decltype(_impl_.block_id_)*/0u
-  , /*decltype(_impl_.destination_arrival_time_)*/0u
-  , /*decltype(_impl_.destination_graphid_)*/uint64_t{0u}
-  , /*decltype(_impl_.origin_graphid_)*/uint64_t{0u}
-  , /*decltype(_impl_.origin_departure_time_)*/0u
-  , /*decltype(_impl_.bikes_allowed_)*/false
-  , /*decltype(_impl_.wheelchair_accessible_)*/false
-  , /*decltype(_impl_.route_index_)*/0u
-  , /*decltype(_impl_.service_end_date_)*/0u
-  , /*decltype(_impl_.service_start_date_)*/0u
-  , /*decltype(_impl_.trip_id_)*/0u
-  , /*decltype(_impl_.shape_id_)*/0u
-  , /*decltype(_impl_.origin_dist_traveled_)*/0
-  , /*decltype(_impl_.destination_dist_traveled_)*/0
-  , /*decltype(_impl_.frequency_end_time_)*/0u
-  , /*decltype(_impl_.frequency_headway_seconds_)*/0u} {}
+
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
+    PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 Transit_NodeDefaultTypeInternal _Transit_Node_default_instance_;
+        template <typename>
+PROTOBUF_CONSTEXPR Transit_StopPair::Transit_StopPair(::_pbi::ConstantInitialized)
+    : _impl_{
+      /*decltype(_impl_._has_bits_)*/ {},
+      /*decltype(_impl_._cached_size_)*/ {},
+      /*decltype(_impl_.service_added_dates_)*/ {},
+      /*decltype(_impl_.service_days_of_week_)*/ {},
+      /*decltype(_impl_.service_except_dates_)*/ {},
+      /*decltype(_impl_.destination_onestop_id_)*/ {
+          &::_pbi::fixed_address_empty_string,
+          ::_pbi::ConstantInitialized{},
+      },
+      /*decltype(_impl_.operated_by_onestop_id_)*/ {
+          &::_pbi::fixed_address_empty_string,
+          ::_pbi::ConstantInitialized{},
+      },
+      /*decltype(_impl_.origin_onestop_id_)*/ {
+          &::_pbi::fixed_address_empty_string,
+          ::_pbi::ConstantInitialized{},
+      },
+      /*decltype(_impl_.trip_headsign_)*/ {
+          &::_pbi::fixed_address_empty_string,
+          ::_pbi::ConstantInitialized{},
+      },
+      /*decltype(_impl_.block_id_)*/ 0u,
+      /*decltype(_impl_.destination_arrival_time_)*/ 0u,
+      /*decltype(_impl_.destination_graphid_)*/ ::uint64_t{0u},
+      /*decltype(_impl_.origin_graphid_)*/ ::uint64_t{0u},
+      /*decltype(_impl_.origin_departure_time_)*/ 0u,
+      /*decltype(_impl_.bikes_allowed_)*/ false,
+      /*decltype(_impl_.wheelchair_accessible_)*/ false,
+      /*decltype(_impl_.route_index_)*/ 0u,
+      /*decltype(_impl_.service_end_date_)*/ 0u,
+      /*decltype(_impl_.service_start_date_)*/ 0u,
+      /*decltype(_impl_.trip_id_)*/ 0u,
+      /*decltype(_impl_.shape_id_)*/ 0u,
+      /*decltype(_impl_.origin_dist_traveled_)*/ 0,
+      /*decltype(_impl_.destination_dist_traveled_)*/ 0,
+      /*decltype(_impl_.frequency_end_time_)*/ 0u,
+      /*decltype(_impl_.frequency_headway_seconds_)*/ 0u,
+    } {}
 struct Transit_StopPairDefaultTypeInternal {
-  PROTOBUF_CONSTEXPR Transit_StopPairDefaultTypeInternal()
-      : _instance(::_pbi::ConstantInitialized{}) {}
+  PROTOBUF_CONSTEXPR Transit_StopPairDefaultTypeInternal() : _instance(::_pbi::ConstantInitialized{}) {}
   ~Transit_StopPairDefaultTypeInternal() {}
   union {
     Transit_StopPair _instance;
   };
 };
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 Transit_StopPairDefaultTypeInternal _Transit_StopPair_default_instance_;
-PROTOBUF_CONSTEXPR Transit_Route::Transit_Route(
-    ::_pbi::ConstantInitialized): _impl_{
-    /*decltype(_impl_._has_bits_)*/{}
-  , /*decltype(_impl_._cached_size_)*/{}
-  , /*decltype(_impl_.name_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
-  , /*decltype(_impl_.onestop_id_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
-  , /*decltype(_impl_.operated_by_name_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
-  , /*decltype(_impl_.operated_by_onestop_id_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
-  , /*decltype(_impl_.operated_by_website_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
-  , /*decltype(_impl_.route_desc_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
-  , /*decltype(_impl_.route_long_name_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
-  , /*decltype(_impl_.route_color_)*/0u
-  , /*decltype(_impl_.route_text_color_)*/0u
-  , /*decltype(_impl_.vehicle_type_)*/0} {}
+
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
+    PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 Transit_StopPairDefaultTypeInternal _Transit_StopPair_default_instance_;
+        template <typename>
+PROTOBUF_CONSTEXPR Transit_Route::Transit_Route(::_pbi::ConstantInitialized)
+    : _impl_{
+      /*decltype(_impl_._has_bits_)*/ {},
+      /*decltype(_impl_._cached_size_)*/ {},
+      /*decltype(_impl_.name_)*/ {
+          &::_pbi::fixed_address_empty_string,
+          ::_pbi::ConstantInitialized{},
+      },
+      /*decltype(_impl_.onestop_id_)*/ {
+          &::_pbi::fixed_address_empty_string,
+          ::_pbi::ConstantInitialized{},
+      },
+      /*decltype(_impl_.operated_by_name_)*/ {
+          &::_pbi::fixed_address_empty_string,
+          ::_pbi::ConstantInitialized{},
+      },
+      /*decltype(_impl_.operated_by_onestop_id_)*/ {
+          &::_pbi::fixed_address_empty_string,
+          ::_pbi::ConstantInitialized{},
+      },
+      /*decltype(_impl_.operated_by_website_)*/ {
+          &::_pbi::fixed_address_empty_string,
+          ::_pbi::ConstantInitialized{},
+      },
+      /*decltype(_impl_.route_desc_)*/ {
+          &::_pbi::fixed_address_empty_string,
+          ::_pbi::ConstantInitialized{},
+      },
+      /*decltype(_impl_.route_long_name_)*/ {
+          &::_pbi::fixed_address_empty_string,
+          ::_pbi::ConstantInitialized{},
+      },
+      /*decltype(_impl_.route_color_)*/ 0u,
+      /*decltype(_impl_.route_text_color_)*/ 0u,
+      /*decltype(_impl_.vehicle_type_)*/ 0,
+    } {}
 struct Transit_RouteDefaultTypeInternal {
-  PROTOBUF_CONSTEXPR Transit_RouteDefaultTypeInternal()
-      : _instance(::_pbi::ConstantInitialized{}) {}
+  PROTOBUF_CONSTEXPR Transit_RouteDefaultTypeInternal() : _instance(::_pbi::ConstantInitialized{}) {}
   ~Transit_RouteDefaultTypeInternal() {}
   union {
     Transit_Route _instance;
   };
 };
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 Transit_RouteDefaultTypeInternal _Transit_Route_default_instance_;
-PROTOBUF_CONSTEXPR Transit_Shape::Transit_Shape(
-    ::_pbi::ConstantInitialized): _impl_{
-    /*decltype(_impl_._has_bits_)*/{}
-  , /*decltype(_impl_._cached_size_)*/{}
-  , /*decltype(_impl_.encoded_shape_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
-  , /*decltype(_impl_.shape_id_)*/0u} {}
+
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
+    PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 Transit_RouteDefaultTypeInternal _Transit_Route_default_instance_;
+        template <typename>
+PROTOBUF_CONSTEXPR Transit_Shape::Transit_Shape(::_pbi::ConstantInitialized)
+    : _impl_{
+      /*decltype(_impl_._has_bits_)*/ {},
+      /*decltype(_impl_._cached_size_)*/ {},
+      /*decltype(_impl_.encoded_shape_)*/ {
+          &::_pbi::fixed_address_empty_string,
+          ::_pbi::ConstantInitialized{},
+      },
+      /*decltype(_impl_.shape_id_)*/ 0u,
+    } {}
 struct Transit_ShapeDefaultTypeInternal {
-  PROTOBUF_CONSTEXPR Transit_ShapeDefaultTypeInternal()
-      : _instance(::_pbi::ConstantInitialized{}) {}
+  PROTOBUF_CONSTEXPR Transit_ShapeDefaultTypeInternal() : _instance(::_pbi::ConstantInitialized{}) {}
   ~Transit_ShapeDefaultTypeInternal() {}
   union {
     Transit_Shape _instance;
   };
 };
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 Transit_ShapeDefaultTypeInternal _Transit_Shape_default_instance_;
-PROTOBUF_CONSTEXPR Transit::Transit(
-    ::_pbi::ConstantInitialized): _impl_{
-    /*decltype(_impl_.nodes_)*/{}
-  , /*decltype(_impl_.stop_pairs_)*/{}
-  , /*decltype(_impl_.routes_)*/{}
-  , /*decltype(_impl_.shapes_)*/{}
-  , /*decltype(_impl_._cached_size_)*/{}} {}
+
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
+    PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 Transit_ShapeDefaultTypeInternal _Transit_Shape_default_instance_;
+        template <typename>
+PROTOBUF_CONSTEXPR Transit::Transit(::_pbi::ConstantInitialized)
+    : _impl_{
+      /*decltype(_impl_.nodes_)*/ {},
+      /*decltype(_impl_.stop_pairs_)*/ {},
+      /*decltype(_impl_.routes_)*/ {},
+      /*decltype(_impl_.shapes_)*/ {},
+      /*decltype(_impl_._cached_size_)*/ {},
+    } {}
 struct TransitDefaultTypeInternal {
-  PROTOBUF_CONSTEXPR TransitDefaultTypeInternal()
-      : _instance(::_pbi::ConstantInitialized{}) {}
+  PROTOBUF_CONSTEXPR TransitDefaultTypeInternal() : _instance(::_pbi::ConstantInitialized{}) {}
   ~TransitDefaultTypeInternal() {}
   union {
     Transit _instance;
   };
 };
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 TransitDefaultTypeInternal _Transit_default_instance_;
+
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
+    PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 TransitDefaultTypeInternal _Transit_default_instance_;
 }  // namespace mjolnir
 }  // namespace valhalla
 namespace valhalla {
@@ -155,67 +215,69 @@ bool Transit_VehicleType_IsValid(int value) {
       return false;
   }
 }
+static ::google::protobuf::internal::ExplicitlyConstructed<std::string>
+    Transit_VehicleType_strings[8] = {};
 
-static ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<std::string> Transit_VehicleType_strings[8] = {};
+static const char Transit_VehicleType_names[] = {
+    "kBus"
+    "kCableCar"
+    "kFerry"
+    "kFunicular"
+    "kGondola"
+    "kMetro"
+    "kRail"
+    "kTram"
+};
 
-static const char Transit_VehicleType_names[] =
-  "kBus"
-  "kCableCar"
-  "kFerry"
-  "kFunicular"
-  "kGondola"
-  "kMetro"
-  "kRail"
-  "kTram";
-
-static const ::PROTOBUF_NAMESPACE_ID::internal::EnumEntry Transit_VehicleType_entries[] = {
-  { {Transit_VehicleType_names + 0, 4}, 3 },
-  { {Transit_VehicleType_names + 4, 9}, 5 },
-  { {Transit_VehicleType_names + 13, 6}, 4 },
-  { {Transit_VehicleType_names + 19, 10}, 7 },
-  { {Transit_VehicleType_names + 29, 8}, 6 },
-  { {Transit_VehicleType_names + 37, 6}, 1 },
-  { {Transit_VehicleType_names + 43, 5}, 2 },
-  { {Transit_VehicleType_names + 48, 5}, 0 },
+static const ::google::protobuf::internal::EnumEntry Transit_VehicleType_entries[] =
+    {
+        {{&Transit_VehicleType_names[0], 4}, 3},
+        {{&Transit_VehicleType_names[4], 9}, 5},
+        {{&Transit_VehicleType_names[13], 6}, 4},
+        {{&Transit_VehicleType_names[19], 10}, 7},
+        {{&Transit_VehicleType_names[29], 8}, 6},
+        {{&Transit_VehicleType_names[37], 6}, 1},
+        {{&Transit_VehicleType_names[43], 5}, 2},
+        {{&Transit_VehicleType_names[48], 5}, 0},
 };
 
 static const int Transit_VehicleType_entries_by_number[] = {
-  7, // 0 -> kTram
-  5, // 1 -> kMetro
-  6, // 2 -> kRail
-  0, // 3 -> kBus
-  2, // 4 -> kFerry
-  1, // 5 -> kCableCar
-  4, // 6 -> kGondola
-  3, // 7 -> kFunicular
+    7,  // 0 -> kTram
+    5,  // 1 -> kMetro
+    6,  // 2 -> kRail
+    0,  // 3 -> kBus
+    2,  // 4 -> kFerry
+    1,  // 5 -> kCableCar
+    4,  // 6 -> kGondola
+    3,  // 7 -> kFunicular
 };
 
-const std::string& Transit_VehicleType_Name(
-    Transit_VehicleType value) {
-  static const bool dummy =
-      ::PROTOBUF_NAMESPACE_ID::internal::InitializeEnumStrings(
-          Transit_VehicleType_entries,
-          Transit_VehicleType_entries_by_number,
+const std::string& Transit_VehicleType_Name(Transit_VehicleType value) {
+  static const bool kDummy =
+      ::google::protobuf::internal::InitializeEnumStrings(
+          Transit_VehicleType_entries, Transit_VehicleType_entries_by_number,
           8, Transit_VehicleType_strings);
-  (void) dummy;
-  int idx = ::PROTOBUF_NAMESPACE_ID::internal::LookUpEnumName(
-      Transit_VehicleType_entries,
-      Transit_VehicleType_entries_by_number,
-      8, value);
-  return idx == -1 ? ::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString() :
-                     Transit_VehicleType_strings[idx].get();
+  (void)kDummy;
+
+  int idx = ::google::protobuf::internal::LookUpEnumName(
+      Transit_VehicleType_entries, Transit_VehicleType_entries_by_number, 8,
+      value);
+  return idx == -1 ? ::google::protobuf::internal::GetEmptyString()
+                   : Transit_VehicleType_strings[idx].get();
 }
-bool Transit_VehicleType_Parse(
-    ::PROTOBUF_NAMESPACE_ID::ConstStringParam name, Transit_VehicleType* value) {
+
+bool Transit_VehicleType_Parse(absl::string_view name, Transit_VehicleType* value) {
   int int_value;
-  bool success = ::PROTOBUF_NAMESPACE_ID::internal::LookUpEnumValue(
+  bool success = ::google::protobuf::internal::LookUpEnumValue(
       Transit_VehicleType_entries, 8, name, &int_value);
   if (success) {
     *value = static_cast<Transit_VehicleType>(int_value);
   }
   return success;
 }
-#if (__cplusplus < 201703) && (!defined(_MSC_VER) || (_MSC_VER >= 1900 && _MSC_VER < 1912))
+#if (__cplusplus < 201703) && \
+  (!defined(_MSC_VER) || (_MSC_VER >= 1900 && _MSC_VER < 1912))
+
 constexpr Transit_VehicleType Transit::kTram;
 constexpr Transit_VehicleType Transit::kMetro;
 constexpr Transit_VehicleType Transit::kRail;
@@ -227,13 +289,16 @@ constexpr Transit_VehicleType Transit::kFunicular;
 constexpr Transit_VehicleType Transit::VehicleType_MIN;
 constexpr Transit_VehicleType Transit::VehicleType_MAX;
 constexpr int Transit::VehicleType_ARRAYSIZE;
-#endif  // (__cplusplus < 201703) && (!defined(_MSC_VER) || (_MSC_VER >= 1900 && _MSC_VER < 1912))
 
+#endif  // (__cplusplus < 201703) &&
+        // (!defined(_MSC_VER) || (_MSC_VER >= 1900 && _MSC_VER < 1912))
 // ===================================================================
 
 class Transit_Node::_Internal {
  public:
   using HasBits = decltype(std::declval<Transit_Node>()._impl_._has_bits_);
+  static constexpr ::int32_t kHasBitsOffset =
+    8 * PROTOBUF_FIELD_OFFSET(Transit_Node, _impl_._has_bits_);
   static void set_has_lon(HasBits* has_bits) {
     (*has_bits)[0] |= 8u;
   }
@@ -278,123 +343,112 @@ class Transit_Node::_Internal {
   }
 };
 
-Transit_Node::Transit_Node(::PROTOBUF_NAMESPACE_ID::Arena* arena,
-                         bool is_message_owned)
-  : ::PROTOBUF_NAMESPACE_ID::MessageLite(arena, is_message_owned) {
-  SharedCtor(arena, is_message_owned);
+Transit_Node::Transit_Node(::google::protobuf::Arena* arena)
+    : ::google::protobuf::MessageLite(arena) {
+  SharedCtor(arena);
   // @@protoc_insertion_point(arena_constructor:valhalla.mjolnir.Transit.Node)
 }
-Transit_Node::Transit_Node(const Transit_Node& from)
-  : ::PROTOBUF_NAMESPACE_ID::MessageLite() {
-  Transit_Node* const _this = this; (void)_this;
+Transit_Node::Transit_Node(const Transit_Node& from) : ::google::protobuf::MessageLite() {
+  Transit_Node* const _this = this;
+  (void)_this;
   new (&_impl_) Impl_{
-      decltype(_impl_._has_bits_){from._impl_._has_bits_}
-    , /*decltype(_impl_._cached_size_)*/{}
-    , decltype(_impl_.name_){}
-    , decltype(_impl_.onestop_id_){}
-    , decltype(_impl_.timezone_){}
-    , decltype(_impl_.lon_){}
-    , decltype(_impl_.lat_){}
-    , decltype(_impl_.graphid_){}
-    , decltype(_impl_.prev_type_graphid_){}
-    , decltype(_impl_.osm_connecting_way_id_){}
-    , decltype(_impl_.type_){}
-    , decltype(_impl_.wheelchair_boarding_){}
-    , decltype(_impl_.generated_){}
-    , decltype(_impl_.osm_connecting_lon_){}
-    , decltype(_impl_.osm_connecting_lat_){}
-    , decltype(_impl_.traversability_){}};
-
-  _internal_metadata_.MergeFrom<std::string>(from._internal_metadata_);
+      decltype(_impl_._has_bits_){from._impl_._has_bits_},
+      /*decltype(_impl_._cached_size_)*/ {},
+      decltype(_impl_.name_){},
+      decltype(_impl_.onestop_id_){},
+      decltype(_impl_.timezone_){},
+      decltype(_impl_.lon_){},
+      decltype(_impl_.lat_){},
+      decltype(_impl_.graphid_){},
+      decltype(_impl_.prev_type_graphid_){},
+      decltype(_impl_.osm_connecting_way_id_){},
+      decltype(_impl_.type_){},
+      decltype(_impl_.wheelchair_boarding_){},
+      decltype(_impl_.generated_){},
+      decltype(_impl_.osm_connecting_lon_){},
+      decltype(_impl_.osm_connecting_lat_){},
+      decltype(_impl_.traversability_){},
+  };
+  _internal_metadata_.MergeFrom<std::string>(
+      from._internal_metadata_);
   _impl_.name_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    _impl_.name_.Set("", GetArenaForAllocation());
-  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  if (from._internal_has_name()) {
-    _this->_impl_.name_.Set(from._internal_name(), 
-      _this->GetArenaForAllocation());
+        _impl_.name_.Set("", GetArenaForAllocation());
+  #endif  // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if ((from._impl_._has_bits_[0] & 0x00000001u) != 0) {
+    _this->_impl_.name_.Set(from._internal_name(), _this->GetArenaForAllocation());
   }
   _impl_.onestop_id_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    _impl_.onestop_id_.Set("", GetArenaForAllocation());
-  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  if (from._internal_has_onestop_id()) {
-    _this->_impl_.onestop_id_.Set(from._internal_onestop_id(), 
-      _this->GetArenaForAllocation());
+        _impl_.onestop_id_.Set("", GetArenaForAllocation());
+  #endif  // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if ((from._impl_._has_bits_[0] & 0x00000002u) != 0) {
+    _this->_impl_.onestop_id_.Set(from._internal_onestop_id(), _this->GetArenaForAllocation());
   }
   _impl_.timezone_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    _impl_.timezone_.Set("", GetArenaForAllocation());
-  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  if (from._internal_has_timezone()) {
-    _this->_impl_.timezone_.Set(from._internal_timezone(), 
-      _this->GetArenaForAllocation());
+        _impl_.timezone_.Set("", GetArenaForAllocation());
+  #endif  // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if ((from._impl_._has_bits_[0] & 0x00000004u) != 0) {
+    _this->_impl_.timezone_.Set(from._internal_timezone(), _this->GetArenaForAllocation());
   }
   ::memcpy(&_impl_.lon_, &from._impl_.lon_,
-    static_cast<size_t>(reinterpret_cast<char*>(&_impl_.traversability_) -
+    static_cast<::size_t>(reinterpret_cast<char*>(&_impl_.traversability_) -
     reinterpret_cast<char*>(&_impl_.lon_)) + sizeof(_impl_.traversability_));
+
   // @@protoc_insertion_point(copy_constructor:valhalla.mjolnir.Transit.Node)
 }
-
-inline void Transit_Node::SharedCtor(
-    ::_pb::Arena* arena, bool is_message_owned) {
+inline void Transit_Node::SharedCtor(::_pb::Arena* arena) {
   (void)arena;
-  (void)is_message_owned;
   new (&_impl_) Impl_{
-      decltype(_impl_._has_bits_){}
-    , /*decltype(_impl_._cached_size_)*/{}
-    , decltype(_impl_.name_){}
-    , decltype(_impl_.onestop_id_){}
-    , decltype(_impl_.timezone_){}
-    , decltype(_impl_.lon_){0}
-    , decltype(_impl_.lat_){0}
-    , decltype(_impl_.graphid_){uint64_t{0u}}
-    , decltype(_impl_.prev_type_graphid_){uint64_t{0u}}
-    , decltype(_impl_.osm_connecting_way_id_){uint64_t{0u}}
-    , decltype(_impl_.type_){0u}
-    , decltype(_impl_.wheelchair_boarding_){false}
-    , decltype(_impl_.generated_){false}
-    , decltype(_impl_.osm_connecting_lon_){0}
-    , decltype(_impl_.osm_connecting_lat_){0}
-    , decltype(_impl_.traversability_){0u}
+      decltype(_impl_._has_bits_){},
+      /*decltype(_impl_._cached_size_)*/ {},
+      decltype(_impl_.name_){},
+      decltype(_impl_.onestop_id_){},
+      decltype(_impl_.timezone_){},
+      decltype(_impl_.lon_){0},
+      decltype(_impl_.lat_){0},
+      decltype(_impl_.graphid_){::uint64_t{0u}},
+      decltype(_impl_.prev_type_graphid_){::uint64_t{0u}},
+      decltype(_impl_.osm_connecting_way_id_){::uint64_t{0u}},
+      decltype(_impl_.type_){0u},
+      decltype(_impl_.wheelchair_boarding_){false},
+      decltype(_impl_.generated_){false},
+      decltype(_impl_.osm_connecting_lon_){0},
+      decltype(_impl_.osm_connecting_lat_){0},
+      decltype(_impl_.traversability_){0u},
   };
   _impl_.name_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    _impl_.name_.Set("", GetArenaForAllocation());
-  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+        _impl_.name_.Set("", GetArenaForAllocation());
+  #endif  // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   _impl_.onestop_id_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    _impl_.onestop_id_.Set("", GetArenaForAllocation());
-  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+        _impl_.onestop_id_.Set("", GetArenaForAllocation());
+  #endif  // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   _impl_.timezone_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    _impl_.timezone_.Set("", GetArenaForAllocation());
-  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+        _impl_.timezone_.Set("", GetArenaForAllocation());
+  #endif  // PROTOBUF_FORCE_COPY_DEFAULT_STRING
 }
-
 Transit_Node::~Transit_Node() {
   // @@protoc_insertion_point(destructor:valhalla.mjolnir.Transit.Node)
-  if (auto *arena = _internal_metadata_.DeleteReturnArena<std::string>()) {
-  (void)arena;
-    return;
-  }
+  _internal_metadata_.Delete<std::string>();
   SharedDtor();
 }
-
 inline void Transit_Node::SharedDtor() {
-  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
+  ABSL_DCHECK(GetArenaForAllocation() == nullptr);
   _impl_.name_.Destroy();
   _impl_.onestop_id_.Destroy();
   _impl_.timezone_.Destroy();
 }
-
 void Transit_Node::SetCachedSize(int size) const {
   _impl_._cached_size_.Set(size);
 }
 
-void Transit_Node::Clear() {
+PROTOBUF_NOINLINE void Transit_Node::Clear() {
 // @@protoc_insertion_point(message_clear_start:valhalla.mjolnir.Transit.Node)
-  uint32_t cached_has_bits = 0;
+  ::uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
@@ -411,12 +465,12 @@ void Transit_Node::Clear() {
     }
   }
   if (cached_has_bits & 0x000000f8u) {
-    ::memset(&_impl_.lon_, 0, static_cast<size_t>(
+    ::memset(&_impl_.lon_, 0, static_cast<::size_t>(
         reinterpret_cast<char*>(&_impl_.osm_connecting_way_id_) -
         reinterpret_cast<char*>(&_impl_.lon_)) + sizeof(_impl_.osm_connecting_way_id_));
   }
   if (cached_has_bits & 0x00003f00u) {
-    ::memset(&_impl_.type_, 0, static_cast<size_t>(
+    ::memset(&_impl_.type_, 0, static_cast<::size_t>(
         reinterpret_cast<char*>(&_impl_.traversability_) -
         reinterpret_cast<char*>(&_impl_.type_)) + sizeof(_impl_.traversability_));
   }
@@ -424,267 +478,240 @@ void Transit_Node::Clear() {
   _internal_metadata_.Clear<std::string>();
 }
 
-const char* Transit_Node::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
-#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
-  _Internal::HasBits has_bits{};
-  while (!ctx->Done(&ptr)) {
-    uint32_t tag;
-    ptr = ::_pbi::ReadTag(ptr, &tag);
-    switch (tag >> 3) {
-      // optional double lon = 1;
-      case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 9)) {
-          _Internal::set_has_lon(&has_bits);
-          _impl_.lon_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<double>(ptr);
-          ptr += sizeof(double);
-        } else
-          goto handle_unusual;
-        continue;
-      // optional double lat = 2;
-      case 2:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 17)) {
-          _Internal::set_has_lat(&has_bits);
-          _impl_.lat_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<double>(ptr);
-          ptr += sizeof(double);
-        } else
-          goto handle_unusual;
-        continue;
-      // optional uint32 type = 3;
-      case 3:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 24)) {
-          _Internal::set_has_type(&has_bits);
-          _impl_.type_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
-          CHK_(ptr);
-        } else
-          goto handle_unusual;
-        continue;
-      // optional uint64 graphid = 4;
-      case 4:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 32)) {
-          _Internal::set_has_graphid(&has_bits);
-          _impl_.graphid_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
-          CHK_(ptr);
-        } else
-          goto handle_unusual;
-        continue;
-      // optional uint64 prev_type_graphid = 5;
-      case 5:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 40)) {
-          _Internal::set_has_prev_type_graphid(&has_bits);
-          _impl_.prev_type_graphid_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
-          CHK_(ptr);
-        } else
-          goto handle_unusual;
-        continue;
-      // optional string name = 6;
-      case 6:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 50)) {
-          auto str = _internal_mutable_name();
-          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(ptr);
-        } else
-          goto handle_unusual;
-        continue;
-      // optional string onestop_id = 7;
-      case 7:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 58)) {
-          auto str = _internal_mutable_onestop_id();
-          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(ptr);
-        } else
-          goto handle_unusual;
-        continue;
-      // optional uint64 osm_connecting_way_id = 8;
-      case 8:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 64)) {
-          _Internal::set_has_osm_connecting_way_id(&has_bits);
-          _impl_.osm_connecting_way_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
-          CHK_(ptr);
-        } else
-          goto handle_unusual;
-        continue;
-      // optional string timezone = 9;
-      case 9:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 74)) {
-          auto str = _internal_mutable_timezone();
-          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(ptr);
-        } else
-          goto handle_unusual;
-        continue;
-      // optional bool wheelchair_boarding = 10;
-      case 10:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 80)) {
-          _Internal::set_has_wheelchair_boarding(&has_bits);
-          _impl_.wheelchair_boarding_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
-          CHK_(ptr);
-        } else
-          goto handle_unusual;
-        continue;
-      // optional bool generated = 11;
-      case 11:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 88)) {
-          _Internal::set_has_generated(&has_bits);
-          _impl_.generated_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
-          CHK_(ptr);
-        } else
-          goto handle_unusual;
-        continue;
-      // optional uint32 traversability = 12;
-      case 12:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 96)) {
-          _Internal::set_has_traversability(&has_bits);
-          _impl_.traversability_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
-          CHK_(ptr);
-        } else
-          goto handle_unusual;
-        continue;
-      // optional double osm_connecting_lon = 13;
-      case 13:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 105)) {
-          _Internal::set_has_osm_connecting_lon(&has_bits);
-          _impl_.osm_connecting_lon_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<double>(ptr);
-          ptr += sizeof(double);
-        } else
-          goto handle_unusual;
-        continue;
-      // optional double osm_connecting_lat = 14;
-      case 14:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 113)) {
-          _Internal::set_has_osm_connecting_lat(&has_bits);
-          _impl_.osm_connecting_lat_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<double>(ptr);
-          ptr += sizeof(double);
-        } else
-          goto handle_unusual;
-        continue;
-      default:
-        goto handle_unusual;
-    }  // switch
-  handle_unusual:
-    if ((tag == 0) || ((tag & 7) == 4)) {
-      CHK_(ptr);
-      ctx->SetLastTag(tag);
-      goto message_done;
-    }
-    ptr = UnknownFieldParse(
-        tag,
-        _internal_metadata_.mutable_unknown_fields<std::string>(),
-        ptr, ctx);
-    CHK_(ptr != nullptr);
-  }  // while
-message_done:
-  _impl_._has_bits_.Or(has_bits);
+const char* Transit_Node::_InternalParse(
+    const char* ptr, ::_pbi::ParseContext* ctx) {
+  ptr = ::_pbi::TcParser::ParseLoop(this, ptr, ctx, &_table_.header);
   return ptr;
-failure:
-  ptr = nullptr;
-  goto message_done;
-#undef CHK_
 }
 
-uint8_t* Transit_Node::_InternalSerialize(
-    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+
+PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1
+const ::_pbi::TcParseTable<4, 14, 0, 0, 2> Transit_Node::_table_ = {
+  {
+    PROTOBUF_FIELD_OFFSET(Transit_Node, _impl_._has_bits_),
+    0, // no _extensions_
+    14, 120,  // max_field_number, fast_idx_mask
+    offsetof(decltype(_table_), field_lookup_table),
+    4294950912,  // skipmap
+    offsetof(decltype(_table_), field_entries),
+    14,  // num_field_entries
+    0,  // num_aux_entries
+    offsetof(decltype(_table_), field_names),  // no aux_entries
+    &_Transit_Node_default_instance_._instance,
+    ::_pbi::TcParser::GenericFallbackLite,  // fallback
+  }, {{
+    {::_pbi::TcParser::MiniParse, {}},
+    // optional double lon = 1;
+    {::_pbi::TcParser::FastF64S1,
+     {9, 3, 0, PROTOBUF_FIELD_OFFSET(Transit_Node, _impl_.lon_)}},
+    // optional double lat = 2;
+    {::_pbi::TcParser::FastF64S1,
+     {17, 4, 0, PROTOBUF_FIELD_OFFSET(Transit_Node, _impl_.lat_)}},
+    // optional uint32 type = 3;
+    {::_pbi::TcParser::FastV32S1,
+     {24, 8, 0, PROTOBUF_FIELD_OFFSET(Transit_Node, _impl_.type_)}},
+    // optional uint64 graphid = 4;
+    {::_pbi::TcParser::FastV64S1,
+     {32, 5, 0, PROTOBUF_FIELD_OFFSET(Transit_Node, _impl_.graphid_)}},
+    // optional uint64 prev_type_graphid = 5;
+    {::_pbi::TcParser::FastV64S1,
+     {40, 6, 0, PROTOBUF_FIELD_OFFSET(Transit_Node, _impl_.prev_type_graphid_)}},
+    // optional string name = 6;
+    {::_pbi::TcParser::FastBS1,
+     {50, 0, 0, PROTOBUF_FIELD_OFFSET(Transit_Node, _impl_.name_)}},
+    // optional string onestop_id = 7;
+    {::_pbi::TcParser::FastBS1,
+     {58, 1, 0, PROTOBUF_FIELD_OFFSET(Transit_Node, _impl_.onestop_id_)}},
+    // optional uint64 osm_connecting_way_id = 8;
+    {::_pbi::TcParser::FastV64S1,
+     {64, 7, 0, PROTOBUF_FIELD_OFFSET(Transit_Node, _impl_.osm_connecting_way_id_)}},
+    // optional string timezone = 9;
+    {::_pbi::TcParser::FastBS1,
+     {74, 2, 0, PROTOBUF_FIELD_OFFSET(Transit_Node, _impl_.timezone_)}},
+    // optional bool wheelchair_boarding = 10;
+    {::_pbi::TcParser::FastV8S1,
+     {80, 9, 0, PROTOBUF_FIELD_OFFSET(Transit_Node, _impl_.wheelchair_boarding_)}},
+    // optional bool generated = 11;
+    {::_pbi::TcParser::FastV8S1,
+     {88, 10, 0, PROTOBUF_FIELD_OFFSET(Transit_Node, _impl_.generated_)}},
+    // optional uint32 traversability = 12;
+    {::_pbi::TcParser::FastV32S1,
+     {96, 13, 0, PROTOBUF_FIELD_OFFSET(Transit_Node, _impl_.traversability_)}},
+    // optional double osm_connecting_lon = 13;
+    {::_pbi::TcParser::FastF64S1,
+     {105, 11, 0, PROTOBUF_FIELD_OFFSET(Transit_Node, _impl_.osm_connecting_lon_)}},
+    // optional double osm_connecting_lat = 14;
+    {::_pbi::TcParser::FastF64S1,
+     {113, 12, 0, PROTOBUF_FIELD_OFFSET(Transit_Node, _impl_.osm_connecting_lat_)}},
+    {::_pbi::TcParser::MiniParse, {}},
+  }}, {{
+    65535, 65535
+  }}, {{
+    // optional double lon = 1;
+    {PROTOBUF_FIELD_OFFSET(Transit_Node, _impl_.lon_), _Internal::kHasBitsOffset + 3, 0,
+    (0 | ::_fl::kFcOptional | ::_fl::kDouble)},
+    // optional double lat = 2;
+    {PROTOBUF_FIELD_OFFSET(Transit_Node, _impl_.lat_), _Internal::kHasBitsOffset + 4, 0,
+    (0 | ::_fl::kFcOptional | ::_fl::kDouble)},
+    // optional uint32 type = 3;
+    {PROTOBUF_FIELD_OFFSET(Transit_Node, _impl_.type_), _Internal::kHasBitsOffset + 8, 0,
+    (0 | ::_fl::kFcOptional | ::_fl::kUInt32)},
+    // optional uint64 graphid = 4;
+    {PROTOBUF_FIELD_OFFSET(Transit_Node, _impl_.graphid_), _Internal::kHasBitsOffset + 5, 0,
+    (0 | ::_fl::kFcOptional | ::_fl::kUInt64)},
+    // optional uint64 prev_type_graphid = 5;
+    {PROTOBUF_FIELD_OFFSET(Transit_Node, _impl_.prev_type_graphid_), _Internal::kHasBitsOffset + 6, 0,
+    (0 | ::_fl::kFcOptional | ::_fl::kUInt64)},
+    // optional string name = 6;
+    {PROTOBUF_FIELD_OFFSET(Transit_Node, _impl_.name_), _Internal::kHasBitsOffset + 0, 0,
+    (0 | ::_fl::kFcOptional | ::_fl::kBytes | ::_fl::kRepAString)},
+    // optional string onestop_id = 7;
+    {PROTOBUF_FIELD_OFFSET(Transit_Node, _impl_.onestop_id_), _Internal::kHasBitsOffset + 1, 0,
+    (0 | ::_fl::kFcOptional | ::_fl::kBytes | ::_fl::kRepAString)},
+    // optional uint64 osm_connecting_way_id = 8;
+    {PROTOBUF_FIELD_OFFSET(Transit_Node, _impl_.osm_connecting_way_id_), _Internal::kHasBitsOffset + 7, 0,
+    (0 | ::_fl::kFcOptional | ::_fl::kUInt64)},
+    // optional string timezone = 9;
+    {PROTOBUF_FIELD_OFFSET(Transit_Node, _impl_.timezone_), _Internal::kHasBitsOffset + 2, 0,
+    (0 | ::_fl::kFcOptional | ::_fl::kBytes | ::_fl::kRepAString)},
+    // optional bool wheelchair_boarding = 10;
+    {PROTOBUF_FIELD_OFFSET(Transit_Node, _impl_.wheelchair_boarding_), _Internal::kHasBitsOffset + 9, 0,
+    (0 | ::_fl::kFcOptional | ::_fl::kBool)},
+    // optional bool generated = 11;
+    {PROTOBUF_FIELD_OFFSET(Transit_Node, _impl_.generated_), _Internal::kHasBitsOffset + 10, 0,
+    (0 | ::_fl::kFcOptional | ::_fl::kBool)},
+    // optional uint32 traversability = 12;
+    {PROTOBUF_FIELD_OFFSET(Transit_Node, _impl_.traversability_), _Internal::kHasBitsOffset + 13, 0,
+    (0 | ::_fl::kFcOptional | ::_fl::kUInt32)},
+    // optional double osm_connecting_lon = 13;
+    {PROTOBUF_FIELD_OFFSET(Transit_Node, _impl_.osm_connecting_lon_), _Internal::kHasBitsOffset + 11, 0,
+    (0 | ::_fl::kFcOptional | ::_fl::kDouble)},
+    // optional double osm_connecting_lat = 14;
+    {PROTOBUF_FIELD_OFFSET(Transit_Node, _impl_.osm_connecting_lat_), _Internal::kHasBitsOffset + 12, 0,
+    (0 | ::_fl::kFcOptional | ::_fl::kDouble)},
+  }},
+  // no aux_entries
+  {{
+  }},
+};
+
+::uint8_t* Transit_Node::_InternalSerialize(
+    ::uint8_t* target,
+    ::google::protobuf::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:valhalla.mjolnir.Transit.Node)
-  uint32_t cached_has_bits = 0;
-  (void) cached_has_bits;
+  ::uint32_t cached_has_bits = 0;
+  (void)cached_has_bits;
 
   cached_has_bits = _impl_._has_bits_[0];
   // optional double lon = 1;
   if (cached_has_bits & 0x00000008u) {
     target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteDoubleToArray(1, this->_internal_lon(), target);
+    target = ::_pbi::WireFormatLite::WriteDoubleToArray(
+        1, this->_internal_lon(), target);
   }
 
   // optional double lat = 2;
   if (cached_has_bits & 0x00000010u) {
     target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteDoubleToArray(2, this->_internal_lat(), target);
+    target = ::_pbi::WireFormatLite::WriteDoubleToArray(
+        2, this->_internal_lat(), target);
   }
 
   // optional uint32 type = 3;
   if (cached_has_bits & 0x00000100u) {
     target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteUInt32ToArray(3, this->_internal_type(), target);
+    target = ::_pbi::WireFormatLite::WriteUInt32ToArray(
+        3, this->_internal_type(), target);
   }
 
   // optional uint64 graphid = 4;
   if (cached_has_bits & 0x00000020u) {
     target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteUInt64ToArray(4, this->_internal_graphid(), target);
+    target = ::_pbi::WireFormatLite::WriteUInt64ToArray(
+        4, this->_internal_graphid(), target);
   }
 
   // optional uint64 prev_type_graphid = 5;
   if (cached_has_bits & 0x00000040u) {
     target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteUInt64ToArray(5, this->_internal_prev_type_graphid(), target);
+    target = ::_pbi::WireFormatLite::WriteUInt64ToArray(
+        5, this->_internal_prev_type_graphid(), target);
   }
 
   // optional string name = 6;
   if (cached_has_bits & 0x00000001u) {
-    target = stream->WriteStringMaybeAliased(
-        6, this->_internal_name(), target);
+    const std::string& _s = this->_internal_name();
+    target = stream->WriteStringMaybeAliased(6, _s, target);
   }
 
   // optional string onestop_id = 7;
   if (cached_has_bits & 0x00000002u) {
-    target = stream->WriteStringMaybeAliased(
-        7, this->_internal_onestop_id(), target);
+    const std::string& _s = this->_internal_onestop_id();
+    target = stream->WriteStringMaybeAliased(7, _s, target);
   }
 
   // optional uint64 osm_connecting_way_id = 8;
   if (cached_has_bits & 0x00000080u) {
     target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteUInt64ToArray(8, this->_internal_osm_connecting_way_id(), target);
+    target = ::_pbi::WireFormatLite::WriteUInt64ToArray(
+        8, this->_internal_osm_connecting_way_id(), target);
   }
 
   // optional string timezone = 9;
   if (cached_has_bits & 0x00000004u) {
-    target = stream->WriteStringMaybeAliased(
-        9, this->_internal_timezone(), target);
+    const std::string& _s = this->_internal_timezone();
+    target = stream->WriteStringMaybeAliased(9, _s, target);
   }
 
   // optional bool wheelchair_boarding = 10;
   if (cached_has_bits & 0x00000200u) {
     target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteBoolToArray(10, this->_internal_wheelchair_boarding(), target);
+    target = ::_pbi::WireFormatLite::WriteBoolToArray(
+        10, this->_internal_wheelchair_boarding(), target);
   }
 
   // optional bool generated = 11;
   if (cached_has_bits & 0x00000400u) {
     target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteBoolToArray(11, this->_internal_generated(), target);
+    target = ::_pbi::WireFormatLite::WriteBoolToArray(
+        11, this->_internal_generated(), target);
   }
 
   // optional uint32 traversability = 12;
   if (cached_has_bits & 0x00002000u) {
     target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteUInt32ToArray(12, this->_internal_traversability(), target);
+    target = ::_pbi::WireFormatLite::WriteUInt32ToArray(
+        12, this->_internal_traversability(), target);
   }
 
   // optional double osm_connecting_lon = 13;
   if (cached_has_bits & 0x00000800u) {
     target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteDoubleToArray(13, this->_internal_osm_connecting_lon(), target);
+    target = ::_pbi::WireFormatLite::WriteDoubleToArray(
+        13, this->_internal_osm_connecting_lon(), target);
   }
 
   // optional double osm_connecting_lat = 14;
   if (cached_has_bits & 0x00001000u) {
     target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteDoubleToArray(14, this->_internal_osm_connecting_lat(), target);
+    target = ::_pbi::WireFormatLite::WriteDoubleToArray(
+        14, this->_internal_osm_connecting_lat(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target = stream->WriteRaw(_internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).data(),
-        static_cast<int>(_internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).size()), target);
+    target = stream->WriteRaw(
+        _internal_metadata_.unknown_fields<std::string>(::google::protobuf::internal::GetEmptyString).data(),
+        static_cast<int>(_internal_metadata_.unknown_fields<std::string>(::google::protobuf::internal::GetEmptyString).size()), target);
   }
   // @@protoc_insertion_point(serialize_to_array_end:valhalla.mjolnir.Transit.Node)
   return target;
 }
 
-size_t Transit_Node::ByteSizeLong() const {
+::size_t Transit_Node::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:valhalla.mjolnir.Transit.Node)
-  size_t total_size = 0;
+  ::size_t total_size = 0;
 
-  uint32_t cached_has_bits = 0;
+  ::uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
@@ -692,85 +719,87 @@ size_t Transit_Node::ByteSizeLong() const {
   if (cached_has_bits & 0x000000ffu) {
     // optional string name = 6;
     if (cached_has_bits & 0x00000001u) {
-      total_size += 1 +
-        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
-          this->_internal_name());
+      total_size += 1 + ::google::protobuf::internal::WireFormatLite::StringSize(
+                                      this->_internal_name());
     }
 
     // optional string onestop_id = 7;
     if (cached_has_bits & 0x00000002u) {
-      total_size += 1 +
-        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
-          this->_internal_onestop_id());
+      total_size += 1 + ::google::protobuf::internal::WireFormatLite::StringSize(
+                                      this->_internal_onestop_id());
     }
 
     // optional string timezone = 9;
     if (cached_has_bits & 0x00000004u) {
-      total_size += 1 +
-        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
-          this->_internal_timezone());
+      total_size += 1 + ::google::protobuf::internal::WireFormatLite::StringSize(
+                                      this->_internal_timezone());
     }
 
     // optional double lon = 1;
     if (cached_has_bits & 0x00000008u) {
-      total_size += 1 + 8;
+      total_size += 9;
     }
 
     // optional double lat = 2;
     if (cached_has_bits & 0x00000010u) {
-      total_size += 1 + 8;
+      total_size += 9;
     }
 
     // optional uint64 graphid = 4;
     if (cached_has_bits & 0x00000020u) {
-      total_size += ::_pbi::WireFormatLite::UInt64SizePlusOne(this->_internal_graphid());
+      total_size += ::_pbi::WireFormatLite::UInt64SizePlusOne(
+          this->_internal_graphid());
     }
 
     // optional uint64 prev_type_graphid = 5;
     if (cached_has_bits & 0x00000040u) {
-      total_size += ::_pbi::WireFormatLite::UInt64SizePlusOne(this->_internal_prev_type_graphid());
+      total_size += ::_pbi::WireFormatLite::UInt64SizePlusOne(
+          this->_internal_prev_type_graphid());
     }
 
     // optional uint64 osm_connecting_way_id = 8;
     if (cached_has_bits & 0x00000080u) {
-      total_size += ::_pbi::WireFormatLite::UInt64SizePlusOne(this->_internal_osm_connecting_way_id());
+      total_size += ::_pbi::WireFormatLite::UInt64SizePlusOne(
+          this->_internal_osm_connecting_way_id());
     }
 
   }
   if (cached_has_bits & 0x00003f00u) {
     // optional uint32 type = 3;
     if (cached_has_bits & 0x00000100u) {
-      total_size += ::_pbi::WireFormatLite::UInt32SizePlusOne(this->_internal_type());
+      total_size += ::_pbi::WireFormatLite::UInt32SizePlusOne(
+          this->_internal_type());
     }
 
     // optional bool wheelchair_boarding = 10;
     if (cached_has_bits & 0x00000200u) {
-      total_size += 1 + 1;
+      total_size += 2;
     }
 
     // optional bool generated = 11;
     if (cached_has_bits & 0x00000400u) {
-      total_size += 1 + 1;
+      total_size += 2;
     }
 
     // optional double osm_connecting_lon = 13;
     if (cached_has_bits & 0x00000800u) {
-      total_size += 1 + 8;
+      total_size += 9;
     }
 
     // optional double osm_connecting_lat = 14;
     if (cached_has_bits & 0x00001000u) {
-      total_size += 1 + 8;
+      total_size += 9;
     }
 
     // optional uint32 traversability = 12;
     if (cached_has_bits & 0x00002000u) {
-      total_size += ::_pbi::WireFormatLite::UInt32SizePlusOne(this->_internal_traversability());
+      total_size += ::_pbi::WireFormatLite::UInt32SizePlusOne(
+          this->_internal_traversability());
     }
 
   }
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    total_size += _internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).size();
+    total_size += _internal_metadata_.unknown_fields<std::string>(::google::protobuf::internal::GetEmptyString).size();
   }
   int cached_size = ::_pbi::ToCachedSize(total_size);
   SetCachedSize(cached_size);
@@ -778,7 +807,7 @@ size_t Transit_Node::ByteSizeLong() const {
 }
 
 void Transit_Node::CheckTypeAndMergeFrom(
-    const ::PROTOBUF_NAMESPACE_ID::MessageLite& from) {
+    const ::google::protobuf::MessageLite& from) {
   MergeFrom(*::_pbi::DownCast<const Transit_Node*>(
       &from));
 }
@@ -786,8 +815,8 @@ void Transit_Node::CheckTypeAndMergeFrom(
 void Transit_Node::MergeFrom(const Transit_Node& from) {
   Transit_Node* const _this = this;
   // @@protoc_insertion_point(class_specific_merge_from_start:valhalla.mjolnir.Transit.Node)
-  GOOGLE_DCHECK_NE(&from, _this);
-  uint32_t cached_has_bits = 0;
+  ABSL_DCHECK_NE(&from, _this);
+  ::uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   cached_has_bits = from._impl_._has_bits_[0];
@@ -849,7 +878,7 @@ void Transit_Node::CopyFrom(const Transit_Node& from) {
   MergeFrom(from);
 }
 
-bool Transit_Node::IsInitialized() const {
+PROTOBUF_NOINLINE bool Transit_Node::IsInitialized() const {
   return true;
 }
 
@@ -859,19 +888,13 @@ void Transit_Node::InternalSwap(Transit_Node* other) {
   auto* rhs_arena = other->GetArenaForAllocation();
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   swap(_impl_._has_bits_[0], other->_impl_._has_bits_[0]);
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &_impl_.name_, lhs_arena,
-      &other->_impl_.name_, rhs_arena
-  );
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &_impl_.onestop_id_, lhs_arena,
-      &other->_impl_.onestop_id_, rhs_arena
-  );
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &_impl_.timezone_, lhs_arena,
-      &other->_impl_.timezone_, rhs_arena
-  );
-  ::PROTOBUF_NAMESPACE_ID::internal::memswap<
+  ::_pbi::ArenaStringPtr::InternalSwap(&_impl_.name_, lhs_arena,
+                                       &other->_impl_.name_, rhs_arena);
+  ::_pbi::ArenaStringPtr::InternalSwap(&_impl_.onestop_id_, lhs_arena,
+                                       &other->_impl_.onestop_id_, rhs_arena);
+  ::_pbi::ArenaStringPtr::InternalSwap(&_impl_.timezone_, lhs_arena,
+                                       &other->_impl_.timezone_, rhs_arena);
+  ::google::protobuf::internal::memswap<
       PROTOBUF_FIELD_OFFSET(Transit_Node, _impl_.traversability_)
       + sizeof(Transit_Node::_impl_.traversability_)
       - PROTOBUF_FIELD_OFFSET(Transit_Node, _impl_.lon_)>(
@@ -883,12 +906,13 @@ std::string Transit_Node::GetTypeName() const {
   return "valhalla.mjolnir.Transit.Node";
 }
 
-
 // ===================================================================
 
 class Transit_StopPair::_Internal {
  public:
   using HasBits = decltype(std::declval<Transit_StopPair>()._impl_._has_bits_);
+  static constexpr ::int32_t kHasBitsOffset =
+    8 * PROTOBUF_FIELD_OFFSET(Transit_StopPair, _impl_._has_bits_);
   static void set_has_bikes_allowed(HasBits* has_bits) {
     (*has_bits)[0] |= 512u;
   }
@@ -951,141 +975,130 @@ class Transit_StopPair::_Internal {
   }
 };
 
-Transit_StopPair::Transit_StopPair(::PROTOBUF_NAMESPACE_ID::Arena* arena,
-                         bool is_message_owned)
-  : ::PROTOBUF_NAMESPACE_ID::MessageLite(arena, is_message_owned) {
-  SharedCtor(arena, is_message_owned);
+Transit_StopPair::Transit_StopPair(::google::protobuf::Arena* arena)
+    : ::google::protobuf::MessageLite(arena) {
+  SharedCtor(arena);
   // @@protoc_insertion_point(arena_constructor:valhalla.mjolnir.Transit.StopPair)
 }
-Transit_StopPair::Transit_StopPair(const Transit_StopPair& from)
-  : ::PROTOBUF_NAMESPACE_ID::MessageLite() {
-  Transit_StopPair* const _this = this; (void)_this;
+Transit_StopPair::Transit_StopPair(const Transit_StopPair& from) : ::google::protobuf::MessageLite() {
+  Transit_StopPair* const _this = this;
+  (void)_this;
   new (&_impl_) Impl_{
-      decltype(_impl_._has_bits_){from._impl_._has_bits_}
-    , /*decltype(_impl_._cached_size_)*/{}
-    , decltype(_impl_.service_added_dates_){from._impl_.service_added_dates_}
-    , decltype(_impl_.service_days_of_week_){from._impl_.service_days_of_week_}
-    , decltype(_impl_.service_except_dates_){from._impl_.service_except_dates_}
-    , decltype(_impl_.destination_onestop_id_){}
-    , decltype(_impl_.operated_by_onestop_id_){}
-    , decltype(_impl_.origin_onestop_id_){}
-    , decltype(_impl_.trip_headsign_){}
-    , decltype(_impl_.block_id_){}
-    , decltype(_impl_.destination_arrival_time_){}
-    , decltype(_impl_.destination_graphid_){}
-    , decltype(_impl_.origin_graphid_){}
-    , decltype(_impl_.origin_departure_time_){}
-    , decltype(_impl_.bikes_allowed_){}
-    , decltype(_impl_.wheelchair_accessible_){}
-    , decltype(_impl_.route_index_){}
-    , decltype(_impl_.service_end_date_){}
-    , decltype(_impl_.service_start_date_){}
-    , decltype(_impl_.trip_id_){}
-    , decltype(_impl_.shape_id_){}
-    , decltype(_impl_.origin_dist_traveled_){}
-    , decltype(_impl_.destination_dist_traveled_){}
-    , decltype(_impl_.frequency_end_time_){}
-    , decltype(_impl_.frequency_headway_seconds_){}};
-
-  _internal_metadata_.MergeFrom<std::string>(from._internal_metadata_);
+      decltype(_impl_._has_bits_){from._impl_._has_bits_},
+      /*decltype(_impl_._cached_size_)*/ {},
+      decltype(_impl_.service_added_dates_){from._impl_.service_added_dates_},
+      decltype(_impl_.service_days_of_week_){from._impl_.service_days_of_week_},
+      decltype(_impl_.service_except_dates_){from._impl_.service_except_dates_},
+      decltype(_impl_.destination_onestop_id_){},
+      decltype(_impl_.operated_by_onestop_id_){},
+      decltype(_impl_.origin_onestop_id_){},
+      decltype(_impl_.trip_headsign_){},
+      decltype(_impl_.block_id_){},
+      decltype(_impl_.destination_arrival_time_){},
+      decltype(_impl_.destination_graphid_){},
+      decltype(_impl_.origin_graphid_){},
+      decltype(_impl_.origin_departure_time_){},
+      decltype(_impl_.bikes_allowed_){},
+      decltype(_impl_.wheelchair_accessible_){},
+      decltype(_impl_.route_index_){},
+      decltype(_impl_.service_end_date_){},
+      decltype(_impl_.service_start_date_){},
+      decltype(_impl_.trip_id_){},
+      decltype(_impl_.shape_id_){},
+      decltype(_impl_.origin_dist_traveled_){},
+      decltype(_impl_.destination_dist_traveled_){},
+      decltype(_impl_.frequency_end_time_){},
+      decltype(_impl_.frequency_headway_seconds_){},
+  };
+  _internal_metadata_.MergeFrom<std::string>(
+      from._internal_metadata_);
   _impl_.destination_onestop_id_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    _impl_.destination_onestop_id_.Set("", GetArenaForAllocation());
-  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  if (from._internal_has_destination_onestop_id()) {
-    _this->_impl_.destination_onestop_id_.Set(from._internal_destination_onestop_id(), 
-      _this->GetArenaForAllocation());
+        _impl_.destination_onestop_id_.Set("", GetArenaForAllocation());
+  #endif  // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if ((from._impl_._has_bits_[0] & 0x00000001u) != 0) {
+    _this->_impl_.destination_onestop_id_.Set(from._internal_destination_onestop_id(), _this->GetArenaForAllocation());
   }
   _impl_.operated_by_onestop_id_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    _impl_.operated_by_onestop_id_.Set("", GetArenaForAllocation());
-  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  if (from._internal_has_operated_by_onestop_id()) {
-    _this->_impl_.operated_by_onestop_id_.Set(from._internal_operated_by_onestop_id(), 
-      _this->GetArenaForAllocation());
+        _impl_.operated_by_onestop_id_.Set("", GetArenaForAllocation());
+  #endif  // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if ((from._impl_._has_bits_[0] & 0x00000002u) != 0) {
+    _this->_impl_.operated_by_onestop_id_.Set(from._internal_operated_by_onestop_id(), _this->GetArenaForAllocation());
   }
   _impl_.origin_onestop_id_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    _impl_.origin_onestop_id_.Set("", GetArenaForAllocation());
-  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  if (from._internal_has_origin_onestop_id()) {
-    _this->_impl_.origin_onestop_id_.Set(from._internal_origin_onestop_id(), 
-      _this->GetArenaForAllocation());
+        _impl_.origin_onestop_id_.Set("", GetArenaForAllocation());
+  #endif  // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if ((from._impl_._has_bits_[0] & 0x00000004u) != 0) {
+    _this->_impl_.origin_onestop_id_.Set(from._internal_origin_onestop_id(), _this->GetArenaForAllocation());
   }
   _impl_.trip_headsign_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    _impl_.trip_headsign_.Set("", GetArenaForAllocation());
-  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  if (from._internal_has_trip_headsign()) {
-    _this->_impl_.trip_headsign_.Set(from._internal_trip_headsign(), 
-      _this->GetArenaForAllocation());
+        _impl_.trip_headsign_.Set("", GetArenaForAllocation());
+  #endif  // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if ((from._impl_._has_bits_[0] & 0x00000008u) != 0) {
+    _this->_impl_.trip_headsign_.Set(from._internal_trip_headsign(), _this->GetArenaForAllocation());
   }
   ::memcpy(&_impl_.block_id_, &from._impl_.block_id_,
-    static_cast<size_t>(reinterpret_cast<char*>(&_impl_.frequency_headway_seconds_) -
+    static_cast<::size_t>(reinterpret_cast<char*>(&_impl_.frequency_headway_seconds_) -
     reinterpret_cast<char*>(&_impl_.block_id_)) + sizeof(_impl_.frequency_headway_seconds_));
+
   // @@protoc_insertion_point(copy_constructor:valhalla.mjolnir.Transit.StopPair)
 }
-
-inline void Transit_StopPair::SharedCtor(
-    ::_pb::Arena* arena, bool is_message_owned) {
+inline void Transit_StopPair::SharedCtor(::_pb::Arena* arena) {
   (void)arena;
-  (void)is_message_owned;
   new (&_impl_) Impl_{
-      decltype(_impl_._has_bits_){}
-    , /*decltype(_impl_._cached_size_)*/{}
-    , decltype(_impl_.service_added_dates_){arena}
-    , decltype(_impl_.service_days_of_week_){arena}
-    , decltype(_impl_.service_except_dates_){arena}
-    , decltype(_impl_.destination_onestop_id_){}
-    , decltype(_impl_.operated_by_onestop_id_){}
-    , decltype(_impl_.origin_onestop_id_){}
-    , decltype(_impl_.trip_headsign_){}
-    , decltype(_impl_.block_id_){0u}
-    , decltype(_impl_.destination_arrival_time_){0u}
-    , decltype(_impl_.destination_graphid_){uint64_t{0u}}
-    , decltype(_impl_.origin_graphid_){uint64_t{0u}}
-    , decltype(_impl_.origin_departure_time_){0u}
-    , decltype(_impl_.bikes_allowed_){false}
-    , decltype(_impl_.wheelchair_accessible_){false}
-    , decltype(_impl_.route_index_){0u}
-    , decltype(_impl_.service_end_date_){0u}
-    , decltype(_impl_.service_start_date_){0u}
-    , decltype(_impl_.trip_id_){0u}
-    , decltype(_impl_.shape_id_){0u}
-    , decltype(_impl_.origin_dist_traveled_){0}
-    , decltype(_impl_.destination_dist_traveled_){0}
-    , decltype(_impl_.frequency_end_time_){0u}
-    , decltype(_impl_.frequency_headway_seconds_){0u}
+      decltype(_impl_._has_bits_){},
+      /*decltype(_impl_._cached_size_)*/ {},
+      decltype(_impl_.service_added_dates_){arena},
+      decltype(_impl_.service_days_of_week_){arena},
+      decltype(_impl_.service_except_dates_){arena},
+      decltype(_impl_.destination_onestop_id_){},
+      decltype(_impl_.operated_by_onestop_id_){},
+      decltype(_impl_.origin_onestop_id_){},
+      decltype(_impl_.trip_headsign_){},
+      decltype(_impl_.block_id_){0u},
+      decltype(_impl_.destination_arrival_time_){0u},
+      decltype(_impl_.destination_graphid_){::uint64_t{0u}},
+      decltype(_impl_.origin_graphid_){::uint64_t{0u}},
+      decltype(_impl_.origin_departure_time_){0u},
+      decltype(_impl_.bikes_allowed_){false},
+      decltype(_impl_.wheelchair_accessible_){false},
+      decltype(_impl_.route_index_){0u},
+      decltype(_impl_.service_end_date_){0u},
+      decltype(_impl_.service_start_date_){0u},
+      decltype(_impl_.trip_id_){0u},
+      decltype(_impl_.shape_id_){0u},
+      decltype(_impl_.origin_dist_traveled_){0},
+      decltype(_impl_.destination_dist_traveled_){0},
+      decltype(_impl_.frequency_end_time_){0u},
+      decltype(_impl_.frequency_headway_seconds_){0u},
   };
   _impl_.destination_onestop_id_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    _impl_.destination_onestop_id_.Set("", GetArenaForAllocation());
-  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+        _impl_.destination_onestop_id_.Set("", GetArenaForAllocation());
+  #endif  // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   _impl_.operated_by_onestop_id_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    _impl_.operated_by_onestop_id_.Set("", GetArenaForAllocation());
-  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+        _impl_.operated_by_onestop_id_.Set("", GetArenaForAllocation());
+  #endif  // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   _impl_.origin_onestop_id_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    _impl_.origin_onestop_id_.Set("", GetArenaForAllocation());
-  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+        _impl_.origin_onestop_id_.Set("", GetArenaForAllocation());
+  #endif  // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   _impl_.trip_headsign_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    _impl_.trip_headsign_.Set("", GetArenaForAllocation());
-  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+        _impl_.trip_headsign_.Set("", GetArenaForAllocation());
+  #endif  // PROTOBUF_FORCE_COPY_DEFAULT_STRING
 }
-
 Transit_StopPair::~Transit_StopPair() {
   // @@protoc_insertion_point(destructor:valhalla.mjolnir.Transit.StopPair)
-  if (auto *arena = _internal_metadata_.DeleteReturnArena<std::string>()) {
-  (void)arena;
-    return;
-  }
+  _internal_metadata_.Delete<std::string>();
   SharedDtor();
 }
-
 inline void Transit_StopPair::SharedDtor() {
-  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
+  ABSL_DCHECK(GetArenaForAllocation() == nullptr);
   _impl_.service_added_dates_.~RepeatedField();
   _impl_.service_days_of_week_.~RepeatedField();
   _impl_.service_except_dates_.~RepeatedField();
@@ -1094,20 +1107,19 @@ inline void Transit_StopPair::SharedDtor() {
   _impl_.origin_onestop_id_.Destroy();
   _impl_.trip_headsign_.Destroy();
 }
-
 void Transit_StopPair::SetCachedSize(int size) const {
   _impl_._cached_size_.Set(size);
 }
 
-void Transit_StopPair::Clear() {
+PROTOBUF_NOINLINE void Transit_StopPair::Clear() {
 // @@protoc_insertion_point(message_clear_start:valhalla.mjolnir.Transit.StopPair)
-  uint32_t cached_has_bits = 0;
+  ::uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  _impl_.service_added_dates_.Clear();
-  _impl_.service_days_of_week_.Clear();
-  _impl_.service_except_dates_.Clear();
+  _internal_mutable_service_added_dates()->Clear();
+  _internal_mutable_service_days_of_week()->Clear();
+  _internal_mutable_service_except_dates()->Clear();
   cached_has_bits = _impl_._has_bits_[0];
   if (cached_has_bits & 0x0000000fu) {
     if (cached_has_bits & 0x00000001u) {
@@ -1124,17 +1136,17 @@ void Transit_StopPair::Clear() {
     }
   }
   if (cached_has_bits & 0x000000f0u) {
-    ::memset(&_impl_.block_id_, 0, static_cast<size_t>(
+    ::memset(&_impl_.block_id_, 0, static_cast<::size_t>(
         reinterpret_cast<char*>(&_impl_.origin_graphid_) -
         reinterpret_cast<char*>(&_impl_.block_id_)) + sizeof(_impl_.origin_graphid_));
   }
   if (cached_has_bits & 0x0000ff00u) {
-    ::memset(&_impl_.origin_departure_time_, 0, static_cast<size_t>(
+    ::memset(&_impl_.origin_departure_time_, 0, static_cast<::size_t>(
         reinterpret_cast<char*>(&_impl_.shape_id_) -
         reinterpret_cast<char*>(&_impl_.origin_departure_time_)) + sizeof(_impl_.shape_id_));
   }
   if (cached_has_bits & 0x000f0000u) {
-    ::memset(&_impl_.origin_dist_traveled_, 0, static_cast<size_t>(
+    ::memset(&_impl_.origin_dist_traveled_, 0, static_cast<::size_t>(
         reinterpret_cast<char*>(&_impl_.frequency_headway_seconds_) -
         reinterpret_cast<char*>(&_impl_.origin_dist_traveled_)) + sizeof(_impl_.frequency_headway_seconds_));
   }
@@ -1142,578 +1154,521 @@ void Transit_StopPair::Clear() {
   _internal_metadata_.Clear<std::string>();
 }
 
-const char* Transit_StopPair::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
-#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
-  _Internal::HasBits has_bits{};
-  while (!ctx->Done(&ptr)) {
-    uint32_t tag;
-    ptr = ::_pbi::ReadTag(ptr, &tag);
-    switch (tag >> 3) {
-      // optional bool bikes_allowed = 1;
-      case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 8)) {
-          _Internal::set_has_bikes_allowed(&has_bits);
-          _impl_.bikes_allowed_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
-          CHK_(ptr);
-        } else
-          goto handle_unusual;
-        continue;
-      // optional uint32 block_id = 2;
-      case 2:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 16)) {
-          _Internal::set_has_block_id(&has_bits);
-          _impl_.block_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
-          CHK_(ptr);
-        } else
-          goto handle_unusual;
-        continue;
-      // optional uint32 destination_arrival_time = 3;
-      case 3:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 24)) {
-          _Internal::set_has_destination_arrival_time(&has_bits);
-          _impl_.destination_arrival_time_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
-          CHK_(ptr);
-        } else
-          goto handle_unusual;
-        continue;
-      // optional uint64 destination_graphid = 4;
-      case 4:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 32)) {
-          _Internal::set_has_destination_graphid(&has_bits);
-          _impl_.destination_graphid_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
-          CHK_(ptr);
-        } else
-          goto handle_unusual;
-        continue;
-      // optional string destination_onestop_id = 5;
-      case 5:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 42)) {
-          auto str = _internal_mutable_destination_onestop_id();
-          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(ptr);
-        } else
-          goto handle_unusual;
-        continue;
-      // optional string operated_by_onestop_id = 6;
-      case 6:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 50)) {
-          auto str = _internal_mutable_operated_by_onestop_id();
-          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(ptr);
-        } else
-          goto handle_unusual;
-        continue;
-      // optional uint32 origin_departure_time = 7;
-      case 7:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 56)) {
-          _Internal::set_has_origin_departure_time(&has_bits);
-          _impl_.origin_departure_time_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
-          CHK_(ptr);
-        } else
-          goto handle_unusual;
-        continue;
-      // optional uint64 origin_graphid = 8;
-      case 8:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 64)) {
-          _Internal::set_has_origin_graphid(&has_bits);
-          _impl_.origin_graphid_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
-          CHK_(ptr);
-        } else
-          goto handle_unusual;
-        continue;
-      // optional string origin_onestop_id = 9;
-      case 9:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 74)) {
-          auto str = _internal_mutable_origin_onestop_id();
-          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(ptr);
-        } else
-          goto handle_unusual;
-        continue;
-      // optional uint32 route_index = 10;
-      case 10:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 80)) {
-          _Internal::set_has_route_index(&has_bits);
-          _impl_.route_index_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
-          CHK_(ptr);
-        } else
-          goto handle_unusual;
-        continue;
-      // repeated uint32 service_added_dates = 11;
-      case 11:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 88)) {
-          ptr -= 1;
-          do {
-            ptr += 1;
-            _internal_add_service_added_dates(::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr));
-            CHK_(ptr);
-            if (!ctx->DataAvailable(ptr)) break;
-          } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<88>(ptr));
-        } else if (static_cast<uint8_t>(tag) == 90) {
-          ptr = ::PROTOBUF_NAMESPACE_ID::internal::PackedUInt32Parser(_internal_mutable_service_added_dates(), ptr, ctx);
-          CHK_(ptr);
-        } else
-          goto handle_unusual;
-        continue;
-      // repeated bool service_days_of_week = 12;
-      case 12:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 96)) {
-          ptr -= 1;
-          do {
-            ptr += 1;
-            _internal_add_service_days_of_week(::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr));
-            CHK_(ptr);
-            if (!ctx->DataAvailable(ptr)) break;
-          } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<96>(ptr));
-        } else if (static_cast<uint8_t>(tag) == 98) {
-          ptr = ::PROTOBUF_NAMESPACE_ID::internal::PackedBoolParser(_internal_mutable_service_days_of_week(), ptr, ctx);
-          CHK_(ptr);
-        } else
-          goto handle_unusual;
-        continue;
-      // optional uint32 service_end_date = 13;
-      case 13:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 104)) {
-          _Internal::set_has_service_end_date(&has_bits);
-          _impl_.service_end_date_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
-          CHK_(ptr);
-        } else
-          goto handle_unusual;
-        continue;
-      // repeated uint32 service_except_dates = 14;
-      case 14:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 112)) {
-          ptr -= 1;
-          do {
-            ptr += 1;
-            _internal_add_service_except_dates(::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr));
-            CHK_(ptr);
-            if (!ctx->DataAvailable(ptr)) break;
-          } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<112>(ptr));
-        } else if (static_cast<uint8_t>(tag) == 114) {
-          ptr = ::PROTOBUF_NAMESPACE_ID::internal::PackedUInt32Parser(_internal_mutable_service_except_dates(), ptr, ctx);
-          CHK_(ptr);
-        } else
-          goto handle_unusual;
-        continue;
-      // optional uint32 service_start_date = 15;
-      case 15:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 120)) {
-          _Internal::set_has_service_start_date(&has_bits);
-          _impl_.service_start_date_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
-          CHK_(ptr);
-        } else
-          goto handle_unusual;
-        continue;
-      // optional string trip_headsign = 16;
-      case 16:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 130)) {
-          auto str = _internal_mutable_trip_headsign();
-          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(ptr);
-        } else
-          goto handle_unusual;
-        continue;
-      // optional uint32 trip_id = 17;
-      case 17:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 136)) {
-          _Internal::set_has_trip_id(&has_bits);
-          _impl_.trip_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
-          CHK_(ptr);
-        } else
-          goto handle_unusual;
-        continue;
-      // optional bool wheelchair_accessible = 18;
-      case 18:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 144)) {
-          _Internal::set_has_wheelchair_accessible(&has_bits);
-          _impl_.wheelchair_accessible_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
-          CHK_(ptr);
-        } else
-          goto handle_unusual;
-        continue;
-      // optional uint32 shape_id = 20;
-      case 20:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 160)) {
-          _Internal::set_has_shape_id(&has_bits);
-          _impl_.shape_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
-          CHK_(ptr);
-        } else
-          goto handle_unusual;
-        continue;
-      // optional float origin_dist_traveled = 21;
-      case 21:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 173)) {
-          _Internal::set_has_origin_dist_traveled(&has_bits);
-          _impl_.origin_dist_traveled_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
-          ptr += sizeof(float);
-        } else
-          goto handle_unusual;
-        continue;
-      // optional float destination_dist_traveled = 22;
-      case 22:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 181)) {
-          _Internal::set_has_destination_dist_traveled(&has_bits);
-          _impl_.destination_dist_traveled_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
-          ptr += sizeof(float);
-        } else
-          goto handle_unusual;
-        continue;
-      // optional uint32 frequency_end_time = 23;
-      case 23:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 184)) {
-          _Internal::set_has_frequency_end_time(&has_bits);
-          _impl_.frequency_end_time_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
-          CHK_(ptr);
-        } else
-          goto handle_unusual;
-        continue;
-      // optional uint32 frequency_headway_seconds = 24;
-      case 24:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 192)) {
-          _Internal::set_has_frequency_headway_seconds(&has_bits);
-          _impl_.frequency_headway_seconds_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
-          CHK_(ptr);
-        } else
-          goto handle_unusual;
-        continue;
-      default:
-        goto handle_unusual;
-    }  // switch
-  handle_unusual:
-    if ((tag == 0) || ((tag & 7) == 4)) {
-      CHK_(ptr);
-      ctx->SetLastTag(tag);
-      goto message_done;
-    }
-    ptr = UnknownFieldParse(
-        tag,
-        _internal_metadata_.mutable_unknown_fields<std::string>(),
-        ptr, ctx);
-    CHK_(ptr != nullptr);
-  }  // while
-message_done:
-  _impl_._has_bits_.Or(has_bits);
+const char* Transit_StopPair::_InternalParse(
+    const char* ptr, ::_pbi::ParseContext* ctx) {
+  ptr = ::_pbi::TcParser::ParseLoop(this, ptr, ctx, &_table_.header);
   return ptr;
-failure:
-  ptr = nullptr;
-  goto message_done;
-#undef CHK_
 }
 
-uint8_t* Transit_StopPair::_InternalSerialize(
-    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+
+PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1
+const ::_pbi::TcParseTable<5, 23, 0, 0, 2> Transit_StopPair::_table_ = {
+  {
+    PROTOBUF_FIELD_OFFSET(Transit_StopPair, _impl_._has_bits_),
+    0, // no _extensions_
+    24, 248,  // max_field_number, fast_idx_mask
+    offsetof(decltype(_table_), field_lookup_table),
+    4278452224,  // skipmap
+    offsetof(decltype(_table_), field_entries),
+    23,  // num_field_entries
+    0,  // num_aux_entries
+    offsetof(decltype(_table_), field_names),  // no aux_entries
+    &_Transit_StopPair_default_instance_._instance,
+    ::_pbi::TcParser::GenericFallbackLite,  // fallback
+  }, {{
+    {::_pbi::TcParser::MiniParse, {}},
+    // optional bool bikes_allowed = 1;
+    {::_pbi::TcParser::FastV8S1,
+     {8, 9, 0, PROTOBUF_FIELD_OFFSET(Transit_StopPair, _impl_.bikes_allowed_)}},
+    // optional uint32 block_id = 2;
+    {::_pbi::TcParser::FastV32S1,
+     {16, 4, 0, PROTOBUF_FIELD_OFFSET(Transit_StopPair, _impl_.block_id_)}},
+    // optional uint32 destination_arrival_time = 3;
+    {::_pbi::TcParser::FastV32S1,
+     {24, 5, 0, PROTOBUF_FIELD_OFFSET(Transit_StopPair, _impl_.destination_arrival_time_)}},
+    // optional uint64 destination_graphid = 4;
+    {::_pbi::TcParser::FastV64S1,
+     {32, 6, 0, PROTOBUF_FIELD_OFFSET(Transit_StopPair, _impl_.destination_graphid_)}},
+    // optional string destination_onestop_id = 5;
+    {::_pbi::TcParser::FastBS1,
+     {42, 0, 0, PROTOBUF_FIELD_OFFSET(Transit_StopPair, _impl_.destination_onestop_id_)}},
+    // optional string operated_by_onestop_id = 6;
+    {::_pbi::TcParser::FastBS1,
+     {50, 1, 0, PROTOBUF_FIELD_OFFSET(Transit_StopPair, _impl_.operated_by_onestop_id_)}},
+    // optional uint32 origin_departure_time = 7;
+    {::_pbi::TcParser::FastV32S1,
+     {56, 8, 0, PROTOBUF_FIELD_OFFSET(Transit_StopPair, _impl_.origin_departure_time_)}},
+    // optional uint64 origin_graphid = 8;
+    {::_pbi::TcParser::FastV64S1,
+     {64, 7, 0, PROTOBUF_FIELD_OFFSET(Transit_StopPair, _impl_.origin_graphid_)}},
+    // optional string origin_onestop_id = 9;
+    {::_pbi::TcParser::FastBS1,
+     {74, 2, 0, PROTOBUF_FIELD_OFFSET(Transit_StopPair, _impl_.origin_onestop_id_)}},
+    // optional uint32 route_index = 10;
+    {::_pbi::TcParser::FastV32S1,
+     {80, 11, 0, PROTOBUF_FIELD_OFFSET(Transit_StopPair, _impl_.route_index_)}},
+    // repeated uint32 service_added_dates = 11;
+    {::_pbi::TcParser::FastV32R1,
+     {88, 63, 0, PROTOBUF_FIELD_OFFSET(Transit_StopPair, _impl_.service_added_dates_)}},
+    // repeated bool service_days_of_week = 12;
+    {::_pbi::TcParser::FastV8R1,
+     {96, 63, 0, PROTOBUF_FIELD_OFFSET(Transit_StopPair, _impl_.service_days_of_week_)}},
+    // optional uint32 service_end_date = 13;
+    {::_pbi::TcParser::FastV32S1,
+     {104, 12, 0, PROTOBUF_FIELD_OFFSET(Transit_StopPair, _impl_.service_end_date_)}},
+    // repeated uint32 service_except_dates = 14;
+    {::_pbi::TcParser::FastV32R1,
+     {112, 63, 0, PROTOBUF_FIELD_OFFSET(Transit_StopPair, _impl_.service_except_dates_)}},
+    // optional uint32 service_start_date = 15;
+    {::_pbi::TcParser::FastV32S1,
+     {120, 13, 0, PROTOBUF_FIELD_OFFSET(Transit_StopPair, _impl_.service_start_date_)}},
+    // optional string trip_headsign = 16;
+    {::_pbi::TcParser::FastBS2,
+     {386, 3, 0, PROTOBUF_FIELD_OFFSET(Transit_StopPair, _impl_.trip_headsign_)}},
+    // optional uint32 trip_id = 17;
+    {::_pbi::TcParser::FastV32S2,
+     {392, 14, 0, PROTOBUF_FIELD_OFFSET(Transit_StopPair, _impl_.trip_id_)}},
+    // optional bool wheelchair_accessible = 18;
+    {::_pbi::TcParser::FastV8S2,
+     {400, 10, 0, PROTOBUF_FIELD_OFFSET(Transit_StopPair, _impl_.wheelchair_accessible_)}},
+    {::_pbi::TcParser::MiniParse, {}},
+    // optional uint32 shape_id = 20;
+    {::_pbi::TcParser::FastV32S2,
+     {416, 15, 0, PROTOBUF_FIELD_OFFSET(Transit_StopPair, _impl_.shape_id_)}},
+    // optional float origin_dist_traveled = 21;
+    {::_pbi::TcParser::FastF32S2,
+     {429, 16, 0, PROTOBUF_FIELD_OFFSET(Transit_StopPair, _impl_.origin_dist_traveled_)}},
+    // optional float destination_dist_traveled = 22;
+    {::_pbi::TcParser::FastF32S2,
+     {437, 17, 0, PROTOBUF_FIELD_OFFSET(Transit_StopPair, _impl_.destination_dist_traveled_)}},
+    // optional uint32 frequency_end_time = 23;
+    {::_pbi::TcParser::FastV32S2,
+     {440, 18, 0, PROTOBUF_FIELD_OFFSET(Transit_StopPair, _impl_.frequency_end_time_)}},
+    // optional uint32 frequency_headway_seconds = 24;
+    {::_pbi::TcParser::FastV32S2,
+     {448, 19, 0, PROTOBUF_FIELD_OFFSET(Transit_StopPair, _impl_.frequency_headway_seconds_)}},
+    {::_pbi::TcParser::MiniParse, {}},
+    {::_pbi::TcParser::MiniParse, {}},
+    {::_pbi::TcParser::MiniParse, {}},
+    {::_pbi::TcParser::MiniParse, {}},
+    {::_pbi::TcParser::MiniParse, {}},
+    {::_pbi::TcParser::MiniParse, {}},
+    {::_pbi::TcParser::MiniParse, {}},
+  }}, {{
+    65535, 65535
+  }}, {{
+    // optional bool bikes_allowed = 1;
+    {PROTOBUF_FIELD_OFFSET(Transit_StopPair, _impl_.bikes_allowed_), _Internal::kHasBitsOffset + 9, 0,
+    (0 | ::_fl::kFcOptional | ::_fl::kBool)},
+    // optional uint32 block_id = 2;
+    {PROTOBUF_FIELD_OFFSET(Transit_StopPair, _impl_.block_id_), _Internal::kHasBitsOffset + 4, 0,
+    (0 | ::_fl::kFcOptional | ::_fl::kUInt32)},
+    // optional uint32 destination_arrival_time = 3;
+    {PROTOBUF_FIELD_OFFSET(Transit_StopPair, _impl_.destination_arrival_time_), _Internal::kHasBitsOffset + 5, 0,
+    (0 | ::_fl::kFcOptional | ::_fl::kUInt32)},
+    // optional uint64 destination_graphid = 4;
+    {PROTOBUF_FIELD_OFFSET(Transit_StopPair, _impl_.destination_graphid_), _Internal::kHasBitsOffset + 6, 0,
+    (0 | ::_fl::kFcOptional | ::_fl::kUInt64)},
+    // optional string destination_onestop_id = 5;
+    {PROTOBUF_FIELD_OFFSET(Transit_StopPair, _impl_.destination_onestop_id_), _Internal::kHasBitsOffset + 0, 0,
+    (0 | ::_fl::kFcOptional | ::_fl::kBytes | ::_fl::kRepAString)},
+    // optional string operated_by_onestop_id = 6;
+    {PROTOBUF_FIELD_OFFSET(Transit_StopPair, _impl_.operated_by_onestop_id_), _Internal::kHasBitsOffset + 1, 0,
+    (0 | ::_fl::kFcOptional | ::_fl::kBytes | ::_fl::kRepAString)},
+    // optional uint32 origin_departure_time = 7;
+    {PROTOBUF_FIELD_OFFSET(Transit_StopPair, _impl_.origin_departure_time_), _Internal::kHasBitsOffset + 8, 0,
+    (0 | ::_fl::kFcOptional | ::_fl::kUInt32)},
+    // optional uint64 origin_graphid = 8;
+    {PROTOBUF_FIELD_OFFSET(Transit_StopPair, _impl_.origin_graphid_), _Internal::kHasBitsOffset + 7, 0,
+    (0 | ::_fl::kFcOptional | ::_fl::kUInt64)},
+    // optional string origin_onestop_id = 9;
+    {PROTOBUF_FIELD_OFFSET(Transit_StopPair, _impl_.origin_onestop_id_), _Internal::kHasBitsOffset + 2, 0,
+    (0 | ::_fl::kFcOptional | ::_fl::kBytes | ::_fl::kRepAString)},
+    // optional uint32 route_index = 10;
+    {PROTOBUF_FIELD_OFFSET(Transit_StopPair, _impl_.route_index_), _Internal::kHasBitsOffset + 11, 0,
+    (0 | ::_fl::kFcOptional | ::_fl::kUInt32)},
+    // repeated uint32 service_added_dates = 11;
+    {PROTOBUF_FIELD_OFFSET(Transit_StopPair, _impl_.service_added_dates_), -1, 0,
+    (0 | ::_fl::kFcRepeated | ::_fl::kUInt32)},
+    // repeated bool service_days_of_week = 12;
+    {PROTOBUF_FIELD_OFFSET(Transit_StopPair, _impl_.service_days_of_week_), -1, 0,
+    (0 | ::_fl::kFcRepeated | ::_fl::kBool)},
+    // optional uint32 service_end_date = 13;
+    {PROTOBUF_FIELD_OFFSET(Transit_StopPair, _impl_.service_end_date_), _Internal::kHasBitsOffset + 12, 0,
+    (0 | ::_fl::kFcOptional | ::_fl::kUInt32)},
+    // repeated uint32 service_except_dates = 14;
+    {PROTOBUF_FIELD_OFFSET(Transit_StopPair, _impl_.service_except_dates_), -1, 0,
+    (0 | ::_fl::kFcRepeated | ::_fl::kUInt32)},
+    // optional uint32 service_start_date = 15;
+    {PROTOBUF_FIELD_OFFSET(Transit_StopPair, _impl_.service_start_date_), _Internal::kHasBitsOffset + 13, 0,
+    (0 | ::_fl::kFcOptional | ::_fl::kUInt32)},
+    // optional string trip_headsign = 16;
+    {PROTOBUF_FIELD_OFFSET(Transit_StopPair, _impl_.trip_headsign_), _Internal::kHasBitsOffset + 3, 0,
+    (0 | ::_fl::kFcOptional | ::_fl::kBytes | ::_fl::kRepAString)},
+    // optional uint32 trip_id = 17;
+    {PROTOBUF_FIELD_OFFSET(Transit_StopPair, _impl_.trip_id_), _Internal::kHasBitsOffset + 14, 0,
+    (0 | ::_fl::kFcOptional | ::_fl::kUInt32)},
+    // optional bool wheelchair_accessible = 18;
+    {PROTOBUF_FIELD_OFFSET(Transit_StopPair, _impl_.wheelchair_accessible_), _Internal::kHasBitsOffset + 10, 0,
+    (0 | ::_fl::kFcOptional | ::_fl::kBool)},
+    // optional uint32 shape_id = 20;
+    {PROTOBUF_FIELD_OFFSET(Transit_StopPair, _impl_.shape_id_), _Internal::kHasBitsOffset + 15, 0,
+    (0 | ::_fl::kFcOptional | ::_fl::kUInt32)},
+    // optional float origin_dist_traveled = 21;
+    {PROTOBUF_FIELD_OFFSET(Transit_StopPair, _impl_.origin_dist_traveled_), _Internal::kHasBitsOffset + 16, 0,
+    (0 | ::_fl::kFcOptional | ::_fl::kFloat)},
+    // optional float destination_dist_traveled = 22;
+    {PROTOBUF_FIELD_OFFSET(Transit_StopPair, _impl_.destination_dist_traveled_), _Internal::kHasBitsOffset + 17, 0,
+    (0 | ::_fl::kFcOptional | ::_fl::kFloat)},
+    // optional uint32 frequency_end_time = 23;
+    {PROTOBUF_FIELD_OFFSET(Transit_StopPair, _impl_.frequency_end_time_), _Internal::kHasBitsOffset + 18, 0,
+    (0 | ::_fl::kFcOptional | ::_fl::kUInt32)},
+    // optional uint32 frequency_headway_seconds = 24;
+    {PROTOBUF_FIELD_OFFSET(Transit_StopPair, _impl_.frequency_headway_seconds_), _Internal::kHasBitsOffset + 19, 0,
+    (0 | ::_fl::kFcOptional | ::_fl::kUInt32)},
+  }},
+  // no aux_entries
+  {{
+  }},
+};
+
+::uint8_t* Transit_StopPair::_InternalSerialize(
+    ::uint8_t* target,
+    ::google::protobuf::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:valhalla.mjolnir.Transit.StopPair)
-  uint32_t cached_has_bits = 0;
-  (void) cached_has_bits;
+  ::uint32_t cached_has_bits = 0;
+  (void)cached_has_bits;
 
   cached_has_bits = _impl_._has_bits_[0];
   // optional bool bikes_allowed = 1;
   if (cached_has_bits & 0x00000200u) {
     target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteBoolToArray(1, this->_internal_bikes_allowed(), target);
+    target = ::_pbi::WireFormatLite::WriteBoolToArray(
+        1, this->_internal_bikes_allowed(), target);
   }
 
   // optional uint32 block_id = 2;
   if (cached_has_bits & 0x00000010u) {
     target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteUInt32ToArray(2, this->_internal_block_id(), target);
+    target = ::_pbi::WireFormatLite::WriteUInt32ToArray(
+        2, this->_internal_block_id(), target);
   }
 
   // optional uint32 destination_arrival_time = 3;
   if (cached_has_bits & 0x00000020u) {
     target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteUInt32ToArray(3, this->_internal_destination_arrival_time(), target);
+    target = ::_pbi::WireFormatLite::WriteUInt32ToArray(
+        3, this->_internal_destination_arrival_time(), target);
   }
 
   // optional uint64 destination_graphid = 4;
   if (cached_has_bits & 0x00000040u) {
     target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteUInt64ToArray(4, this->_internal_destination_graphid(), target);
+    target = ::_pbi::WireFormatLite::WriteUInt64ToArray(
+        4, this->_internal_destination_graphid(), target);
   }
 
   // optional string destination_onestop_id = 5;
   if (cached_has_bits & 0x00000001u) {
-    target = stream->WriteStringMaybeAliased(
-        5, this->_internal_destination_onestop_id(), target);
+    const std::string& _s = this->_internal_destination_onestop_id();
+    target = stream->WriteStringMaybeAliased(5, _s, target);
   }
 
   // optional string operated_by_onestop_id = 6;
   if (cached_has_bits & 0x00000002u) {
-    target = stream->WriteStringMaybeAliased(
-        6, this->_internal_operated_by_onestop_id(), target);
+    const std::string& _s = this->_internal_operated_by_onestop_id();
+    target = stream->WriteStringMaybeAliased(6, _s, target);
   }
 
   // optional uint32 origin_departure_time = 7;
   if (cached_has_bits & 0x00000100u) {
     target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteUInt32ToArray(7, this->_internal_origin_departure_time(), target);
+    target = ::_pbi::WireFormatLite::WriteUInt32ToArray(
+        7, this->_internal_origin_departure_time(), target);
   }
 
   // optional uint64 origin_graphid = 8;
   if (cached_has_bits & 0x00000080u) {
     target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteUInt64ToArray(8, this->_internal_origin_graphid(), target);
+    target = ::_pbi::WireFormatLite::WriteUInt64ToArray(
+        8, this->_internal_origin_graphid(), target);
   }
 
   // optional string origin_onestop_id = 9;
   if (cached_has_bits & 0x00000004u) {
-    target = stream->WriteStringMaybeAliased(
-        9, this->_internal_origin_onestop_id(), target);
+    const std::string& _s = this->_internal_origin_onestop_id();
+    target = stream->WriteStringMaybeAliased(9, _s, target);
   }
 
   // optional uint32 route_index = 10;
   if (cached_has_bits & 0x00000800u) {
     target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteUInt32ToArray(10, this->_internal_route_index(), target);
+    target = ::_pbi::WireFormatLite::WriteUInt32ToArray(
+        10, this->_internal_route_index(), target);
   }
 
   // repeated uint32 service_added_dates = 11;
-  for (int i = 0, n = this->_internal_service_added_dates_size(); i < n; i++) {
+  for (int i = 0, n = this->_internal_service_added_dates_size(); i < n; ++i) {
     target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteUInt32ToArray(11, this->_internal_service_added_dates(i), target);
+    target = ::_pbi::WireFormatLite::WriteUInt32ToArray(
+        11, this->_internal_service_added_dates().Get(i), target);
   }
 
   // repeated bool service_days_of_week = 12;
-  for (int i = 0, n = this->_internal_service_days_of_week_size(); i < n; i++) {
+  for (int i = 0, n = this->_internal_service_days_of_week_size(); i < n; ++i) {
     target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteBoolToArray(12, this->_internal_service_days_of_week(i), target);
+    target = ::_pbi::WireFormatLite::WriteBoolToArray(
+        12, this->_internal_service_days_of_week().Get(i), target);
   }
 
   // optional uint32 service_end_date = 13;
   if (cached_has_bits & 0x00001000u) {
     target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteUInt32ToArray(13, this->_internal_service_end_date(), target);
+    target = ::_pbi::WireFormatLite::WriteUInt32ToArray(
+        13, this->_internal_service_end_date(), target);
   }
 
   // repeated uint32 service_except_dates = 14;
-  for (int i = 0, n = this->_internal_service_except_dates_size(); i < n; i++) {
+  for (int i = 0, n = this->_internal_service_except_dates_size(); i < n; ++i) {
     target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteUInt32ToArray(14, this->_internal_service_except_dates(i), target);
+    target = ::_pbi::WireFormatLite::WriteUInt32ToArray(
+        14, this->_internal_service_except_dates().Get(i), target);
   }
 
   // optional uint32 service_start_date = 15;
   if (cached_has_bits & 0x00002000u) {
     target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteUInt32ToArray(15, this->_internal_service_start_date(), target);
+    target = ::_pbi::WireFormatLite::WriteUInt32ToArray(
+        15, this->_internal_service_start_date(), target);
   }
 
   // optional string trip_headsign = 16;
   if (cached_has_bits & 0x00000008u) {
-    target = stream->WriteStringMaybeAliased(
-        16, this->_internal_trip_headsign(), target);
+    const std::string& _s = this->_internal_trip_headsign();
+    target = stream->WriteStringMaybeAliased(16, _s, target);
   }
 
   // optional uint32 trip_id = 17;
   if (cached_has_bits & 0x00004000u) {
     target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteUInt32ToArray(17, this->_internal_trip_id(), target);
+    target = ::_pbi::WireFormatLite::WriteUInt32ToArray(
+        17, this->_internal_trip_id(), target);
   }
 
   // optional bool wheelchair_accessible = 18;
   if (cached_has_bits & 0x00000400u) {
     target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteBoolToArray(18, this->_internal_wheelchair_accessible(), target);
+    target = ::_pbi::WireFormatLite::WriteBoolToArray(
+        18, this->_internal_wheelchair_accessible(), target);
   }
 
   // optional uint32 shape_id = 20;
   if (cached_has_bits & 0x00008000u) {
     target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteUInt32ToArray(20, this->_internal_shape_id(), target);
+    target = ::_pbi::WireFormatLite::WriteUInt32ToArray(
+        20, this->_internal_shape_id(), target);
   }
 
   // optional float origin_dist_traveled = 21;
   if (cached_has_bits & 0x00010000u) {
     target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteFloatToArray(21, this->_internal_origin_dist_traveled(), target);
+    target = ::_pbi::WireFormatLite::WriteFloatToArray(
+        21, this->_internal_origin_dist_traveled(), target);
   }
 
   // optional float destination_dist_traveled = 22;
   if (cached_has_bits & 0x00020000u) {
     target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteFloatToArray(22, this->_internal_destination_dist_traveled(), target);
+    target = ::_pbi::WireFormatLite::WriteFloatToArray(
+        22, this->_internal_destination_dist_traveled(), target);
   }
 
   // optional uint32 frequency_end_time = 23;
   if (cached_has_bits & 0x00040000u) {
     target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteUInt32ToArray(23, this->_internal_frequency_end_time(), target);
+    target = ::_pbi::WireFormatLite::WriteUInt32ToArray(
+        23, this->_internal_frequency_end_time(), target);
   }
 
   // optional uint32 frequency_headway_seconds = 24;
   if (cached_has_bits & 0x00080000u) {
     target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteUInt32ToArray(24, this->_internal_frequency_headway_seconds(), target);
+    target = ::_pbi::WireFormatLite::WriteUInt32ToArray(
+        24, this->_internal_frequency_headway_seconds(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target = stream->WriteRaw(_internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).data(),
-        static_cast<int>(_internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).size()), target);
+    target = stream->WriteRaw(
+        _internal_metadata_.unknown_fields<std::string>(::google::protobuf::internal::GetEmptyString).data(),
+        static_cast<int>(_internal_metadata_.unknown_fields<std::string>(::google::protobuf::internal::GetEmptyString).size()), target);
   }
   // @@protoc_insertion_point(serialize_to_array_end:valhalla.mjolnir.Transit.StopPair)
   return target;
 }
 
-size_t Transit_StopPair::ByteSizeLong() const {
+::size_t Transit_StopPair::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:valhalla.mjolnir.Transit.StopPair)
-  size_t total_size = 0;
+  ::size_t total_size = 0;
 
-  uint32_t cached_has_bits = 0;
+  ::uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
   // repeated uint32 service_added_dates = 11;
   {
-    size_t data_size = ::_pbi::WireFormatLite::
-      UInt32Size(this->_impl_.service_added_dates_);
-    total_size += 1 *
-                  ::_pbi::FromIntSize(this->_internal_service_added_dates_size());
-    total_size += data_size;
+    std::size_t data_size = ::_pbi::WireFormatLite::UInt32Size(
+        this->_internal_service_added_dates())
+    ;
+    std::size_t tag_size = std::size_t{1} *
+        ::_pbi::FromIntSize(this->_internal_service_added_dates_size());
+    ;
+    total_size += tag_size + data_size;
   }
-
   // repeated bool service_days_of_week = 12;
   {
-    unsigned int count = static_cast<unsigned int>(this->_internal_service_days_of_week_size());
-    size_t data_size = 1UL * count;
-    total_size += 1 *
-                  ::_pbi::FromIntSize(this->_internal_service_days_of_week_size());
-    total_size += data_size;
+    std::size_t data_size = std::size_t{1} *
+        ::_pbi::FromIntSize(this->_internal_service_days_of_week_size())
+    ;
+    std::size_t tag_size = std::size_t{1} *
+        ::_pbi::FromIntSize(this->_internal_service_days_of_week_size());
+    ;
+    total_size += tag_size + data_size;
   }
-
   // repeated uint32 service_except_dates = 14;
   {
-    size_t data_size = ::_pbi::WireFormatLite::
-      UInt32Size(this->_impl_.service_except_dates_);
-    total_size += 1 *
-                  ::_pbi::FromIntSize(this->_internal_service_except_dates_size());
-    total_size += data_size;
+    std::size_t data_size = ::_pbi::WireFormatLite::UInt32Size(
+        this->_internal_service_except_dates())
+    ;
+    std::size_t tag_size = std::size_t{1} *
+        ::_pbi::FromIntSize(this->_internal_service_except_dates_size());
+    ;
+    total_size += tag_size + data_size;
   }
-
   cached_has_bits = _impl_._has_bits_[0];
   if (cached_has_bits & 0x000000ffu) {
     // optional string destination_onestop_id = 5;
     if (cached_has_bits & 0x00000001u) {
-      total_size += 1 +
-        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
-          this->_internal_destination_onestop_id());
+      total_size += 1 + ::google::protobuf::internal::WireFormatLite::StringSize(
+                                      this->_internal_destination_onestop_id());
     }
 
     // optional string operated_by_onestop_id = 6;
     if (cached_has_bits & 0x00000002u) {
-      total_size += 1 +
-        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
-          this->_internal_operated_by_onestop_id());
+      total_size += 1 + ::google::protobuf::internal::WireFormatLite::StringSize(
+                                      this->_internal_operated_by_onestop_id());
     }
 
     // optional string origin_onestop_id = 9;
     if (cached_has_bits & 0x00000004u) {
-      total_size += 1 +
-        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
-          this->_internal_origin_onestop_id());
+      total_size += 1 + ::google::protobuf::internal::WireFormatLite::StringSize(
+                                      this->_internal_origin_onestop_id());
     }
 
     // optional string trip_headsign = 16;
     if (cached_has_bits & 0x00000008u) {
-      total_size += 2 +
-        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
-          this->_internal_trip_headsign());
+      total_size += 2 + ::google::protobuf::internal::WireFormatLite::StringSize(
+                                      this->_internal_trip_headsign());
     }
 
     // optional uint32 block_id = 2;
     if (cached_has_bits & 0x00000010u) {
-      total_size += ::_pbi::WireFormatLite::UInt32SizePlusOne(this->_internal_block_id());
+      total_size += ::_pbi::WireFormatLite::UInt32SizePlusOne(
+          this->_internal_block_id());
     }
 
     // optional uint32 destination_arrival_time = 3;
     if (cached_has_bits & 0x00000020u) {
-      total_size += ::_pbi::WireFormatLite::UInt32SizePlusOne(this->_internal_destination_arrival_time());
+      total_size += ::_pbi::WireFormatLite::UInt32SizePlusOne(
+          this->_internal_destination_arrival_time());
     }
 
     // optional uint64 destination_graphid = 4;
     if (cached_has_bits & 0x00000040u) {
-      total_size += ::_pbi::WireFormatLite::UInt64SizePlusOne(this->_internal_destination_graphid());
+      total_size += ::_pbi::WireFormatLite::UInt64SizePlusOne(
+          this->_internal_destination_graphid());
     }
 
     // optional uint64 origin_graphid = 8;
     if (cached_has_bits & 0x00000080u) {
-      total_size += ::_pbi::WireFormatLite::UInt64SizePlusOne(this->_internal_origin_graphid());
+      total_size += ::_pbi::WireFormatLite::UInt64SizePlusOne(
+          this->_internal_origin_graphid());
     }
 
   }
   if (cached_has_bits & 0x0000ff00u) {
     // optional uint32 origin_departure_time = 7;
     if (cached_has_bits & 0x00000100u) {
-      total_size += ::_pbi::WireFormatLite::UInt32SizePlusOne(this->_internal_origin_departure_time());
+      total_size += ::_pbi::WireFormatLite::UInt32SizePlusOne(
+          this->_internal_origin_departure_time());
     }
 
     // optional bool bikes_allowed = 1;
     if (cached_has_bits & 0x00000200u) {
-      total_size += 1 + 1;
+      total_size += 2;
     }
 
     // optional bool wheelchair_accessible = 18;
     if (cached_has_bits & 0x00000400u) {
-      total_size += 2 + 1;
+      total_size += 3;
     }
 
     // optional uint32 route_index = 10;
     if (cached_has_bits & 0x00000800u) {
-      total_size += ::_pbi::WireFormatLite::UInt32SizePlusOne(this->_internal_route_index());
+      total_size += ::_pbi::WireFormatLite::UInt32SizePlusOne(
+          this->_internal_route_index());
     }
 
     // optional uint32 service_end_date = 13;
     if (cached_has_bits & 0x00001000u) {
-      total_size += ::_pbi::WireFormatLite::UInt32SizePlusOne(this->_internal_service_end_date());
+      total_size += ::_pbi::WireFormatLite::UInt32SizePlusOne(
+          this->_internal_service_end_date());
     }
 
     // optional uint32 service_start_date = 15;
     if (cached_has_bits & 0x00002000u) {
-      total_size += ::_pbi::WireFormatLite::UInt32SizePlusOne(this->_internal_service_start_date());
+      total_size += ::_pbi::WireFormatLite::UInt32SizePlusOne(
+          this->_internal_service_start_date());
     }
 
     // optional uint32 trip_id = 17;
     if (cached_has_bits & 0x00004000u) {
-      total_size += 2 +
-        ::_pbi::WireFormatLite::UInt32Size(
-          this->_internal_trip_id());
+      total_size += 2 + ::_pbi::WireFormatLite::UInt32Size(
+                                      this->_internal_trip_id());
     }
 
     // optional uint32 shape_id = 20;
     if (cached_has_bits & 0x00008000u) {
-      total_size += 2 +
-        ::_pbi::WireFormatLite::UInt32Size(
-          this->_internal_shape_id());
+      total_size += 2 + ::_pbi::WireFormatLite::UInt32Size(
+                                      this->_internal_shape_id());
     }
 
   }
   if (cached_has_bits & 0x000f0000u) {
     // optional float origin_dist_traveled = 21;
     if (cached_has_bits & 0x00010000u) {
-      total_size += 2 + 4;
+      total_size += 6;
     }
 
     // optional float destination_dist_traveled = 22;
     if (cached_has_bits & 0x00020000u) {
-      total_size += 2 + 4;
+      total_size += 6;
     }
 
     // optional uint32 frequency_end_time = 23;
     if (cached_has_bits & 0x00040000u) {
-      total_size += 2 +
-        ::_pbi::WireFormatLite::UInt32Size(
-          this->_internal_frequency_end_time());
+      total_size += 2 + ::_pbi::WireFormatLite::UInt32Size(
+                                      this->_internal_frequency_end_time());
     }
 
     // optional uint32 frequency_headway_seconds = 24;
     if (cached_has_bits & 0x00080000u) {
-      total_size += 2 +
-        ::_pbi::WireFormatLite::UInt32Size(
-          this->_internal_frequency_headway_seconds());
+      total_size += 2 + ::_pbi::WireFormatLite::UInt32Size(
+                                      this->_internal_frequency_headway_seconds());
     }
 
   }
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    total_size += _internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).size();
+    total_size += _internal_metadata_.unknown_fields<std::string>(::google::protobuf::internal::GetEmptyString).size();
   }
   int cached_size = ::_pbi::ToCachedSize(total_size);
   SetCachedSize(cached_size);
@@ -1721,7 +1676,7 @@ size_t Transit_StopPair::ByteSizeLong() const {
 }
 
 void Transit_StopPair::CheckTypeAndMergeFrom(
-    const ::PROTOBUF_NAMESPACE_ID::MessageLite& from) {
+    const ::google::protobuf::MessageLite& from) {
   MergeFrom(*::_pbi::DownCast<const Transit_StopPair*>(
       &from));
 }
@@ -1729,13 +1684,13 @@ void Transit_StopPair::CheckTypeAndMergeFrom(
 void Transit_StopPair::MergeFrom(const Transit_StopPair& from) {
   Transit_StopPair* const _this = this;
   // @@protoc_insertion_point(class_specific_merge_from_start:valhalla.mjolnir.Transit.StopPair)
-  GOOGLE_DCHECK_NE(&from, _this);
-  uint32_t cached_has_bits = 0;
+  ABSL_DCHECK_NE(&from, _this);
+  ::uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  _this->_impl_.service_added_dates_.MergeFrom(from._impl_.service_added_dates_);
-  _this->_impl_.service_days_of_week_.MergeFrom(from._impl_.service_days_of_week_);
-  _this->_impl_.service_except_dates_.MergeFrom(from._impl_.service_except_dates_);
+  _this->_internal_mutable_service_added_dates()->MergeFrom(from._internal_service_added_dates());
+  _this->_internal_mutable_service_days_of_week()->MergeFrom(from._internal_service_days_of_week());
+  _this->_internal_mutable_service_except_dates()->MergeFrom(from._internal_service_except_dates());
   cached_has_bits = from._impl_._has_bits_[0];
   if (cached_has_bits & 0x000000ffu) {
     if (cached_has_bits & 0x00000001u) {
@@ -1816,7 +1771,7 @@ void Transit_StopPair::CopyFrom(const Transit_StopPair& from) {
   MergeFrom(from);
 }
 
-bool Transit_StopPair::IsInitialized() const {
+PROTOBUF_NOINLINE bool Transit_StopPair::IsInitialized() const {
   return true;
 }
 
@@ -1829,23 +1784,15 @@ void Transit_StopPair::InternalSwap(Transit_StopPair* other) {
   _impl_.service_added_dates_.InternalSwap(&other->_impl_.service_added_dates_);
   _impl_.service_days_of_week_.InternalSwap(&other->_impl_.service_days_of_week_);
   _impl_.service_except_dates_.InternalSwap(&other->_impl_.service_except_dates_);
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &_impl_.destination_onestop_id_, lhs_arena,
-      &other->_impl_.destination_onestop_id_, rhs_arena
-  );
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &_impl_.operated_by_onestop_id_, lhs_arena,
-      &other->_impl_.operated_by_onestop_id_, rhs_arena
-  );
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &_impl_.origin_onestop_id_, lhs_arena,
-      &other->_impl_.origin_onestop_id_, rhs_arena
-  );
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &_impl_.trip_headsign_, lhs_arena,
-      &other->_impl_.trip_headsign_, rhs_arena
-  );
-  ::PROTOBUF_NAMESPACE_ID::internal::memswap<
+  ::_pbi::ArenaStringPtr::InternalSwap(&_impl_.destination_onestop_id_, lhs_arena,
+                                       &other->_impl_.destination_onestop_id_, rhs_arena);
+  ::_pbi::ArenaStringPtr::InternalSwap(&_impl_.operated_by_onestop_id_, lhs_arena,
+                                       &other->_impl_.operated_by_onestop_id_, rhs_arena);
+  ::_pbi::ArenaStringPtr::InternalSwap(&_impl_.origin_onestop_id_, lhs_arena,
+                                       &other->_impl_.origin_onestop_id_, rhs_arena);
+  ::_pbi::ArenaStringPtr::InternalSwap(&_impl_.trip_headsign_, lhs_arena,
+                                       &other->_impl_.trip_headsign_, rhs_arena);
+  ::google::protobuf::internal::memswap<
       PROTOBUF_FIELD_OFFSET(Transit_StopPair, _impl_.frequency_headway_seconds_)
       + sizeof(Transit_StopPair::_impl_.frequency_headway_seconds_)
       - PROTOBUF_FIELD_OFFSET(Transit_StopPair, _impl_.block_id_)>(
@@ -1857,12 +1804,13 @@ std::string Transit_StopPair::GetTypeName() const {
   return "valhalla.mjolnir.Transit.StopPair";
 }
 
-
 // ===================================================================
 
 class Transit_Route::_Internal {
  public:
   using HasBits = decltype(std::declval<Transit_Route>()._impl_._has_bits_);
+  static constexpr ::int32_t kHasBitsOffset =
+    8 * PROTOBUF_FIELD_OFFSET(Transit_Route, _impl_._has_bits_);
   static void set_has_name(HasBits* has_bits) {
     (*has_bits)[0] |= 1u;
   }
@@ -1895,151 +1843,137 @@ class Transit_Route::_Internal {
   }
 };
 
-Transit_Route::Transit_Route(::PROTOBUF_NAMESPACE_ID::Arena* arena,
-                         bool is_message_owned)
-  : ::PROTOBUF_NAMESPACE_ID::MessageLite(arena, is_message_owned) {
-  SharedCtor(arena, is_message_owned);
+Transit_Route::Transit_Route(::google::protobuf::Arena* arena)
+    : ::google::protobuf::MessageLite(arena) {
+  SharedCtor(arena);
   // @@protoc_insertion_point(arena_constructor:valhalla.mjolnir.Transit.Route)
 }
-Transit_Route::Transit_Route(const Transit_Route& from)
-  : ::PROTOBUF_NAMESPACE_ID::MessageLite() {
-  Transit_Route* const _this = this; (void)_this;
+Transit_Route::Transit_Route(const Transit_Route& from) : ::google::protobuf::MessageLite() {
+  Transit_Route* const _this = this;
+  (void)_this;
   new (&_impl_) Impl_{
-      decltype(_impl_._has_bits_){from._impl_._has_bits_}
-    , /*decltype(_impl_._cached_size_)*/{}
-    , decltype(_impl_.name_){}
-    , decltype(_impl_.onestop_id_){}
-    , decltype(_impl_.operated_by_name_){}
-    , decltype(_impl_.operated_by_onestop_id_){}
-    , decltype(_impl_.operated_by_website_){}
-    , decltype(_impl_.route_desc_){}
-    , decltype(_impl_.route_long_name_){}
-    , decltype(_impl_.route_color_){}
-    , decltype(_impl_.route_text_color_){}
-    , decltype(_impl_.vehicle_type_){}};
-
-  _internal_metadata_.MergeFrom<std::string>(from._internal_metadata_);
+      decltype(_impl_._has_bits_){from._impl_._has_bits_},
+      /*decltype(_impl_._cached_size_)*/ {},
+      decltype(_impl_.name_){},
+      decltype(_impl_.onestop_id_){},
+      decltype(_impl_.operated_by_name_){},
+      decltype(_impl_.operated_by_onestop_id_){},
+      decltype(_impl_.operated_by_website_){},
+      decltype(_impl_.route_desc_){},
+      decltype(_impl_.route_long_name_){},
+      decltype(_impl_.route_color_){},
+      decltype(_impl_.route_text_color_){},
+      decltype(_impl_.vehicle_type_){},
+  };
+  _internal_metadata_.MergeFrom<std::string>(
+      from._internal_metadata_);
   _impl_.name_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    _impl_.name_.Set("", GetArenaForAllocation());
-  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  if (from._internal_has_name()) {
-    _this->_impl_.name_.Set(from._internal_name(), 
-      _this->GetArenaForAllocation());
+        _impl_.name_.Set("", GetArenaForAllocation());
+  #endif  // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if ((from._impl_._has_bits_[0] & 0x00000001u) != 0) {
+    _this->_impl_.name_.Set(from._internal_name(), _this->GetArenaForAllocation());
   }
   _impl_.onestop_id_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    _impl_.onestop_id_.Set("", GetArenaForAllocation());
-  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  if (from._internal_has_onestop_id()) {
-    _this->_impl_.onestop_id_.Set(from._internal_onestop_id(), 
-      _this->GetArenaForAllocation());
+        _impl_.onestop_id_.Set("", GetArenaForAllocation());
+  #endif  // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if ((from._impl_._has_bits_[0] & 0x00000002u) != 0) {
+    _this->_impl_.onestop_id_.Set(from._internal_onestop_id(), _this->GetArenaForAllocation());
   }
   _impl_.operated_by_name_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    _impl_.operated_by_name_.Set("", GetArenaForAllocation());
-  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  if (from._internal_has_operated_by_name()) {
-    _this->_impl_.operated_by_name_.Set(from._internal_operated_by_name(), 
-      _this->GetArenaForAllocation());
+        _impl_.operated_by_name_.Set("", GetArenaForAllocation());
+  #endif  // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if ((from._impl_._has_bits_[0] & 0x00000004u) != 0) {
+    _this->_impl_.operated_by_name_.Set(from._internal_operated_by_name(), _this->GetArenaForAllocation());
   }
   _impl_.operated_by_onestop_id_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    _impl_.operated_by_onestop_id_.Set("", GetArenaForAllocation());
-  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  if (from._internal_has_operated_by_onestop_id()) {
-    _this->_impl_.operated_by_onestop_id_.Set(from._internal_operated_by_onestop_id(), 
-      _this->GetArenaForAllocation());
+        _impl_.operated_by_onestop_id_.Set("", GetArenaForAllocation());
+  #endif  // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if ((from._impl_._has_bits_[0] & 0x00000008u) != 0) {
+    _this->_impl_.operated_by_onestop_id_.Set(from._internal_operated_by_onestop_id(), _this->GetArenaForAllocation());
   }
   _impl_.operated_by_website_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    _impl_.operated_by_website_.Set("", GetArenaForAllocation());
-  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  if (from._internal_has_operated_by_website()) {
-    _this->_impl_.operated_by_website_.Set(from._internal_operated_by_website(), 
-      _this->GetArenaForAllocation());
+        _impl_.operated_by_website_.Set("", GetArenaForAllocation());
+  #endif  // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if ((from._impl_._has_bits_[0] & 0x00000010u) != 0) {
+    _this->_impl_.operated_by_website_.Set(from._internal_operated_by_website(), _this->GetArenaForAllocation());
   }
   _impl_.route_desc_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    _impl_.route_desc_.Set("", GetArenaForAllocation());
-  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  if (from._internal_has_route_desc()) {
-    _this->_impl_.route_desc_.Set(from._internal_route_desc(), 
-      _this->GetArenaForAllocation());
+        _impl_.route_desc_.Set("", GetArenaForAllocation());
+  #endif  // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if ((from._impl_._has_bits_[0] & 0x00000020u) != 0) {
+    _this->_impl_.route_desc_.Set(from._internal_route_desc(), _this->GetArenaForAllocation());
   }
   _impl_.route_long_name_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    _impl_.route_long_name_.Set("", GetArenaForAllocation());
-  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  if (from._internal_has_route_long_name()) {
-    _this->_impl_.route_long_name_.Set(from._internal_route_long_name(), 
-      _this->GetArenaForAllocation());
+        _impl_.route_long_name_.Set("", GetArenaForAllocation());
+  #endif  // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if ((from._impl_._has_bits_[0] & 0x00000040u) != 0) {
+    _this->_impl_.route_long_name_.Set(from._internal_route_long_name(), _this->GetArenaForAllocation());
   }
   ::memcpy(&_impl_.route_color_, &from._impl_.route_color_,
-    static_cast<size_t>(reinterpret_cast<char*>(&_impl_.vehicle_type_) -
+    static_cast<::size_t>(reinterpret_cast<char*>(&_impl_.vehicle_type_) -
     reinterpret_cast<char*>(&_impl_.route_color_)) + sizeof(_impl_.vehicle_type_));
+
   // @@protoc_insertion_point(copy_constructor:valhalla.mjolnir.Transit.Route)
 }
-
-inline void Transit_Route::SharedCtor(
-    ::_pb::Arena* arena, bool is_message_owned) {
+inline void Transit_Route::SharedCtor(::_pb::Arena* arena) {
   (void)arena;
-  (void)is_message_owned;
   new (&_impl_) Impl_{
-      decltype(_impl_._has_bits_){}
-    , /*decltype(_impl_._cached_size_)*/{}
-    , decltype(_impl_.name_){}
-    , decltype(_impl_.onestop_id_){}
-    , decltype(_impl_.operated_by_name_){}
-    , decltype(_impl_.operated_by_onestop_id_){}
-    , decltype(_impl_.operated_by_website_){}
-    , decltype(_impl_.route_desc_){}
-    , decltype(_impl_.route_long_name_){}
-    , decltype(_impl_.route_color_){0u}
-    , decltype(_impl_.route_text_color_){0u}
-    , decltype(_impl_.vehicle_type_){0}
+      decltype(_impl_._has_bits_){},
+      /*decltype(_impl_._cached_size_)*/ {},
+      decltype(_impl_.name_){},
+      decltype(_impl_.onestop_id_){},
+      decltype(_impl_.operated_by_name_){},
+      decltype(_impl_.operated_by_onestop_id_){},
+      decltype(_impl_.operated_by_website_){},
+      decltype(_impl_.route_desc_){},
+      decltype(_impl_.route_long_name_){},
+      decltype(_impl_.route_color_){0u},
+      decltype(_impl_.route_text_color_){0u},
+      decltype(_impl_.vehicle_type_){0},
   };
   _impl_.name_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    _impl_.name_.Set("", GetArenaForAllocation());
-  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+        _impl_.name_.Set("", GetArenaForAllocation());
+  #endif  // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   _impl_.onestop_id_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    _impl_.onestop_id_.Set("", GetArenaForAllocation());
-  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+        _impl_.onestop_id_.Set("", GetArenaForAllocation());
+  #endif  // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   _impl_.operated_by_name_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    _impl_.operated_by_name_.Set("", GetArenaForAllocation());
-  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+        _impl_.operated_by_name_.Set("", GetArenaForAllocation());
+  #endif  // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   _impl_.operated_by_onestop_id_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    _impl_.operated_by_onestop_id_.Set("", GetArenaForAllocation());
-  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+        _impl_.operated_by_onestop_id_.Set("", GetArenaForAllocation());
+  #endif  // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   _impl_.operated_by_website_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    _impl_.operated_by_website_.Set("", GetArenaForAllocation());
-  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+        _impl_.operated_by_website_.Set("", GetArenaForAllocation());
+  #endif  // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   _impl_.route_desc_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    _impl_.route_desc_.Set("", GetArenaForAllocation());
-  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+        _impl_.route_desc_.Set("", GetArenaForAllocation());
+  #endif  // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   _impl_.route_long_name_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    _impl_.route_long_name_.Set("", GetArenaForAllocation());
-  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+        _impl_.route_long_name_.Set("", GetArenaForAllocation());
+  #endif  // PROTOBUF_FORCE_COPY_DEFAULT_STRING
 }
-
 Transit_Route::~Transit_Route() {
   // @@protoc_insertion_point(destructor:valhalla.mjolnir.Transit.Route)
-  if (auto *arena = _internal_metadata_.DeleteReturnArena<std::string>()) {
-  (void)arena;
-    return;
-  }
+  _internal_metadata_.Delete<std::string>();
   SharedDtor();
 }
-
 inline void Transit_Route::SharedDtor() {
-  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
+  ABSL_DCHECK(GetArenaForAllocation() == nullptr);
   _impl_.name_.Destroy();
   _impl_.onestop_id_.Destroy();
   _impl_.operated_by_name_.Destroy();
@@ -2048,14 +1982,13 @@ inline void Transit_Route::SharedDtor() {
   _impl_.route_desc_.Destroy();
   _impl_.route_long_name_.Destroy();
 }
-
 void Transit_Route::SetCachedSize(int size) const {
   _impl_._cached_size_.Set(size);
 }
 
-void Transit_Route::Clear() {
+PROTOBUF_NOINLINE void Transit_Route::Clear() {
 // @@protoc_insertion_point(message_clear_start:valhalla.mjolnir.Transit.Route)
-  uint32_t cached_has_bits = 0;
+  ::uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
@@ -2085,7 +2018,7 @@ void Transit_Route::Clear() {
   }
   _impl_.route_color_ = 0u;
   if (cached_has_bits & 0x00000300u) {
-    ::memset(&_impl_.route_text_color_, 0, static_cast<size_t>(
+    ::memset(&_impl_.route_text_color_, 0, static_cast<::size_t>(
         reinterpret_cast<char*>(&_impl_.vehicle_type_) -
         reinterpret_cast<char*>(&_impl_.route_text_color_)) + sizeof(_impl_.vehicle_type_));
   }
@@ -2093,212 +2026,188 @@ void Transit_Route::Clear() {
   _internal_metadata_.Clear<std::string>();
 }
 
-const char* Transit_Route::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
-#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
-  _Internal::HasBits has_bits{};
-  while (!ctx->Done(&ptr)) {
-    uint32_t tag;
-    ptr = ::_pbi::ReadTag(ptr, &tag);
-    switch (tag >> 3) {
-      // optional string name = 1;
-      case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
-          auto str = _internal_mutable_name();
-          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(ptr);
-        } else
-          goto handle_unusual;
-        continue;
-      // optional string onestop_id = 2;
-      case 2:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 18)) {
-          auto str = _internal_mutable_onestop_id();
-          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(ptr);
-        } else
-          goto handle_unusual;
-        continue;
-      // optional string operated_by_name = 3;
-      case 3:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 26)) {
-          auto str = _internal_mutable_operated_by_name();
-          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(ptr);
-        } else
-          goto handle_unusual;
-        continue;
-      // optional string operated_by_onestop_id = 4;
-      case 4:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 34)) {
-          auto str = _internal_mutable_operated_by_onestop_id();
-          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(ptr);
-        } else
-          goto handle_unusual;
-        continue;
-      // optional string operated_by_website = 5;
-      case 5:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 42)) {
-          auto str = _internal_mutable_operated_by_website();
-          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(ptr);
-        } else
-          goto handle_unusual;
-        continue;
-      // optional uint32 route_color = 6;
-      case 6:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 48)) {
-          _Internal::set_has_route_color(&has_bits);
-          _impl_.route_color_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
-          CHK_(ptr);
-        } else
-          goto handle_unusual;
-        continue;
-      // optional string route_desc = 7;
-      case 7:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 58)) {
-          auto str = _internal_mutable_route_desc();
-          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(ptr);
-        } else
-          goto handle_unusual;
-        continue;
-      // optional string route_long_name = 8;
-      case 8:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 66)) {
-          auto str = _internal_mutable_route_long_name();
-          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(ptr);
-        } else
-          goto handle_unusual;
-        continue;
-      // optional uint32 route_text_color = 9;
-      case 9:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 72)) {
-          _Internal::set_has_route_text_color(&has_bits);
-          _impl_.route_text_color_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
-          CHK_(ptr);
-        } else
-          goto handle_unusual;
-        continue;
-      // optional .valhalla.mjolnir.Transit.VehicleType vehicle_type = 10;
-      case 10:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 80)) {
-          uint64_t val = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
-          CHK_(ptr);
-          if (PROTOBUF_PREDICT_TRUE(::valhalla::mjolnir::Transit_VehicleType_IsValid(val))) {
-            _internal_set_vehicle_type(static_cast<::valhalla::mjolnir::Transit_VehicleType>(val));
-          } else {
-            ::PROTOBUF_NAMESPACE_ID::internal::WriteVarint(10, val, mutable_unknown_fields());
-          }
-        } else
-          goto handle_unusual;
-        continue;
-      default:
-        goto handle_unusual;
-    }  // switch
-  handle_unusual:
-    if ((tag == 0) || ((tag & 7) == 4)) {
-      CHK_(ptr);
-      ctx->SetLastTag(tag);
-      goto message_done;
-    }
-    ptr = UnknownFieldParse(
-        tag,
-        _internal_metadata_.mutable_unknown_fields<std::string>(),
-        ptr, ctx);
-    CHK_(ptr != nullptr);
-  }  // while
-message_done:
-  _impl_._has_bits_.Or(has_bits);
+const char* Transit_Route::_InternalParse(
+    const char* ptr, ::_pbi::ParseContext* ctx) {
+  ptr = ::_pbi::TcParser::ParseLoop(this, ptr, ctx, &_table_.header);
   return ptr;
-failure:
-  ptr = nullptr;
-  goto message_done;
-#undef CHK_
 }
 
-uint8_t* Transit_Route::_InternalSerialize(
-    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+
+PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1
+const ::_pbi::TcParseTable<4, 10, 1, 0, 2> Transit_Route::_table_ = {
+  {
+    PROTOBUF_FIELD_OFFSET(Transit_Route, _impl_._has_bits_),
+    0, // no _extensions_
+    10, 120,  // max_field_number, fast_idx_mask
+    offsetof(decltype(_table_), field_lookup_table),
+    4294966272,  // skipmap
+    offsetof(decltype(_table_), field_entries),
+    10,  // num_field_entries
+    1,  // num_aux_entries
+    offsetof(decltype(_table_), aux_entries),
+    &_Transit_Route_default_instance_._instance,
+    ::_pbi::TcParser::GenericFallbackLite,  // fallback
+  }, {{
+    {::_pbi::TcParser::MiniParse, {}},
+    // optional string name = 1;
+    {::_pbi::TcParser::FastBS1,
+     {10, 0, 0, PROTOBUF_FIELD_OFFSET(Transit_Route, _impl_.name_)}},
+    // optional string onestop_id = 2;
+    {::_pbi::TcParser::FastBS1,
+     {18, 1, 0, PROTOBUF_FIELD_OFFSET(Transit_Route, _impl_.onestop_id_)}},
+    // optional string operated_by_name = 3;
+    {::_pbi::TcParser::FastBS1,
+     {26, 2, 0, PROTOBUF_FIELD_OFFSET(Transit_Route, _impl_.operated_by_name_)}},
+    // optional string operated_by_onestop_id = 4;
+    {::_pbi::TcParser::FastBS1,
+     {34, 3, 0, PROTOBUF_FIELD_OFFSET(Transit_Route, _impl_.operated_by_onestop_id_)}},
+    // optional string operated_by_website = 5;
+    {::_pbi::TcParser::FastBS1,
+     {42, 4, 0, PROTOBUF_FIELD_OFFSET(Transit_Route, _impl_.operated_by_website_)}},
+    // optional uint32 route_color = 6;
+    {::_pbi::TcParser::FastV32S1,
+     {48, 7, 0, PROTOBUF_FIELD_OFFSET(Transit_Route, _impl_.route_color_)}},
+    // optional string route_desc = 7;
+    {::_pbi::TcParser::FastBS1,
+     {58, 5, 0, PROTOBUF_FIELD_OFFSET(Transit_Route, _impl_.route_desc_)}},
+    // optional string route_long_name = 8;
+    {::_pbi::TcParser::FastBS1,
+     {66, 6, 0, PROTOBUF_FIELD_OFFSET(Transit_Route, _impl_.route_long_name_)}},
+    // optional uint32 route_text_color = 9;
+    {::_pbi::TcParser::FastV32S1,
+     {72, 8, 0, PROTOBUF_FIELD_OFFSET(Transit_Route, _impl_.route_text_color_)}},
+    // optional .valhalla.mjolnir.Transit.VehicleType vehicle_type = 10;
+    {::_pbi::TcParser::FastEr0S1,
+     {80, 9, 7, PROTOBUF_FIELD_OFFSET(Transit_Route, _impl_.vehicle_type_)}},
+    {::_pbi::TcParser::MiniParse, {}},
+    {::_pbi::TcParser::MiniParse, {}},
+    {::_pbi::TcParser::MiniParse, {}},
+    {::_pbi::TcParser::MiniParse, {}},
+    {::_pbi::TcParser::MiniParse, {}},
+  }}, {{
+    65535, 65535
+  }}, {{
+    // optional string name = 1;
+    {PROTOBUF_FIELD_OFFSET(Transit_Route, _impl_.name_), _Internal::kHasBitsOffset + 0, 0,
+    (0 | ::_fl::kFcOptional | ::_fl::kBytes | ::_fl::kRepAString)},
+    // optional string onestop_id = 2;
+    {PROTOBUF_FIELD_OFFSET(Transit_Route, _impl_.onestop_id_), _Internal::kHasBitsOffset + 1, 0,
+    (0 | ::_fl::kFcOptional | ::_fl::kBytes | ::_fl::kRepAString)},
+    // optional string operated_by_name = 3;
+    {PROTOBUF_FIELD_OFFSET(Transit_Route, _impl_.operated_by_name_), _Internal::kHasBitsOffset + 2, 0,
+    (0 | ::_fl::kFcOptional | ::_fl::kBytes | ::_fl::kRepAString)},
+    // optional string operated_by_onestop_id = 4;
+    {PROTOBUF_FIELD_OFFSET(Transit_Route, _impl_.operated_by_onestop_id_), _Internal::kHasBitsOffset + 3, 0,
+    (0 | ::_fl::kFcOptional | ::_fl::kBytes | ::_fl::kRepAString)},
+    // optional string operated_by_website = 5;
+    {PROTOBUF_FIELD_OFFSET(Transit_Route, _impl_.operated_by_website_), _Internal::kHasBitsOffset + 4, 0,
+    (0 | ::_fl::kFcOptional | ::_fl::kBytes | ::_fl::kRepAString)},
+    // optional uint32 route_color = 6;
+    {PROTOBUF_FIELD_OFFSET(Transit_Route, _impl_.route_color_), _Internal::kHasBitsOffset + 7, 0,
+    (0 | ::_fl::kFcOptional | ::_fl::kUInt32)},
+    // optional string route_desc = 7;
+    {PROTOBUF_FIELD_OFFSET(Transit_Route, _impl_.route_desc_), _Internal::kHasBitsOffset + 5, 0,
+    (0 | ::_fl::kFcOptional | ::_fl::kBytes | ::_fl::kRepAString)},
+    // optional string route_long_name = 8;
+    {PROTOBUF_FIELD_OFFSET(Transit_Route, _impl_.route_long_name_), _Internal::kHasBitsOffset + 6, 0,
+    (0 | ::_fl::kFcOptional | ::_fl::kBytes | ::_fl::kRepAString)},
+    // optional uint32 route_text_color = 9;
+    {PROTOBUF_FIELD_OFFSET(Transit_Route, _impl_.route_text_color_), _Internal::kHasBitsOffset + 8, 0,
+    (0 | ::_fl::kFcOptional | ::_fl::kUInt32)},
+    // optional .valhalla.mjolnir.Transit.VehicleType vehicle_type = 10;
+    {PROTOBUF_FIELD_OFFSET(Transit_Route, _impl_.vehicle_type_), _Internal::kHasBitsOffset + 9, 0,
+    (0 | ::_fl::kFcOptional | ::_fl::kEnumRange)},
+  }}, {{
+    {0, 8},
+  }}, {{
+  }},
+};
+
+::uint8_t* Transit_Route::_InternalSerialize(
+    ::uint8_t* target,
+    ::google::protobuf::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:valhalla.mjolnir.Transit.Route)
-  uint32_t cached_has_bits = 0;
-  (void) cached_has_bits;
+  ::uint32_t cached_has_bits = 0;
+  (void)cached_has_bits;
 
   cached_has_bits = _impl_._has_bits_[0];
   // optional string name = 1;
   if (cached_has_bits & 0x00000001u) {
-    target = stream->WriteStringMaybeAliased(
-        1, this->_internal_name(), target);
+    const std::string& _s = this->_internal_name();
+    target = stream->WriteStringMaybeAliased(1, _s, target);
   }
 
   // optional string onestop_id = 2;
   if (cached_has_bits & 0x00000002u) {
-    target = stream->WriteStringMaybeAliased(
-        2, this->_internal_onestop_id(), target);
+    const std::string& _s = this->_internal_onestop_id();
+    target = stream->WriteStringMaybeAliased(2, _s, target);
   }
 
   // optional string operated_by_name = 3;
   if (cached_has_bits & 0x00000004u) {
-    target = stream->WriteStringMaybeAliased(
-        3, this->_internal_operated_by_name(), target);
+    const std::string& _s = this->_internal_operated_by_name();
+    target = stream->WriteStringMaybeAliased(3, _s, target);
   }
 
   // optional string operated_by_onestop_id = 4;
   if (cached_has_bits & 0x00000008u) {
-    target = stream->WriteStringMaybeAliased(
-        4, this->_internal_operated_by_onestop_id(), target);
+    const std::string& _s = this->_internal_operated_by_onestop_id();
+    target = stream->WriteStringMaybeAliased(4, _s, target);
   }
 
   // optional string operated_by_website = 5;
   if (cached_has_bits & 0x00000010u) {
-    target = stream->WriteStringMaybeAliased(
-        5, this->_internal_operated_by_website(), target);
+    const std::string& _s = this->_internal_operated_by_website();
+    target = stream->WriteStringMaybeAliased(5, _s, target);
   }
 
   // optional uint32 route_color = 6;
   if (cached_has_bits & 0x00000080u) {
     target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteUInt32ToArray(6, this->_internal_route_color(), target);
+    target = ::_pbi::WireFormatLite::WriteUInt32ToArray(
+        6, this->_internal_route_color(), target);
   }
 
   // optional string route_desc = 7;
   if (cached_has_bits & 0x00000020u) {
-    target = stream->WriteStringMaybeAliased(
-        7, this->_internal_route_desc(), target);
+    const std::string& _s = this->_internal_route_desc();
+    target = stream->WriteStringMaybeAliased(7, _s, target);
   }
 
   // optional string route_long_name = 8;
   if (cached_has_bits & 0x00000040u) {
-    target = stream->WriteStringMaybeAliased(
-        8, this->_internal_route_long_name(), target);
+    const std::string& _s = this->_internal_route_long_name();
+    target = stream->WriteStringMaybeAliased(8, _s, target);
   }
 
   // optional uint32 route_text_color = 9;
   if (cached_has_bits & 0x00000100u) {
     target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteUInt32ToArray(9, this->_internal_route_text_color(), target);
+    target = ::_pbi::WireFormatLite::WriteUInt32ToArray(
+        9, this->_internal_route_text_color(), target);
   }
 
   // optional .valhalla.mjolnir.Transit.VehicleType vehicle_type = 10;
   if (cached_has_bits & 0x00000200u) {
     target = stream->EnsureSpace(target);
     target = ::_pbi::WireFormatLite::WriteEnumToArray(
-      10, this->_internal_vehicle_type(), target);
+        10, this->_internal_vehicle_type(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target = stream->WriteRaw(_internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).data(),
-        static_cast<int>(_internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).size()), target);
+    target = stream->WriteRaw(
+        _internal_metadata_.unknown_fields<std::string>(::google::protobuf::internal::GetEmptyString).data(),
+        static_cast<int>(_internal_metadata_.unknown_fields<std::string>(::google::protobuf::internal::GetEmptyString).size()), target);
   }
   // @@protoc_insertion_point(serialize_to_array_end:valhalla.mjolnir.Transit.Route)
   return target;
 }
 
-size_t Transit_Route::ByteSizeLong() const {
+::size_t Transit_Route::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:valhalla.mjolnir.Transit.Route)
-  size_t total_size = 0;
+  ::size_t total_size = 0;
 
-  uint32_t cached_has_bits = 0;
+  ::uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
@@ -2306,74 +2215,69 @@ size_t Transit_Route::ByteSizeLong() const {
   if (cached_has_bits & 0x000000ffu) {
     // optional string name = 1;
     if (cached_has_bits & 0x00000001u) {
-      total_size += 1 +
-        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
-          this->_internal_name());
+      total_size += 1 + ::google::protobuf::internal::WireFormatLite::StringSize(
+                                      this->_internal_name());
     }
 
     // optional string onestop_id = 2;
     if (cached_has_bits & 0x00000002u) {
-      total_size += 1 +
-        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
-          this->_internal_onestop_id());
+      total_size += 1 + ::google::protobuf::internal::WireFormatLite::StringSize(
+                                      this->_internal_onestop_id());
     }
 
     // optional string operated_by_name = 3;
     if (cached_has_bits & 0x00000004u) {
-      total_size += 1 +
-        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
-          this->_internal_operated_by_name());
+      total_size += 1 + ::google::protobuf::internal::WireFormatLite::StringSize(
+                                      this->_internal_operated_by_name());
     }
 
     // optional string operated_by_onestop_id = 4;
     if (cached_has_bits & 0x00000008u) {
-      total_size += 1 +
-        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
-          this->_internal_operated_by_onestop_id());
+      total_size += 1 + ::google::protobuf::internal::WireFormatLite::StringSize(
+                                      this->_internal_operated_by_onestop_id());
     }
 
     // optional string operated_by_website = 5;
     if (cached_has_bits & 0x00000010u) {
-      total_size += 1 +
-        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
-          this->_internal_operated_by_website());
+      total_size += 1 + ::google::protobuf::internal::WireFormatLite::StringSize(
+                                      this->_internal_operated_by_website());
     }
 
     // optional string route_desc = 7;
     if (cached_has_bits & 0x00000020u) {
-      total_size += 1 +
-        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
-          this->_internal_route_desc());
+      total_size += 1 + ::google::protobuf::internal::WireFormatLite::StringSize(
+                                      this->_internal_route_desc());
     }
 
     // optional string route_long_name = 8;
     if (cached_has_bits & 0x00000040u) {
-      total_size += 1 +
-        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
-          this->_internal_route_long_name());
+      total_size += 1 + ::google::protobuf::internal::WireFormatLite::StringSize(
+                                      this->_internal_route_long_name());
     }
 
     // optional uint32 route_color = 6;
     if (cached_has_bits & 0x00000080u) {
-      total_size += ::_pbi::WireFormatLite::UInt32SizePlusOne(this->_internal_route_color());
+      total_size += ::_pbi::WireFormatLite::UInt32SizePlusOne(
+          this->_internal_route_color());
     }
 
   }
   if (cached_has_bits & 0x00000300u) {
     // optional uint32 route_text_color = 9;
     if (cached_has_bits & 0x00000100u) {
-      total_size += ::_pbi::WireFormatLite::UInt32SizePlusOne(this->_internal_route_text_color());
+      total_size += ::_pbi::WireFormatLite::UInt32SizePlusOne(
+          this->_internal_route_text_color());
     }
 
     // optional .valhalla.mjolnir.Transit.VehicleType vehicle_type = 10;
     if (cached_has_bits & 0x00000200u) {
       total_size += 1 +
-        ::_pbi::WireFormatLite::EnumSize(this->_internal_vehicle_type());
+                    ::_pbi::WireFormatLite::EnumSize(this->_internal_vehicle_type());
     }
 
   }
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    total_size += _internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).size();
+    total_size += _internal_metadata_.unknown_fields<std::string>(::google::protobuf::internal::GetEmptyString).size();
   }
   int cached_size = ::_pbi::ToCachedSize(total_size);
   SetCachedSize(cached_size);
@@ -2381,7 +2285,7 @@ size_t Transit_Route::ByteSizeLong() const {
 }
 
 void Transit_Route::CheckTypeAndMergeFrom(
-    const ::PROTOBUF_NAMESPACE_ID::MessageLite& from) {
+    const ::google::protobuf::MessageLite& from) {
   MergeFrom(*::_pbi::DownCast<const Transit_Route*>(
       &from));
 }
@@ -2389,8 +2293,8 @@ void Transit_Route::CheckTypeAndMergeFrom(
 void Transit_Route::MergeFrom(const Transit_Route& from) {
   Transit_Route* const _this = this;
   // @@protoc_insertion_point(class_specific_merge_from_start:valhalla.mjolnir.Transit.Route)
-  GOOGLE_DCHECK_NE(&from, _this);
-  uint32_t cached_has_bits = 0;
+  ABSL_DCHECK_NE(&from, _this);
+  ::uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   cached_has_bits = from._impl_._has_bits_[0];
@@ -2440,7 +2344,7 @@ void Transit_Route::CopyFrom(const Transit_Route& from) {
   MergeFrom(from);
 }
 
-bool Transit_Route::IsInitialized() const {
+PROTOBUF_NOINLINE bool Transit_Route::IsInitialized() const {
   return true;
 }
 
@@ -2450,35 +2354,21 @@ void Transit_Route::InternalSwap(Transit_Route* other) {
   auto* rhs_arena = other->GetArenaForAllocation();
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   swap(_impl_._has_bits_[0], other->_impl_._has_bits_[0]);
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &_impl_.name_, lhs_arena,
-      &other->_impl_.name_, rhs_arena
-  );
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &_impl_.onestop_id_, lhs_arena,
-      &other->_impl_.onestop_id_, rhs_arena
-  );
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &_impl_.operated_by_name_, lhs_arena,
-      &other->_impl_.operated_by_name_, rhs_arena
-  );
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &_impl_.operated_by_onestop_id_, lhs_arena,
-      &other->_impl_.operated_by_onestop_id_, rhs_arena
-  );
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &_impl_.operated_by_website_, lhs_arena,
-      &other->_impl_.operated_by_website_, rhs_arena
-  );
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &_impl_.route_desc_, lhs_arena,
-      &other->_impl_.route_desc_, rhs_arena
-  );
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &_impl_.route_long_name_, lhs_arena,
-      &other->_impl_.route_long_name_, rhs_arena
-  );
-  ::PROTOBUF_NAMESPACE_ID::internal::memswap<
+  ::_pbi::ArenaStringPtr::InternalSwap(&_impl_.name_, lhs_arena,
+                                       &other->_impl_.name_, rhs_arena);
+  ::_pbi::ArenaStringPtr::InternalSwap(&_impl_.onestop_id_, lhs_arena,
+                                       &other->_impl_.onestop_id_, rhs_arena);
+  ::_pbi::ArenaStringPtr::InternalSwap(&_impl_.operated_by_name_, lhs_arena,
+                                       &other->_impl_.operated_by_name_, rhs_arena);
+  ::_pbi::ArenaStringPtr::InternalSwap(&_impl_.operated_by_onestop_id_, lhs_arena,
+                                       &other->_impl_.operated_by_onestop_id_, rhs_arena);
+  ::_pbi::ArenaStringPtr::InternalSwap(&_impl_.operated_by_website_, lhs_arena,
+                                       &other->_impl_.operated_by_website_, rhs_arena);
+  ::_pbi::ArenaStringPtr::InternalSwap(&_impl_.route_desc_, lhs_arena,
+                                       &other->_impl_.route_desc_, rhs_arena);
+  ::_pbi::ArenaStringPtr::InternalSwap(&_impl_.route_long_name_, lhs_arena,
+                                       &other->_impl_.route_long_name_, rhs_arena);
+  ::google::protobuf::internal::memswap<
       PROTOBUF_FIELD_OFFSET(Transit_Route, _impl_.vehicle_type_)
       + sizeof(Transit_Route::_impl_.vehicle_type_)
       - PROTOBUF_FIELD_OFFSET(Transit_Route, _impl_.route_color_)>(
@@ -2490,12 +2380,13 @@ std::string Transit_Route::GetTypeName() const {
   return "valhalla.mjolnir.Transit.Route";
 }
 
-
 // ===================================================================
 
 class Transit_Shape::_Internal {
  public:
   using HasBits = decltype(std::declval<Transit_Shape>()._impl_._has_bits_);
+  static constexpr ::int32_t kHasBitsOffset =
+    8 * PROTOBUF_FIELD_OFFSET(Transit_Shape, _impl_._has_bits_);
   static void set_has_shape_id(HasBits* has_bits) {
     (*has_bits)[0] |= 2u;
   }
@@ -2504,71 +2395,62 @@ class Transit_Shape::_Internal {
   }
 };
 
-Transit_Shape::Transit_Shape(::PROTOBUF_NAMESPACE_ID::Arena* arena,
-                         bool is_message_owned)
-  : ::PROTOBUF_NAMESPACE_ID::MessageLite(arena, is_message_owned) {
-  SharedCtor(arena, is_message_owned);
+Transit_Shape::Transit_Shape(::google::protobuf::Arena* arena)
+    : ::google::protobuf::MessageLite(arena) {
+  SharedCtor(arena);
   // @@protoc_insertion_point(arena_constructor:valhalla.mjolnir.Transit.Shape)
 }
-Transit_Shape::Transit_Shape(const Transit_Shape& from)
-  : ::PROTOBUF_NAMESPACE_ID::MessageLite() {
-  Transit_Shape* const _this = this; (void)_this;
+Transit_Shape::Transit_Shape(const Transit_Shape& from) : ::google::protobuf::MessageLite() {
+  Transit_Shape* const _this = this;
+  (void)_this;
   new (&_impl_) Impl_{
-      decltype(_impl_._has_bits_){from._impl_._has_bits_}
-    , /*decltype(_impl_._cached_size_)*/{}
-    , decltype(_impl_.encoded_shape_){}
-    , decltype(_impl_.shape_id_){}};
-
-  _internal_metadata_.MergeFrom<std::string>(from._internal_metadata_);
+      decltype(_impl_._has_bits_){from._impl_._has_bits_},
+      /*decltype(_impl_._cached_size_)*/ {},
+      decltype(_impl_.encoded_shape_){},
+      decltype(_impl_.shape_id_){},
+  };
+  _internal_metadata_.MergeFrom<std::string>(
+      from._internal_metadata_);
   _impl_.encoded_shape_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    _impl_.encoded_shape_.Set("", GetArenaForAllocation());
-  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  if (from._internal_has_encoded_shape()) {
-    _this->_impl_.encoded_shape_.Set(from._internal_encoded_shape(), 
-      _this->GetArenaForAllocation());
+        _impl_.encoded_shape_.Set("", GetArenaForAllocation());
+  #endif  // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if ((from._impl_._has_bits_[0] & 0x00000001u) != 0) {
+    _this->_impl_.encoded_shape_.Set(from._internal_encoded_shape(), _this->GetArenaForAllocation());
   }
   _this->_impl_.shape_id_ = from._impl_.shape_id_;
+
   // @@protoc_insertion_point(copy_constructor:valhalla.mjolnir.Transit.Shape)
 }
-
-inline void Transit_Shape::SharedCtor(
-    ::_pb::Arena* arena, bool is_message_owned) {
+inline void Transit_Shape::SharedCtor(::_pb::Arena* arena) {
   (void)arena;
-  (void)is_message_owned;
   new (&_impl_) Impl_{
-      decltype(_impl_._has_bits_){}
-    , /*decltype(_impl_._cached_size_)*/{}
-    , decltype(_impl_.encoded_shape_){}
-    , decltype(_impl_.shape_id_){0u}
+      decltype(_impl_._has_bits_){},
+      /*decltype(_impl_._cached_size_)*/ {},
+      decltype(_impl_.encoded_shape_){},
+      decltype(_impl_.shape_id_){0u},
   };
   _impl_.encoded_shape_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    _impl_.encoded_shape_.Set("", GetArenaForAllocation());
-  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+        _impl_.encoded_shape_.Set("", GetArenaForAllocation());
+  #endif  // PROTOBUF_FORCE_COPY_DEFAULT_STRING
 }
-
 Transit_Shape::~Transit_Shape() {
   // @@protoc_insertion_point(destructor:valhalla.mjolnir.Transit.Shape)
-  if (auto *arena = _internal_metadata_.DeleteReturnArena<std::string>()) {
-  (void)arena;
-    return;
-  }
+  _internal_metadata_.Delete<std::string>();
   SharedDtor();
 }
-
 inline void Transit_Shape::SharedDtor() {
-  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
+  ABSL_DCHECK(GetArenaForAllocation() == nullptr);
   _impl_.encoded_shape_.Destroy();
 }
-
 void Transit_Shape::SetCachedSize(int size) const {
   _impl_._cached_size_.Set(size);
 }
 
-void Transit_Shape::Clear() {
+PROTOBUF_NOINLINE void Transit_Shape::Clear() {
 // @@protoc_insertion_point(message_clear_start:valhalla.mjolnir.Transit.Shape)
-  uint32_t cached_has_bits = 0;
+  ::uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
@@ -2581,87 +2463,84 @@ void Transit_Shape::Clear() {
   _internal_metadata_.Clear<std::string>();
 }
 
-const char* Transit_Shape::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
-#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
-  _Internal::HasBits has_bits{};
-  while (!ctx->Done(&ptr)) {
-    uint32_t tag;
-    ptr = ::_pbi::ReadTag(ptr, &tag);
-    switch (tag >> 3) {
-      // optional uint32 shape_id = 1;
-      case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 8)) {
-          _Internal::set_has_shape_id(&has_bits);
-          _impl_.shape_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
-          CHK_(ptr);
-        } else
-          goto handle_unusual;
-        continue;
-      // optional bytes encoded_shape = 2;
-      case 2:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 18)) {
-          auto str = _internal_mutable_encoded_shape();
-          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(ptr);
-        } else
-          goto handle_unusual;
-        continue;
-      default:
-        goto handle_unusual;
-    }  // switch
-  handle_unusual:
-    if ((tag == 0) || ((tag & 7) == 4)) {
-      CHK_(ptr);
-      ctx->SetLastTag(tag);
-      goto message_done;
-    }
-    ptr = UnknownFieldParse(
-        tag,
-        _internal_metadata_.mutable_unknown_fields<std::string>(),
-        ptr, ctx);
-    CHK_(ptr != nullptr);
-  }  // while
-message_done:
-  _impl_._has_bits_.Or(has_bits);
+const char* Transit_Shape::_InternalParse(
+    const char* ptr, ::_pbi::ParseContext* ctx) {
+  ptr = ::_pbi::TcParser::ParseLoop(this, ptr, ctx, &_table_.header);
   return ptr;
-failure:
-  ptr = nullptr;
-  goto message_done;
-#undef CHK_
 }
 
-uint8_t* Transit_Shape::_InternalSerialize(
-    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+
+PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1
+const ::_pbi::TcParseTable<1, 2, 0, 0, 2> Transit_Shape::_table_ = {
+  {
+    PROTOBUF_FIELD_OFFSET(Transit_Shape, _impl_._has_bits_),
+    0, // no _extensions_
+    2, 8,  // max_field_number, fast_idx_mask
+    offsetof(decltype(_table_), field_lookup_table),
+    4294967292,  // skipmap
+    offsetof(decltype(_table_), field_entries),
+    2,  // num_field_entries
+    0,  // num_aux_entries
+    offsetof(decltype(_table_), field_names),  // no aux_entries
+    &_Transit_Shape_default_instance_._instance,
+    ::_pbi::TcParser::GenericFallbackLite,  // fallback
+  }, {{
+    // optional bytes encoded_shape = 2;
+    {::_pbi::TcParser::FastBS1,
+     {18, 0, 0, PROTOBUF_FIELD_OFFSET(Transit_Shape, _impl_.encoded_shape_)}},
+    // optional uint32 shape_id = 1;
+    {::_pbi::TcParser::FastV32S1,
+     {8, 1, 0, PROTOBUF_FIELD_OFFSET(Transit_Shape, _impl_.shape_id_)}},
+  }}, {{
+    65535, 65535
+  }}, {{
+    // optional uint32 shape_id = 1;
+    {PROTOBUF_FIELD_OFFSET(Transit_Shape, _impl_.shape_id_), _Internal::kHasBitsOffset + 1, 0,
+    (0 | ::_fl::kFcOptional | ::_fl::kUInt32)},
+    // optional bytes encoded_shape = 2;
+    {PROTOBUF_FIELD_OFFSET(Transit_Shape, _impl_.encoded_shape_), _Internal::kHasBitsOffset + 0, 0,
+    (0 | ::_fl::kFcOptional | ::_fl::kBytes | ::_fl::kRepAString)},
+  }},
+  // no aux_entries
+  {{
+  }},
+};
+
+::uint8_t* Transit_Shape::_InternalSerialize(
+    ::uint8_t* target,
+    ::google::protobuf::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:valhalla.mjolnir.Transit.Shape)
-  uint32_t cached_has_bits = 0;
-  (void) cached_has_bits;
+  ::uint32_t cached_has_bits = 0;
+  (void)cached_has_bits;
 
   cached_has_bits = _impl_._has_bits_[0];
   // optional uint32 shape_id = 1;
   if (cached_has_bits & 0x00000002u) {
     target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteUInt32ToArray(1, this->_internal_shape_id(), target);
+    target = ::_pbi::WireFormatLite::WriteUInt32ToArray(
+        1, this->_internal_shape_id(), target);
   }
 
   // optional bytes encoded_shape = 2;
   if (cached_has_bits & 0x00000001u) {
-    target = stream->WriteBytesMaybeAliased(
-        2, this->_internal_encoded_shape(), target);
+    const std::string& _s = this->_internal_encoded_shape();
+    target = stream->WriteBytesMaybeAliased(2, _s, target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target = stream->WriteRaw(_internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).data(),
-        static_cast<int>(_internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).size()), target);
+    target = stream->WriteRaw(
+        _internal_metadata_.unknown_fields<std::string>(::google::protobuf::internal::GetEmptyString).data(),
+        static_cast<int>(_internal_metadata_.unknown_fields<std::string>(::google::protobuf::internal::GetEmptyString).size()), target);
   }
   // @@protoc_insertion_point(serialize_to_array_end:valhalla.mjolnir.Transit.Shape)
   return target;
 }
 
-size_t Transit_Shape::ByteSizeLong() const {
+::size_t Transit_Shape::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:valhalla.mjolnir.Transit.Shape)
-  size_t total_size = 0;
+  ::size_t total_size = 0;
 
-  uint32_t cached_has_bits = 0;
+  ::uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
@@ -2669,19 +2548,19 @@ size_t Transit_Shape::ByteSizeLong() const {
   if (cached_has_bits & 0x00000003u) {
     // optional bytes encoded_shape = 2;
     if (cached_has_bits & 0x00000001u) {
-      total_size += 1 +
-        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::BytesSize(
-          this->_internal_encoded_shape());
+      total_size += 1 + ::google::protobuf::internal::WireFormatLite::BytesSize(
+                                      this->_internal_encoded_shape());
     }
 
     // optional uint32 shape_id = 1;
     if (cached_has_bits & 0x00000002u) {
-      total_size += ::_pbi::WireFormatLite::UInt32SizePlusOne(this->_internal_shape_id());
+      total_size += ::_pbi::WireFormatLite::UInt32SizePlusOne(
+          this->_internal_shape_id());
     }
 
   }
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    total_size += _internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).size();
+    total_size += _internal_metadata_.unknown_fields<std::string>(::google::protobuf::internal::GetEmptyString).size();
   }
   int cached_size = ::_pbi::ToCachedSize(total_size);
   SetCachedSize(cached_size);
@@ -2689,7 +2568,7 @@ size_t Transit_Shape::ByteSizeLong() const {
 }
 
 void Transit_Shape::CheckTypeAndMergeFrom(
-    const ::PROTOBUF_NAMESPACE_ID::MessageLite& from) {
+    const ::google::protobuf::MessageLite& from) {
   MergeFrom(*::_pbi::DownCast<const Transit_Shape*>(
       &from));
 }
@@ -2697,8 +2576,8 @@ void Transit_Shape::CheckTypeAndMergeFrom(
 void Transit_Shape::MergeFrom(const Transit_Shape& from) {
   Transit_Shape* const _this = this;
   // @@protoc_insertion_point(class_specific_merge_from_start:valhalla.mjolnir.Transit.Shape)
-  GOOGLE_DCHECK_NE(&from, _this);
-  uint32_t cached_has_bits = 0;
+  ABSL_DCHECK_NE(&from, _this);
+  ::uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   cached_has_bits = from._impl_._has_bits_[0];
@@ -2721,7 +2600,7 @@ void Transit_Shape::CopyFrom(const Transit_Shape& from) {
   MergeFrom(from);
 }
 
-bool Transit_Shape::IsInitialized() const {
+PROTOBUF_NOINLINE bool Transit_Shape::IsInitialized() const {
   return true;
 }
 
@@ -2731,17 +2610,14 @@ void Transit_Shape::InternalSwap(Transit_Shape* other) {
   auto* rhs_arena = other->GetArenaForAllocation();
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   swap(_impl_._has_bits_[0], other->_impl_._has_bits_[0]);
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &_impl_.encoded_shape_, lhs_arena,
-      &other->_impl_.encoded_shape_, rhs_arena
-  );
-  swap(_impl_.shape_id_, other->_impl_.shape_id_);
+  ::_pbi::ArenaStringPtr::InternalSwap(&_impl_.encoded_shape_, lhs_arena,
+                                       &other->_impl_.encoded_shape_, rhs_arena);
+        swap(_impl_.shape_id_, other->_impl_.shape_id_);
 }
 
 std::string Transit_Shape::GetTypeName() const {
   return "valhalla.mjolnir.Transit.Shape";
 }
-
 
 // ===================================================================
 
@@ -2749,238 +2625,205 @@ class Transit::_Internal {
  public:
 };
 
-Transit::Transit(::PROTOBUF_NAMESPACE_ID::Arena* arena,
-                         bool is_message_owned)
-  : ::PROTOBUF_NAMESPACE_ID::MessageLite(arena, is_message_owned) {
-  SharedCtor(arena, is_message_owned);
+Transit::Transit(::google::protobuf::Arena* arena)
+    : ::google::protobuf::MessageLite(arena) {
+  SharedCtor(arena);
   // @@protoc_insertion_point(arena_constructor:valhalla.mjolnir.Transit)
 }
-Transit::Transit(const Transit& from)
-  : ::PROTOBUF_NAMESPACE_ID::MessageLite() {
-  Transit* const _this = this; (void)_this;
+Transit::Transit(const Transit& from) : ::google::protobuf::MessageLite() {
+  Transit* const _this = this;
+  (void)_this;
   new (&_impl_) Impl_{
-      decltype(_impl_.nodes_){from._impl_.nodes_}
-    , decltype(_impl_.stop_pairs_){from._impl_.stop_pairs_}
-    , decltype(_impl_.routes_){from._impl_.routes_}
-    , decltype(_impl_.shapes_){from._impl_.shapes_}
-    , /*decltype(_impl_._cached_size_)*/{}};
+      decltype(_impl_.nodes_){from._impl_.nodes_},
+      decltype(_impl_.stop_pairs_){from._impl_.stop_pairs_},
+      decltype(_impl_.routes_){from._impl_.routes_},
+      decltype(_impl_.shapes_){from._impl_.shapes_},
+      /*decltype(_impl_._cached_size_)*/ {},
+  };
+  _internal_metadata_.MergeFrom<std::string>(
+      from._internal_metadata_);
 
-  _internal_metadata_.MergeFrom<std::string>(from._internal_metadata_);
   // @@protoc_insertion_point(copy_constructor:valhalla.mjolnir.Transit)
 }
-
-inline void Transit::SharedCtor(
-    ::_pb::Arena* arena, bool is_message_owned) {
+inline void Transit::SharedCtor(::_pb::Arena* arena) {
   (void)arena;
-  (void)is_message_owned;
   new (&_impl_) Impl_{
-      decltype(_impl_.nodes_){arena}
-    , decltype(_impl_.stop_pairs_){arena}
-    , decltype(_impl_.routes_){arena}
-    , decltype(_impl_.shapes_){arena}
-    , /*decltype(_impl_._cached_size_)*/{}
+      decltype(_impl_.nodes_){arena},
+      decltype(_impl_.stop_pairs_){arena},
+      decltype(_impl_.routes_){arena},
+      decltype(_impl_.shapes_){arena},
+      /*decltype(_impl_._cached_size_)*/ {},
   };
 }
-
 Transit::~Transit() {
   // @@protoc_insertion_point(destructor:valhalla.mjolnir.Transit)
-  if (auto *arena = _internal_metadata_.DeleteReturnArena<std::string>()) {
-  (void)arena;
-    return;
-  }
+  _internal_metadata_.Delete<std::string>();
   SharedDtor();
 }
-
 inline void Transit::SharedDtor() {
-  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
+  ABSL_DCHECK(GetArenaForAllocation() == nullptr);
   _impl_.nodes_.~RepeatedPtrField();
   _impl_.stop_pairs_.~RepeatedPtrField();
   _impl_.routes_.~RepeatedPtrField();
   _impl_.shapes_.~RepeatedPtrField();
 }
-
 void Transit::SetCachedSize(int size) const {
   _impl_._cached_size_.Set(size);
 }
 
-void Transit::Clear() {
+PROTOBUF_NOINLINE void Transit::Clear() {
 // @@protoc_insertion_point(message_clear_start:valhalla.mjolnir.Transit)
-  uint32_t cached_has_bits = 0;
+  ::uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  _impl_.nodes_.Clear();
-  _impl_.stop_pairs_.Clear();
-  _impl_.routes_.Clear();
-  _impl_.shapes_.Clear();
+  _internal_mutable_nodes()->Clear();
+  _internal_mutable_stop_pairs()->Clear();
+  _internal_mutable_routes()->Clear();
+  _internal_mutable_shapes()->Clear();
   _internal_metadata_.Clear<std::string>();
 }
 
-const char* Transit::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
-#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
-  while (!ctx->Done(&ptr)) {
-    uint32_t tag;
-    ptr = ::_pbi::ReadTag(ptr, &tag);
-    switch (tag >> 3) {
-      // repeated .valhalla.mjolnir.Transit.Node nodes = 1;
-      case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
-          ptr -= 1;
-          do {
-            ptr += 1;
-            ptr = ctx->ParseMessage(_internal_add_nodes(), ptr);
-            CHK_(ptr);
-            if (!ctx->DataAvailable(ptr)) break;
-          } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<10>(ptr));
-        } else
-          goto handle_unusual;
-        continue;
-      // repeated .valhalla.mjolnir.Transit.StopPair stop_pairs = 2;
-      case 2:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 18)) {
-          ptr -= 1;
-          do {
-            ptr += 1;
-            ptr = ctx->ParseMessage(_internal_add_stop_pairs(), ptr);
-            CHK_(ptr);
-            if (!ctx->DataAvailable(ptr)) break;
-          } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<18>(ptr));
-        } else
-          goto handle_unusual;
-        continue;
-      // repeated .valhalla.mjolnir.Transit.Route routes = 3;
-      case 3:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 26)) {
-          ptr -= 1;
-          do {
-            ptr += 1;
-            ptr = ctx->ParseMessage(_internal_add_routes(), ptr);
-            CHK_(ptr);
-            if (!ctx->DataAvailable(ptr)) break;
-          } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<26>(ptr));
-        } else
-          goto handle_unusual;
-        continue;
-      // repeated .valhalla.mjolnir.Transit.Shape shapes = 4;
-      case 4:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 34)) {
-          ptr -= 1;
-          do {
-            ptr += 1;
-            ptr = ctx->ParseMessage(_internal_add_shapes(), ptr);
-            CHK_(ptr);
-            if (!ctx->DataAvailable(ptr)) break;
-          } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<34>(ptr));
-        } else
-          goto handle_unusual;
-        continue;
-      default:
-        goto handle_unusual;
-    }  // switch
-  handle_unusual:
-    if ((tag == 0) || ((tag & 7) == 4)) {
-      CHK_(ptr);
-      ctx->SetLastTag(tag);
-      goto message_done;
-    }
-    ptr = UnknownFieldParse(
-        tag,
-        _internal_metadata_.mutable_unknown_fields<std::string>(),
-        ptr, ctx);
-    CHK_(ptr != nullptr);
-  }  // while
-message_done:
+const char* Transit::_InternalParse(
+    const char* ptr, ::_pbi::ParseContext* ctx) {
+  ptr = ::_pbi::TcParser::ParseLoop(this, ptr, ctx, &_table_.header);
   return ptr;
-failure:
-  ptr = nullptr;
-  goto message_done;
-#undef CHK_
 }
 
-uint8_t* Transit::_InternalSerialize(
-    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+
+PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1
+const ::_pbi::TcParseTable<2, 4, 4, 0, 2> Transit::_table_ = {
+  {
+    0,  // no _has_bits_
+    0, // no _extensions_
+    4, 24,  // max_field_number, fast_idx_mask
+    offsetof(decltype(_table_), field_lookup_table),
+    4294967280,  // skipmap
+    offsetof(decltype(_table_), field_entries),
+    4,  // num_field_entries
+    4,  // num_aux_entries
+    offsetof(decltype(_table_), aux_entries),
+    &_Transit_default_instance_._instance,
+    ::_pbi::TcParser::GenericFallbackLite,  // fallback
+  }, {{
+    // repeated .valhalla.mjolnir.Transit.Shape shapes = 4;
+    {::_pbi::TcParser::FastMtR1,
+     {34, 63, 3, PROTOBUF_FIELD_OFFSET(Transit, _impl_.shapes_)}},
+    // repeated .valhalla.mjolnir.Transit.Node nodes = 1;
+    {::_pbi::TcParser::FastMtR1,
+     {10, 63, 0, PROTOBUF_FIELD_OFFSET(Transit, _impl_.nodes_)}},
+    // repeated .valhalla.mjolnir.Transit.StopPair stop_pairs = 2;
+    {::_pbi::TcParser::FastMtR1,
+     {18, 63, 1, PROTOBUF_FIELD_OFFSET(Transit, _impl_.stop_pairs_)}},
+    // repeated .valhalla.mjolnir.Transit.Route routes = 3;
+    {::_pbi::TcParser::FastMtR1,
+     {26, 63, 2, PROTOBUF_FIELD_OFFSET(Transit, _impl_.routes_)}},
+  }}, {{
+    65535, 65535
+  }}, {{
+    // repeated .valhalla.mjolnir.Transit.Node nodes = 1;
+    {PROTOBUF_FIELD_OFFSET(Transit, _impl_.nodes_), 0, 0,
+    (0 | ::_fl::kFcRepeated | ::_fl::kMessage | ::_fl::kTvTable)},
+    // repeated .valhalla.mjolnir.Transit.StopPair stop_pairs = 2;
+    {PROTOBUF_FIELD_OFFSET(Transit, _impl_.stop_pairs_), 0, 1,
+    (0 | ::_fl::kFcRepeated | ::_fl::kMessage | ::_fl::kTvTable)},
+    // repeated .valhalla.mjolnir.Transit.Route routes = 3;
+    {PROTOBUF_FIELD_OFFSET(Transit, _impl_.routes_), 0, 2,
+    (0 | ::_fl::kFcRepeated | ::_fl::kMessage | ::_fl::kTvTable)},
+    // repeated .valhalla.mjolnir.Transit.Shape shapes = 4;
+    {PROTOBUF_FIELD_OFFSET(Transit, _impl_.shapes_), 0, 3,
+    (0 | ::_fl::kFcRepeated | ::_fl::kMessage | ::_fl::kTvTable)},
+  }}, {{
+    {::_pbi::TcParser::GetTable<::valhalla::mjolnir::Transit_Node>()},
+    {::_pbi::TcParser::GetTable<::valhalla::mjolnir::Transit_StopPair>()},
+    {::_pbi::TcParser::GetTable<::valhalla::mjolnir::Transit_Route>()},
+    {::_pbi::TcParser::GetTable<::valhalla::mjolnir::Transit_Shape>()},
+  }}, {{
+  }},
+};
+
+::uint8_t* Transit::_InternalSerialize(
+    ::uint8_t* target,
+    ::google::protobuf::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:valhalla.mjolnir.Transit)
-  uint32_t cached_has_bits = 0;
-  (void) cached_has_bits;
+  ::uint32_t cached_has_bits = 0;
+  (void)cached_has_bits;
 
   // repeated .valhalla.mjolnir.Transit.Node nodes = 1;
   for (unsigned i = 0,
       n = static_cast<unsigned>(this->_internal_nodes_size()); i < n; i++) {
-    const auto& repfield = this->_internal_nodes(i);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
+    const auto& repfield = this->_internal_nodes().Get(i);
+    target = ::google::protobuf::internal::WireFormatLite::
         InternalWriteMessage(1, repfield, repfield.GetCachedSize(), target, stream);
   }
 
   // repeated .valhalla.mjolnir.Transit.StopPair stop_pairs = 2;
   for (unsigned i = 0,
       n = static_cast<unsigned>(this->_internal_stop_pairs_size()); i < n; i++) {
-    const auto& repfield = this->_internal_stop_pairs(i);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
+    const auto& repfield = this->_internal_stop_pairs().Get(i);
+    target = ::google::protobuf::internal::WireFormatLite::
         InternalWriteMessage(2, repfield, repfield.GetCachedSize(), target, stream);
   }
 
   // repeated .valhalla.mjolnir.Transit.Route routes = 3;
   for (unsigned i = 0,
       n = static_cast<unsigned>(this->_internal_routes_size()); i < n; i++) {
-    const auto& repfield = this->_internal_routes(i);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
+    const auto& repfield = this->_internal_routes().Get(i);
+    target = ::google::protobuf::internal::WireFormatLite::
         InternalWriteMessage(3, repfield, repfield.GetCachedSize(), target, stream);
   }
 
   // repeated .valhalla.mjolnir.Transit.Shape shapes = 4;
   for (unsigned i = 0,
       n = static_cast<unsigned>(this->_internal_shapes_size()); i < n; i++) {
-    const auto& repfield = this->_internal_shapes(i);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
+    const auto& repfield = this->_internal_shapes().Get(i);
+    target = ::google::protobuf::internal::WireFormatLite::
         InternalWriteMessage(4, repfield, repfield.GetCachedSize(), target, stream);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target = stream->WriteRaw(_internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).data(),
-        static_cast<int>(_internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).size()), target);
+    target = stream->WriteRaw(
+        _internal_metadata_.unknown_fields<std::string>(::google::protobuf::internal::GetEmptyString).data(),
+        static_cast<int>(_internal_metadata_.unknown_fields<std::string>(::google::protobuf::internal::GetEmptyString).size()), target);
   }
   // @@protoc_insertion_point(serialize_to_array_end:valhalla.mjolnir.Transit)
   return target;
 }
 
-size_t Transit::ByteSizeLong() const {
+::size_t Transit::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:valhalla.mjolnir.Transit)
-  size_t total_size = 0;
+  ::size_t total_size = 0;
 
-  uint32_t cached_has_bits = 0;
+  ::uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
   // repeated .valhalla.mjolnir.Transit.Node nodes = 1;
   total_size += 1UL * this->_internal_nodes_size();
-  for (const auto& msg : this->_impl_.nodes_) {
+  for (const auto& msg : this->_internal_nodes()) {
     total_size +=
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(msg);
+      ::google::protobuf::internal::WireFormatLite::MessageSize(msg);
   }
-
   // repeated .valhalla.mjolnir.Transit.StopPair stop_pairs = 2;
   total_size += 1UL * this->_internal_stop_pairs_size();
-  for (const auto& msg : this->_impl_.stop_pairs_) {
+  for (const auto& msg : this->_internal_stop_pairs()) {
     total_size +=
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(msg);
+      ::google::protobuf::internal::WireFormatLite::MessageSize(msg);
   }
-
   // repeated .valhalla.mjolnir.Transit.Route routes = 3;
   total_size += 1UL * this->_internal_routes_size();
-  for (const auto& msg : this->_impl_.routes_) {
+  for (const auto& msg : this->_internal_routes()) {
     total_size +=
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(msg);
+      ::google::protobuf::internal::WireFormatLite::MessageSize(msg);
   }
-
   // repeated .valhalla.mjolnir.Transit.Shape shapes = 4;
   total_size += 1UL * this->_internal_shapes_size();
-  for (const auto& msg : this->_impl_.shapes_) {
+  for (const auto& msg : this->_internal_shapes()) {
     total_size +=
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(msg);
+      ::google::protobuf::internal::WireFormatLite::MessageSize(msg);
   }
-
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    total_size += _internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).size();
+    total_size += _internal_metadata_.unknown_fields<std::string>(::google::protobuf::internal::GetEmptyString).size();
   }
   int cached_size = ::_pbi::ToCachedSize(total_size);
   SetCachedSize(cached_size);
@@ -2988,7 +2831,7 @@ size_t Transit::ByteSizeLong() const {
 }
 
 void Transit::CheckTypeAndMergeFrom(
-    const ::PROTOBUF_NAMESPACE_ID::MessageLite& from) {
+    const ::google::protobuf::MessageLite& from) {
   MergeFrom(*::_pbi::DownCast<const Transit*>(
       &from));
 }
@@ -2996,14 +2839,14 @@ void Transit::CheckTypeAndMergeFrom(
 void Transit::MergeFrom(const Transit& from) {
   Transit* const _this = this;
   // @@protoc_insertion_point(class_specific_merge_from_start:valhalla.mjolnir.Transit)
-  GOOGLE_DCHECK_NE(&from, _this);
-  uint32_t cached_has_bits = 0;
+  ABSL_DCHECK_NE(&from, _this);
+  ::uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  _this->_impl_.nodes_.MergeFrom(from._impl_.nodes_);
-  _this->_impl_.stop_pairs_.MergeFrom(from._impl_.stop_pairs_);
-  _this->_impl_.routes_.MergeFrom(from._impl_.routes_);
-  _this->_impl_.shapes_.MergeFrom(from._impl_.shapes_);
+  _this->_internal_mutable_nodes()->MergeFrom(from._internal_nodes());
+  _this->_internal_mutable_stop_pairs()->MergeFrom(from._internal_stop_pairs());
+  _this->_internal_mutable_routes()->MergeFrom(from._internal_routes());
+  _this->_internal_mutable_shapes()->MergeFrom(from._internal_shapes());
   _this->_internal_metadata_.MergeFrom<std::string>(from._internal_metadata_);
 }
 
@@ -3014,7 +2857,7 @@ void Transit::CopyFrom(const Transit& from) {
   MergeFrom(from);
 }
 
-bool Transit::IsInitialized() const {
+PROTOBUF_NOINLINE bool Transit::IsInitialized() const {
   return true;
 }
 
@@ -3031,32 +2874,12 @@ std::string Transit::GetTypeName() const {
   return "valhalla.mjolnir.Transit";
 }
 
-
 // @@protoc_insertion_point(namespace_scope)
 }  // namespace mjolnir
 }  // namespace valhalla
-PROTOBUF_NAMESPACE_OPEN
-template<> PROTOBUF_NOINLINE ::valhalla::mjolnir::Transit_Node*
-Arena::CreateMaybeMessage< ::valhalla::mjolnir::Transit_Node >(Arena* arena) {
-  return Arena::CreateMessageInternal< ::valhalla::mjolnir::Transit_Node >(arena);
-}
-template<> PROTOBUF_NOINLINE ::valhalla::mjolnir::Transit_StopPair*
-Arena::CreateMaybeMessage< ::valhalla::mjolnir::Transit_StopPair >(Arena* arena) {
-  return Arena::CreateMessageInternal< ::valhalla::mjolnir::Transit_StopPair >(arena);
-}
-template<> PROTOBUF_NOINLINE ::valhalla::mjolnir::Transit_Route*
-Arena::CreateMaybeMessage< ::valhalla::mjolnir::Transit_Route >(Arena* arena) {
-  return Arena::CreateMessageInternal< ::valhalla::mjolnir::Transit_Route >(arena);
-}
-template<> PROTOBUF_NOINLINE ::valhalla::mjolnir::Transit_Shape*
-Arena::CreateMaybeMessage< ::valhalla::mjolnir::Transit_Shape >(Arena* arena) {
-  return Arena::CreateMessageInternal< ::valhalla::mjolnir::Transit_Shape >(arena);
-}
-template<> PROTOBUF_NOINLINE ::valhalla::mjolnir::Transit*
-Arena::CreateMaybeMessage< ::valhalla::mjolnir::Transit >(Arena* arena) {
-  return Arena::CreateMessageInternal< ::valhalla::mjolnir::Transit >(arena);
-}
-PROTOBUF_NAMESPACE_CLOSE
-
+namespace google {
+namespace protobuf {
+}  // namespace protobuf
+}  // namespace google
 // @@protoc_insertion_point(global_scope)
-#include <google/protobuf/port_undef.inc>
+#include "google/protobuf/port_undef.inc"

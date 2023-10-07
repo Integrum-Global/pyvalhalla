@@ -4,268 +4,291 @@
 #include "options.pb.h"
 
 #include <algorithm>
-
-#include <google/protobuf/io/coded_stream.h>
-#include <google/protobuf/extension_set.h>
-#include <google/protobuf/wire_format_lite.h>
-#include <google/protobuf/io/zero_copy_stream_impl_lite.h>
+#include "google/protobuf/io/coded_stream.h"
+#include "google/protobuf/extension_set.h"
+#include "google/protobuf/wire_format_lite.h"
+#include "google/protobuf/io/zero_copy_stream_impl_lite.h"
+#include "google/protobuf/generated_message_tctable_impl.h"
 // @@protoc_insertion_point(includes)
-#include <google/protobuf/port_def.inc>
 
+// Must be included last.
+#include "google/protobuf/port_def.inc"
 PROTOBUF_PRAGMA_INIT_SEG
-
-namespace _pb = ::PROTOBUF_NAMESPACE_ID;
-namespace _pbi = _pb::internal;
-
+namespace _pb = ::google::protobuf;
+namespace _pbi = ::google::protobuf::internal;
+namespace _fl = ::google::protobuf::internal::field_layout;
 namespace valhalla {
-PROTOBUF_CONSTEXPR Contour::Contour(
-    ::_pbi::ConstantInitialized): _impl_{
-    /*decltype(_impl_.has_time_)*/{}
-  , /*decltype(_impl_.has_color_)*/{}
-  , /*decltype(_impl_.has_distance_)*/{}
-  , /*decltype(_impl_._cached_size_)*/{}
-  , /*decltype(_impl_._oneof_case_)*/{}} {}
+        template <typename>
+PROTOBUF_CONSTEXPR Contour::Contour(::_pbi::ConstantInitialized)
+    : _impl_{
+      /*decltype(_impl_.has_time_)*/ {},
+      /*decltype(_impl_.has_color_)*/ {},
+      /*decltype(_impl_.has_distance_)*/ {},
+      /*decltype(_impl_._cached_size_)*/ {},
+      /*decltype(_impl_._oneof_case_)*/ {},
+    } {}
 struct ContourDefaultTypeInternal {
-  PROTOBUF_CONSTEXPR ContourDefaultTypeInternal()
-      : _instance(::_pbi::ConstantInitialized{}) {}
+  PROTOBUF_CONSTEXPR ContourDefaultTypeInternal() : _instance(::_pbi::ConstantInitialized{}) {}
   ~ContourDefaultTypeInternal() {}
   union {
     Contour _instance;
   };
 };
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 ContourDefaultTypeInternal _Contour_default_instance_;
-PROTOBUF_CONSTEXPR Ring::Ring(
-    ::_pbi::ConstantInitialized): _impl_{
-    /*decltype(_impl_.coords_)*/{}
-  , /*decltype(_impl_._cached_size_)*/{}} {}
+
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
+    PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 ContourDefaultTypeInternal _Contour_default_instance_;
+        template <typename>
+PROTOBUF_CONSTEXPR Ring::Ring(::_pbi::ConstantInitialized)
+    : _impl_{
+      /*decltype(_impl_.coords_)*/ {},
+      /*decltype(_impl_._cached_size_)*/ {},
+    } {}
 struct RingDefaultTypeInternal {
-  PROTOBUF_CONSTEXPR RingDefaultTypeInternal()
-      : _instance(::_pbi::ConstantInitialized{}) {}
+  PROTOBUF_CONSTEXPR RingDefaultTypeInternal() : _instance(::_pbi::ConstantInitialized{}) {}
   ~RingDefaultTypeInternal() {}
   union {
     Ring _instance;
   };
 };
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 RingDefaultTypeInternal _Ring_default_instance_;
-PROTOBUF_CONSTEXPR PbfFieldSelector::PbfFieldSelector(
-    ::_pbi::ConstantInitialized): _impl_{
-    /*decltype(_impl_.options_)*/false
-  , /*decltype(_impl_.trip_)*/false
-  , /*decltype(_impl_.directions_)*/false
-  , /*decltype(_impl_.status_)*/false
-  , /*decltype(_impl_._cached_size_)*/{}} {}
+
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
+    PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 RingDefaultTypeInternal _Ring_default_instance_;
+        template <typename>
+PROTOBUF_CONSTEXPR PbfFieldSelector::PbfFieldSelector(::_pbi::ConstantInitialized)
+    : _impl_{
+      /*decltype(_impl_.options_)*/ false,
+      /*decltype(_impl_.trip_)*/ false,
+      /*decltype(_impl_.directions_)*/ false,
+      /*decltype(_impl_.status_)*/ false,
+      /*decltype(_impl_._cached_size_)*/ {},
+    } {}
 struct PbfFieldSelectorDefaultTypeInternal {
-  PROTOBUF_CONSTEXPR PbfFieldSelectorDefaultTypeInternal()
-      : _instance(::_pbi::ConstantInitialized{}) {}
+  PROTOBUF_CONSTEXPR PbfFieldSelectorDefaultTypeInternal() : _instance(::_pbi::ConstantInitialized{}) {}
   ~PbfFieldSelectorDefaultTypeInternal() {}
   union {
     PbfFieldSelector _instance;
   };
 };
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 PbfFieldSelectorDefaultTypeInternal _PbfFieldSelector_default_instance_;
-PROTOBUF_CONSTEXPR AvoidEdge::AvoidEdge(
-    ::_pbi::ConstantInitialized): _impl_{
-    /*decltype(_impl_.has_id_)*/{}
-  , /*decltype(_impl_.has_percent_along_)*/{}
-  , /*decltype(_impl_._cached_size_)*/{}
-  , /*decltype(_impl_._oneof_case_)*/{}} {}
+
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
+    PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 PbfFieldSelectorDefaultTypeInternal _PbfFieldSelector_default_instance_;
+        template <typename>
+PROTOBUF_CONSTEXPR AvoidEdge::AvoidEdge(::_pbi::ConstantInitialized)
+    : _impl_{
+      /*decltype(_impl_.has_id_)*/ {},
+      /*decltype(_impl_.has_percent_along_)*/ {},
+      /*decltype(_impl_._cached_size_)*/ {},
+      /*decltype(_impl_._oneof_case_)*/ {},
+    } {}
 struct AvoidEdgeDefaultTypeInternal {
-  PROTOBUF_CONSTEXPR AvoidEdgeDefaultTypeInternal()
-      : _instance(::_pbi::ConstantInitialized{}) {}
+  PROTOBUF_CONSTEXPR AvoidEdgeDefaultTypeInternal() : _instance(::_pbi::ConstantInitialized{}) {}
   ~AvoidEdgeDefaultTypeInternal() {}
   union {
     AvoidEdge _instance;
   };
 };
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 AvoidEdgeDefaultTypeInternal _AvoidEdge_default_instance_;
-PROTOBUF_CONSTEXPR Costing_Options::Costing_Options(
-    ::_pbi::ConstantInitialized): _impl_{
-    /*decltype(_impl_.filter_stop_ids_)*/{}
-  , /*decltype(_impl_.filter_operator_ids_)*/{}
-  , /*decltype(_impl_.filter_route_ids_)*/{}
-  , /*decltype(_impl_.exclude_edges_)*/{}
-  , /*decltype(_impl_.filter_stop_action_)*/0
-  , /*decltype(_impl_.filter_operator_action_)*/0
-  , /*decltype(_impl_.filter_route_action_)*/0
-  , /*decltype(_impl_.fixed_speed_)*/0u
-  , /*decltype(_impl_.axle_count_)*/0u
-  , /*decltype(_impl_.use_lit_)*/0
-  , /*decltype(_impl_.disable_hierarchy_pruning_)*/false
-  , /*decltype(_impl_.has_maneuver_penalty_)*/{}
-  , /*decltype(_impl_.has_destination_only_penalty_)*/{}
-  , /*decltype(_impl_.has_gate_cost_)*/{}
-  , /*decltype(_impl_.has_gate_penalty_)*/{}
-  , /*decltype(_impl_.has_toll_booth_cost_)*/{}
-  , /*decltype(_impl_.has_toll_booth_penalty_)*/{}
-  , /*decltype(_impl_.has_alley_penalty_)*/{}
-  , /*decltype(_impl_.has_country_crossing_cost_)*/{}
-  , /*decltype(_impl_.has_country_crossing_penalty_)*/{}
-  , /*decltype(_impl_.has_ferry_cost_)*/{}
-  , /*decltype(_impl_.has_avoid_bad_surfaces_)*/{}
-  , /*decltype(_impl_.has_use_ferry_)*/{}
-  , /*decltype(_impl_.has_use_highways_)*/{}
-  , /*decltype(_impl_.has_use_tolls_)*/{}
-  , /*decltype(_impl_.has_use_roads_)*/{}
-  , /*decltype(_impl_.has_max_distance_)*/{}
-  , /*decltype(_impl_.has_walking_speed_)*/{}
-  , /*decltype(_impl_.has_step_penalty_)*/{}
-  , /*decltype(_impl_.has_max_grade_)*/{}
-  , /*decltype(_impl_.has_max_hiking_difficulty_)*/{}
-  , /*decltype(_impl_.has_mode_factor_)*/{}
-  , /*decltype(_impl_.has_walkway_factor_)*/{}
-  , /*decltype(_impl_.has_sidewalk_factor_)*/{}
-  , /*decltype(_impl_.has_alley_factor_)*/{}
-  , /*decltype(_impl_.has_driveway_factor_)*/{}
-  , /*decltype(_impl_.has_driveway_penalty_)*/{}
-  , /*decltype(_impl_.has_transit_start_end_max_distance_)*/{}
-  , /*decltype(_impl_.has_transit_transfer_max_distance_)*/{}
-  , /*decltype(_impl_.has_transport_type_)*/{}
-  , /*decltype(_impl_.has_top_speed_)*/{}
-  , /*decltype(_impl_.has_use_hills_)*/{}
-  , /*decltype(_impl_.has_use_primary_)*/{}
-  , /*decltype(_impl_.has_use_trails_)*/{}
-  , /*decltype(_impl_.has_low_class_penalty_)*/{}
-  , /*decltype(_impl_.has_hazmat_)*/{}
-  , /*decltype(_impl_.has_weight_)*/{}
-  , /*decltype(_impl_.has_axle_load_)*/{}
-  , /*decltype(_impl_.has_height_)*/{}
-  , /*decltype(_impl_.has_width_)*/{}
-  , /*decltype(_impl_.has_length_)*/{}
-  , /*decltype(_impl_.has_cycling_speed_)*/{}
-  , /*decltype(_impl_.has_wheelchair_)*/{}
-  , /*decltype(_impl_.has_bicycle_)*/{}
-  , /*decltype(_impl_.has_use_bus_)*/{}
-  , /*decltype(_impl_.has_use_rail_)*/{}
-  , /*decltype(_impl_.has_use_transfers_)*/{}
-  , /*decltype(_impl_.has_transfer_cost_)*/{}
-  , /*decltype(_impl_.has_transfer_penalty_)*/{}
-  , /*decltype(_impl_.has_flow_mask_)*/{}
-  , /*decltype(_impl_.has_bike_share_cost_)*/{}
-  , /*decltype(_impl_.has_bike_share_penalty_)*/{}
-  , /*decltype(_impl_.has_rail_ferry_cost_)*/{}
-  , /*decltype(_impl_.has_use_rail_ferry_)*/{}
-  , /*decltype(_impl_.has_ignore_restrictions_)*/{}
-  , /*decltype(_impl_.has_ignore_oneways_)*/{}
-  , /*decltype(_impl_.has_ignore_access_)*/{}
-  , /*decltype(_impl_.has_ignore_closures_)*/{}
-  , /*decltype(_impl_.has_shortest_)*/{}
-  , /*decltype(_impl_.has_service_penalty_)*/{}
-  , /*decltype(_impl_.has_use_tracks_)*/{}
-  , /*decltype(_impl_.has_use_distance_)*/{}
-  , /*decltype(_impl_.has_use_living_streets_)*/{}
-  , /*decltype(_impl_.has_service_factor_)*/{}
-  , /*decltype(_impl_.has_closure_factor_)*/{}
-  , /*decltype(_impl_.has_private_access_penalty_)*/{}
-  , /*decltype(_impl_.has_exclude_unpaved_)*/{}
-  , /*decltype(_impl_.has_include_hot_)*/{}
-  , /*decltype(_impl_.has_include_hov2_)*/{}
-  , /*decltype(_impl_.has_include_hov3_)*/{}
-  , /*decltype(_impl_.has_exclude_cash_only_tolls_)*/{}
-  , /*decltype(_impl_.has_restriction_probability_)*/{}
-  , /*decltype(_impl_.has_elevator_penalty_)*/{}
-  , /*decltype(_impl_._cached_size_)*/{}
-  , /*decltype(_impl_._oneof_case_)*/{}} {}
+
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
+    PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 AvoidEdgeDefaultTypeInternal _AvoidEdge_default_instance_;
+        template <typename>
+PROTOBUF_CONSTEXPR Costing_Options::Costing_Options(::_pbi::ConstantInitialized)
+    : _impl_{
+      /*decltype(_impl_.filter_stop_ids_)*/ {},
+      /*decltype(_impl_.filter_operator_ids_)*/ {},
+      /*decltype(_impl_.filter_route_ids_)*/ {},
+      /*decltype(_impl_.exclude_edges_)*/ {},
+      /*decltype(_impl_.filter_stop_action_)*/ 0,
+      /*decltype(_impl_.filter_operator_action_)*/ 0,
+      /*decltype(_impl_.filter_route_action_)*/ 0,
+      /*decltype(_impl_.fixed_speed_)*/ 0u,
+      /*decltype(_impl_.axle_count_)*/ 0u,
+      /*decltype(_impl_.use_lit_)*/ 0,
+      /*decltype(_impl_.disable_hierarchy_pruning_)*/ false,
+      /*decltype(_impl_.has_maneuver_penalty_)*/ {},
+      /*decltype(_impl_.has_destination_only_penalty_)*/ {},
+      /*decltype(_impl_.has_gate_cost_)*/ {},
+      /*decltype(_impl_.has_gate_penalty_)*/ {},
+      /*decltype(_impl_.has_toll_booth_cost_)*/ {},
+      /*decltype(_impl_.has_toll_booth_penalty_)*/ {},
+      /*decltype(_impl_.has_alley_penalty_)*/ {},
+      /*decltype(_impl_.has_country_crossing_cost_)*/ {},
+      /*decltype(_impl_.has_country_crossing_penalty_)*/ {},
+      /*decltype(_impl_.has_ferry_cost_)*/ {},
+      /*decltype(_impl_.has_avoid_bad_surfaces_)*/ {},
+      /*decltype(_impl_.has_use_ferry_)*/ {},
+      /*decltype(_impl_.has_use_highways_)*/ {},
+      /*decltype(_impl_.has_use_tolls_)*/ {},
+      /*decltype(_impl_.has_use_roads_)*/ {},
+      /*decltype(_impl_.has_max_distance_)*/ {},
+      /*decltype(_impl_.has_walking_speed_)*/ {},
+      /*decltype(_impl_.has_step_penalty_)*/ {},
+      /*decltype(_impl_.has_max_grade_)*/ {},
+      /*decltype(_impl_.has_max_hiking_difficulty_)*/ {},
+      /*decltype(_impl_.has_mode_factor_)*/ {},
+      /*decltype(_impl_.has_walkway_factor_)*/ {},
+      /*decltype(_impl_.has_sidewalk_factor_)*/ {},
+      /*decltype(_impl_.has_alley_factor_)*/ {},
+      /*decltype(_impl_.has_driveway_factor_)*/ {},
+      /*decltype(_impl_.has_driveway_penalty_)*/ {},
+      /*decltype(_impl_.has_transit_start_end_max_distance_)*/ {},
+      /*decltype(_impl_.has_transit_transfer_max_distance_)*/ {},
+      /*decltype(_impl_.has_transport_type_)*/ {},
+      /*decltype(_impl_.has_top_speed_)*/ {},
+      /*decltype(_impl_.has_use_hills_)*/ {},
+      /*decltype(_impl_.has_use_primary_)*/ {},
+      /*decltype(_impl_.has_use_trails_)*/ {},
+      /*decltype(_impl_.has_low_class_penalty_)*/ {},
+      /*decltype(_impl_.has_hazmat_)*/ {},
+      /*decltype(_impl_.has_weight_)*/ {},
+      /*decltype(_impl_.has_axle_load_)*/ {},
+      /*decltype(_impl_.has_height_)*/ {},
+      /*decltype(_impl_.has_width_)*/ {},
+      /*decltype(_impl_.has_length_)*/ {},
+      /*decltype(_impl_.has_cycling_speed_)*/ {},
+      /*decltype(_impl_.has_wheelchair_)*/ {},
+      /*decltype(_impl_.has_bicycle_)*/ {},
+      /*decltype(_impl_.has_use_bus_)*/ {},
+      /*decltype(_impl_.has_use_rail_)*/ {},
+      /*decltype(_impl_.has_use_transfers_)*/ {},
+      /*decltype(_impl_.has_transfer_cost_)*/ {},
+      /*decltype(_impl_.has_transfer_penalty_)*/ {},
+      /*decltype(_impl_.has_flow_mask_)*/ {},
+      /*decltype(_impl_.has_bike_share_cost_)*/ {},
+      /*decltype(_impl_.has_bike_share_penalty_)*/ {},
+      /*decltype(_impl_.has_rail_ferry_cost_)*/ {},
+      /*decltype(_impl_.has_use_rail_ferry_)*/ {},
+      /*decltype(_impl_.has_ignore_restrictions_)*/ {},
+      /*decltype(_impl_.has_ignore_oneways_)*/ {},
+      /*decltype(_impl_.has_ignore_access_)*/ {},
+      /*decltype(_impl_.has_ignore_closures_)*/ {},
+      /*decltype(_impl_.has_shortest_)*/ {},
+      /*decltype(_impl_.has_service_penalty_)*/ {},
+      /*decltype(_impl_.has_use_tracks_)*/ {},
+      /*decltype(_impl_.has_use_distance_)*/ {},
+      /*decltype(_impl_.has_use_living_streets_)*/ {},
+      /*decltype(_impl_.has_service_factor_)*/ {},
+      /*decltype(_impl_.has_closure_factor_)*/ {},
+      /*decltype(_impl_.has_private_access_penalty_)*/ {},
+      /*decltype(_impl_.has_exclude_unpaved_)*/ {},
+      /*decltype(_impl_.has_include_hot_)*/ {},
+      /*decltype(_impl_.has_include_hov2_)*/ {},
+      /*decltype(_impl_.has_include_hov3_)*/ {},
+      /*decltype(_impl_.has_exclude_cash_only_tolls_)*/ {},
+      /*decltype(_impl_.has_restriction_probability_)*/ {},
+      /*decltype(_impl_.has_elevator_penalty_)*/ {},
+      /*decltype(_impl_._cached_size_)*/ {},
+      /*decltype(_impl_._oneof_case_)*/ {},
+    } {}
 struct Costing_OptionsDefaultTypeInternal {
-  PROTOBUF_CONSTEXPR Costing_OptionsDefaultTypeInternal()
-      : _instance(::_pbi::ConstantInitialized{}) {}
+  PROTOBUF_CONSTEXPR Costing_OptionsDefaultTypeInternal() : _instance(::_pbi::ConstantInitialized{}) {}
   ~Costing_OptionsDefaultTypeInternal() {}
   union {
     Costing_Options _instance;
   };
 };
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 Costing_OptionsDefaultTypeInternal _Costing_Options_default_instance_;
-PROTOBUF_CONSTEXPR Costing::Costing(
-    ::_pbi::ConstantInitialized): _impl_{
-    /*decltype(_impl_.type_)*/0
-  , /*decltype(_impl_.has_options_)*/{}
-  , /*decltype(_impl_.has_name_)*/{}
-  , /*decltype(_impl_.has_filter_closures_)*/{}
-  , /*decltype(_impl_._cached_size_)*/{}
-  , /*decltype(_impl_._oneof_case_)*/{}} {}
+
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
+    PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 Costing_OptionsDefaultTypeInternal _Costing_Options_default_instance_;
+        template <typename>
+PROTOBUF_CONSTEXPR Costing::Costing(::_pbi::ConstantInitialized)
+    : _impl_{
+      /*decltype(_impl_.type_)*/ 0,
+      /*decltype(_impl_.has_options_)*/ {},
+      /*decltype(_impl_.has_name_)*/ {},
+      /*decltype(_impl_.has_filter_closures_)*/ {},
+      /*decltype(_impl_._cached_size_)*/ {},
+      /*decltype(_impl_._oneof_case_)*/ {},
+    } {}
 struct CostingDefaultTypeInternal {
-  PROTOBUF_CONSTEXPR CostingDefaultTypeInternal()
-      : _instance(::_pbi::ConstantInitialized{}) {}
+  PROTOBUF_CONSTEXPR CostingDefaultTypeInternal() : _instance(::_pbi::ConstantInitialized{}) {}
   ~CostingDefaultTypeInternal() {}
   union {
     Costing _instance;
   };
 };
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 CostingDefaultTypeInternal _Costing_default_instance_;
-PROTOBUF_CONSTEXPR Options_CostingsEntry_DoNotUse::Options_CostingsEntry_DoNotUse(
-    ::_pbi::ConstantInitialized) {}
+
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
+    PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 CostingDefaultTypeInternal _Costing_default_instance_;
+      template <typename>
+PROTOBUF_CONSTEXPR Options_CostingsEntry_DoNotUse::Options_CostingsEntry_DoNotUse(::_pbi::ConstantInitialized) {}
 struct Options_CostingsEntry_DoNotUseDefaultTypeInternal {
-  PROTOBUF_CONSTEXPR Options_CostingsEntry_DoNotUseDefaultTypeInternal()
-      : _instance(::_pbi::ConstantInitialized{}) {}
+  PROTOBUF_CONSTEXPR Options_CostingsEntry_DoNotUseDefaultTypeInternal() : _instance(::_pbi::ConstantInitialized{}) {}
   ~Options_CostingsEntry_DoNotUseDefaultTypeInternal() {}
   union {
     Options_CostingsEntry_DoNotUse _instance;
   };
 };
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 Options_CostingsEntry_DoNotUseDefaultTypeInternal _Options_CostingsEntry_DoNotUse_default_instance_;
-PROTOBUF_CONSTEXPR Options::Options(
-    ::_pbi::ConstantInitialized): _impl_{
-    /*decltype(_impl_.costings_)*/{}
-  , /*decltype(_impl_.locations_)*/{}
-  , /*decltype(_impl_.exclude_locations_)*/{}
-  , /*decltype(_impl_.sources_)*/{}
-  , /*decltype(_impl_.targets_)*/{}
-  , /*decltype(_impl_.shape_)*/{}
-  , /*decltype(_impl_.contours_)*/{}
-  , /*decltype(_impl_.trace_)*/{}
-  , /*decltype(_impl_.filter_attributes_)*/{}
-  , /*decltype(_impl_.recostings_)*/{}
-  , /*decltype(_impl_.exclude_polygons_)*/{}
-  , /*decltype(_impl_.expansion_properties_)*/{}
-  , /*decltype(_impl_._expansion_properties_cached_byte_size_)*/{0}
-  , /*decltype(_impl_.pbf_field_selector_)*/nullptr
-  , /*decltype(_impl_.units_)*/0
-  , /*decltype(_impl_.directions_type_)*/0
-  , /*decltype(_impl_.format_)*/0
-  , /*decltype(_impl_.action_)*/0
-  , /*decltype(_impl_.costing_type_)*/0
-  , /*decltype(_impl_.date_time_type_)*/0
-  , /*decltype(_impl_.shape_match_)*/0
-  , /*decltype(_impl_.filter_action_)*/0
-  , /*decltype(_impl_.shape_format_)*/0
-  , /*decltype(_impl_.reverse_)*/false
-  , /*decltype(_impl_.has_language_)*/{}
-  , /*decltype(_impl_.has_id_)*/{}
-  , /*decltype(_impl_.has_jsonp_)*/{}
-  , /*decltype(_impl_.has_encoded_polyline_)*/{}
-  , /*decltype(_impl_.has_range_)*/{}
-  , /*decltype(_impl_.has_verbose_)*/{}
-  , /*decltype(_impl_.has_date_time_)*/{}
-  , /*decltype(_impl_.has_resample_distance_)*/{}
-  , /*decltype(_impl_.has_polygons_)*/{}
-  , /*decltype(_impl_.has_denoise_)*/{}
-  , /*decltype(_impl_.has_generalize_)*/{}
-  , /*decltype(_impl_.has_show_locations_)*/{}
-  , /*decltype(_impl_.has_gps_accuracy_)*/{}
-  , /*decltype(_impl_.has_search_radius_)*/{}
-  , /*decltype(_impl_.has_turn_penalty_factor_)*/{}
-  , /*decltype(_impl_.has_breakage_distance_)*/{}
-  , /*decltype(_impl_.has_use_timestamps_)*/{}
-  , /*decltype(_impl_.has_alternates_)*/{}
-  , /*decltype(_impl_.has_interpolation_distance_)*/{}
-  , /*decltype(_impl_.has_guidance_views_)*/{}
-  , /*decltype(_impl_.has_height_precision_)*/{}
-  , /*decltype(_impl_.has_roundabout_exits_)*/{}
-  , /*decltype(_impl_.has_linear_references_)*/{}
-  , /*decltype(_impl_.has_prioritize_bidirectional_)*/{}
-  , /*decltype(_impl_.has_expansion_action_)*/{}
-  , /*decltype(_impl_.has_skip_opposites_)*/{}
-  , /*decltype(_impl_.has_matrix_locations_)*/{}
-  , /*decltype(_impl_._cached_size_)*/{}
-  , /*decltype(_impl_._oneof_case_)*/{}} {}
+
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
+    PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 Options_CostingsEntry_DoNotUseDefaultTypeInternal _Options_CostingsEntry_DoNotUse_default_instance_;
+        template <typename>
+PROTOBUF_CONSTEXPR Options::Options(::_pbi::ConstantInitialized)
+    : _impl_{
+      /*decltype(_impl_._has_bits_)*/ {},
+      /*decltype(_impl_._cached_size_)*/ {},
+      /* decltype(_impl_.costings_) */ {},
+      /*decltype(_impl_.locations_)*/ {},
+      /*decltype(_impl_.exclude_locations_)*/ {},
+      /*decltype(_impl_.sources_)*/ {},
+      /*decltype(_impl_.targets_)*/ {},
+      /*decltype(_impl_.shape_)*/ {},
+      /*decltype(_impl_.contours_)*/ {},
+      /*decltype(_impl_.trace_)*/ {},
+      /*decltype(_impl_.filter_attributes_)*/ {},
+      /*decltype(_impl_.recostings_)*/ {},
+      /*decltype(_impl_.exclude_polygons_)*/ {},
+      /*decltype(_impl_.expansion_properties_)*/ {},
+      /*decltype(_impl_._expansion_properties_cached_byte_size_)*/ {0},
+      /*decltype(_impl_.pbf_field_selector_)*/ nullptr,
+      /*decltype(_impl_.units_)*/ 0,
+      /*decltype(_impl_.directions_type_)*/ 0,
+      /*decltype(_impl_.format_)*/ 0,
+      /*decltype(_impl_.action_)*/ 0,
+      /*decltype(_impl_.costing_type_)*/ 0,
+      /*decltype(_impl_.date_time_type_)*/ 0,
+      /*decltype(_impl_.shape_match_)*/ 0,
+      /*decltype(_impl_.filter_action_)*/ 0,
+      /*decltype(_impl_.shape_format_)*/ 0,
+      /*decltype(_impl_.reverse_)*/ false,
+      /*decltype(_impl_.has_language_)*/ {},
+      /*decltype(_impl_.has_id_)*/ {},
+      /*decltype(_impl_.has_jsonp_)*/ {},
+      /*decltype(_impl_.has_encoded_polyline_)*/ {},
+      /*decltype(_impl_.has_range_)*/ {},
+      /*decltype(_impl_.has_verbose_)*/ {},
+      /*decltype(_impl_.has_date_time_)*/ {},
+      /*decltype(_impl_.has_resample_distance_)*/ {},
+      /*decltype(_impl_.has_polygons_)*/ {},
+      /*decltype(_impl_.has_denoise_)*/ {},
+      /*decltype(_impl_.has_generalize_)*/ {},
+      /*decltype(_impl_.has_show_locations_)*/ {},
+      /*decltype(_impl_.has_gps_accuracy_)*/ {},
+      /*decltype(_impl_.has_search_radius_)*/ {},
+      /*decltype(_impl_.has_turn_penalty_factor_)*/ {},
+      /*decltype(_impl_.has_breakage_distance_)*/ {},
+      /*decltype(_impl_.has_use_timestamps_)*/ {},
+      /*decltype(_impl_.has_alternates_)*/ {},
+      /*decltype(_impl_.has_interpolation_distance_)*/ {},
+      /*decltype(_impl_.has_guidance_views_)*/ {},
+      /*decltype(_impl_.has_height_precision_)*/ {},
+      /*decltype(_impl_.has_roundabout_exits_)*/ {},
+      /*decltype(_impl_.has_linear_references_)*/ {},
+      /*decltype(_impl_.has_prioritize_bidirectional_)*/ {},
+      /*decltype(_impl_.has_expansion_action_)*/ {},
+      /*decltype(_impl_.has_skip_opposites_)*/ {},
+      /*decltype(_impl_.has_matrix_locations_)*/ {},
+      /*decltype(_impl_._oneof_case_)*/ {},
+    } {}
 struct OptionsDefaultTypeInternal {
-  PROTOBUF_CONSTEXPR OptionsDefaultTypeInternal()
-      : _instance(::_pbi::ConstantInitialized{}) {}
+  PROTOBUF_CONSTEXPR OptionsDefaultTypeInternal() : _instance(::_pbi::ConstantInitialized{}) {}
   ~OptionsDefaultTypeInternal() {}
   union {
     Options _instance;
   };
 };
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 OptionsDefaultTypeInternal _Options_default_instance_;
+
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
+    PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 OptionsDefaultTypeInternal _Options_default_instance_;
 }  // namespace valhalla
 namespace valhalla {
 bool Costing_Type_IsValid(int value) {
@@ -287,79 +310,81 @@ bool Costing_Type_IsValid(int value) {
       return false;
   }
 }
+static ::google::protobuf::internal::ExplicitlyConstructed<std::string>
+    Costing_Type_strings[12] = {};
 
-static ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<std::string> Costing_Type_strings[12] = {};
+static const char Costing_Type_names[] = {
+    "auto_"
+    "bicycle"
+    "bikeshare"
+    "bus"
+    "motor_scooter"
+    "motorcycle"
+    "multimodal"
+    "none_"
+    "pedestrian"
+    "taxi"
+    "transit"
+    "truck"
+};
 
-static const char Costing_Type_names[] =
-  "auto_"
-  "bicycle"
-  "bikeshare"
-  "bus"
-  "motor_scooter"
-  "motorcycle"
-  "multimodal"
-  "none_"
-  "pedestrian"
-  "taxi"
-  "transit"
-  "truck";
-
-static const ::PROTOBUF_NAMESPACE_ID::internal::EnumEntry Costing_Type_entries[] = {
-  { {Costing_Type_names + 0, 5}, 10 },
-  { {Costing_Type_names + 5, 7}, 1 },
-  { {Costing_Type_names + 12, 9}, 11 },
-  { {Costing_Type_names + 21, 3}, 2 },
-  { {Costing_Type_names + 24, 13}, 3 },
-  { {Costing_Type_names + 37, 10}, 8 },
-  { {Costing_Type_names + 47, 10}, 4 },
-  { {Costing_Type_names + 57, 5}, 0 },
-  { {Costing_Type_names + 62, 10}, 5 },
-  { {Costing_Type_names + 72, 4}, 9 },
-  { {Costing_Type_names + 76, 7}, 6 },
-  { {Costing_Type_names + 83, 5}, 7 },
+static const ::google::protobuf::internal::EnumEntry Costing_Type_entries[] =
+    {
+        {{&Costing_Type_names[0], 5}, 10},
+        {{&Costing_Type_names[5], 7}, 1},
+        {{&Costing_Type_names[12], 9}, 11},
+        {{&Costing_Type_names[21], 3}, 2},
+        {{&Costing_Type_names[24], 13}, 3},
+        {{&Costing_Type_names[37], 10}, 8},
+        {{&Costing_Type_names[47], 10}, 4},
+        {{&Costing_Type_names[57], 5}, 0},
+        {{&Costing_Type_names[62], 10}, 5},
+        {{&Costing_Type_names[72], 4}, 9},
+        {{&Costing_Type_names[76], 7}, 6},
+        {{&Costing_Type_names[83], 5}, 7},
 };
 
 static const int Costing_Type_entries_by_number[] = {
-  7, // 0 -> none_
-  1, // 1 -> bicycle
-  3, // 2 -> bus
-  4, // 3 -> motor_scooter
-  6, // 4 -> multimodal
-  8, // 5 -> pedestrian
-  10, // 6 -> transit
-  11, // 7 -> truck
-  5, // 8 -> motorcycle
-  9, // 9 -> taxi
-  0, // 10 -> auto_
-  2, // 11 -> bikeshare
+    7,  // 0 -> none_
+    1,  // 1 -> bicycle
+    3,  // 2 -> bus
+    4,  // 3 -> motor_scooter
+    6,  // 4 -> multimodal
+    8,  // 5 -> pedestrian
+    10,  // 6 -> transit
+    11,  // 7 -> truck
+    5,  // 8 -> motorcycle
+    9,  // 9 -> taxi
+    0,  // 10 -> auto_
+    2,  // 11 -> bikeshare
 };
 
-const std::string& Costing_Type_Name(
-    Costing_Type value) {
-  static const bool dummy =
-      ::PROTOBUF_NAMESPACE_ID::internal::InitializeEnumStrings(
-          Costing_Type_entries,
-          Costing_Type_entries_by_number,
+const std::string& Costing_Type_Name(Costing_Type value) {
+  static const bool kDummy =
+      ::google::protobuf::internal::InitializeEnumStrings(
+          Costing_Type_entries, Costing_Type_entries_by_number,
           12, Costing_Type_strings);
-  (void) dummy;
-  int idx = ::PROTOBUF_NAMESPACE_ID::internal::LookUpEnumName(
-      Costing_Type_entries,
-      Costing_Type_entries_by_number,
-      12, value);
-  return idx == -1 ? ::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString() :
-                     Costing_Type_strings[idx].get();
+  (void)kDummy;
+
+  int idx = ::google::protobuf::internal::LookUpEnumName(
+      Costing_Type_entries, Costing_Type_entries_by_number, 12,
+      value);
+  return idx == -1 ? ::google::protobuf::internal::GetEmptyString()
+                   : Costing_Type_strings[idx].get();
 }
-bool Costing_Type_Parse(
-    ::PROTOBUF_NAMESPACE_ID::ConstStringParam name, Costing_Type* value) {
+
+bool Costing_Type_Parse(absl::string_view name, Costing_Type* value) {
   int int_value;
-  bool success = ::PROTOBUF_NAMESPACE_ID::internal::LookUpEnumValue(
+  bool success = ::google::protobuf::internal::LookUpEnumValue(
       Costing_Type_entries, 12, name, &int_value);
   if (success) {
     *value = static_cast<Costing_Type>(int_value);
   }
   return success;
 }
-#if (__cplusplus < 201703) && (!defined(_MSC_VER) || (_MSC_VER >= 1900 && _MSC_VER < 1912))
+#if (__cplusplus < 201703) && \
+  (!defined(_MSC_VER) || (_MSC_VER >= 1900 && _MSC_VER < 1912))
+
 constexpr Costing_Type Costing::none_;
 constexpr Costing_Type Costing::bicycle;
 constexpr Costing_Type Costing::bus;
@@ -375,7 +400,9 @@ constexpr Costing_Type Costing::bikeshare;
 constexpr Costing_Type Costing::Type_MIN;
 constexpr Costing_Type Costing::Type_MAX;
 constexpr int Costing::Type_ARRAYSIZE;
-#endif  // (__cplusplus < 201703) && (!defined(_MSC_VER) || (_MSC_VER >= 1900 && _MSC_VER < 1912))
+
+#endif  // (__cplusplus < 201703) &&
+        // (!defined(_MSC_VER) || (_MSC_VER >= 1900 && _MSC_VER < 1912))
 bool Options_Units_IsValid(int value) {
   switch (value) {
     case 0:
@@ -385,55 +412,59 @@ bool Options_Units_IsValid(int value) {
       return false;
   }
 }
+static ::google::protobuf::internal::ExplicitlyConstructed<std::string>
+    Options_Units_strings[2] = {};
 
-static ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<std::string> Options_Units_strings[2] = {};
+static const char Options_Units_names[] = {
+    "kilometers"
+    "miles"
+};
 
-static const char Options_Units_names[] =
-  "kilometers"
-  "miles";
-
-static const ::PROTOBUF_NAMESPACE_ID::internal::EnumEntry Options_Units_entries[] = {
-  { {Options_Units_names + 0, 10}, 0 },
-  { {Options_Units_names + 10, 5}, 1 },
+static const ::google::protobuf::internal::EnumEntry Options_Units_entries[] =
+    {
+        {{&Options_Units_names[0], 10}, 0},
+        {{&Options_Units_names[10], 5}, 1},
 };
 
 static const int Options_Units_entries_by_number[] = {
-  0, // 0 -> kilometers
-  1, // 1 -> miles
+    0,  // 0 -> kilometers
+    1,  // 1 -> miles
 };
 
-const std::string& Options_Units_Name(
-    Options_Units value) {
-  static const bool dummy =
-      ::PROTOBUF_NAMESPACE_ID::internal::InitializeEnumStrings(
-          Options_Units_entries,
-          Options_Units_entries_by_number,
+const std::string& Options_Units_Name(Options_Units value) {
+  static const bool kDummy =
+      ::google::protobuf::internal::InitializeEnumStrings(
+          Options_Units_entries, Options_Units_entries_by_number,
           2, Options_Units_strings);
-  (void) dummy;
-  int idx = ::PROTOBUF_NAMESPACE_ID::internal::LookUpEnumName(
-      Options_Units_entries,
-      Options_Units_entries_by_number,
-      2, value);
-  return idx == -1 ? ::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString() :
-                     Options_Units_strings[idx].get();
+  (void)kDummy;
+
+  int idx = ::google::protobuf::internal::LookUpEnumName(
+      Options_Units_entries, Options_Units_entries_by_number, 2,
+      value);
+  return idx == -1 ? ::google::protobuf::internal::GetEmptyString()
+                   : Options_Units_strings[idx].get();
 }
-bool Options_Units_Parse(
-    ::PROTOBUF_NAMESPACE_ID::ConstStringParam name, Options_Units* value) {
+
+bool Options_Units_Parse(absl::string_view name, Options_Units* value) {
   int int_value;
-  bool success = ::PROTOBUF_NAMESPACE_ID::internal::LookUpEnumValue(
+  bool success = ::google::protobuf::internal::LookUpEnumValue(
       Options_Units_entries, 2, name, &int_value);
   if (success) {
     *value = static_cast<Options_Units>(int_value);
   }
   return success;
 }
-#if (__cplusplus < 201703) && (!defined(_MSC_VER) || (_MSC_VER >= 1900 && _MSC_VER < 1912))
+#if (__cplusplus < 201703) && \
+  (!defined(_MSC_VER) || (_MSC_VER >= 1900 && _MSC_VER < 1912))
+
 constexpr Options_Units Options::kilometers;
 constexpr Options_Units Options::miles;
 constexpr Options_Units Options::Units_MIN;
 constexpr Options_Units Options::Units_MAX;
 constexpr int Options::Units_ARRAYSIZE;
-#endif  // (__cplusplus < 201703) && (!defined(_MSC_VER) || (_MSC_VER >= 1900 && _MSC_VER < 1912))
+
+#endif  // (__cplusplus < 201703) &&
+        // (!defined(_MSC_VER) || (_MSC_VER >= 1900 && _MSC_VER < 1912))
 bool Options_Format_IsValid(int value) {
   switch (value) {
     case 0:
@@ -445,55 +476,57 @@ bool Options_Format_IsValid(int value) {
       return false;
   }
 }
+static ::google::protobuf::internal::ExplicitlyConstructed<std::string>
+    Options_Format_strings[4] = {};
 
-static ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<std::string> Options_Format_strings[4] = {};
+static const char Options_Format_names[] = {
+    "gpx"
+    "json"
+    "osrm"
+    "pbf"
+};
 
-static const char Options_Format_names[] =
-  "gpx"
-  "json"
-  "osrm"
-  "pbf";
-
-static const ::PROTOBUF_NAMESPACE_ID::internal::EnumEntry Options_Format_entries[] = {
-  { {Options_Format_names + 0, 3}, 1 },
-  { {Options_Format_names + 3, 4}, 0 },
-  { {Options_Format_names + 7, 4}, 2 },
-  { {Options_Format_names + 11, 3}, 3 },
+static const ::google::protobuf::internal::EnumEntry Options_Format_entries[] =
+    {
+        {{&Options_Format_names[0], 3}, 1},
+        {{&Options_Format_names[3], 4}, 0},
+        {{&Options_Format_names[7], 4}, 2},
+        {{&Options_Format_names[11], 3}, 3},
 };
 
 static const int Options_Format_entries_by_number[] = {
-  1, // 0 -> json
-  0, // 1 -> gpx
-  2, // 2 -> osrm
-  3, // 3 -> pbf
+    1,  // 0 -> json
+    0,  // 1 -> gpx
+    2,  // 2 -> osrm
+    3,  // 3 -> pbf
 };
 
-const std::string& Options_Format_Name(
-    Options_Format value) {
-  static const bool dummy =
-      ::PROTOBUF_NAMESPACE_ID::internal::InitializeEnumStrings(
-          Options_Format_entries,
-          Options_Format_entries_by_number,
+const std::string& Options_Format_Name(Options_Format value) {
+  static const bool kDummy =
+      ::google::protobuf::internal::InitializeEnumStrings(
+          Options_Format_entries, Options_Format_entries_by_number,
           4, Options_Format_strings);
-  (void) dummy;
-  int idx = ::PROTOBUF_NAMESPACE_ID::internal::LookUpEnumName(
-      Options_Format_entries,
-      Options_Format_entries_by_number,
-      4, value);
-  return idx == -1 ? ::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString() :
-                     Options_Format_strings[idx].get();
+  (void)kDummy;
+
+  int idx = ::google::protobuf::internal::LookUpEnumName(
+      Options_Format_entries, Options_Format_entries_by_number, 4,
+      value);
+  return idx == -1 ? ::google::protobuf::internal::GetEmptyString()
+                   : Options_Format_strings[idx].get();
 }
-bool Options_Format_Parse(
-    ::PROTOBUF_NAMESPACE_ID::ConstStringParam name, Options_Format* value) {
+
+bool Options_Format_Parse(absl::string_view name, Options_Format* value) {
   int int_value;
-  bool success = ::PROTOBUF_NAMESPACE_ID::internal::LookUpEnumValue(
+  bool success = ::google::protobuf::internal::LookUpEnumValue(
       Options_Format_entries, 4, name, &int_value);
   if (success) {
     *value = static_cast<Options_Format>(int_value);
   }
   return success;
 }
-#if (__cplusplus < 201703) && (!defined(_MSC_VER) || (_MSC_VER >= 1900 && _MSC_VER < 1912))
+#if (__cplusplus < 201703) && \
+  (!defined(_MSC_VER) || (_MSC_VER >= 1900 && _MSC_VER < 1912))
+
 constexpr Options_Format Options::json;
 constexpr Options_Format Options::gpx;
 constexpr Options_Format Options::osrm;
@@ -501,7 +534,9 @@ constexpr Options_Format Options::pbf;
 constexpr Options_Format Options::Format_MIN;
 constexpr Options_Format Options::Format_MAX;
 constexpr int Options::Format_ARRAYSIZE;
-#endif  // (__cplusplus < 201703) && (!defined(_MSC_VER) || (_MSC_VER >= 1900 && _MSC_VER < 1912))
+
+#endif  // (__cplusplus < 201703) &&
+        // (!defined(_MSC_VER) || (_MSC_VER >= 1900 && _MSC_VER < 1912))
 bool Options_Action_IsValid(int value) {
   switch (value) {
     case 0:
@@ -522,82 +557,84 @@ bool Options_Action_IsValid(int value) {
       return false;
   }
 }
+static ::google::protobuf::internal::ExplicitlyConstructed<std::string>
+    Options_Action_strings[13] = {};
 
-static ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<std::string> Options_Action_strings[13] = {};
+static const char Options_Action_names[] = {
+    "centroid"
+    "expansion"
+    "height"
+    "isochrone"
+    "locate"
+    "no_action"
+    "optimized_route"
+    "route"
+    "sources_to_targets"
+    "status"
+    "trace_attributes"
+    "trace_route"
+    "transit_available"
+};
 
-static const char Options_Action_names[] =
-  "centroid"
-  "expansion"
-  "height"
-  "isochrone"
-  "locate"
-  "no_action"
-  "optimized_route"
-  "route"
-  "sources_to_targets"
-  "status"
-  "trace_attributes"
-  "trace_route"
-  "transit_available";
-
-static const ::PROTOBUF_NAMESPACE_ID::internal::EnumEntry Options_Action_entries[] = {
-  { {Options_Action_names + 0, 8}, 11 },
-  { {Options_Action_names + 8, 9}, 10 },
-  { {Options_Action_names + 17, 6}, 8 },
-  { {Options_Action_names + 23, 9}, 5 },
-  { {Options_Action_names + 32, 6}, 2 },
-  { {Options_Action_names + 38, 9}, 0 },
-  { {Options_Action_names + 47, 15}, 4 },
-  { {Options_Action_names + 62, 5}, 1 },
-  { {Options_Action_names + 67, 18}, 3 },
-  { {Options_Action_names + 85, 6}, 12 },
-  { {Options_Action_names + 91, 16}, 7 },
-  { {Options_Action_names + 107, 11}, 6 },
-  { {Options_Action_names + 118, 17}, 9 },
+static const ::google::protobuf::internal::EnumEntry Options_Action_entries[] =
+    {
+        {{&Options_Action_names[0], 8}, 11},
+        {{&Options_Action_names[8], 9}, 10},
+        {{&Options_Action_names[17], 6}, 8},
+        {{&Options_Action_names[23], 9}, 5},
+        {{&Options_Action_names[32], 6}, 2},
+        {{&Options_Action_names[38], 9}, 0},
+        {{&Options_Action_names[47], 15}, 4},
+        {{&Options_Action_names[62], 5}, 1},
+        {{&Options_Action_names[67], 18}, 3},
+        {{&Options_Action_names[85], 6}, 12},
+        {{&Options_Action_names[91], 16}, 7},
+        {{&Options_Action_names[107], 11}, 6},
+        {{&Options_Action_names[118], 17}, 9},
 };
 
 static const int Options_Action_entries_by_number[] = {
-  5, // 0 -> no_action
-  7, // 1 -> route
-  4, // 2 -> locate
-  8, // 3 -> sources_to_targets
-  6, // 4 -> optimized_route
-  3, // 5 -> isochrone
-  11, // 6 -> trace_route
-  10, // 7 -> trace_attributes
-  2, // 8 -> height
-  12, // 9 -> transit_available
-  1, // 10 -> expansion
-  0, // 11 -> centroid
-  9, // 12 -> status
+    5,  // 0 -> no_action
+    7,  // 1 -> route
+    4,  // 2 -> locate
+    8,  // 3 -> sources_to_targets
+    6,  // 4 -> optimized_route
+    3,  // 5 -> isochrone
+    11,  // 6 -> trace_route
+    10,  // 7 -> trace_attributes
+    2,  // 8 -> height
+    12,  // 9 -> transit_available
+    1,  // 10 -> expansion
+    0,  // 11 -> centroid
+    9,  // 12 -> status
 };
 
-const std::string& Options_Action_Name(
-    Options_Action value) {
-  static const bool dummy =
-      ::PROTOBUF_NAMESPACE_ID::internal::InitializeEnumStrings(
-          Options_Action_entries,
-          Options_Action_entries_by_number,
+const std::string& Options_Action_Name(Options_Action value) {
+  static const bool kDummy =
+      ::google::protobuf::internal::InitializeEnumStrings(
+          Options_Action_entries, Options_Action_entries_by_number,
           13, Options_Action_strings);
-  (void) dummy;
-  int idx = ::PROTOBUF_NAMESPACE_ID::internal::LookUpEnumName(
-      Options_Action_entries,
-      Options_Action_entries_by_number,
-      13, value);
-  return idx == -1 ? ::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString() :
-                     Options_Action_strings[idx].get();
+  (void)kDummy;
+
+  int idx = ::google::protobuf::internal::LookUpEnumName(
+      Options_Action_entries, Options_Action_entries_by_number, 13,
+      value);
+  return idx == -1 ? ::google::protobuf::internal::GetEmptyString()
+                   : Options_Action_strings[idx].get();
 }
-bool Options_Action_Parse(
-    ::PROTOBUF_NAMESPACE_ID::ConstStringParam name, Options_Action* value) {
+
+bool Options_Action_Parse(absl::string_view name, Options_Action* value) {
   int int_value;
-  bool success = ::PROTOBUF_NAMESPACE_ID::internal::LookUpEnumValue(
+  bool success = ::google::protobuf::internal::LookUpEnumValue(
       Options_Action_entries, 13, name, &int_value);
   if (success) {
     *value = static_cast<Options_Action>(int_value);
   }
   return success;
 }
-#if (__cplusplus < 201703) && (!defined(_MSC_VER) || (_MSC_VER >= 1900 && _MSC_VER < 1912))
+#if (__cplusplus < 201703) && \
+  (!defined(_MSC_VER) || (_MSC_VER >= 1900 && _MSC_VER < 1912))
+
 constexpr Options_Action Options::no_action;
 constexpr Options_Action Options::route;
 constexpr Options_Action Options::locate;
@@ -614,7 +651,9 @@ constexpr Options_Action Options::status;
 constexpr Options_Action Options::Action_MIN;
 constexpr Options_Action Options::Action_MAX;
 constexpr int Options::Action_ARRAYSIZE;
-#endif  // (__cplusplus < 201703) && (!defined(_MSC_VER) || (_MSC_VER >= 1900 && _MSC_VER < 1912))
+
+#endif  // (__cplusplus < 201703) &&
+        // (!defined(_MSC_VER) || (_MSC_VER >= 1900 && _MSC_VER < 1912))
 bool Options_DateTimeType_IsValid(int value) {
   switch (value) {
     case 0:
@@ -627,58 +666,60 @@ bool Options_DateTimeType_IsValid(int value) {
       return false;
   }
 }
+static ::google::protobuf::internal::ExplicitlyConstructed<std::string>
+    Options_DateTimeType_strings[5] = {};
 
-static ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<std::string> Options_DateTimeType_strings[5] = {};
+static const char Options_DateTimeType_names[] = {
+    "arrive_by"
+    "current"
+    "depart_at"
+    "invariant"
+    "no_time"
+};
 
-static const char Options_DateTimeType_names[] =
-  "arrive_by"
-  "current"
-  "depart_at"
-  "invariant"
-  "no_time";
-
-static const ::PROTOBUF_NAMESPACE_ID::internal::EnumEntry Options_DateTimeType_entries[] = {
-  { {Options_DateTimeType_names + 0, 9}, 3 },
-  { {Options_DateTimeType_names + 9, 7}, 1 },
-  { {Options_DateTimeType_names + 16, 9}, 2 },
-  { {Options_DateTimeType_names + 25, 9}, 4 },
-  { {Options_DateTimeType_names + 34, 7}, 0 },
+static const ::google::protobuf::internal::EnumEntry Options_DateTimeType_entries[] =
+    {
+        {{&Options_DateTimeType_names[0], 9}, 3},
+        {{&Options_DateTimeType_names[9], 7}, 1},
+        {{&Options_DateTimeType_names[16], 9}, 2},
+        {{&Options_DateTimeType_names[25], 9}, 4},
+        {{&Options_DateTimeType_names[34], 7}, 0},
 };
 
 static const int Options_DateTimeType_entries_by_number[] = {
-  4, // 0 -> no_time
-  1, // 1 -> current
-  2, // 2 -> depart_at
-  0, // 3 -> arrive_by
-  3, // 4 -> invariant
+    4,  // 0 -> no_time
+    1,  // 1 -> current
+    2,  // 2 -> depart_at
+    0,  // 3 -> arrive_by
+    3,  // 4 -> invariant
 };
 
-const std::string& Options_DateTimeType_Name(
-    Options_DateTimeType value) {
-  static const bool dummy =
-      ::PROTOBUF_NAMESPACE_ID::internal::InitializeEnumStrings(
-          Options_DateTimeType_entries,
-          Options_DateTimeType_entries_by_number,
+const std::string& Options_DateTimeType_Name(Options_DateTimeType value) {
+  static const bool kDummy =
+      ::google::protobuf::internal::InitializeEnumStrings(
+          Options_DateTimeType_entries, Options_DateTimeType_entries_by_number,
           5, Options_DateTimeType_strings);
-  (void) dummy;
-  int idx = ::PROTOBUF_NAMESPACE_ID::internal::LookUpEnumName(
-      Options_DateTimeType_entries,
-      Options_DateTimeType_entries_by_number,
-      5, value);
-  return idx == -1 ? ::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString() :
-                     Options_DateTimeType_strings[idx].get();
+  (void)kDummy;
+
+  int idx = ::google::protobuf::internal::LookUpEnumName(
+      Options_DateTimeType_entries, Options_DateTimeType_entries_by_number, 5,
+      value);
+  return idx == -1 ? ::google::protobuf::internal::GetEmptyString()
+                   : Options_DateTimeType_strings[idx].get();
 }
-bool Options_DateTimeType_Parse(
-    ::PROTOBUF_NAMESPACE_ID::ConstStringParam name, Options_DateTimeType* value) {
+
+bool Options_DateTimeType_Parse(absl::string_view name, Options_DateTimeType* value) {
   int int_value;
-  bool success = ::PROTOBUF_NAMESPACE_ID::internal::LookUpEnumValue(
+  bool success = ::google::protobuf::internal::LookUpEnumValue(
       Options_DateTimeType_entries, 5, name, &int_value);
   if (success) {
     *value = static_cast<Options_DateTimeType>(int_value);
   }
   return success;
 }
-#if (__cplusplus < 201703) && (!defined(_MSC_VER) || (_MSC_VER >= 1900 && _MSC_VER < 1912))
+#if (__cplusplus < 201703) && \
+  (!defined(_MSC_VER) || (_MSC_VER >= 1900 && _MSC_VER < 1912))
+
 constexpr Options_DateTimeType Options::no_time;
 constexpr Options_DateTimeType Options::current;
 constexpr Options_DateTimeType Options::depart_at;
@@ -687,7 +728,9 @@ constexpr Options_DateTimeType Options::invariant;
 constexpr Options_DateTimeType Options::DateTimeType_MIN;
 constexpr Options_DateTimeType Options::DateTimeType_MAX;
 constexpr int Options::DateTimeType_ARRAYSIZE;
-#endif  // (__cplusplus < 201703) && (!defined(_MSC_VER) || (_MSC_VER >= 1900 && _MSC_VER < 1912))
+
+#endif  // (__cplusplus < 201703) &&
+        // (!defined(_MSC_VER) || (_MSC_VER >= 1900 && _MSC_VER < 1912))
 bool Options_ExpansionProperties_IsValid(int value) {
   switch (value) {
     case 0:
@@ -700,58 +743,60 @@ bool Options_ExpansionProperties_IsValid(int value) {
       return false;
   }
 }
+static ::google::protobuf::internal::ExplicitlyConstructed<std::string>
+    Options_ExpansionProperties_strings[5] = {};
 
-static ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<std::string> Options_ExpansionProperties_strings[5] = {};
+static const char Options_ExpansionProperties_names[] = {
+    "costs"
+    "distances"
+    "durations"
+    "edge_ids"
+    "statuses"
+};
 
-static const char Options_ExpansionProperties_names[] =
-  "costs"
-  "distances"
-  "durations"
-  "edge_ids"
-  "statuses";
-
-static const ::PROTOBUF_NAMESPACE_ID::internal::EnumEntry Options_ExpansionProperties_entries[] = {
-  { {Options_ExpansionProperties_names + 0, 5}, 0 },
-  { {Options_ExpansionProperties_names + 5, 9}, 2 },
-  { {Options_ExpansionProperties_names + 14, 9}, 1 },
-  { {Options_ExpansionProperties_names + 23, 8}, 4 },
-  { {Options_ExpansionProperties_names + 31, 8}, 3 },
+static const ::google::protobuf::internal::EnumEntry Options_ExpansionProperties_entries[] =
+    {
+        {{&Options_ExpansionProperties_names[0], 5}, 0},
+        {{&Options_ExpansionProperties_names[5], 9}, 2},
+        {{&Options_ExpansionProperties_names[14], 9}, 1},
+        {{&Options_ExpansionProperties_names[23], 8}, 4},
+        {{&Options_ExpansionProperties_names[31], 8}, 3},
 };
 
 static const int Options_ExpansionProperties_entries_by_number[] = {
-  0, // 0 -> costs
-  2, // 1 -> durations
-  1, // 2 -> distances
-  4, // 3 -> statuses
-  3, // 4 -> edge_ids
+    0,  // 0 -> costs
+    2,  // 1 -> durations
+    1,  // 2 -> distances
+    4,  // 3 -> statuses
+    3,  // 4 -> edge_ids
 };
 
-const std::string& Options_ExpansionProperties_Name(
-    Options_ExpansionProperties value) {
-  static const bool dummy =
-      ::PROTOBUF_NAMESPACE_ID::internal::InitializeEnumStrings(
-          Options_ExpansionProperties_entries,
-          Options_ExpansionProperties_entries_by_number,
+const std::string& Options_ExpansionProperties_Name(Options_ExpansionProperties value) {
+  static const bool kDummy =
+      ::google::protobuf::internal::InitializeEnumStrings(
+          Options_ExpansionProperties_entries, Options_ExpansionProperties_entries_by_number,
           5, Options_ExpansionProperties_strings);
-  (void) dummy;
-  int idx = ::PROTOBUF_NAMESPACE_ID::internal::LookUpEnumName(
-      Options_ExpansionProperties_entries,
-      Options_ExpansionProperties_entries_by_number,
-      5, value);
-  return idx == -1 ? ::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString() :
-                     Options_ExpansionProperties_strings[idx].get();
+  (void)kDummy;
+
+  int idx = ::google::protobuf::internal::LookUpEnumName(
+      Options_ExpansionProperties_entries, Options_ExpansionProperties_entries_by_number, 5,
+      value);
+  return idx == -1 ? ::google::protobuf::internal::GetEmptyString()
+                   : Options_ExpansionProperties_strings[idx].get();
 }
-bool Options_ExpansionProperties_Parse(
-    ::PROTOBUF_NAMESPACE_ID::ConstStringParam name, Options_ExpansionProperties* value) {
+
+bool Options_ExpansionProperties_Parse(absl::string_view name, Options_ExpansionProperties* value) {
   int int_value;
-  bool success = ::PROTOBUF_NAMESPACE_ID::internal::LookUpEnumValue(
+  bool success = ::google::protobuf::internal::LookUpEnumValue(
       Options_ExpansionProperties_entries, 5, name, &int_value);
   if (success) {
     *value = static_cast<Options_ExpansionProperties>(int_value);
   }
   return success;
 }
-#if (__cplusplus < 201703) && (!defined(_MSC_VER) || (_MSC_VER >= 1900 && _MSC_VER < 1912))
+#if (__cplusplus < 201703) && \
+  (!defined(_MSC_VER) || (_MSC_VER >= 1900 && _MSC_VER < 1912))
+
 constexpr Options_ExpansionProperties Options::costs;
 constexpr Options_ExpansionProperties Options::durations;
 constexpr Options_ExpansionProperties Options::distances;
@@ -760,7 +805,9 @@ constexpr Options_ExpansionProperties Options::edge_ids;
 constexpr Options_ExpansionProperties Options::ExpansionProperties_MIN;
 constexpr Options_ExpansionProperties Options::ExpansionProperties_MAX;
 constexpr int Options::ExpansionProperties_ARRAYSIZE;
-#endif  // (__cplusplus < 201703) && (!defined(_MSC_VER) || (_MSC_VER >= 1900 && _MSC_VER < 1912))
+
+#endif  // (__cplusplus < 201703) &&
+        // (!defined(_MSC_VER) || (_MSC_VER >= 1900 && _MSC_VER < 1912))
 bool ShapeMatch_IsValid(int value) {
   switch (value) {
     case 0:
@@ -771,45 +818,45 @@ bool ShapeMatch_IsValid(int value) {
       return false;
   }
 }
+static ::google::protobuf::internal::ExplicitlyConstructed<std::string>
+    ShapeMatch_strings[3] = {};
 
-static ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<std::string> ShapeMatch_strings[3] = {};
+static const char ShapeMatch_names[] = {
+    "edge_walk"
+    "map_snap"
+    "walk_or_snap"
+};
 
-static const char ShapeMatch_names[] =
-  "edge_walk"
-  "map_snap"
-  "walk_or_snap";
-
-static const ::PROTOBUF_NAMESPACE_ID::internal::EnumEntry ShapeMatch_entries[] = {
-  { {ShapeMatch_names + 0, 9}, 1 },
-  { {ShapeMatch_names + 9, 8}, 2 },
-  { {ShapeMatch_names + 17, 12}, 0 },
+static const ::google::protobuf::internal::EnumEntry ShapeMatch_entries[] =
+    {
+        {{&ShapeMatch_names[0], 9}, 1},
+        {{&ShapeMatch_names[9], 8}, 2},
+        {{&ShapeMatch_names[17], 12}, 0},
 };
 
 static const int ShapeMatch_entries_by_number[] = {
-  2, // 0 -> walk_or_snap
-  0, // 1 -> edge_walk
-  1, // 2 -> map_snap
+    2,  // 0 -> walk_or_snap
+    0,  // 1 -> edge_walk
+    1,  // 2 -> map_snap
 };
 
-const std::string& ShapeMatch_Name(
-    ShapeMatch value) {
-  static const bool dummy =
-      ::PROTOBUF_NAMESPACE_ID::internal::InitializeEnumStrings(
-          ShapeMatch_entries,
-          ShapeMatch_entries_by_number,
+const std::string& ShapeMatch_Name(ShapeMatch value) {
+  static const bool kDummy =
+      ::google::protobuf::internal::InitializeEnumStrings(
+          ShapeMatch_entries, ShapeMatch_entries_by_number,
           3, ShapeMatch_strings);
-  (void) dummy;
-  int idx = ::PROTOBUF_NAMESPACE_ID::internal::LookUpEnumName(
-      ShapeMatch_entries,
-      ShapeMatch_entries_by_number,
-      3, value);
-  return idx == -1 ? ::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString() :
-                     ShapeMatch_strings[idx].get();
+  (void)kDummy;
+
+  int idx = ::google::protobuf::internal::LookUpEnumName(
+      ShapeMatch_entries, ShapeMatch_entries_by_number, 3,
+      value);
+  return idx == -1 ? ::google::protobuf::internal::GetEmptyString()
+                   : ShapeMatch_strings[idx].get();
 }
-bool ShapeMatch_Parse(
-    ::PROTOBUF_NAMESPACE_ID::ConstStringParam name, ShapeMatch* value) {
+
+bool ShapeMatch_Parse(absl::string_view name, ShapeMatch* value) {
   int int_value;
-  bool success = ::PROTOBUF_NAMESPACE_ID::internal::LookUpEnumValue(
+  bool success = ::google::protobuf::internal::LookUpEnumValue(
       ShapeMatch_entries, 3, name, &int_value);
   if (success) {
     *value = static_cast<ShapeMatch>(int_value);
@@ -826,45 +873,45 @@ bool FilterAction_IsValid(int value) {
       return false;
   }
 }
+static ::google::protobuf::internal::ExplicitlyConstructed<std::string>
+    FilterAction_strings[3] = {};
 
-static ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<std::string> FilterAction_strings[3] = {};
+static const char FilterAction_names[] = {
+    "exclude"
+    "include"
+    "no_action"
+};
 
-static const char FilterAction_names[] =
-  "exclude"
-  "include"
-  "no_action";
-
-static const ::PROTOBUF_NAMESPACE_ID::internal::EnumEntry FilterAction_entries[] = {
-  { {FilterAction_names + 0, 7}, 1 },
-  { {FilterAction_names + 7, 7}, 2 },
-  { {FilterAction_names + 14, 9}, 0 },
+static const ::google::protobuf::internal::EnumEntry FilterAction_entries[] =
+    {
+        {{&FilterAction_names[0], 7}, 1},
+        {{&FilterAction_names[7], 7}, 2},
+        {{&FilterAction_names[14], 9}, 0},
 };
 
 static const int FilterAction_entries_by_number[] = {
-  2, // 0 -> no_action
-  0, // 1 -> exclude
-  1, // 2 -> include
+    2,  // 0 -> no_action
+    0,  // 1 -> exclude
+    1,  // 2 -> include
 };
 
-const std::string& FilterAction_Name(
-    FilterAction value) {
-  static const bool dummy =
-      ::PROTOBUF_NAMESPACE_ID::internal::InitializeEnumStrings(
-          FilterAction_entries,
-          FilterAction_entries_by_number,
+const std::string& FilterAction_Name(FilterAction value) {
+  static const bool kDummy =
+      ::google::protobuf::internal::InitializeEnumStrings(
+          FilterAction_entries, FilterAction_entries_by_number,
           3, FilterAction_strings);
-  (void) dummy;
-  int idx = ::PROTOBUF_NAMESPACE_ID::internal::LookUpEnumName(
-      FilterAction_entries,
-      FilterAction_entries_by_number,
-      3, value);
-  return idx == -1 ? ::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString() :
-                     FilterAction_strings[idx].get();
+  (void)kDummy;
+
+  int idx = ::google::protobuf::internal::LookUpEnumName(
+      FilterAction_entries, FilterAction_entries_by_number, 3,
+      value);
+  return idx == -1 ? ::google::protobuf::internal::GetEmptyString()
+                   : FilterAction_strings[idx].get();
 }
-bool FilterAction_Parse(
-    ::PROTOBUF_NAMESPACE_ID::ConstStringParam name, FilterAction* value) {
+
+bool FilterAction_Parse(absl::string_view name, FilterAction* value) {
   int int_value;
-  bool success = ::PROTOBUF_NAMESPACE_ID::internal::LookUpEnumValue(
+  bool success = ::google::protobuf::internal::LookUpEnumValue(
       FilterAction_entries, 3, name, &int_value);
   if (success) {
     *value = static_cast<FilterAction>(int_value);
@@ -881,45 +928,45 @@ bool DirectionsType_IsValid(int value) {
       return false;
   }
 }
+static ::google::protobuf::internal::ExplicitlyConstructed<std::string>
+    DirectionsType_strings[3] = {};
 
-static ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<std::string> DirectionsType_strings[3] = {};
+static const char DirectionsType_names[] = {
+    "instructions"
+    "maneuvers"
+    "none"
+};
 
-static const char DirectionsType_names[] =
-  "instructions"
-  "maneuvers"
-  "none";
-
-static const ::PROTOBUF_NAMESPACE_ID::internal::EnumEntry DirectionsType_entries[] = {
-  { {DirectionsType_names + 0, 12}, 0 },
-  { {DirectionsType_names + 12, 9}, 2 },
-  { {DirectionsType_names + 21, 4}, 1 },
+static const ::google::protobuf::internal::EnumEntry DirectionsType_entries[] =
+    {
+        {{&DirectionsType_names[0], 12}, 0},
+        {{&DirectionsType_names[12], 9}, 2},
+        {{&DirectionsType_names[21], 4}, 1},
 };
 
 static const int DirectionsType_entries_by_number[] = {
-  0, // 0 -> instructions
-  2, // 1 -> none
-  1, // 2 -> maneuvers
+    0,  // 0 -> instructions
+    2,  // 1 -> none
+    1,  // 2 -> maneuvers
 };
 
-const std::string& DirectionsType_Name(
-    DirectionsType value) {
-  static const bool dummy =
-      ::PROTOBUF_NAMESPACE_ID::internal::InitializeEnumStrings(
-          DirectionsType_entries,
-          DirectionsType_entries_by_number,
+const std::string& DirectionsType_Name(DirectionsType value) {
+  static const bool kDummy =
+      ::google::protobuf::internal::InitializeEnumStrings(
+          DirectionsType_entries, DirectionsType_entries_by_number,
           3, DirectionsType_strings);
-  (void) dummy;
-  int idx = ::PROTOBUF_NAMESPACE_ID::internal::LookUpEnumName(
-      DirectionsType_entries,
-      DirectionsType_entries_by_number,
-      3, value);
-  return idx == -1 ? ::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString() :
-                     DirectionsType_strings[idx].get();
+  (void)kDummy;
+
+  int idx = ::google::protobuf::internal::LookUpEnumName(
+      DirectionsType_entries, DirectionsType_entries_by_number, 3,
+      value);
+  return idx == -1 ? ::google::protobuf::internal::GetEmptyString()
+                   : DirectionsType_strings[idx].get();
 }
-bool DirectionsType_Parse(
-    ::PROTOBUF_NAMESPACE_ID::ConstStringParam name, DirectionsType* value) {
+
+bool DirectionsType_Parse(absl::string_view name, DirectionsType* value) {
   int int_value;
-  bool success = ::PROTOBUF_NAMESPACE_ID::internal::LookUpEnumValue(
+  bool success = ::google::protobuf::internal::LookUpEnumValue(
       DirectionsType_entries, 3, name, &int_value);
   if (success) {
     *value = static_cast<DirectionsType>(int_value);
@@ -936,75 +983,76 @@ bool ShapeFormat_IsValid(int value) {
       return false;
   }
 }
+static ::google::protobuf::internal::ExplicitlyConstructed<std::string>
+    ShapeFormat_strings[3] = {};
 
-static ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<std::string> ShapeFormat_strings[3] = {};
+static const char ShapeFormat_names[] = {
+    "geojson"
+    "polyline5"
+    "polyline6"
+};
 
-static const char ShapeFormat_names[] =
-  "geojson"
-  "polyline5"
-  "polyline6";
-
-static const ::PROTOBUF_NAMESPACE_ID::internal::EnumEntry ShapeFormat_entries[] = {
-  { {ShapeFormat_names + 0, 7}, 2 },
-  { {ShapeFormat_names + 7, 9}, 1 },
-  { {ShapeFormat_names + 16, 9}, 0 },
+static const ::google::protobuf::internal::EnumEntry ShapeFormat_entries[] =
+    {
+        {{&ShapeFormat_names[0], 7}, 2},
+        {{&ShapeFormat_names[7], 9}, 1},
+        {{&ShapeFormat_names[16], 9}, 0},
 };
 
 static const int ShapeFormat_entries_by_number[] = {
-  2, // 0 -> polyline6
-  1, // 1 -> polyline5
-  0, // 2 -> geojson
+    2,  // 0 -> polyline6
+    1,  // 1 -> polyline5
+    0,  // 2 -> geojson
 };
 
-const std::string& ShapeFormat_Name(
-    ShapeFormat value) {
-  static const bool dummy =
-      ::PROTOBUF_NAMESPACE_ID::internal::InitializeEnumStrings(
-          ShapeFormat_entries,
-          ShapeFormat_entries_by_number,
+const std::string& ShapeFormat_Name(ShapeFormat value) {
+  static const bool kDummy =
+      ::google::protobuf::internal::InitializeEnumStrings(
+          ShapeFormat_entries, ShapeFormat_entries_by_number,
           3, ShapeFormat_strings);
-  (void) dummy;
-  int idx = ::PROTOBUF_NAMESPACE_ID::internal::LookUpEnumName(
-      ShapeFormat_entries,
-      ShapeFormat_entries_by_number,
-      3, value);
-  return idx == -1 ? ::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString() :
-                     ShapeFormat_strings[idx].get();
+  (void)kDummy;
+
+  int idx = ::google::protobuf::internal::LookUpEnumName(
+      ShapeFormat_entries, ShapeFormat_entries_by_number, 3,
+      value);
+  return idx == -1 ? ::google::protobuf::internal::GetEmptyString()
+                   : ShapeFormat_strings[idx].get();
 }
-bool ShapeFormat_Parse(
-    ::PROTOBUF_NAMESPACE_ID::ConstStringParam name, ShapeFormat* value) {
+
+bool ShapeFormat_Parse(absl::string_view name, ShapeFormat* value) {
   int int_value;
-  bool success = ::PROTOBUF_NAMESPACE_ID::internal::LookUpEnumValue(
+  bool success = ::google::protobuf::internal::LookUpEnumValue(
       ShapeFormat_entries, 3, name, &int_value);
   if (success) {
     *value = static_cast<ShapeFormat>(int_value);
   }
   return success;
 }
-
 // ===================================================================
 
 class Contour::_Internal {
  public:
+  static constexpr ::int32_t kOneofCaseOffset =
+    PROTOBUF_FIELD_OFFSET(::valhalla::Contour, _impl_._oneof_case_);
 };
 
-Contour::Contour(::PROTOBUF_NAMESPACE_ID::Arena* arena,
-                         bool is_message_owned)
-  : ::PROTOBUF_NAMESPACE_ID::MessageLite(arena, is_message_owned) {
-  SharedCtor(arena, is_message_owned);
+Contour::Contour(::google::protobuf::Arena* arena)
+    : ::google::protobuf::MessageLite(arena) {
+  SharedCtor(arena);
   // @@protoc_insertion_point(arena_constructor:valhalla.Contour)
 }
-Contour::Contour(const Contour& from)
-  : ::PROTOBUF_NAMESPACE_ID::MessageLite() {
-  Contour* const _this = this; (void)_this;
+Contour::Contour(const Contour& from) : ::google::protobuf::MessageLite() {
+  Contour* const _this = this;
+  (void)_this;
   new (&_impl_) Impl_{
-      decltype(_impl_.has_time_){}
-    , decltype(_impl_.has_color_){}
-    , decltype(_impl_.has_distance_){}
-    , /*decltype(_impl_._cached_size_)*/{}
-    , /*decltype(_impl_._oneof_case_)*/{}};
-
-  _internal_metadata_.MergeFrom<std::string>(from._internal_metadata_);
+      decltype(_impl_.has_time_){},
+      decltype(_impl_.has_color_){},
+      decltype(_impl_.has_distance_){},
+      /*decltype(_impl_._cached_size_)*/ {},
+      /*decltype(_impl_._oneof_case_)*/ {},
+  };
+  _internal_metadata_.MergeFrom<std::string>(
+      from._internal_metadata_);
   clear_has_has_time();
   switch (from.has_time_case()) {
     case kTime: {
@@ -1035,36 +1083,29 @@ Contour::Contour(const Contour& from)
       break;
     }
   }
+
   // @@protoc_insertion_point(copy_constructor:valhalla.Contour)
 }
-
-inline void Contour::SharedCtor(
-    ::_pb::Arena* arena, bool is_message_owned) {
+inline void Contour::SharedCtor(::_pb::Arena* arena) {
   (void)arena;
-  (void)is_message_owned;
   new (&_impl_) Impl_{
-      decltype(_impl_.has_time_){}
-    , decltype(_impl_.has_color_){}
-    , decltype(_impl_.has_distance_){}
-    , /*decltype(_impl_._cached_size_)*/{}
-    , /*decltype(_impl_._oneof_case_)*/{}
+      decltype(_impl_.has_time_){},
+      decltype(_impl_.has_color_){},
+      decltype(_impl_.has_distance_){},
+      /*decltype(_impl_._cached_size_)*/ {},
+      /*decltype(_impl_._oneof_case_)*/ {},
   };
   clear_has_has_time();
   clear_has_has_color();
   clear_has_has_distance();
 }
-
 Contour::~Contour() {
   // @@protoc_insertion_point(destructor:valhalla.Contour)
-  if (auto *arena = _internal_metadata_.DeleteReturnArena<std::string>()) {
-  (void)arena;
-    return;
-  }
+  _internal_metadata_.Delete<std::string>();
   SharedDtor();
 }
-
 inline void Contour::SharedDtor() {
-  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
+  ABSL_DCHECK(GetArenaForAllocation() == nullptr);
   if (has_has_time()) {
     clear_has_time();
   }
@@ -1075,7 +1116,6 @@ inline void Contour::SharedDtor() {
     clear_has_distance();
   }
 }
-
 void Contour::SetCachedSize(int size) const {
   _impl_._cached_size_.Set(size);
 }
@@ -1123,9 +1163,9 @@ void Contour::clear_has_distance() {
 }
 
 
-void Contour::Clear() {
+PROTOBUF_NOINLINE void Contour::Clear() {
 // @@protoc_insertion_point(message_clear_start:valhalla.Contour)
-  uint32_t cached_has_bits = 0;
+  ::uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
@@ -1135,109 +1175,100 @@ void Contour::Clear() {
   _internal_metadata_.Clear<std::string>();
 }
 
-const char* Contour::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
-#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
-  while (!ctx->Done(&ptr)) {
-    uint32_t tag;
-    ptr = ::_pbi::ReadTag(ptr, &tag);
-    switch (tag >> 3) {
-      // float time = 1;
-      case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 13)) {
-          _internal_set_time(::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr));
-          ptr += sizeof(float);
-        } else
-          goto handle_unusual;
-        continue;
-      // string color = 2;
-      case 2:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 18)) {
-          auto str = _internal_mutable_color();
-          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(ptr);
-          CHK_(::_pbi::VerifyUTF8(str, nullptr));
-        } else
-          goto handle_unusual;
-        continue;
-      // float distance = 3;
-      case 3:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 29)) {
-          _internal_set_distance(::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr));
-          ptr += sizeof(float);
-        } else
-          goto handle_unusual;
-        continue;
-      default:
-        goto handle_unusual;
-    }  // switch
-  handle_unusual:
-    if ((tag == 0) || ((tag & 7) == 4)) {
-      CHK_(ptr);
-      ctx->SetLastTag(tag);
-      goto message_done;
-    }
-    ptr = UnknownFieldParse(
-        tag,
-        _internal_metadata_.mutable_unknown_fields<std::string>(),
-        ptr, ctx);
-    CHK_(ptr != nullptr);
-  }  // while
-message_done:
+const char* Contour::_InternalParse(
+    const char* ptr, ::_pbi::ParseContext* ctx) {
+  ptr = ::_pbi::TcParser::ParseLoop(this, ptr, ctx, &_table_.header);
   return ptr;
-failure:
-  ptr = nullptr;
-  goto message_done;
-#undef CHK_
 }
 
-uint8_t* Contour::_InternalSerialize(
-    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+
+PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1
+const ::_pbi::TcParseTable<0, 3, 0, 30, 2> Contour::_table_ = {
+  {
+    0,  // no _has_bits_
+    0, // no _extensions_
+    3, 0,  // max_field_number, fast_idx_mask
+    offsetof(decltype(_table_), field_lookup_table),
+    4294967288,  // skipmap
+    offsetof(decltype(_table_), field_entries),
+    3,  // num_field_entries
+    0,  // num_aux_entries
+    offsetof(decltype(_table_), field_names),  // no aux_entries
+    &_Contour_default_instance_._instance,
+    ::_pbi::TcParser::GenericFallbackLite,  // fallback
+  }, {{
+    {::_pbi::TcParser::MiniParse, {}},
+  }}, {{
+    65535, 65535
+  }}, {{
+    // float time = 1;
+    {PROTOBUF_FIELD_OFFSET(Contour, _impl_.has_time_.time_), _Internal::kOneofCaseOffset + 0, 0,
+    (0 | ::_fl::kFcOneof | ::_fl::kFloat)},
+    // string color = 2;
+    {PROTOBUF_FIELD_OFFSET(Contour, _impl_.has_color_.color_), _Internal::kOneofCaseOffset + 4, 0,
+    (0 | ::_fl::kFcOneof | ::_fl::kUtf8String | ::_fl::kRepAString)},
+    // float distance = 3;
+    {PROTOBUF_FIELD_OFFSET(Contour, _impl_.has_distance_.distance_), _Internal::kOneofCaseOffset + 8, 0,
+    (0 | ::_fl::kFcOneof | ::_fl::kFloat)},
+  }},
+  // no aux_entries
+  {{
+    "\20\0\5\0\0\0\0\0"
+    "valhalla.Contour"
+    "color"
+  }},
+};
+
+::uint8_t* Contour::_InternalSerialize(
+    ::uint8_t* target,
+    ::google::protobuf::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:valhalla.Contour)
-  uint32_t cached_has_bits = 0;
-  (void) cached_has_bits;
+  ::uint32_t cached_has_bits = 0;
+  (void)cached_has_bits;
 
   // float time = 1;
-  if (_internal_has_time()) {
+  if (has_time_case() == kTime) {
     target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteFloatToArray(1, this->_internal_time(), target);
+    target = ::_pbi::WireFormatLite::WriteFloatToArray(
+        1, this->_internal_time(), target);
   }
 
   // string color = 2;
-  if (_internal_has_color()) {
-    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
-      this->_internal_color().data(), static_cast<int>(this->_internal_color().length()),
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "valhalla.Contour.color");
-    target = stream->WriteStringMaybeAliased(
-        2, this->_internal_color(), target);
+  if (has_color_case() == kColor) {
+    const std::string& _s = this->_internal_color();
+    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+        _s.data(), static_cast<int>(_s.length()), ::google::protobuf::internal::WireFormatLite::SERIALIZE, "valhalla.Contour.color");
+    target = stream->WriteStringMaybeAliased(2, _s, target);
   }
 
   // float distance = 3;
-  if (_internal_has_distance()) {
+  if (has_distance_case() == kDistance) {
     target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteFloatToArray(3, this->_internal_distance(), target);
+    target = ::_pbi::WireFormatLite::WriteFloatToArray(
+        3, this->_internal_distance(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target = stream->WriteRaw(_internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).data(),
-        static_cast<int>(_internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).size()), target);
+    target = stream->WriteRaw(
+        _internal_metadata_.unknown_fields<std::string>(::google::protobuf::internal::GetEmptyString).data(),
+        static_cast<int>(_internal_metadata_.unknown_fields<std::string>(::google::protobuf::internal::GetEmptyString).size()), target);
   }
   // @@protoc_insertion_point(serialize_to_array_end:valhalla.Contour)
   return target;
 }
 
-size_t Contour::ByteSizeLong() const {
+::size_t Contour::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:valhalla.Contour)
-  size_t total_size = 0;
+  ::size_t total_size = 0;
 
-  uint32_t cached_has_bits = 0;
+  ::uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
   switch (has_time_case()) {
     // float time = 1;
     case kTime: {
-      total_size += 1 + 4;
+      total_size += 5;
       break;
     }
     case HAS_TIME_NOT_SET: {
@@ -1247,9 +1278,8 @@ size_t Contour::ByteSizeLong() const {
   switch (has_color_case()) {
     // string color = 2;
     case kColor: {
-      total_size += 1 +
-        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
-          this->_internal_color());
+      total_size += 1 + ::google::protobuf::internal::WireFormatLite::StringSize(
+                                      this->_internal_color());
       break;
     }
     case HAS_COLOR_NOT_SET: {
@@ -1259,7 +1289,7 @@ size_t Contour::ByteSizeLong() const {
   switch (has_distance_case()) {
     // float distance = 3;
     case kDistance: {
-      total_size += 1 + 4;
+      total_size += 5;
       break;
     }
     case HAS_DISTANCE_NOT_SET: {
@@ -1267,7 +1297,7 @@ size_t Contour::ByteSizeLong() const {
     }
   }
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    total_size += _internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).size();
+    total_size += _internal_metadata_.unknown_fields<std::string>(::google::protobuf::internal::GetEmptyString).size();
   }
   int cached_size = ::_pbi::ToCachedSize(total_size);
   SetCachedSize(cached_size);
@@ -1275,7 +1305,7 @@ size_t Contour::ByteSizeLong() const {
 }
 
 void Contour::CheckTypeAndMergeFrom(
-    const ::PROTOBUF_NAMESPACE_ID::MessageLite& from) {
+    const ::google::protobuf::MessageLite& from) {
   MergeFrom(*::_pbi::DownCast<const Contour*>(
       &from));
 }
@@ -1283,8 +1313,8 @@ void Contour::CheckTypeAndMergeFrom(
 void Contour::MergeFrom(const Contour& from) {
   Contour* const _this = this;
   // @@protoc_insertion_point(class_specific_merge_from_start:valhalla.Contour)
-  GOOGLE_DCHECK_NE(&from, _this);
-  uint32_t cached_has_bits = 0;
+  ABSL_DCHECK_NE(&from, _this);
+  ::uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   switch (from.has_time_case()) {
@@ -1324,7 +1354,7 @@ void Contour::CopyFrom(const Contour& from) {
   MergeFrom(from);
 }
 
-bool Contour::IsInitialized() const {
+PROTOBUF_NOINLINE bool Contour::IsInitialized() const {
   return true;
 }
 
@@ -1343,7 +1373,6 @@ std::string Contour::GetTypeName() const {
   return "valhalla.Contour";
 }
 
-
 // ===================================================================
 
 class Ring::_Internal {
@@ -1351,144 +1380,132 @@ class Ring::_Internal {
 };
 
 void Ring::clear_coords() {
-  _impl_.coords_.Clear();
+  _internal_mutable_coords()->Clear();
 }
-Ring::Ring(::PROTOBUF_NAMESPACE_ID::Arena* arena,
-                         bool is_message_owned)
-  : ::PROTOBUF_NAMESPACE_ID::MessageLite(arena, is_message_owned) {
-  SharedCtor(arena, is_message_owned);
+Ring::Ring(::google::protobuf::Arena* arena)
+    : ::google::protobuf::MessageLite(arena) {
+  SharedCtor(arena);
   // @@protoc_insertion_point(arena_constructor:valhalla.Ring)
 }
-Ring::Ring(const Ring& from)
-  : ::PROTOBUF_NAMESPACE_ID::MessageLite() {
-  Ring* const _this = this; (void)_this;
+Ring::Ring(const Ring& from) : ::google::protobuf::MessageLite() {
+  Ring* const _this = this;
+  (void)_this;
   new (&_impl_) Impl_{
-      decltype(_impl_.coords_){from._impl_.coords_}
-    , /*decltype(_impl_._cached_size_)*/{}};
+      decltype(_impl_.coords_){from._impl_.coords_},
+      /*decltype(_impl_._cached_size_)*/ {},
+  };
+  _internal_metadata_.MergeFrom<std::string>(
+      from._internal_metadata_);
 
-  _internal_metadata_.MergeFrom<std::string>(from._internal_metadata_);
   // @@protoc_insertion_point(copy_constructor:valhalla.Ring)
 }
-
-inline void Ring::SharedCtor(
-    ::_pb::Arena* arena, bool is_message_owned) {
+inline void Ring::SharedCtor(::_pb::Arena* arena) {
   (void)arena;
-  (void)is_message_owned;
   new (&_impl_) Impl_{
-      decltype(_impl_.coords_){arena}
-    , /*decltype(_impl_._cached_size_)*/{}
+      decltype(_impl_.coords_){arena},
+      /*decltype(_impl_._cached_size_)*/ {},
   };
 }
-
 Ring::~Ring() {
   // @@protoc_insertion_point(destructor:valhalla.Ring)
-  if (auto *arena = _internal_metadata_.DeleteReturnArena<std::string>()) {
-  (void)arena;
-    return;
-  }
+  _internal_metadata_.Delete<std::string>();
   SharedDtor();
 }
-
 inline void Ring::SharedDtor() {
-  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
+  ABSL_DCHECK(GetArenaForAllocation() == nullptr);
   _impl_.coords_.~RepeatedPtrField();
 }
-
 void Ring::SetCachedSize(int size) const {
   _impl_._cached_size_.Set(size);
 }
 
-void Ring::Clear() {
+PROTOBUF_NOINLINE void Ring::Clear() {
 // @@protoc_insertion_point(message_clear_start:valhalla.Ring)
-  uint32_t cached_has_bits = 0;
+  ::uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  _impl_.coords_.Clear();
+  _internal_mutable_coords()->Clear();
   _internal_metadata_.Clear<std::string>();
 }
 
-const char* Ring::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
-#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
-  while (!ctx->Done(&ptr)) {
-    uint32_t tag;
-    ptr = ::_pbi::ReadTag(ptr, &tag);
-    switch (tag >> 3) {
-      // repeated .valhalla.LatLng coords = 1;
-      case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
-          ptr -= 1;
-          do {
-            ptr += 1;
-            ptr = ctx->ParseMessage(_internal_add_coords(), ptr);
-            CHK_(ptr);
-            if (!ctx->DataAvailable(ptr)) break;
-          } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<10>(ptr));
-        } else
-          goto handle_unusual;
-        continue;
-      default:
-        goto handle_unusual;
-    }  // switch
-  handle_unusual:
-    if ((tag == 0) || ((tag & 7) == 4)) {
-      CHK_(ptr);
-      ctx->SetLastTag(tag);
-      goto message_done;
-    }
-    ptr = UnknownFieldParse(
-        tag,
-        _internal_metadata_.mutable_unknown_fields<std::string>(),
-        ptr, ctx);
-    CHK_(ptr != nullptr);
-  }  // while
-message_done:
+const char* Ring::_InternalParse(
+    const char* ptr, ::_pbi::ParseContext* ctx) {
+  ptr = ::_pbi::TcParser::ParseLoop(this, ptr, ctx, &_table_.header);
   return ptr;
-failure:
-  ptr = nullptr;
-  goto message_done;
-#undef CHK_
 }
 
-uint8_t* Ring::_InternalSerialize(
-    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+
+PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1
+const ::_pbi::TcParseTable<0, 1, 1, 0, 2> Ring::_table_ = {
+  {
+    0,  // no _has_bits_
+    0, // no _extensions_
+    1, 0,  // max_field_number, fast_idx_mask
+    offsetof(decltype(_table_), field_lookup_table),
+    4294967294,  // skipmap
+    offsetof(decltype(_table_), field_entries),
+    1,  // num_field_entries
+    1,  // num_aux_entries
+    offsetof(decltype(_table_), aux_entries),
+    &_Ring_default_instance_._instance,
+    ::_pbi::TcParser::GenericFallbackLite,  // fallback
+  }, {{
+    // repeated .valhalla.LatLng coords = 1;
+    {::_pbi::TcParser::FastMtR1,
+     {10, 63, 0, PROTOBUF_FIELD_OFFSET(Ring, _impl_.coords_)}},
+  }}, {{
+    65535, 65535
+  }}, {{
+    // repeated .valhalla.LatLng coords = 1;
+    {PROTOBUF_FIELD_OFFSET(Ring, _impl_.coords_), 0, 0,
+    (0 | ::_fl::kFcRepeated | ::_fl::kMessage | ::_fl::kTvTable)},
+  }}, {{
+    {::_pbi::TcParser::GetTable<::valhalla::LatLng>()},
+  }}, {{
+  }},
+};
+
+::uint8_t* Ring::_InternalSerialize(
+    ::uint8_t* target,
+    ::google::protobuf::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:valhalla.Ring)
-  uint32_t cached_has_bits = 0;
-  (void) cached_has_bits;
+  ::uint32_t cached_has_bits = 0;
+  (void)cached_has_bits;
 
   // repeated .valhalla.LatLng coords = 1;
   for (unsigned i = 0,
       n = static_cast<unsigned>(this->_internal_coords_size()); i < n; i++) {
-    const auto& repfield = this->_internal_coords(i);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
+    const auto& repfield = this->_internal_coords().Get(i);
+    target = ::google::protobuf::internal::WireFormatLite::
         InternalWriteMessage(1, repfield, repfield.GetCachedSize(), target, stream);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target = stream->WriteRaw(_internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).data(),
-        static_cast<int>(_internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).size()), target);
+    target = stream->WriteRaw(
+        _internal_metadata_.unknown_fields<std::string>(::google::protobuf::internal::GetEmptyString).data(),
+        static_cast<int>(_internal_metadata_.unknown_fields<std::string>(::google::protobuf::internal::GetEmptyString).size()), target);
   }
   // @@protoc_insertion_point(serialize_to_array_end:valhalla.Ring)
   return target;
 }
 
-size_t Ring::ByteSizeLong() const {
+::size_t Ring::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:valhalla.Ring)
-  size_t total_size = 0;
+  ::size_t total_size = 0;
 
-  uint32_t cached_has_bits = 0;
+  ::uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
   // repeated .valhalla.LatLng coords = 1;
   total_size += 1UL * this->_internal_coords_size();
-  for (const auto& msg : this->_impl_.coords_) {
+  for (const auto& msg : this->_internal_coords()) {
     total_size +=
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(msg);
+      ::google::protobuf::internal::WireFormatLite::MessageSize(msg);
   }
-
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    total_size += _internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).size();
+    total_size += _internal_metadata_.unknown_fields<std::string>(::google::protobuf::internal::GetEmptyString).size();
   }
   int cached_size = ::_pbi::ToCachedSize(total_size);
   SetCachedSize(cached_size);
@@ -1496,7 +1513,7 @@ size_t Ring::ByteSizeLong() const {
 }
 
 void Ring::CheckTypeAndMergeFrom(
-    const ::PROTOBUF_NAMESPACE_ID::MessageLite& from) {
+    const ::google::protobuf::MessageLite& from) {
   MergeFrom(*::_pbi::DownCast<const Ring*>(
       &from));
 }
@@ -1504,11 +1521,11 @@ void Ring::CheckTypeAndMergeFrom(
 void Ring::MergeFrom(const Ring& from) {
   Ring* const _this = this;
   // @@protoc_insertion_point(class_specific_merge_from_start:valhalla.Ring)
-  GOOGLE_DCHECK_NE(&from, _this);
-  uint32_t cached_has_bits = 0;
+  ABSL_DCHECK_NE(&from, _this);
+  ::uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  _this->_impl_.coords_.MergeFrom(from._impl_.coords_);
+  _this->_internal_mutable_coords()->MergeFrom(from._internal_coords());
   _this->_internal_metadata_.MergeFrom<std::string>(from._internal_metadata_);
 }
 
@@ -1519,7 +1536,7 @@ void Ring::CopyFrom(const Ring& from) {
   MergeFrom(from);
 }
 
-bool Ring::IsInitialized() const {
+PROTOBUF_NOINLINE bool Ring::IsInitialized() const {
   return true;
 }
 
@@ -1533,207 +1550,186 @@ std::string Ring::GetTypeName() const {
   return "valhalla.Ring";
 }
 
-
 // ===================================================================
 
 class PbfFieldSelector::_Internal {
  public:
 };
 
-PbfFieldSelector::PbfFieldSelector(::PROTOBUF_NAMESPACE_ID::Arena* arena,
-                         bool is_message_owned)
-  : ::PROTOBUF_NAMESPACE_ID::MessageLite(arena, is_message_owned) {
-  SharedCtor(arena, is_message_owned);
+PbfFieldSelector::PbfFieldSelector(::google::protobuf::Arena* arena)
+    : ::google::protobuf::MessageLite(arena) {
+  SharedCtor(arena);
   // @@protoc_insertion_point(arena_constructor:valhalla.PbfFieldSelector)
 }
 PbfFieldSelector::PbfFieldSelector(const PbfFieldSelector& from)
-  : ::PROTOBUF_NAMESPACE_ID::MessageLite() {
-  PbfFieldSelector* const _this = this; (void)_this;
-  new (&_impl_) Impl_{
-      decltype(_impl_.options_){}
-    , decltype(_impl_.trip_){}
-    , decltype(_impl_.directions_){}
-    , decltype(_impl_.status_){}
-    , /*decltype(_impl_._cached_size_)*/{}};
-
-  _internal_metadata_.MergeFrom<std::string>(from._internal_metadata_);
-  ::memcpy(&_impl_.options_, &from._impl_.options_,
-    static_cast<size_t>(reinterpret_cast<char*>(&_impl_.status_) -
-    reinterpret_cast<char*>(&_impl_.options_)) + sizeof(_impl_.status_));
+    : ::google::protobuf::MessageLite(), _impl_(from._impl_) {
+  _internal_metadata_.MergeFrom<std::string>(
+      from._internal_metadata_);
   // @@protoc_insertion_point(copy_constructor:valhalla.PbfFieldSelector)
 }
-
-inline void PbfFieldSelector::SharedCtor(
-    ::_pb::Arena* arena, bool is_message_owned) {
+inline void PbfFieldSelector::SharedCtor(::_pb::Arena* arena) {
   (void)arena;
-  (void)is_message_owned;
   new (&_impl_) Impl_{
-      decltype(_impl_.options_){false}
-    , decltype(_impl_.trip_){false}
-    , decltype(_impl_.directions_){false}
-    , decltype(_impl_.status_){false}
-    , /*decltype(_impl_._cached_size_)*/{}
+      decltype(_impl_.options_){false},
+      decltype(_impl_.trip_){false},
+      decltype(_impl_.directions_){false},
+      decltype(_impl_.status_){false},
+      /*decltype(_impl_._cached_size_)*/ {},
   };
 }
-
 PbfFieldSelector::~PbfFieldSelector() {
   // @@protoc_insertion_point(destructor:valhalla.PbfFieldSelector)
-  if (auto *arena = _internal_metadata_.DeleteReturnArena<std::string>()) {
-  (void)arena;
-    return;
-  }
+  _internal_metadata_.Delete<std::string>();
   SharedDtor();
 }
-
 inline void PbfFieldSelector::SharedDtor() {
-  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
+  ABSL_DCHECK(GetArenaForAllocation() == nullptr);
 }
-
 void PbfFieldSelector::SetCachedSize(int size) const {
   _impl_._cached_size_.Set(size);
 }
 
-void PbfFieldSelector::Clear() {
+PROTOBUF_NOINLINE void PbfFieldSelector::Clear() {
 // @@protoc_insertion_point(message_clear_start:valhalla.PbfFieldSelector)
-  uint32_t cached_has_bits = 0;
+  ::uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  ::memset(&_impl_.options_, 0, static_cast<size_t>(
+  ::memset(&_impl_.options_, 0, static_cast<::size_t>(
       reinterpret_cast<char*>(&_impl_.status_) -
       reinterpret_cast<char*>(&_impl_.options_)) + sizeof(_impl_.status_));
   _internal_metadata_.Clear<std::string>();
 }
 
-const char* PbfFieldSelector::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
-#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
-  while (!ctx->Done(&ptr)) {
-    uint32_t tag;
-    ptr = ::_pbi::ReadTag(ptr, &tag);
-    switch (tag >> 3) {
-      // bool options = 1;
-      case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 8)) {
-          _impl_.options_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
-          CHK_(ptr);
-        } else
-          goto handle_unusual;
-        continue;
-      // bool trip = 2;
-      case 2:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 16)) {
-          _impl_.trip_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
-          CHK_(ptr);
-        } else
-          goto handle_unusual;
-        continue;
-      // bool directions = 3;
-      case 3:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 24)) {
-          _impl_.directions_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
-          CHK_(ptr);
-        } else
-          goto handle_unusual;
-        continue;
-      // bool status = 4;
-      case 4:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 32)) {
-          _impl_.status_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
-          CHK_(ptr);
-        } else
-          goto handle_unusual;
-        continue;
-      default:
-        goto handle_unusual;
-    }  // switch
-  handle_unusual:
-    if ((tag == 0) || ((tag & 7) == 4)) {
-      CHK_(ptr);
-      ctx->SetLastTag(tag);
-      goto message_done;
-    }
-    ptr = UnknownFieldParse(
-        tag,
-        _internal_metadata_.mutable_unknown_fields<std::string>(),
-        ptr, ctx);
-    CHK_(ptr != nullptr);
-  }  // while
-message_done:
+const char* PbfFieldSelector::_InternalParse(
+    const char* ptr, ::_pbi::ParseContext* ctx) {
+  ptr = ::_pbi::TcParser::ParseLoop(this, ptr, ctx, &_table_.header);
   return ptr;
-failure:
-  ptr = nullptr;
-  goto message_done;
-#undef CHK_
 }
 
-uint8_t* PbfFieldSelector::_InternalSerialize(
-    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+
+PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1
+const ::_pbi::TcParseTable<2, 4, 0, 0, 2> PbfFieldSelector::_table_ = {
+  {
+    0,  // no _has_bits_
+    0, // no _extensions_
+    4, 24,  // max_field_number, fast_idx_mask
+    offsetof(decltype(_table_), field_lookup_table),
+    4294967280,  // skipmap
+    offsetof(decltype(_table_), field_entries),
+    4,  // num_field_entries
+    0,  // num_aux_entries
+    offsetof(decltype(_table_), field_names),  // no aux_entries
+    &_PbfFieldSelector_default_instance_._instance,
+    ::_pbi::TcParser::GenericFallbackLite,  // fallback
+  }, {{
+    // bool status = 4;
+    {::_pbi::TcParser::FastV8S1,
+     {32, 63, 0, PROTOBUF_FIELD_OFFSET(PbfFieldSelector, _impl_.status_)}},
+    // bool options = 1;
+    {::_pbi::TcParser::FastV8S1,
+     {8, 63, 0, PROTOBUF_FIELD_OFFSET(PbfFieldSelector, _impl_.options_)}},
+    // bool trip = 2;
+    {::_pbi::TcParser::FastV8S1,
+     {16, 63, 0, PROTOBUF_FIELD_OFFSET(PbfFieldSelector, _impl_.trip_)}},
+    // bool directions = 3;
+    {::_pbi::TcParser::FastV8S1,
+     {24, 63, 0, PROTOBUF_FIELD_OFFSET(PbfFieldSelector, _impl_.directions_)}},
+  }}, {{
+    65535, 65535
+  }}, {{
+    // bool options = 1;
+    {PROTOBUF_FIELD_OFFSET(PbfFieldSelector, _impl_.options_), 0, 0,
+    (0 | ::_fl::kFcSingular | ::_fl::kBool)},
+    // bool trip = 2;
+    {PROTOBUF_FIELD_OFFSET(PbfFieldSelector, _impl_.trip_), 0, 0,
+    (0 | ::_fl::kFcSingular | ::_fl::kBool)},
+    // bool directions = 3;
+    {PROTOBUF_FIELD_OFFSET(PbfFieldSelector, _impl_.directions_), 0, 0,
+    (0 | ::_fl::kFcSingular | ::_fl::kBool)},
+    // bool status = 4;
+    {PROTOBUF_FIELD_OFFSET(PbfFieldSelector, _impl_.status_), 0, 0,
+    (0 | ::_fl::kFcSingular | ::_fl::kBool)},
+  }},
+  // no aux_entries
+  {{
+  }},
+};
+
+::uint8_t* PbfFieldSelector::_InternalSerialize(
+    ::uint8_t* target,
+    ::google::protobuf::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:valhalla.PbfFieldSelector)
-  uint32_t cached_has_bits = 0;
-  (void) cached_has_bits;
+  ::uint32_t cached_has_bits = 0;
+  (void)cached_has_bits;
 
   // bool options = 1;
   if (this->_internal_options() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteBoolToArray(1, this->_internal_options(), target);
+    target = ::_pbi::WireFormatLite::WriteBoolToArray(
+        1, this->_internal_options(), target);
   }
 
   // bool trip = 2;
   if (this->_internal_trip() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteBoolToArray(2, this->_internal_trip(), target);
+    target = ::_pbi::WireFormatLite::WriteBoolToArray(
+        2, this->_internal_trip(), target);
   }
 
   // bool directions = 3;
   if (this->_internal_directions() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteBoolToArray(3, this->_internal_directions(), target);
+    target = ::_pbi::WireFormatLite::WriteBoolToArray(
+        3, this->_internal_directions(), target);
   }
 
   // bool status = 4;
   if (this->_internal_status() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteBoolToArray(4, this->_internal_status(), target);
+    target = ::_pbi::WireFormatLite::WriteBoolToArray(
+        4, this->_internal_status(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target = stream->WriteRaw(_internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).data(),
-        static_cast<int>(_internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).size()), target);
+    target = stream->WriteRaw(
+        _internal_metadata_.unknown_fields<std::string>(::google::protobuf::internal::GetEmptyString).data(),
+        static_cast<int>(_internal_metadata_.unknown_fields<std::string>(::google::protobuf::internal::GetEmptyString).size()), target);
   }
   // @@protoc_insertion_point(serialize_to_array_end:valhalla.PbfFieldSelector)
   return target;
 }
 
-size_t PbfFieldSelector::ByteSizeLong() const {
+::size_t PbfFieldSelector::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:valhalla.PbfFieldSelector)
-  size_t total_size = 0;
+  ::size_t total_size = 0;
 
-  uint32_t cached_has_bits = 0;
+  ::uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
   // bool options = 1;
   if (this->_internal_options() != 0) {
-    total_size += 1 + 1;
+    total_size += 2;
   }
 
   // bool trip = 2;
   if (this->_internal_trip() != 0) {
-    total_size += 1 + 1;
+    total_size += 2;
   }
 
   // bool directions = 3;
   if (this->_internal_directions() != 0) {
-    total_size += 1 + 1;
+    total_size += 2;
   }
 
   // bool status = 4;
   if (this->_internal_status() != 0) {
-    total_size += 1 + 1;
+    total_size += 2;
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    total_size += _internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).size();
+    total_size += _internal_metadata_.unknown_fields<std::string>(::google::protobuf::internal::GetEmptyString).size();
   }
   int cached_size = ::_pbi::ToCachedSize(total_size);
   SetCachedSize(cached_size);
@@ -1741,7 +1737,7 @@ size_t PbfFieldSelector::ByteSizeLong() const {
 }
 
 void PbfFieldSelector::CheckTypeAndMergeFrom(
-    const ::PROTOBUF_NAMESPACE_ID::MessageLite& from) {
+    const ::google::protobuf::MessageLite& from) {
   MergeFrom(*::_pbi::DownCast<const PbfFieldSelector*>(
       &from));
 }
@@ -1749,8 +1745,8 @@ void PbfFieldSelector::CheckTypeAndMergeFrom(
 void PbfFieldSelector::MergeFrom(const PbfFieldSelector& from) {
   PbfFieldSelector* const _this = this;
   // @@protoc_insertion_point(class_specific_merge_from_start:valhalla.PbfFieldSelector)
-  GOOGLE_DCHECK_NE(&from, _this);
-  uint32_t cached_has_bits = 0;
+  ABSL_DCHECK_NE(&from, _this);
+  ::uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   if (from._internal_options() != 0) {
@@ -1775,14 +1771,14 @@ void PbfFieldSelector::CopyFrom(const PbfFieldSelector& from) {
   MergeFrom(from);
 }
 
-bool PbfFieldSelector::IsInitialized() const {
+PROTOBUF_NOINLINE bool PbfFieldSelector::IsInitialized() const {
   return true;
 }
 
 void PbfFieldSelector::InternalSwap(PbfFieldSelector* other) {
   using std::swap;
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
-  ::PROTOBUF_NAMESPACE_ID::internal::memswap<
+  ::google::protobuf::internal::memswap<
       PROTOBUF_FIELD_OFFSET(PbfFieldSelector, _impl_.status_)
       + sizeof(PbfFieldSelector::_impl_.status_)
       - PROTOBUF_FIELD_OFFSET(PbfFieldSelector, _impl_.options_)>(
@@ -1794,29 +1790,30 @@ std::string PbfFieldSelector::GetTypeName() const {
   return "valhalla.PbfFieldSelector";
 }
 
-
 // ===================================================================
 
 class AvoidEdge::_Internal {
  public:
+  static constexpr ::int32_t kOneofCaseOffset =
+    PROTOBUF_FIELD_OFFSET(::valhalla::AvoidEdge, _impl_._oneof_case_);
 };
 
-AvoidEdge::AvoidEdge(::PROTOBUF_NAMESPACE_ID::Arena* arena,
-                         bool is_message_owned)
-  : ::PROTOBUF_NAMESPACE_ID::MessageLite(arena, is_message_owned) {
-  SharedCtor(arena, is_message_owned);
+AvoidEdge::AvoidEdge(::google::protobuf::Arena* arena)
+    : ::google::protobuf::MessageLite(arena) {
+  SharedCtor(arena);
   // @@protoc_insertion_point(arena_constructor:valhalla.AvoidEdge)
 }
-AvoidEdge::AvoidEdge(const AvoidEdge& from)
-  : ::PROTOBUF_NAMESPACE_ID::MessageLite() {
-  AvoidEdge* const _this = this; (void)_this;
+AvoidEdge::AvoidEdge(const AvoidEdge& from) : ::google::protobuf::MessageLite() {
+  AvoidEdge* const _this = this;
+  (void)_this;
   new (&_impl_) Impl_{
-      decltype(_impl_.has_id_){}
-    , decltype(_impl_.has_percent_along_){}
-    , /*decltype(_impl_._cached_size_)*/{}
-    , /*decltype(_impl_._oneof_case_)*/{}};
-
-  _internal_metadata_.MergeFrom<std::string>(from._internal_metadata_);
+      decltype(_impl_.has_id_){},
+      decltype(_impl_.has_percent_along_){},
+      /*decltype(_impl_._cached_size_)*/ {},
+      /*decltype(_impl_._oneof_case_)*/ {},
+  };
+  _internal_metadata_.MergeFrom<std::string>(
+      from._internal_metadata_);
   clear_has_has_id();
   switch (from.has_id_case()) {
     case kId: {
@@ -1837,34 +1834,27 @@ AvoidEdge::AvoidEdge(const AvoidEdge& from)
       break;
     }
   }
+
   // @@protoc_insertion_point(copy_constructor:valhalla.AvoidEdge)
 }
-
-inline void AvoidEdge::SharedCtor(
-    ::_pb::Arena* arena, bool is_message_owned) {
+inline void AvoidEdge::SharedCtor(::_pb::Arena* arena) {
   (void)arena;
-  (void)is_message_owned;
   new (&_impl_) Impl_{
-      decltype(_impl_.has_id_){}
-    , decltype(_impl_.has_percent_along_){}
-    , /*decltype(_impl_._cached_size_)*/{}
-    , /*decltype(_impl_._oneof_case_)*/{}
+      decltype(_impl_.has_id_){},
+      decltype(_impl_.has_percent_along_){},
+      /*decltype(_impl_._cached_size_)*/ {},
+      /*decltype(_impl_._oneof_case_)*/ {},
   };
   clear_has_has_id();
   clear_has_has_percent_along();
 }
-
 AvoidEdge::~AvoidEdge() {
   // @@protoc_insertion_point(destructor:valhalla.AvoidEdge)
-  if (auto *arena = _internal_metadata_.DeleteReturnArena<std::string>()) {
-  (void)arena;
-    return;
-  }
+  _internal_metadata_.Delete<std::string>();
   SharedDtor();
 }
-
 inline void AvoidEdge::SharedDtor() {
-  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
+  ABSL_DCHECK(GetArenaForAllocation() == nullptr);
   if (has_has_id()) {
     clear_has_id();
   }
@@ -1872,7 +1862,6 @@ inline void AvoidEdge::SharedDtor() {
     clear_has_percent_along();
   }
 }
-
 void AvoidEdge::SetCachedSize(int size) const {
   _impl_._cached_size_.Set(size);
 }
@@ -1906,9 +1895,9 @@ void AvoidEdge::clear_has_percent_along() {
 }
 
 
-void AvoidEdge::Clear() {
+PROTOBUF_NOINLINE void AvoidEdge::Clear() {
 // @@protoc_insertion_point(message_clear_start:valhalla.AvoidEdge)
-  uint32_t cached_has_bits = 0;
+  ::uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
@@ -1917,89 +1906,87 @@ void AvoidEdge::Clear() {
   _internal_metadata_.Clear<std::string>();
 }
 
-const char* AvoidEdge::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
-#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
-  while (!ctx->Done(&ptr)) {
-    uint32_t tag;
-    ptr = ::_pbi::ReadTag(ptr, &tag);
-    switch (tag >> 3) {
-      // uint64 id = 1;
-      case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 8)) {
-          _internal_set_id(::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr));
-          CHK_(ptr);
-        } else
-          goto handle_unusual;
-        continue;
-      // float percent_along = 2;
-      case 2:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 21)) {
-          _internal_set_percent_along(::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr));
-          ptr += sizeof(float);
-        } else
-          goto handle_unusual;
-        continue;
-      default:
-        goto handle_unusual;
-    }  // switch
-  handle_unusual:
-    if ((tag == 0) || ((tag & 7) == 4)) {
-      CHK_(ptr);
-      ctx->SetLastTag(tag);
-      goto message_done;
-    }
-    ptr = UnknownFieldParse(
-        tag,
-        _internal_metadata_.mutable_unknown_fields<std::string>(),
-        ptr, ctx);
-    CHK_(ptr != nullptr);
-  }  // while
-message_done:
+const char* AvoidEdge::_InternalParse(
+    const char* ptr, ::_pbi::ParseContext* ctx) {
+  ptr = ::_pbi::TcParser::ParseLoop(this, ptr, ctx, &_table_.header);
   return ptr;
-failure:
-  ptr = nullptr;
-  goto message_done;
-#undef CHK_
 }
 
-uint8_t* AvoidEdge::_InternalSerialize(
-    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+
+PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1
+const ::_pbi::TcParseTable<0, 2, 0, 0, 2> AvoidEdge::_table_ = {
+  {
+    0,  // no _has_bits_
+    0, // no _extensions_
+    2, 0,  // max_field_number, fast_idx_mask
+    offsetof(decltype(_table_), field_lookup_table),
+    4294967292,  // skipmap
+    offsetof(decltype(_table_), field_entries),
+    2,  // num_field_entries
+    0,  // num_aux_entries
+    offsetof(decltype(_table_), field_names),  // no aux_entries
+    &_AvoidEdge_default_instance_._instance,
+    ::_pbi::TcParser::GenericFallbackLite,  // fallback
+  }, {{
+    {::_pbi::TcParser::MiniParse, {}},
+  }}, {{
+    65535, 65535
+  }}, {{
+    // uint64 id = 1;
+    {PROTOBUF_FIELD_OFFSET(AvoidEdge, _impl_.has_id_.id_), _Internal::kOneofCaseOffset + 0, 0,
+    (0 | ::_fl::kFcOneof | ::_fl::kUInt64)},
+    // float percent_along = 2;
+    {PROTOBUF_FIELD_OFFSET(AvoidEdge, _impl_.has_percent_along_.percent_along_), _Internal::kOneofCaseOffset + 4, 0,
+    (0 | ::_fl::kFcOneof | ::_fl::kFloat)},
+  }},
+  // no aux_entries
+  {{
+  }},
+};
+
+::uint8_t* AvoidEdge::_InternalSerialize(
+    ::uint8_t* target,
+    ::google::protobuf::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:valhalla.AvoidEdge)
-  uint32_t cached_has_bits = 0;
-  (void) cached_has_bits;
+  ::uint32_t cached_has_bits = 0;
+  (void)cached_has_bits;
 
   // uint64 id = 1;
-  if (_internal_has_id()) {
+  if (has_id_case() == kId) {
     target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteUInt64ToArray(1, this->_internal_id(), target);
+    target = ::_pbi::WireFormatLite::WriteUInt64ToArray(
+        1, this->_internal_id(), target);
   }
 
   // float percent_along = 2;
-  if (_internal_has_percent_along()) {
+  if (has_percent_along_case() == kPercentAlong) {
     target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteFloatToArray(2, this->_internal_percent_along(), target);
+    target = ::_pbi::WireFormatLite::WriteFloatToArray(
+        2, this->_internal_percent_along(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target = stream->WriteRaw(_internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).data(),
-        static_cast<int>(_internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).size()), target);
+    target = stream->WriteRaw(
+        _internal_metadata_.unknown_fields<std::string>(::google::protobuf::internal::GetEmptyString).data(),
+        static_cast<int>(_internal_metadata_.unknown_fields<std::string>(::google::protobuf::internal::GetEmptyString).size()), target);
   }
   // @@protoc_insertion_point(serialize_to_array_end:valhalla.AvoidEdge)
   return target;
 }
 
-size_t AvoidEdge::ByteSizeLong() const {
+::size_t AvoidEdge::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:valhalla.AvoidEdge)
-  size_t total_size = 0;
+  ::size_t total_size = 0;
 
-  uint32_t cached_has_bits = 0;
+  ::uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
   switch (has_id_case()) {
     // uint64 id = 1;
     case kId: {
-      total_size += ::_pbi::WireFormatLite::UInt64SizePlusOne(this->_internal_id());
+      total_size += ::_pbi::WireFormatLite::UInt64SizePlusOne(
+          this->_internal_id());
       break;
     }
     case HAS_ID_NOT_SET: {
@@ -2009,7 +1996,7 @@ size_t AvoidEdge::ByteSizeLong() const {
   switch (has_percent_along_case()) {
     // float percent_along = 2;
     case kPercentAlong: {
-      total_size += 1 + 4;
+      total_size += 5;
       break;
     }
     case HAS_PERCENT_ALONG_NOT_SET: {
@@ -2017,7 +2004,7 @@ size_t AvoidEdge::ByteSizeLong() const {
     }
   }
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    total_size += _internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).size();
+    total_size += _internal_metadata_.unknown_fields<std::string>(::google::protobuf::internal::GetEmptyString).size();
   }
   int cached_size = ::_pbi::ToCachedSize(total_size);
   SetCachedSize(cached_size);
@@ -2025,7 +2012,7 @@ size_t AvoidEdge::ByteSizeLong() const {
 }
 
 void AvoidEdge::CheckTypeAndMergeFrom(
-    const ::PROTOBUF_NAMESPACE_ID::MessageLite& from) {
+    const ::google::protobuf::MessageLite& from) {
   MergeFrom(*::_pbi::DownCast<const AvoidEdge*>(
       &from));
 }
@@ -2033,8 +2020,8 @@ void AvoidEdge::CheckTypeAndMergeFrom(
 void AvoidEdge::MergeFrom(const AvoidEdge& from) {
   AvoidEdge* const _this = this;
   // @@protoc_insertion_point(class_specific_merge_from_start:valhalla.AvoidEdge)
-  GOOGLE_DCHECK_NE(&from, _this);
-  uint32_t cached_has_bits = 0;
+  ABSL_DCHECK_NE(&from, _this);
+  ::uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   switch (from.has_id_case()) {
@@ -2065,7 +2052,7 @@ void AvoidEdge::CopyFrom(const AvoidEdge& from) {
   MergeFrom(from);
 }
 
-bool AvoidEdge::IsInitialized() const {
+PROTOBUF_NOINLINE bool AvoidEdge::IsInitialized() const {
   return true;
 }
 
@@ -2082,112 +2069,113 @@ std::string AvoidEdge::GetTypeName() const {
   return "valhalla.AvoidEdge";
 }
 
-
 // ===================================================================
 
 class Costing_Options::_Internal {
  public:
+  static constexpr ::int32_t kOneofCaseOffset =
+    PROTOBUF_FIELD_OFFSET(::valhalla::Costing_Options, _impl_._oneof_case_);
 };
 
-Costing_Options::Costing_Options(::PROTOBUF_NAMESPACE_ID::Arena* arena,
-                         bool is_message_owned)
-  : ::PROTOBUF_NAMESPACE_ID::MessageLite(arena, is_message_owned) {
-  SharedCtor(arena, is_message_owned);
+Costing_Options::Costing_Options(::google::protobuf::Arena* arena)
+    : ::google::protobuf::MessageLite(arena) {
+  SharedCtor(arena);
   // @@protoc_insertion_point(arena_constructor:valhalla.Costing.Options)
 }
-Costing_Options::Costing_Options(const Costing_Options& from)
-  : ::PROTOBUF_NAMESPACE_ID::MessageLite() {
-  Costing_Options* const _this = this; (void)_this;
+Costing_Options::Costing_Options(const Costing_Options& from) : ::google::protobuf::MessageLite() {
+  Costing_Options* const _this = this;
+  (void)_this;
   new (&_impl_) Impl_{
-      decltype(_impl_.filter_stop_ids_){from._impl_.filter_stop_ids_}
-    , decltype(_impl_.filter_operator_ids_){from._impl_.filter_operator_ids_}
-    , decltype(_impl_.filter_route_ids_){from._impl_.filter_route_ids_}
-    , decltype(_impl_.exclude_edges_){from._impl_.exclude_edges_}
-    , decltype(_impl_.filter_stop_action_){}
-    , decltype(_impl_.filter_operator_action_){}
-    , decltype(_impl_.filter_route_action_){}
-    , decltype(_impl_.fixed_speed_){}
-    , decltype(_impl_.axle_count_){}
-    , decltype(_impl_.use_lit_){}
-    , decltype(_impl_.disable_hierarchy_pruning_){}
-    , decltype(_impl_.has_maneuver_penalty_){}
-    , decltype(_impl_.has_destination_only_penalty_){}
-    , decltype(_impl_.has_gate_cost_){}
-    , decltype(_impl_.has_gate_penalty_){}
-    , decltype(_impl_.has_toll_booth_cost_){}
-    , decltype(_impl_.has_toll_booth_penalty_){}
-    , decltype(_impl_.has_alley_penalty_){}
-    , decltype(_impl_.has_country_crossing_cost_){}
-    , decltype(_impl_.has_country_crossing_penalty_){}
-    , decltype(_impl_.has_ferry_cost_){}
-    , decltype(_impl_.has_avoid_bad_surfaces_){}
-    , decltype(_impl_.has_use_ferry_){}
-    , decltype(_impl_.has_use_highways_){}
-    , decltype(_impl_.has_use_tolls_){}
-    , decltype(_impl_.has_use_roads_){}
-    , decltype(_impl_.has_max_distance_){}
-    , decltype(_impl_.has_walking_speed_){}
-    , decltype(_impl_.has_step_penalty_){}
-    , decltype(_impl_.has_max_grade_){}
-    , decltype(_impl_.has_max_hiking_difficulty_){}
-    , decltype(_impl_.has_mode_factor_){}
-    , decltype(_impl_.has_walkway_factor_){}
-    , decltype(_impl_.has_sidewalk_factor_){}
-    , decltype(_impl_.has_alley_factor_){}
-    , decltype(_impl_.has_driveway_factor_){}
-    , decltype(_impl_.has_driveway_penalty_){}
-    , decltype(_impl_.has_transit_start_end_max_distance_){}
-    , decltype(_impl_.has_transit_transfer_max_distance_){}
-    , decltype(_impl_.has_transport_type_){}
-    , decltype(_impl_.has_top_speed_){}
-    , decltype(_impl_.has_use_hills_){}
-    , decltype(_impl_.has_use_primary_){}
-    , decltype(_impl_.has_use_trails_){}
-    , decltype(_impl_.has_low_class_penalty_){}
-    , decltype(_impl_.has_hazmat_){}
-    , decltype(_impl_.has_weight_){}
-    , decltype(_impl_.has_axle_load_){}
-    , decltype(_impl_.has_height_){}
-    , decltype(_impl_.has_width_){}
-    , decltype(_impl_.has_length_){}
-    , decltype(_impl_.has_cycling_speed_){}
-    , decltype(_impl_.has_wheelchair_){}
-    , decltype(_impl_.has_bicycle_){}
-    , decltype(_impl_.has_use_bus_){}
-    , decltype(_impl_.has_use_rail_){}
-    , decltype(_impl_.has_use_transfers_){}
-    , decltype(_impl_.has_transfer_cost_){}
-    , decltype(_impl_.has_transfer_penalty_){}
-    , decltype(_impl_.has_flow_mask_){}
-    , decltype(_impl_.has_bike_share_cost_){}
-    , decltype(_impl_.has_bike_share_penalty_){}
-    , decltype(_impl_.has_rail_ferry_cost_){}
-    , decltype(_impl_.has_use_rail_ferry_){}
-    , decltype(_impl_.has_ignore_restrictions_){}
-    , decltype(_impl_.has_ignore_oneways_){}
-    , decltype(_impl_.has_ignore_access_){}
-    , decltype(_impl_.has_ignore_closures_){}
-    , decltype(_impl_.has_shortest_){}
-    , decltype(_impl_.has_service_penalty_){}
-    , decltype(_impl_.has_use_tracks_){}
-    , decltype(_impl_.has_use_distance_){}
-    , decltype(_impl_.has_use_living_streets_){}
-    , decltype(_impl_.has_service_factor_){}
-    , decltype(_impl_.has_closure_factor_){}
-    , decltype(_impl_.has_private_access_penalty_){}
-    , decltype(_impl_.has_exclude_unpaved_){}
-    , decltype(_impl_.has_include_hot_){}
-    , decltype(_impl_.has_include_hov2_){}
-    , decltype(_impl_.has_include_hov3_){}
-    , decltype(_impl_.has_exclude_cash_only_tolls_){}
-    , decltype(_impl_.has_restriction_probability_){}
-    , decltype(_impl_.has_elevator_penalty_){}
-    , /*decltype(_impl_._cached_size_)*/{}
-    , /*decltype(_impl_._oneof_case_)*/{}};
-
-  _internal_metadata_.MergeFrom<std::string>(from._internal_metadata_);
+      decltype(_impl_.filter_stop_ids_){from._impl_.filter_stop_ids_},
+      decltype(_impl_.filter_operator_ids_){from._impl_.filter_operator_ids_},
+      decltype(_impl_.filter_route_ids_){from._impl_.filter_route_ids_},
+      decltype(_impl_.exclude_edges_){from._impl_.exclude_edges_},
+      decltype(_impl_.filter_stop_action_){},
+      decltype(_impl_.filter_operator_action_){},
+      decltype(_impl_.filter_route_action_){},
+      decltype(_impl_.fixed_speed_){},
+      decltype(_impl_.axle_count_){},
+      decltype(_impl_.use_lit_){},
+      decltype(_impl_.disable_hierarchy_pruning_){},
+      decltype(_impl_.has_maneuver_penalty_){},
+      decltype(_impl_.has_destination_only_penalty_){},
+      decltype(_impl_.has_gate_cost_){},
+      decltype(_impl_.has_gate_penalty_){},
+      decltype(_impl_.has_toll_booth_cost_){},
+      decltype(_impl_.has_toll_booth_penalty_){},
+      decltype(_impl_.has_alley_penalty_){},
+      decltype(_impl_.has_country_crossing_cost_){},
+      decltype(_impl_.has_country_crossing_penalty_){},
+      decltype(_impl_.has_ferry_cost_){},
+      decltype(_impl_.has_avoid_bad_surfaces_){},
+      decltype(_impl_.has_use_ferry_){},
+      decltype(_impl_.has_use_highways_){},
+      decltype(_impl_.has_use_tolls_){},
+      decltype(_impl_.has_use_roads_){},
+      decltype(_impl_.has_max_distance_){},
+      decltype(_impl_.has_walking_speed_){},
+      decltype(_impl_.has_step_penalty_){},
+      decltype(_impl_.has_max_grade_){},
+      decltype(_impl_.has_max_hiking_difficulty_){},
+      decltype(_impl_.has_mode_factor_){},
+      decltype(_impl_.has_walkway_factor_){},
+      decltype(_impl_.has_sidewalk_factor_){},
+      decltype(_impl_.has_alley_factor_){},
+      decltype(_impl_.has_driveway_factor_){},
+      decltype(_impl_.has_driveway_penalty_){},
+      decltype(_impl_.has_transit_start_end_max_distance_){},
+      decltype(_impl_.has_transit_transfer_max_distance_){},
+      decltype(_impl_.has_transport_type_){},
+      decltype(_impl_.has_top_speed_){},
+      decltype(_impl_.has_use_hills_){},
+      decltype(_impl_.has_use_primary_){},
+      decltype(_impl_.has_use_trails_){},
+      decltype(_impl_.has_low_class_penalty_){},
+      decltype(_impl_.has_hazmat_){},
+      decltype(_impl_.has_weight_){},
+      decltype(_impl_.has_axle_load_){},
+      decltype(_impl_.has_height_){},
+      decltype(_impl_.has_width_){},
+      decltype(_impl_.has_length_){},
+      decltype(_impl_.has_cycling_speed_){},
+      decltype(_impl_.has_wheelchair_){},
+      decltype(_impl_.has_bicycle_){},
+      decltype(_impl_.has_use_bus_){},
+      decltype(_impl_.has_use_rail_){},
+      decltype(_impl_.has_use_transfers_){},
+      decltype(_impl_.has_transfer_cost_){},
+      decltype(_impl_.has_transfer_penalty_){},
+      decltype(_impl_.has_flow_mask_){},
+      decltype(_impl_.has_bike_share_cost_){},
+      decltype(_impl_.has_bike_share_penalty_){},
+      decltype(_impl_.has_rail_ferry_cost_){},
+      decltype(_impl_.has_use_rail_ferry_){},
+      decltype(_impl_.has_ignore_restrictions_){},
+      decltype(_impl_.has_ignore_oneways_){},
+      decltype(_impl_.has_ignore_access_){},
+      decltype(_impl_.has_ignore_closures_){},
+      decltype(_impl_.has_shortest_){},
+      decltype(_impl_.has_service_penalty_){},
+      decltype(_impl_.has_use_tracks_){},
+      decltype(_impl_.has_use_distance_){},
+      decltype(_impl_.has_use_living_streets_){},
+      decltype(_impl_.has_service_factor_){},
+      decltype(_impl_.has_closure_factor_){},
+      decltype(_impl_.has_private_access_penalty_){},
+      decltype(_impl_.has_exclude_unpaved_){},
+      decltype(_impl_.has_include_hot_){},
+      decltype(_impl_.has_include_hov2_){},
+      decltype(_impl_.has_include_hov3_){},
+      decltype(_impl_.has_exclude_cash_only_tolls_){},
+      decltype(_impl_.has_restriction_probability_){},
+      decltype(_impl_.has_elevator_penalty_){},
+      /*decltype(_impl_._cached_size_)*/ {},
+      /*decltype(_impl_._oneof_case_)*/ {},
+  };
+  _internal_metadata_.MergeFrom<std::string>(
+      from._internal_metadata_);
   ::memcpy(&_impl_.filter_stop_action_, &from._impl_.filter_stop_action_,
-    static_cast<size_t>(reinterpret_cast<char*>(&_impl_.disable_hierarchy_pruning_) -
+    static_cast<::size_t>(reinterpret_cast<char*>(&_impl_.disable_hierarchy_pruning_) -
     reinterpret_cast<char*>(&_impl_.filter_stop_action_)) + sizeof(_impl_.disable_hierarchy_pruning_));
   clear_has_has_maneuver_penalty();
   switch (from.has_maneuver_penalty_case()) {
@@ -2909,99 +2897,97 @@ Costing_Options::Costing_Options(const Costing_Options& from)
       break;
     }
   }
+
   // @@protoc_insertion_point(copy_constructor:valhalla.Costing.Options)
 }
-
-inline void Costing_Options::SharedCtor(
-    ::_pb::Arena* arena, bool is_message_owned) {
+inline void Costing_Options::SharedCtor(::_pb::Arena* arena) {
   (void)arena;
-  (void)is_message_owned;
   new (&_impl_) Impl_{
-      decltype(_impl_.filter_stop_ids_){arena}
-    , decltype(_impl_.filter_operator_ids_){arena}
-    , decltype(_impl_.filter_route_ids_){arena}
-    , decltype(_impl_.exclude_edges_){arena}
-    , decltype(_impl_.filter_stop_action_){0}
-    , decltype(_impl_.filter_operator_action_){0}
-    , decltype(_impl_.filter_route_action_){0}
-    , decltype(_impl_.fixed_speed_){0u}
-    , decltype(_impl_.axle_count_){0u}
-    , decltype(_impl_.use_lit_){0}
-    , decltype(_impl_.disable_hierarchy_pruning_){false}
-    , decltype(_impl_.has_maneuver_penalty_){}
-    , decltype(_impl_.has_destination_only_penalty_){}
-    , decltype(_impl_.has_gate_cost_){}
-    , decltype(_impl_.has_gate_penalty_){}
-    , decltype(_impl_.has_toll_booth_cost_){}
-    , decltype(_impl_.has_toll_booth_penalty_){}
-    , decltype(_impl_.has_alley_penalty_){}
-    , decltype(_impl_.has_country_crossing_cost_){}
-    , decltype(_impl_.has_country_crossing_penalty_){}
-    , decltype(_impl_.has_ferry_cost_){}
-    , decltype(_impl_.has_avoid_bad_surfaces_){}
-    , decltype(_impl_.has_use_ferry_){}
-    , decltype(_impl_.has_use_highways_){}
-    , decltype(_impl_.has_use_tolls_){}
-    , decltype(_impl_.has_use_roads_){}
-    , decltype(_impl_.has_max_distance_){}
-    , decltype(_impl_.has_walking_speed_){}
-    , decltype(_impl_.has_step_penalty_){}
-    , decltype(_impl_.has_max_grade_){}
-    , decltype(_impl_.has_max_hiking_difficulty_){}
-    , decltype(_impl_.has_mode_factor_){}
-    , decltype(_impl_.has_walkway_factor_){}
-    , decltype(_impl_.has_sidewalk_factor_){}
-    , decltype(_impl_.has_alley_factor_){}
-    , decltype(_impl_.has_driveway_factor_){}
-    , decltype(_impl_.has_driveway_penalty_){}
-    , decltype(_impl_.has_transit_start_end_max_distance_){}
-    , decltype(_impl_.has_transit_transfer_max_distance_){}
-    , decltype(_impl_.has_transport_type_){}
-    , decltype(_impl_.has_top_speed_){}
-    , decltype(_impl_.has_use_hills_){}
-    , decltype(_impl_.has_use_primary_){}
-    , decltype(_impl_.has_use_trails_){}
-    , decltype(_impl_.has_low_class_penalty_){}
-    , decltype(_impl_.has_hazmat_){}
-    , decltype(_impl_.has_weight_){}
-    , decltype(_impl_.has_axle_load_){}
-    , decltype(_impl_.has_height_){}
-    , decltype(_impl_.has_width_){}
-    , decltype(_impl_.has_length_){}
-    , decltype(_impl_.has_cycling_speed_){}
-    , decltype(_impl_.has_wheelchair_){}
-    , decltype(_impl_.has_bicycle_){}
-    , decltype(_impl_.has_use_bus_){}
-    , decltype(_impl_.has_use_rail_){}
-    , decltype(_impl_.has_use_transfers_){}
-    , decltype(_impl_.has_transfer_cost_){}
-    , decltype(_impl_.has_transfer_penalty_){}
-    , decltype(_impl_.has_flow_mask_){}
-    , decltype(_impl_.has_bike_share_cost_){}
-    , decltype(_impl_.has_bike_share_penalty_){}
-    , decltype(_impl_.has_rail_ferry_cost_){}
-    , decltype(_impl_.has_use_rail_ferry_){}
-    , decltype(_impl_.has_ignore_restrictions_){}
-    , decltype(_impl_.has_ignore_oneways_){}
-    , decltype(_impl_.has_ignore_access_){}
-    , decltype(_impl_.has_ignore_closures_){}
-    , decltype(_impl_.has_shortest_){}
-    , decltype(_impl_.has_service_penalty_){}
-    , decltype(_impl_.has_use_tracks_){}
-    , decltype(_impl_.has_use_distance_){}
-    , decltype(_impl_.has_use_living_streets_){}
-    , decltype(_impl_.has_service_factor_){}
-    , decltype(_impl_.has_closure_factor_){}
-    , decltype(_impl_.has_private_access_penalty_){}
-    , decltype(_impl_.has_exclude_unpaved_){}
-    , decltype(_impl_.has_include_hot_){}
-    , decltype(_impl_.has_include_hov2_){}
-    , decltype(_impl_.has_include_hov3_){}
-    , decltype(_impl_.has_exclude_cash_only_tolls_){}
-    , decltype(_impl_.has_restriction_probability_){}
-    , decltype(_impl_.has_elevator_penalty_){}
-    , /*decltype(_impl_._cached_size_)*/{}
-    , /*decltype(_impl_._oneof_case_)*/{}
+      decltype(_impl_.filter_stop_ids_){arena},
+      decltype(_impl_.filter_operator_ids_){arena},
+      decltype(_impl_.filter_route_ids_){arena},
+      decltype(_impl_.exclude_edges_){arena},
+      decltype(_impl_.filter_stop_action_){0},
+      decltype(_impl_.filter_operator_action_){0},
+      decltype(_impl_.filter_route_action_){0},
+      decltype(_impl_.fixed_speed_){0u},
+      decltype(_impl_.axle_count_){0u},
+      decltype(_impl_.use_lit_){0},
+      decltype(_impl_.disable_hierarchy_pruning_){false},
+      decltype(_impl_.has_maneuver_penalty_){},
+      decltype(_impl_.has_destination_only_penalty_){},
+      decltype(_impl_.has_gate_cost_){},
+      decltype(_impl_.has_gate_penalty_){},
+      decltype(_impl_.has_toll_booth_cost_){},
+      decltype(_impl_.has_toll_booth_penalty_){},
+      decltype(_impl_.has_alley_penalty_){},
+      decltype(_impl_.has_country_crossing_cost_){},
+      decltype(_impl_.has_country_crossing_penalty_){},
+      decltype(_impl_.has_ferry_cost_){},
+      decltype(_impl_.has_avoid_bad_surfaces_){},
+      decltype(_impl_.has_use_ferry_){},
+      decltype(_impl_.has_use_highways_){},
+      decltype(_impl_.has_use_tolls_){},
+      decltype(_impl_.has_use_roads_){},
+      decltype(_impl_.has_max_distance_){},
+      decltype(_impl_.has_walking_speed_){},
+      decltype(_impl_.has_step_penalty_){},
+      decltype(_impl_.has_max_grade_){},
+      decltype(_impl_.has_max_hiking_difficulty_){},
+      decltype(_impl_.has_mode_factor_){},
+      decltype(_impl_.has_walkway_factor_){},
+      decltype(_impl_.has_sidewalk_factor_){},
+      decltype(_impl_.has_alley_factor_){},
+      decltype(_impl_.has_driveway_factor_){},
+      decltype(_impl_.has_driveway_penalty_){},
+      decltype(_impl_.has_transit_start_end_max_distance_){},
+      decltype(_impl_.has_transit_transfer_max_distance_){},
+      decltype(_impl_.has_transport_type_){},
+      decltype(_impl_.has_top_speed_){},
+      decltype(_impl_.has_use_hills_){},
+      decltype(_impl_.has_use_primary_){},
+      decltype(_impl_.has_use_trails_){},
+      decltype(_impl_.has_low_class_penalty_){},
+      decltype(_impl_.has_hazmat_){},
+      decltype(_impl_.has_weight_){},
+      decltype(_impl_.has_axle_load_){},
+      decltype(_impl_.has_height_){},
+      decltype(_impl_.has_width_){},
+      decltype(_impl_.has_length_){},
+      decltype(_impl_.has_cycling_speed_){},
+      decltype(_impl_.has_wheelchair_){},
+      decltype(_impl_.has_bicycle_){},
+      decltype(_impl_.has_use_bus_){},
+      decltype(_impl_.has_use_rail_){},
+      decltype(_impl_.has_use_transfers_){},
+      decltype(_impl_.has_transfer_cost_){},
+      decltype(_impl_.has_transfer_penalty_){},
+      decltype(_impl_.has_flow_mask_){},
+      decltype(_impl_.has_bike_share_cost_){},
+      decltype(_impl_.has_bike_share_penalty_){},
+      decltype(_impl_.has_rail_ferry_cost_){},
+      decltype(_impl_.has_use_rail_ferry_){},
+      decltype(_impl_.has_ignore_restrictions_){},
+      decltype(_impl_.has_ignore_oneways_){},
+      decltype(_impl_.has_ignore_access_){},
+      decltype(_impl_.has_ignore_closures_){},
+      decltype(_impl_.has_shortest_){},
+      decltype(_impl_.has_service_penalty_){},
+      decltype(_impl_.has_use_tracks_){},
+      decltype(_impl_.has_use_distance_){},
+      decltype(_impl_.has_use_living_streets_){},
+      decltype(_impl_.has_service_factor_){},
+      decltype(_impl_.has_closure_factor_){},
+      decltype(_impl_.has_private_access_penalty_){},
+      decltype(_impl_.has_exclude_unpaved_){},
+      decltype(_impl_.has_include_hot_){},
+      decltype(_impl_.has_include_hov2_){},
+      decltype(_impl_.has_include_hov3_){},
+      decltype(_impl_.has_exclude_cash_only_tolls_){},
+      decltype(_impl_.has_restriction_probability_){},
+      decltype(_impl_.has_elevator_penalty_){},
+      /*decltype(_impl_._cached_size_)*/ {},
+      /*decltype(_impl_._oneof_case_)*/ {},
   };
   clear_has_has_maneuver_penalty();
   clear_has_has_destination_only_penalty();
@@ -3076,21 +3062,16 @@ inline void Costing_Options::SharedCtor(
   clear_has_has_restriction_probability();
   clear_has_has_elevator_penalty();
 }
-
 Costing_Options::~Costing_Options() {
   // @@protoc_insertion_point(destructor:valhalla.Costing.Options)
-  if (auto *arena = _internal_metadata_.DeleteReturnArena<std::string>()) {
-  (void)arena;
-    return;
-  }
+  _internal_metadata_.Delete<std::string>();
   SharedDtor();
 }
-
 inline void Costing_Options::SharedDtor() {
-  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
-  _impl_.filter_stop_ids_.~RepeatedPtrField();
-  _impl_.filter_operator_ids_.~RepeatedPtrField();
-  _impl_.filter_route_ids_.~RepeatedPtrField();
+  ABSL_DCHECK(GetArenaForAllocation() == nullptr);
+  _internal_mutable_filter_stop_ids()->~RepeatedPtrField();
+  _internal_mutable_filter_operator_ids()->~RepeatedPtrField();
+  _internal_mutable_filter_route_ids()->~RepeatedPtrField();
   _impl_.exclude_edges_.~RepeatedPtrField();
   if (has_has_maneuver_penalty()) {
     clear_has_maneuver_penalty();
@@ -3309,7 +3290,6 @@ inline void Costing_Options::SharedDtor() {
     clear_has_elevator_penalty();
   }
 }
-
 void Costing_Options::SetCachedSize(int size) const {
   _impl_._cached_size_.Set(size);
 }
@@ -4323,17 +4303,17 @@ void Costing_Options::clear_has_elevator_penalty() {
 }
 
 
-void Costing_Options::Clear() {
+PROTOBUF_NOINLINE void Costing_Options::Clear() {
 // @@protoc_insertion_point(message_clear_start:valhalla.Costing.Options)
-  uint32_t cached_has_bits = 0;
+  ::uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  _impl_.filter_stop_ids_.Clear();
-  _impl_.filter_operator_ids_.Clear();
-  _impl_.filter_route_ids_.Clear();
-  _impl_.exclude_edges_.Clear();
-  ::memset(&_impl_.filter_stop_action_, 0, static_cast<size_t>(
+  _internal_mutable_filter_stop_ids()->Clear();
+  _internal_mutable_filter_operator_ids()->Clear();
+  _internal_mutable_filter_route_ids()->Clear();
+  _internal_mutable_exclude_edges()->Clear();
+  ::memset(&_impl_.filter_stop_action_, 0, static_cast<::size_t>(
       reinterpret_cast<char*>(&_impl_.disable_hierarchy_pruning_) -
       reinterpret_cast<char*>(&_impl_.filter_stop_action_)) + sizeof(_impl_.disable_hierarchy_pruning_));
   clear_has_maneuver_penalty();
@@ -4411,1042 +4391,682 @@ void Costing_Options::Clear() {
   _internal_metadata_.Clear<std::string>();
 }
 
-const char* Costing_Options::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
-#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
-  while (!ctx->Done(&ptr)) {
-    uint32_t tag;
-    ptr = ::_pbi::ReadTag(ptr, &tag);
-    switch (tag >> 3) {
-      // float maneuver_penalty = 1;
-      case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 13)) {
-          _internal_set_maneuver_penalty(::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr));
-          ptr += sizeof(float);
-        } else
-          goto handle_unusual;
-        continue;
-      // float destination_only_penalty = 2;
-      case 2:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 21)) {
-          _internal_set_destination_only_penalty(::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr));
-          ptr += sizeof(float);
-        } else
-          goto handle_unusual;
-        continue;
-      // float gate_cost = 3;
-      case 3:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 29)) {
-          _internal_set_gate_cost(::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr));
-          ptr += sizeof(float);
-        } else
-          goto handle_unusual;
-        continue;
-      // float gate_penalty = 4;
-      case 4:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 37)) {
-          _internal_set_gate_penalty(::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr));
-          ptr += sizeof(float);
-        } else
-          goto handle_unusual;
-        continue;
-      // float toll_booth_cost = 5;
-      case 5:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 45)) {
-          _internal_set_toll_booth_cost(::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr));
-          ptr += sizeof(float);
-        } else
-          goto handle_unusual;
-        continue;
-      // float toll_booth_penalty = 6;
-      case 6:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 53)) {
-          _internal_set_toll_booth_penalty(::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr));
-          ptr += sizeof(float);
-        } else
-          goto handle_unusual;
-        continue;
-      // float alley_penalty = 7;
-      case 7:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 61)) {
-          _internal_set_alley_penalty(::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr));
-          ptr += sizeof(float);
-        } else
-          goto handle_unusual;
-        continue;
-      // float country_crossing_cost = 8;
-      case 8:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 69)) {
-          _internal_set_country_crossing_cost(::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr));
-          ptr += sizeof(float);
-        } else
-          goto handle_unusual;
-        continue;
-      // float country_crossing_penalty = 9;
-      case 9:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 77)) {
-          _internal_set_country_crossing_penalty(::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr));
-          ptr += sizeof(float);
-        } else
-          goto handle_unusual;
-        continue;
-      // float ferry_cost = 10;
-      case 10:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 85)) {
-          _internal_set_ferry_cost(::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr));
-          ptr += sizeof(float);
-        } else
-          goto handle_unusual;
-        continue;
-      // float avoid_bad_surfaces = 11;
-      case 11:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 93)) {
-          _internal_set_avoid_bad_surfaces(::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr));
-          ptr += sizeof(float);
-        } else
-          goto handle_unusual;
-        continue;
-      // float use_ferry = 12;
-      case 12:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 101)) {
-          _internal_set_use_ferry(::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr));
-          ptr += sizeof(float);
-        } else
-          goto handle_unusual;
-        continue;
-      // float use_highways = 13;
-      case 13:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 109)) {
-          _internal_set_use_highways(::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr));
-          ptr += sizeof(float);
-        } else
-          goto handle_unusual;
-        continue;
-      // float use_tolls = 14;
-      case 14:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 117)) {
-          _internal_set_use_tolls(::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr));
-          ptr += sizeof(float);
-        } else
-          goto handle_unusual;
-        continue;
-      // float use_roads = 15;
-      case 15:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 125)) {
-          _internal_set_use_roads(::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr));
-          ptr += sizeof(float);
-        } else
-          goto handle_unusual;
-        continue;
-      // uint32 max_distance = 16;
-      case 16:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 128)) {
-          _internal_set_max_distance(::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr));
-          CHK_(ptr);
-        } else
-          goto handle_unusual;
-        continue;
-      // float walking_speed = 17;
-      case 17:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 141)) {
-          _internal_set_walking_speed(::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr));
-          ptr += sizeof(float);
-        } else
-          goto handle_unusual;
-        continue;
-      // float step_penalty = 18;
-      case 18:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 149)) {
-          _internal_set_step_penalty(::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr));
-          ptr += sizeof(float);
-        } else
-          goto handle_unusual;
-        continue;
-      // uint32 max_grade = 19;
-      case 19:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 152)) {
-          _internal_set_max_grade(::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr));
-          CHK_(ptr);
-        } else
-          goto handle_unusual;
-        continue;
-      // uint32 max_hiking_difficulty = 20;
-      case 20:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 160)) {
-          _internal_set_max_hiking_difficulty(::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr));
-          CHK_(ptr);
-        } else
-          goto handle_unusual;
-        continue;
-      // float mode_factor = 21;
-      case 21:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 173)) {
-          _internal_set_mode_factor(::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr));
-          ptr += sizeof(float);
-        } else
-          goto handle_unusual;
-        continue;
-      // float walkway_factor = 22;
-      case 22:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 181)) {
-          _internal_set_walkway_factor(::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr));
-          ptr += sizeof(float);
-        } else
-          goto handle_unusual;
-        continue;
-      // float sidewalk_factor = 23;
-      case 23:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 189)) {
-          _internal_set_sidewalk_factor(::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr));
-          ptr += sizeof(float);
-        } else
-          goto handle_unusual;
-        continue;
-      // float alley_factor = 24;
-      case 24:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 197)) {
-          _internal_set_alley_factor(::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr));
-          ptr += sizeof(float);
-        } else
-          goto handle_unusual;
-        continue;
-      // float driveway_factor = 25;
-      case 25:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 205)) {
-          _internal_set_driveway_factor(::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr));
-          ptr += sizeof(float);
-        } else
-          goto handle_unusual;
-        continue;
-      // float driveway_penalty = 26;
-      case 26:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 213)) {
-          _internal_set_driveway_penalty(::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr));
-          ptr += sizeof(float);
-        } else
-          goto handle_unusual;
-        continue;
-      // uint32 transit_start_end_max_distance = 27;
-      case 27:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 216)) {
-          _internal_set_transit_start_end_max_distance(::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr));
-          CHK_(ptr);
-        } else
-          goto handle_unusual;
-        continue;
-      // uint32 transit_transfer_max_distance = 28;
-      case 28:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 224)) {
-          _internal_set_transit_transfer_max_distance(::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr));
-          CHK_(ptr);
-        } else
-          goto handle_unusual;
-        continue;
-      // string transport_type = 29;
-      case 29:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 234)) {
-          auto str = _internal_mutable_transport_type();
-          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(ptr);
-          CHK_(::_pbi::VerifyUTF8(str, nullptr));
-        } else
-          goto handle_unusual;
-        continue;
-      // float top_speed = 30;
-      case 30:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 245)) {
-          _internal_set_top_speed(::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr));
-          ptr += sizeof(float);
-        } else
-          goto handle_unusual;
-        continue;
-      // float use_hills = 31;
-      case 31:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 253)) {
-          _internal_set_use_hills(::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr));
-          ptr += sizeof(float);
-        } else
-          goto handle_unusual;
-        continue;
-      // float use_primary = 32;
-      case 32:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 5)) {
-          _internal_set_use_primary(::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr));
-          ptr += sizeof(float);
-        } else
-          goto handle_unusual;
-        continue;
-      // float use_trails = 33;
-      case 33:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 13)) {
-          _internal_set_use_trails(::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr));
-          ptr += sizeof(float);
-        } else
-          goto handle_unusual;
-        continue;
-      // float low_class_penalty = 34;
-      case 34:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 21)) {
-          _internal_set_low_class_penalty(::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr));
-          ptr += sizeof(float);
-        } else
-          goto handle_unusual;
-        continue;
-      // bool hazmat = 35;
-      case 35:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 24)) {
-          _internal_set_hazmat(::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr));
-          CHK_(ptr);
-        } else
-          goto handle_unusual;
-        continue;
-      // float weight = 36;
-      case 36:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 37)) {
-          _internal_set_weight(::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr));
-          ptr += sizeof(float);
-        } else
-          goto handle_unusual;
-        continue;
-      // float axle_load = 37;
-      case 37:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 45)) {
-          _internal_set_axle_load(::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr));
-          ptr += sizeof(float);
-        } else
-          goto handle_unusual;
-        continue;
-      // float height = 38;
-      case 38:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 53)) {
-          _internal_set_height(::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr));
-          ptr += sizeof(float);
-        } else
-          goto handle_unusual;
-        continue;
-      // float width = 39;
-      case 39:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 61)) {
-          _internal_set_width(::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr));
-          ptr += sizeof(float);
-        } else
-          goto handle_unusual;
-        continue;
-      // float length = 40;
-      case 40:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 69)) {
-          _internal_set_length(::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr));
-          ptr += sizeof(float);
-        } else
-          goto handle_unusual;
-        continue;
-      // float cycling_speed = 41;
-      case 41:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 77)) {
-          _internal_set_cycling_speed(::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr));
-          ptr += sizeof(float);
-        } else
-          goto handle_unusual;
-        continue;
-      // bool wheelchair = 42;
-      case 42:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 80)) {
-          _internal_set_wheelchair(::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr));
-          CHK_(ptr);
-        } else
-          goto handle_unusual;
-        continue;
-      // bool bicycle = 43;
-      case 43:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 88)) {
-          _internal_set_bicycle(::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr));
-          CHK_(ptr);
-        } else
-          goto handle_unusual;
-        continue;
-      // float use_bus = 44;
-      case 44:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 101)) {
-          _internal_set_use_bus(::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr));
-          ptr += sizeof(float);
-        } else
-          goto handle_unusual;
-        continue;
-      // float use_rail = 45;
-      case 45:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 109)) {
-          _internal_set_use_rail(::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr));
-          ptr += sizeof(float);
-        } else
-          goto handle_unusual;
-        continue;
-      // float use_transfers = 46;
-      case 46:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 117)) {
-          _internal_set_use_transfers(::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr));
-          ptr += sizeof(float);
-        } else
-          goto handle_unusual;
-        continue;
-      // float transfer_cost = 47;
-      case 47:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 125)) {
-          _internal_set_transfer_cost(::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr));
-          ptr += sizeof(float);
-        } else
-          goto handle_unusual;
-        continue;
-      // float transfer_penalty = 48;
-      case 48:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 133)) {
-          _internal_set_transfer_penalty(::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr));
-          ptr += sizeof(float);
-        } else
-          goto handle_unusual;
-        continue;
-      // .valhalla.FilterAction filter_stop_action = 49;
-      case 49:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 136)) {
-          uint64_t val = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
-          CHK_(ptr);
-          _internal_set_filter_stop_action(static_cast<::valhalla::FilterAction>(val));
-        } else
-          goto handle_unusual;
-        continue;
-      // repeated string filter_stop_ids = 50;
-      case 50:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 146)) {
-          ptr -= 2;
-          do {
-            ptr += 2;
-            auto str = _internal_add_filter_stop_ids();
-            ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
-            CHK_(ptr);
-            CHK_(::_pbi::VerifyUTF8(str, nullptr));
-            if (!ctx->DataAvailable(ptr)) break;
-          } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<402>(ptr));
-        } else
-          goto handle_unusual;
-        continue;
-      // .valhalla.FilterAction filter_operator_action = 51;
-      case 51:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 152)) {
-          uint64_t val = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
-          CHK_(ptr);
-          _internal_set_filter_operator_action(static_cast<::valhalla::FilterAction>(val));
-        } else
-          goto handle_unusual;
-        continue;
-      // repeated string filter_operator_ids = 52;
-      case 52:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 162)) {
-          ptr -= 2;
-          do {
-            ptr += 2;
-            auto str = _internal_add_filter_operator_ids();
-            ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
-            CHK_(ptr);
-            CHK_(::_pbi::VerifyUTF8(str, nullptr));
-            if (!ctx->DataAvailable(ptr)) break;
-          } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<418>(ptr));
-        } else
-          goto handle_unusual;
-        continue;
-      // .valhalla.FilterAction filter_route_action = 53;
-      case 53:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 168)) {
-          uint64_t val = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
-          CHK_(ptr);
-          _internal_set_filter_route_action(static_cast<::valhalla::FilterAction>(val));
-        } else
-          goto handle_unusual;
-        continue;
-      // repeated string filter_route_ids = 54;
-      case 54:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 178)) {
-          ptr -= 2;
-          do {
-            ptr += 2;
-            auto str = _internal_add_filter_route_ids();
-            ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
-            CHK_(ptr);
-            CHK_(::_pbi::VerifyUTF8(str, nullptr));
-            if (!ctx->DataAvailable(ptr)) break;
-          } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<434>(ptr));
-        } else
-          goto handle_unusual;
-        continue;
-      // uint32 flow_mask = 55;
-      case 55:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 184)) {
-          _internal_set_flow_mask(::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr));
-          CHK_(ptr);
-        } else
-          goto handle_unusual;
-        continue;
-      // float bike_share_cost = 56;
-      case 56:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 197)) {
-          _internal_set_bike_share_cost(::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr));
-          ptr += sizeof(float);
-        } else
-          goto handle_unusual;
-        continue;
-      // float bike_share_penalty = 57;
-      case 57:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 205)) {
-          _internal_set_bike_share_penalty(::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr));
-          ptr += sizeof(float);
-        } else
-          goto handle_unusual;
-        continue;
-      // float rail_ferry_cost = 58;
-      case 58:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 213)) {
-          _internal_set_rail_ferry_cost(::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr));
-          ptr += sizeof(float);
-        } else
-          goto handle_unusual;
-        continue;
-      // float use_rail_ferry = 59;
-      case 59:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 221)) {
-          _internal_set_use_rail_ferry(::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr));
-          ptr += sizeof(float);
-        } else
-          goto handle_unusual;
-        continue;
-      // bool ignore_restrictions = 60;
-      case 60:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 224)) {
-          _internal_set_ignore_restrictions(::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr));
-          CHK_(ptr);
-        } else
-          goto handle_unusual;
-        continue;
-      // bool ignore_oneways = 61;
-      case 61:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 232)) {
-          _internal_set_ignore_oneways(::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr));
-          CHK_(ptr);
-        } else
-          goto handle_unusual;
-        continue;
-      // bool ignore_access = 62;
-      case 62:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 240)) {
-          _internal_set_ignore_access(::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr));
-          CHK_(ptr);
-        } else
-          goto handle_unusual;
-        continue;
-      // bool ignore_closures = 63;
-      case 63:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 248)) {
-          _internal_set_ignore_closures(::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr));
-          CHK_(ptr);
-        } else
-          goto handle_unusual;
-        continue;
-      // bool shortest = 64;
-      case 64:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 0)) {
-          _internal_set_shortest(::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr));
-          CHK_(ptr);
-        } else
-          goto handle_unusual;
-        continue;
-      // float service_penalty = 65;
-      case 65:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 13)) {
-          _internal_set_service_penalty(::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr));
-          ptr += sizeof(float);
-        } else
-          goto handle_unusual;
-        continue;
-      // float use_tracks = 66;
-      case 66:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 21)) {
-          _internal_set_use_tracks(::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr));
-          ptr += sizeof(float);
-        } else
-          goto handle_unusual;
-        continue;
-      // float use_distance = 67;
-      case 67:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 29)) {
-          _internal_set_use_distance(::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr));
-          ptr += sizeof(float);
-        } else
-          goto handle_unusual;
-        continue;
-      // float use_living_streets = 68;
-      case 68:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 37)) {
-          _internal_set_use_living_streets(::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr));
-          ptr += sizeof(float);
-        } else
-          goto handle_unusual;
-        continue;
-      // float service_factor = 69;
-      case 69:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 45)) {
-          _internal_set_service_factor(::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr));
-          ptr += sizeof(float);
-        } else
-          goto handle_unusual;
-        continue;
-      // float closure_factor = 70;
-      case 70:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 53)) {
-          _internal_set_closure_factor(::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr));
-          ptr += sizeof(float);
-        } else
-          goto handle_unusual;
-        continue;
-      // float private_access_penalty = 71;
-      case 71:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 61)) {
-          _internal_set_private_access_penalty(::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr));
-          ptr += sizeof(float);
-        } else
-          goto handle_unusual;
-        continue;
-      // bool exclude_unpaved = 72;
-      case 72:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 64)) {
-          _internal_set_exclude_unpaved(::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr));
-          CHK_(ptr);
-        } else
-          goto handle_unusual;
-        continue;
-      // bool include_hot = 73;
-      case 73:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 72)) {
-          _internal_set_include_hot(::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr));
-          CHK_(ptr);
-        } else
-          goto handle_unusual;
-        continue;
-      // bool include_hov2 = 74;
-      case 74:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 80)) {
-          _internal_set_include_hov2(::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr));
-          CHK_(ptr);
-        } else
-          goto handle_unusual;
-        continue;
-      // bool include_hov3 = 75;
-      case 75:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 88)) {
-          _internal_set_include_hov3(::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr));
-          CHK_(ptr);
-        } else
-          goto handle_unusual;
-        continue;
-      // bool exclude_cash_only_tolls = 76;
-      case 76:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 96)) {
-          _internal_set_exclude_cash_only_tolls(::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr));
-          CHK_(ptr);
-        } else
-          goto handle_unusual;
-        continue;
-      // uint32 restriction_probability = 77;
-      case 77:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 104)) {
-          _internal_set_restriction_probability(::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr));
-          CHK_(ptr);
-        } else
-          goto handle_unusual;
-        continue;
-      // repeated .valhalla.AvoidEdge exclude_edges = 78;
-      case 78:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 114)) {
-          ptr -= 2;
-          do {
-            ptr += 2;
-            ptr = ctx->ParseMessage(_internal_add_exclude_edges(), ptr);
-            CHK_(ptr);
-            if (!ctx->DataAvailable(ptr)) break;
-          } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<626>(ptr));
-        } else
-          goto handle_unusual;
-        continue;
-      // float elevator_penalty = 79;
-      case 79:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 125)) {
-          _internal_set_elevator_penalty(::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr));
-          ptr += sizeof(float);
-        } else
-          goto handle_unusual;
-        continue;
-      // uint32 fixed_speed = 80;
-      case 80:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 128)) {
-          _impl_.fixed_speed_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
-          CHK_(ptr);
-        } else
-          goto handle_unusual;
-        continue;
-      // uint32 axle_count = 81;
-      case 81:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 136)) {
-          _impl_.axle_count_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
-          CHK_(ptr);
-        } else
-          goto handle_unusual;
-        continue;
-      // float use_lit = 82;
-      case 82:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 149)) {
-          _impl_.use_lit_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
-          ptr += sizeof(float);
-        } else
-          goto handle_unusual;
-        continue;
-      // bool disable_hierarchy_pruning = 83;
-      case 83:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 152)) {
-          _impl_.disable_hierarchy_pruning_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
-          CHK_(ptr);
-        } else
-          goto handle_unusual;
-        continue;
-      default:
-        goto handle_unusual;
-    }  // switch
-  handle_unusual:
-    if ((tag == 0) || ((tag & 7) == 4)) {
-      CHK_(ptr);
-      ctx->SetLastTag(tag);
-      goto message_done;
-    }
-    ptr = UnknownFieldParse(
-        tag,
-        _internal_metadata_.mutable_unknown_fields<std::string>(),
-        ptr, ctx);
-    CHK_(ptr != nullptr);
-  }  // while
-message_done:
+const char* Costing_Options::_InternalParse(
+    const char* ptr, ::_pbi::ParseContext* ctx) {
+  ptr = ::_pbi::TcParser::ParseLoop(this, ptr, ctx, &_table_.header);
   return ptr;
-failure:
-  ptr = nullptr;
-  goto message_done;
-#undef CHK_
 }
 
-uint8_t* Costing_Options::_InternalSerialize(
-    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+
+PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1
+const ::_pbi::TcParseTable<4, 83, 1, 177, 13> Costing_Options::_table_ = {
+  {
+    0,  // no _has_bits_
+    0, // no _extensions_
+    83, 120,  // max_field_number, fast_idx_mask
+    offsetof(decltype(_table_), field_lookup_table),
+    0,  // skipmap
+    offsetof(decltype(_table_), field_entries),
+    83,  // num_field_entries
+    1,  // num_aux_entries
+    offsetof(decltype(_table_), aux_entries),
+    &_Costing_Options_default_instance_._instance,
+    ::_pbi::TcParser::GenericFallbackLite,  // fallback
+  }, {{
+    // uint32 fixed_speed = 80;
+    {::_pbi::TcParser::FastV32S2,
+     {1408, 63, 0, PROTOBUF_FIELD_OFFSET(Costing_Options, _impl_.fixed_speed_)}},
+    // .valhalla.FilterAction filter_stop_action = 49;
+    {::_pbi::TcParser::FastV32S2,
+     {904, 63, 0, PROTOBUF_FIELD_OFFSET(Costing_Options, _impl_.filter_stop_action_)}},
+    // repeated string filter_stop_ids = 50;
+    {::_pbi::TcParser::FastUR2,
+     {914, 63, 0, PROTOBUF_FIELD_OFFSET(Costing_Options, _impl_.filter_stop_ids_)}},
+    // .valhalla.FilterAction filter_operator_action = 51;
+    {::_pbi::TcParser::FastV32S2,
+     {920, 63, 0, PROTOBUF_FIELD_OFFSET(Costing_Options, _impl_.filter_operator_action_)}},
+    // repeated string filter_operator_ids = 52;
+    {::_pbi::TcParser::FastUR2,
+     {930, 63, 0, PROTOBUF_FIELD_OFFSET(Costing_Options, _impl_.filter_operator_ids_)}},
+    // .valhalla.FilterAction filter_route_action = 53;
+    {::_pbi::TcParser::FastV32S2,
+     {936, 63, 0, PROTOBUF_FIELD_OFFSET(Costing_Options, _impl_.filter_route_action_)}},
+    // repeated string filter_route_ids = 54;
+    {::_pbi::TcParser::FastUR2,
+     {946, 63, 0, PROTOBUF_FIELD_OFFSET(Costing_Options, _impl_.filter_route_ids_)}},
+    {::_pbi::TcParser::MiniParse, {}},
+    {::_pbi::TcParser::MiniParse, {}},
+    {::_pbi::TcParser::MiniParse, {}},
+    {::_pbi::TcParser::MiniParse, {}},
+    {::_pbi::TcParser::MiniParse, {}},
+    {::_pbi::TcParser::MiniParse, {}},
+    {::_pbi::TcParser::MiniParse, {}},
+    // repeated .valhalla.AvoidEdge exclude_edges = 78;
+    {::_pbi::TcParser::FastMtR2,
+     {1266, 63, 0, PROTOBUF_FIELD_OFFSET(Costing_Options, _impl_.exclude_edges_)}},
+    {::_pbi::TcParser::MiniParse, {}},
+  }}, {{
+    33, 0, 4,
+    0, 32, 0, 48, 0, 64, 65528, 80,
+    65535, 65535
+  }}, {{
+    // float maneuver_penalty = 1;
+    {PROTOBUF_FIELD_OFFSET(Costing_Options, _impl_.has_maneuver_penalty_.maneuver_penalty_), _Internal::kOneofCaseOffset + 0, 0,
+    (0 | ::_fl::kFcOneof | ::_fl::kFloat)},
+    // float destination_only_penalty = 2;
+    {PROTOBUF_FIELD_OFFSET(Costing_Options, _impl_.has_destination_only_penalty_.destination_only_penalty_), _Internal::kOneofCaseOffset + 4, 0,
+    (0 | ::_fl::kFcOneof | ::_fl::kFloat)},
+    // float gate_cost = 3;
+    {PROTOBUF_FIELD_OFFSET(Costing_Options, _impl_.has_gate_cost_.gate_cost_), _Internal::kOneofCaseOffset + 8, 0,
+    (0 | ::_fl::kFcOneof | ::_fl::kFloat)},
+    // float gate_penalty = 4;
+    {PROTOBUF_FIELD_OFFSET(Costing_Options, _impl_.has_gate_penalty_.gate_penalty_), _Internal::kOneofCaseOffset + 12, 0,
+    (0 | ::_fl::kFcOneof | ::_fl::kFloat)},
+    // float toll_booth_cost = 5;
+    {PROTOBUF_FIELD_OFFSET(Costing_Options, _impl_.has_toll_booth_cost_.toll_booth_cost_), _Internal::kOneofCaseOffset + 16, 0,
+    (0 | ::_fl::kFcOneof | ::_fl::kFloat)},
+    // float toll_booth_penalty = 6;
+    {PROTOBUF_FIELD_OFFSET(Costing_Options, _impl_.has_toll_booth_penalty_.toll_booth_penalty_), _Internal::kOneofCaseOffset + 20, 0,
+    (0 | ::_fl::kFcOneof | ::_fl::kFloat)},
+    // float alley_penalty = 7;
+    {PROTOBUF_FIELD_OFFSET(Costing_Options, _impl_.has_alley_penalty_.alley_penalty_), _Internal::kOneofCaseOffset + 24, 0,
+    (0 | ::_fl::kFcOneof | ::_fl::kFloat)},
+    // float country_crossing_cost = 8;
+    {PROTOBUF_FIELD_OFFSET(Costing_Options, _impl_.has_country_crossing_cost_.country_crossing_cost_), _Internal::kOneofCaseOffset + 28, 0,
+    (0 | ::_fl::kFcOneof | ::_fl::kFloat)},
+    // float country_crossing_penalty = 9;
+    {PROTOBUF_FIELD_OFFSET(Costing_Options, _impl_.has_country_crossing_penalty_.country_crossing_penalty_), _Internal::kOneofCaseOffset + 32, 0,
+    (0 | ::_fl::kFcOneof | ::_fl::kFloat)},
+    // float ferry_cost = 10;
+    {PROTOBUF_FIELD_OFFSET(Costing_Options, _impl_.has_ferry_cost_.ferry_cost_), _Internal::kOneofCaseOffset + 36, 0,
+    (0 | ::_fl::kFcOneof | ::_fl::kFloat)},
+    // float avoid_bad_surfaces = 11;
+    {PROTOBUF_FIELD_OFFSET(Costing_Options, _impl_.has_avoid_bad_surfaces_.avoid_bad_surfaces_), _Internal::kOneofCaseOffset + 40, 0,
+    (0 | ::_fl::kFcOneof | ::_fl::kFloat)},
+    // float use_ferry = 12;
+    {PROTOBUF_FIELD_OFFSET(Costing_Options, _impl_.has_use_ferry_.use_ferry_), _Internal::kOneofCaseOffset + 44, 0,
+    (0 | ::_fl::kFcOneof | ::_fl::kFloat)},
+    // float use_highways = 13;
+    {PROTOBUF_FIELD_OFFSET(Costing_Options, _impl_.has_use_highways_.use_highways_), _Internal::kOneofCaseOffset + 48, 0,
+    (0 | ::_fl::kFcOneof | ::_fl::kFloat)},
+    // float use_tolls = 14;
+    {PROTOBUF_FIELD_OFFSET(Costing_Options, _impl_.has_use_tolls_.use_tolls_), _Internal::kOneofCaseOffset + 52, 0,
+    (0 | ::_fl::kFcOneof | ::_fl::kFloat)},
+    // float use_roads = 15;
+    {PROTOBUF_FIELD_OFFSET(Costing_Options, _impl_.has_use_roads_.use_roads_), _Internal::kOneofCaseOffset + 56, 0,
+    (0 | ::_fl::kFcOneof | ::_fl::kFloat)},
+    // uint32 max_distance = 16;
+    {PROTOBUF_FIELD_OFFSET(Costing_Options, _impl_.has_max_distance_.max_distance_), _Internal::kOneofCaseOffset + 60, 0,
+    (0 | ::_fl::kFcOneof | ::_fl::kUInt32)},
+    // float walking_speed = 17;
+    {PROTOBUF_FIELD_OFFSET(Costing_Options, _impl_.has_walking_speed_.walking_speed_), _Internal::kOneofCaseOffset + 64, 0,
+    (0 | ::_fl::kFcOneof | ::_fl::kFloat)},
+    // float step_penalty = 18;
+    {PROTOBUF_FIELD_OFFSET(Costing_Options, _impl_.has_step_penalty_.step_penalty_), _Internal::kOneofCaseOffset + 68, 0,
+    (0 | ::_fl::kFcOneof | ::_fl::kFloat)},
+    // uint32 max_grade = 19;
+    {PROTOBUF_FIELD_OFFSET(Costing_Options, _impl_.has_max_grade_.max_grade_), _Internal::kOneofCaseOffset + 72, 0,
+    (0 | ::_fl::kFcOneof | ::_fl::kUInt32)},
+    // uint32 max_hiking_difficulty = 20;
+    {PROTOBUF_FIELD_OFFSET(Costing_Options, _impl_.has_max_hiking_difficulty_.max_hiking_difficulty_), _Internal::kOneofCaseOffset + 76, 0,
+    (0 | ::_fl::kFcOneof | ::_fl::kUInt32)},
+    // float mode_factor = 21;
+    {PROTOBUF_FIELD_OFFSET(Costing_Options, _impl_.has_mode_factor_.mode_factor_), _Internal::kOneofCaseOffset + 80, 0,
+    (0 | ::_fl::kFcOneof | ::_fl::kFloat)},
+    // float walkway_factor = 22;
+    {PROTOBUF_FIELD_OFFSET(Costing_Options, _impl_.has_walkway_factor_.walkway_factor_), _Internal::kOneofCaseOffset + 84, 0,
+    (0 | ::_fl::kFcOneof | ::_fl::kFloat)},
+    // float sidewalk_factor = 23;
+    {PROTOBUF_FIELD_OFFSET(Costing_Options, _impl_.has_sidewalk_factor_.sidewalk_factor_), _Internal::kOneofCaseOffset + 88, 0,
+    (0 | ::_fl::kFcOneof | ::_fl::kFloat)},
+    // float alley_factor = 24;
+    {PROTOBUF_FIELD_OFFSET(Costing_Options, _impl_.has_alley_factor_.alley_factor_), _Internal::kOneofCaseOffset + 92, 0,
+    (0 | ::_fl::kFcOneof | ::_fl::kFloat)},
+    // float driveway_factor = 25;
+    {PROTOBUF_FIELD_OFFSET(Costing_Options, _impl_.has_driveway_factor_.driveway_factor_), _Internal::kOneofCaseOffset + 96, 0,
+    (0 | ::_fl::kFcOneof | ::_fl::kFloat)},
+    // float driveway_penalty = 26;
+    {PROTOBUF_FIELD_OFFSET(Costing_Options, _impl_.has_driveway_penalty_.driveway_penalty_), _Internal::kOneofCaseOffset + 100, 0,
+    (0 | ::_fl::kFcOneof | ::_fl::kFloat)},
+    // uint32 transit_start_end_max_distance = 27;
+    {PROTOBUF_FIELD_OFFSET(Costing_Options, _impl_.has_transit_start_end_max_distance_.transit_start_end_max_distance_), _Internal::kOneofCaseOffset + 104, 0,
+    (0 | ::_fl::kFcOneof | ::_fl::kUInt32)},
+    // uint32 transit_transfer_max_distance = 28;
+    {PROTOBUF_FIELD_OFFSET(Costing_Options, _impl_.has_transit_transfer_max_distance_.transit_transfer_max_distance_), _Internal::kOneofCaseOffset + 108, 0,
+    (0 | ::_fl::kFcOneof | ::_fl::kUInt32)},
+    // string transport_type = 29;
+    {PROTOBUF_FIELD_OFFSET(Costing_Options, _impl_.has_transport_type_.transport_type_), _Internal::kOneofCaseOffset + 112, 0,
+    (0 | ::_fl::kFcOneof | ::_fl::kUtf8String | ::_fl::kRepAString)},
+    // float top_speed = 30;
+    {PROTOBUF_FIELD_OFFSET(Costing_Options, _impl_.has_top_speed_.top_speed_), _Internal::kOneofCaseOffset + 116, 0,
+    (0 | ::_fl::kFcOneof | ::_fl::kFloat)},
+    // float use_hills = 31;
+    {PROTOBUF_FIELD_OFFSET(Costing_Options, _impl_.has_use_hills_.use_hills_), _Internal::kOneofCaseOffset + 120, 0,
+    (0 | ::_fl::kFcOneof | ::_fl::kFloat)},
+    // float use_primary = 32;
+    {PROTOBUF_FIELD_OFFSET(Costing_Options, _impl_.has_use_primary_.use_primary_), _Internal::kOneofCaseOffset + 124, 0,
+    (0 | ::_fl::kFcOneof | ::_fl::kFloat)},
+    // float use_trails = 33;
+    {PROTOBUF_FIELD_OFFSET(Costing_Options, _impl_.has_use_trails_.use_trails_), _Internal::kOneofCaseOffset + 128, 0,
+    (0 | ::_fl::kFcOneof | ::_fl::kFloat)},
+    // float low_class_penalty = 34;
+    {PROTOBUF_FIELD_OFFSET(Costing_Options, _impl_.has_low_class_penalty_.low_class_penalty_), _Internal::kOneofCaseOffset + 132, 0,
+    (0 | ::_fl::kFcOneof | ::_fl::kFloat)},
+    // bool hazmat = 35;
+    {PROTOBUF_FIELD_OFFSET(Costing_Options, _impl_.has_hazmat_.hazmat_), _Internal::kOneofCaseOffset + 136, 0,
+    (0 | ::_fl::kFcOneof | ::_fl::kBool)},
+    // float weight = 36;
+    {PROTOBUF_FIELD_OFFSET(Costing_Options, _impl_.has_weight_.weight_), _Internal::kOneofCaseOffset + 140, 0,
+    (0 | ::_fl::kFcOneof | ::_fl::kFloat)},
+    // float axle_load = 37;
+    {PROTOBUF_FIELD_OFFSET(Costing_Options, _impl_.has_axle_load_.axle_load_), _Internal::kOneofCaseOffset + 144, 0,
+    (0 | ::_fl::kFcOneof | ::_fl::kFloat)},
+    // float height = 38;
+    {PROTOBUF_FIELD_OFFSET(Costing_Options, _impl_.has_height_.height_), _Internal::kOneofCaseOffset + 148, 0,
+    (0 | ::_fl::kFcOneof | ::_fl::kFloat)},
+    // float width = 39;
+    {PROTOBUF_FIELD_OFFSET(Costing_Options, _impl_.has_width_.width_), _Internal::kOneofCaseOffset + 152, 0,
+    (0 | ::_fl::kFcOneof | ::_fl::kFloat)},
+    // float length = 40;
+    {PROTOBUF_FIELD_OFFSET(Costing_Options, _impl_.has_length_.length_), _Internal::kOneofCaseOffset + 156, 0,
+    (0 | ::_fl::kFcOneof | ::_fl::kFloat)},
+    // float cycling_speed = 41;
+    {PROTOBUF_FIELD_OFFSET(Costing_Options, _impl_.has_cycling_speed_.cycling_speed_), _Internal::kOneofCaseOffset + 160, 0,
+    (0 | ::_fl::kFcOneof | ::_fl::kFloat)},
+    // bool wheelchair = 42;
+    {PROTOBUF_FIELD_OFFSET(Costing_Options, _impl_.has_wheelchair_.wheelchair_), _Internal::kOneofCaseOffset + 164, 0,
+    (0 | ::_fl::kFcOneof | ::_fl::kBool)},
+    // bool bicycle = 43;
+    {PROTOBUF_FIELD_OFFSET(Costing_Options, _impl_.has_bicycle_.bicycle_), _Internal::kOneofCaseOffset + 168, 0,
+    (0 | ::_fl::kFcOneof | ::_fl::kBool)},
+    // float use_bus = 44;
+    {PROTOBUF_FIELD_OFFSET(Costing_Options, _impl_.has_use_bus_.use_bus_), _Internal::kOneofCaseOffset + 172, 0,
+    (0 | ::_fl::kFcOneof | ::_fl::kFloat)},
+    // float use_rail = 45;
+    {PROTOBUF_FIELD_OFFSET(Costing_Options, _impl_.has_use_rail_.use_rail_), _Internal::kOneofCaseOffset + 176, 0,
+    (0 | ::_fl::kFcOneof | ::_fl::kFloat)},
+    // float use_transfers = 46;
+    {PROTOBUF_FIELD_OFFSET(Costing_Options, _impl_.has_use_transfers_.use_transfers_), _Internal::kOneofCaseOffset + 180, 0,
+    (0 | ::_fl::kFcOneof | ::_fl::kFloat)},
+    // float transfer_cost = 47;
+    {PROTOBUF_FIELD_OFFSET(Costing_Options, _impl_.has_transfer_cost_.transfer_cost_), _Internal::kOneofCaseOffset + 184, 0,
+    (0 | ::_fl::kFcOneof | ::_fl::kFloat)},
+    // float transfer_penalty = 48;
+    {PROTOBUF_FIELD_OFFSET(Costing_Options, _impl_.has_transfer_penalty_.transfer_penalty_), _Internal::kOneofCaseOffset + 188, 0,
+    (0 | ::_fl::kFcOneof | ::_fl::kFloat)},
+    // .valhalla.FilterAction filter_stop_action = 49;
+    {PROTOBUF_FIELD_OFFSET(Costing_Options, _impl_.filter_stop_action_), 0, 0,
+    (0 | ::_fl::kFcSingular | ::_fl::kOpenEnum)},
+    // repeated string filter_stop_ids = 50;
+    {PROTOBUF_FIELD_OFFSET(Costing_Options, _impl_.filter_stop_ids_), 0, 0,
+    (0 | ::_fl::kFcRepeated | ::_fl::kUtf8String | ::_fl::kRepSString)},
+    // .valhalla.FilterAction filter_operator_action = 51;
+    {PROTOBUF_FIELD_OFFSET(Costing_Options, _impl_.filter_operator_action_), 0, 0,
+    (0 | ::_fl::kFcSingular | ::_fl::kOpenEnum)},
+    // repeated string filter_operator_ids = 52;
+    {PROTOBUF_FIELD_OFFSET(Costing_Options, _impl_.filter_operator_ids_), 0, 0,
+    (0 | ::_fl::kFcRepeated | ::_fl::kUtf8String | ::_fl::kRepSString)},
+    // .valhalla.FilterAction filter_route_action = 53;
+    {PROTOBUF_FIELD_OFFSET(Costing_Options, _impl_.filter_route_action_), 0, 0,
+    (0 | ::_fl::kFcSingular | ::_fl::kOpenEnum)},
+    // repeated string filter_route_ids = 54;
+    {PROTOBUF_FIELD_OFFSET(Costing_Options, _impl_.filter_route_ids_), 0, 0,
+    (0 | ::_fl::kFcRepeated | ::_fl::kUtf8String | ::_fl::kRepSString)},
+    // uint32 flow_mask = 55;
+    {PROTOBUF_FIELD_OFFSET(Costing_Options, _impl_.has_flow_mask_.flow_mask_), _Internal::kOneofCaseOffset + 192, 0,
+    (0 | ::_fl::kFcOneof | ::_fl::kUInt32)},
+    // float bike_share_cost = 56;
+    {PROTOBUF_FIELD_OFFSET(Costing_Options, _impl_.has_bike_share_cost_.bike_share_cost_), _Internal::kOneofCaseOffset + 196, 0,
+    (0 | ::_fl::kFcOneof | ::_fl::kFloat)},
+    // float bike_share_penalty = 57;
+    {PROTOBUF_FIELD_OFFSET(Costing_Options, _impl_.has_bike_share_penalty_.bike_share_penalty_), _Internal::kOneofCaseOffset + 200, 0,
+    (0 | ::_fl::kFcOneof | ::_fl::kFloat)},
+    // float rail_ferry_cost = 58;
+    {PROTOBUF_FIELD_OFFSET(Costing_Options, _impl_.has_rail_ferry_cost_.rail_ferry_cost_), _Internal::kOneofCaseOffset + 204, 0,
+    (0 | ::_fl::kFcOneof | ::_fl::kFloat)},
+    // float use_rail_ferry = 59;
+    {PROTOBUF_FIELD_OFFSET(Costing_Options, _impl_.has_use_rail_ferry_.use_rail_ferry_), _Internal::kOneofCaseOffset + 208, 0,
+    (0 | ::_fl::kFcOneof | ::_fl::kFloat)},
+    // bool ignore_restrictions = 60;
+    {PROTOBUF_FIELD_OFFSET(Costing_Options, _impl_.has_ignore_restrictions_.ignore_restrictions_), _Internal::kOneofCaseOffset + 212, 0,
+    (0 | ::_fl::kFcOneof | ::_fl::kBool)},
+    // bool ignore_oneways = 61;
+    {PROTOBUF_FIELD_OFFSET(Costing_Options, _impl_.has_ignore_oneways_.ignore_oneways_), _Internal::kOneofCaseOffset + 216, 0,
+    (0 | ::_fl::kFcOneof | ::_fl::kBool)},
+    // bool ignore_access = 62;
+    {PROTOBUF_FIELD_OFFSET(Costing_Options, _impl_.has_ignore_access_.ignore_access_), _Internal::kOneofCaseOffset + 220, 0,
+    (0 | ::_fl::kFcOneof | ::_fl::kBool)},
+    // bool ignore_closures = 63;
+    {PROTOBUF_FIELD_OFFSET(Costing_Options, _impl_.has_ignore_closures_.ignore_closures_), _Internal::kOneofCaseOffset + 224, 0,
+    (0 | ::_fl::kFcOneof | ::_fl::kBool)},
+    // bool shortest = 64;
+    {PROTOBUF_FIELD_OFFSET(Costing_Options, _impl_.has_shortest_.shortest_), _Internal::kOneofCaseOffset + 228, 0,
+    (0 | ::_fl::kFcOneof | ::_fl::kBool)},
+    // float service_penalty = 65;
+    {PROTOBUF_FIELD_OFFSET(Costing_Options, _impl_.has_service_penalty_.service_penalty_), _Internal::kOneofCaseOffset + 232, 0,
+    (0 | ::_fl::kFcOneof | ::_fl::kFloat)},
+    // float use_tracks = 66;
+    {PROTOBUF_FIELD_OFFSET(Costing_Options, _impl_.has_use_tracks_.use_tracks_), _Internal::kOneofCaseOffset + 236, 0,
+    (0 | ::_fl::kFcOneof | ::_fl::kFloat)},
+    // float use_distance = 67;
+    {PROTOBUF_FIELD_OFFSET(Costing_Options, _impl_.has_use_distance_.use_distance_), _Internal::kOneofCaseOffset + 240, 0,
+    (0 | ::_fl::kFcOneof | ::_fl::kFloat)},
+    // float use_living_streets = 68;
+    {PROTOBUF_FIELD_OFFSET(Costing_Options, _impl_.has_use_living_streets_.use_living_streets_), _Internal::kOneofCaseOffset + 244, 0,
+    (0 | ::_fl::kFcOneof | ::_fl::kFloat)},
+    // float service_factor = 69;
+    {PROTOBUF_FIELD_OFFSET(Costing_Options, _impl_.has_service_factor_.service_factor_), _Internal::kOneofCaseOffset + 248, 0,
+    (0 | ::_fl::kFcOneof | ::_fl::kFloat)},
+    // float closure_factor = 70;
+    {PROTOBUF_FIELD_OFFSET(Costing_Options, _impl_.has_closure_factor_.closure_factor_), _Internal::kOneofCaseOffset + 252, 0,
+    (0 | ::_fl::kFcOneof | ::_fl::kFloat)},
+    // float private_access_penalty = 71;
+    {PROTOBUF_FIELD_OFFSET(Costing_Options, _impl_.has_private_access_penalty_.private_access_penalty_), _Internal::kOneofCaseOffset + 256, 0,
+    (0 | ::_fl::kFcOneof | ::_fl::kFloat)},
+    // bool exclude_unpaved = 72;
+    {PROTOBUF_FIELD_OFFSET(Costing_Options, _impl_.has_exclude_unpaved_.exclude_unpaved_), _Internal::kOneofCaseOffset + 260, 0,
+    (0 | ::_fl::kFcOneof | ::_fl::kBool)},
+    // bool include_hot = 73;
+    {PROTOBUF_FIELD_OFFSET(Costing_Options, _impl_.has_include_hot_.include_hot_), _Internal::kOneofCaseOffset + 264, 0,
+    (0 | ::_fl::kFcOneof | ::_fl::kBool)},
+    // bool include_hov2 = 74;
+    {PROTOBUF_FIELD_OFFSET(Costing_Options, _impl_.has_include_hov2_.include_hov2_), _Internal::kOneofCaseOffset + 268, 0,
+    (0 | ::_fl::kFcOneof | ::_fl::kBool)},
+    // bool include_hov3 = 75;
+    {PROTOBUF_FIELD_OFFSET(Costing_Options, _impl_.has_include_hov3_.include_hov3_), _Internal::kOneofCaseOffset + 272, 0,
+    (0 | ::_fl::kFcOneof | ::_fl::kBool)},
+    // bool exclude_cash_only_tolls = 76;
+    {PROTOBUF_FIELD_OFFSET(Costing_Options, _impl_.has_exclude_cash_only_tolls_.exclude_cash_only_tolls_), _Internal::kOneofCaseOffset + 276, 0,
+    (0 | ::_fl::kFcOneof | ::_fl::kBool)},
+    // uint32 restriction_probability = 77;
+    {PROTOBUF_FIELD_OFFSET(Costing_Options, _impl_.has_restriction_probability_.restriction_probability_), _Internal::kOneofCaseOffset + 280, 0,
+    (0 | ::_fl::kFcOneof | ::_fl::kUInt32)},
+    // repeated .valhalla.AvoidEdge exclude_edges = 78;
+    {PROTOBUF_FIELD_OFFSET(Costing_Options, _impl_.exclude_edges_), 0, 0,
+    (0 | ::_fl::kFcRepeated | ::_fl::kMessage | ::_fl::kTvTable)},
+    // float elevator_penalty = 79;
+    {PROTOBUF_FIELD_OFFSET(Costing_Options, _impl_.has_elevator_penalty_.elevator_penalty_), _Internal::kOneofCaseOffset + 284, 0,
+    (0 | ::_fl::kFcOneof | ::_fl::kFloat)},
+    // uint32 fixed_speed = 80;
+    {PROTOBUF_FIELD_OFFSET(Costing_Options, _impl_.fixed_speed_), 0, 0,
+    (0 | ::_fl::kFcSingular | ::_fl::kUInt32)},
+    // uint32 axle_count = 81;
+    {PROTOBUF_FIELD_OFFSET(Costing_Options, _impl_.axle_count_), 0, 0,
+    (0 | ::_fl::kFcSingular | ::_fl::kUInt32)},
+    // float use_lit = 82;
+    {PROTOBUF_FIELD_OFFSET(Costing_Options, _impl_.use_lit_), 0, 0,
+    (0 | ::_fl::kFcSingular | ::_fl::kFloat)},
+    // bool disable_hierarchy_pruning = 83;
+    {PROTOBUF_FIELD_OFFSET(Costing_Options, _impl_.disable_hierarchy_pruning_), 0, 0,
+    (0 | ::_fl::kFcSingular | ::_fl::kBool)},
+  }}, {{
+    {::_pbi::TcParser::GetTable<::valhalla::AvoidEdge>()},
+  }}, {{
+    "\30\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\16\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\17\0\23\0\20\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0"
+    "valhalla.Costing.Options"
+    "transport_type"
+    "filter_stop_ids"
+    "filter_operator_ids"
+    "filter_route_ids"
+  }},
+};
+
+::uint8_t* Costing_Options::_InternalSerialize(
+    ::uint8_t* target,
+    ::google::protobuf::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:valhalla.Costing.Options)
-  uint32_t cached_has_bits = 0;
-  (void) cached_has_bits;
+  ::uint32_t cached_has_bits = 0;
+  (void)cached_has_bits;
 
   // float maneuver_penalty = 1;
-  if (_internal_has_maneuver_penalty()) {
+  if (has_maneuver_penalty_case() == kManeuverPenalty) {
     target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteFloatToArray(1, this->_internal_maneuver_penalty(), target);
+    target = ::_pbi::WireFormatLite::WriteFloatToArray(
+        1, this->_internal_maneuver_penalty(), target);
   }
 
   // float destination_only_penalty = 2;
-  if (_internal_has_destination_only_penalty()) {
+  if (has_destination_only_penalty_case() == kDestinationOnlyPenalty) {
     target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteFloatToArray(2, this->_internal_destination_only_penalty(), target);
+    target = ::_pbi::WireFormatLite::WriteFloatToArray(
+        2, this->_internal_destination_only_penalty(), target);
   }
 
   // float gate_cost = 3;
-  if (_internal_has_gate_cost()) {
+  if (has_gate_cost_case() == kGateCost) {
     target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteFloatToArray(3, this->_internal_gate_cost(), target);
+    target = ::_pbi::WireFormatLite::WriteFloatToArray(
+        3, this->_internal_gate_cost(), target);
   }
 
   // float gate_penalty = 4;
-  if (_internal_has_gate_penalty()) {
+  if (has_gate_penalty_case() == kGatePenalty) {
     target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteFloatToArray(4, this->_internal_gate_penalty(), target);
+    target = ::_pbi::WireFormatLite::WriteFloatToArray(
+        4, this->_internal_gate_penalty(), target);
   }
 
   // float toll_booth_cost = 5;
-  if (_internal_has_toll_booth_cost()) {
+  if (has_toll_booth_cost_case() == kTollBoothCost) {
     target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteFloatToArray(5, this->_internal_toll_booth_cost(), target);
+    target = ::_pbi::WireFormatLite::WriteFloatToArray(
+        5, this->_internal_toll_booth_cost(), target);
   }
 
   // float toll_booth_penalty = 6;
-  if (_internal_has_toll_booth_penalty()) {
+  if (has_toll_booth_penalty_case() == kTollBoothPenalty) {
     target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteFloatToArray(6, this->_internal_toll_booth_penalty(), target);
+    target = ::_pbi::WireFormatLite::WriteFloatToArray(
+        6, this->_internal_toll_booth_penalty(), target);
   }
 
   // float alley_penalty = 7;
-  if (_internal_has_alley_penalty()) {
+  if (has_alley_penalty_case() == kAlleyPenalty) {
     target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteFloatToArray(7, this->_internal_alley_penalty(), target);
+    target = ::_pbi::WireFormatLite::WriteFloatToArray(
+        7, this->_internal_alley_penalty(), target);
   }
 
   // float country_crossing_cost = 8;
-  if (_internal_has_country_crossing_cost()) {
+  if (has_country_crossing_cost_case() == kCountryCrossingCost) {
     target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteFloatToArray(8, this->_internal_country_crossing_cost(), target);
+    target = ::_pbi::WireFormatLite::WriteFloatToArray(
+        8, this->_internal_country_crossing_cost(), target);
   }
 
   // float country_crossing_penalty = 9;
-  if (_internal_has_country_crossing_penalty()) {
+  if (has_country_crossing_penalty_case() == kCountryCrossingPenalty) {
     target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteFloatToArray(9, this->_internal_country_crossing_penalty(), target);
+    target = ::_pbi::WireFormatLite::WriteFloatToArray(
+        9, this->_internal_country_crossing_penalty(), target);
   }
 
   // float ferry_cost = 10;
-  if (_internal_has_ferry_cost()) {
+  if (has_ferry_cost_case() == kFerryCost) {
     target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteFloatToArray(10, this->_internal_ferry_cost(), target);
+    target = ::_pbi::WireFormatLite::WriteFloatToArray(
+        10, this->_internal_ferry_cost(), target);
   }
 
   // float avoid_bad_surfaces = 11;
-  if (_internal_has_avoid_bad_surfaces()) {
+  if (has_avoid_bad_surfaces_case() == kAvoidBadSurfaces) {
     target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteFloatToArray(11, this->_internal_avoid_bad_surfaces(), target);
+    target = ::_pbi::WireFormatLite::WriteFloatToArray(
+        11, this->_internal_avoid_bad_surfaces(), target);
   }
 
   // float use_ferry = 12;
-  if (_internal_has_use_ferry()) {
+  if (has_use_ferry_case() == kUseFerry) {
     target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteFloatToArray(12, this->_internal_use_ferry(), target);
+    target = ::_pbi::WireFormatLite::WriteFloatToArray(
+        12, this->_internal_use_ferry(), target);
   }
 
   // float use_highways = 13;
-  if (_internal_has_use_highways()) {
+  if (has_use_highways_case() == kUseHighways) {
     target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteFloatToArray(13, this->_internal_use_highways(), target);
+    target = ::_pbi::WireFormatLite::WriteFloatToArray(
+        13, this->_internal_use_highways(), target);
   }
 
   // float use_tolls = 14;
-  if (_internal_has_use_tolls()) {
+  if (has_use_tolls_case() == kUseTolls) {
     target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteFloatToArray(14, this->_internal_use_tolls(), target);
+    target = ::_pbi::WireFormatLite::WriteFloatToArray(
+        14, this->_internal_use_tolls(), target);
   }
 
   // float use_roads = 15;
-  if (_internal_has_use_roads()) {
+  if (has_use_roads_case() == kUseRoads) {
     target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteFloatToArray(15, this->_internal_use_roads(), target);
+    target = ::_pbi::WireFormatLite::WriteFloatToArray(
+        15, this->_internal_use_roads(), target);
   }
 
   // uint32 max_distance = 16;
-  if (_internal_has_max_distance()) {
+  if (has_max_distance_case() == kMaxDistance) {
     target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteUInt32ToArray(16, this->_internal_max_distance(), target);
+    target = ::_pbi::WireFormatLite::WriteUInt32ToArray(
+        16, this->_internal_max_distance(), target);
   }
 
   // float walking_speed = 17;
-  if (_internal_has_walking_speed()) {
+  if (has_walking_speed_case() == kWalkingSpeed) {
     target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteFloatToArray(17, this->_internal_walking_speed(), target);
+    target = ::_pbi::WireFormatLite::WriteFloatToArray(
+        17, this->_internal_walking_speed(), target);
   }
 
   // float step_penalty = 18;
-  if (_internal_has_step_penalty()) {
+  if (has_step_penalty_case() == kStepPenalty) {
     target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteFloatToArray(18, this->_internal_step_penalty(), target);
+    target = ::_pbi::WireFormatLite::WriteFloatToArray(
+        18, this->_internal_step_penalty(), target);
   }
 
   // uint32 max_grade = 19;
-  if (_internal_has_max_grade()) {
+  if (has_max_grade_case() == kMaxGrade) {
     target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteUInt32ToArray(19, this->_internal_max_grade(), target);
+    target = ::_pbi::WireFormatLite::WriteUInt32ToArray(
+        19, this->_internal_max_grade(), target);
   }
 
   // uint32 max_hiking_difficulty = 20;
-  if (_internal_has_max_hiking_difficulty()) {
+  if (has_max_hiking_difficulty_case() == kMaxHikingDifficulty) {
     target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteUInt32ToArray(20, this->_internal_max_hiking_difficulty(), target);
+    target = ::_pbi::WireFormatLite::WriteUInt32ToArray(
+        20, this->_internal_max_hiking_difficulty(), target);
   }
 
   // float mode_factor = 21;
-  if (_internal_has_mode_factor()) {
+  if (has_mode_factor_case() == kModeFactor) {
     target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteFloatToArray(21, this->_internal_mode_factor(), target);
+    target = ::_pbi::WireFormatLite::WriteFloatToArray(
+        21, this->_internal_mode_factor(), target);
   }
 
   // float walkway_factor = 22;
-  if (_internal_has_walkway_factor()) {
+  if (has_walkway_factor_case() == kWalkwayFactor) {
     target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteFloatToArray(22, this->_internal_walkway_factor(), target);
+    target = ::_pbi::WireFormatLite::WriteFloatToArray(
+        22, this->_internal_walkway_factor(), target);
   }
 
   // float sidewalk_factor = 23;
-  if (_internal_has_sidewalk_factor()) {
+  if (has_sidewalk_factor_case() == kSidewalkFactor) {
     target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteFloatToArray(23, this->_internal_sidewalk_factor(), target);
+    target = ::_pbi::WireFormatLite::WriteFloatToArray(
+        23, this->_internal_sidewalk_factor(), target);
   }
 
   // float alley_factor = 24;
-  if (_internal_has_alley_factor()) {
+  if (has_alley_factor_case() == kAlleyFactor) {
     target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteFloatToArray(24, this->_internal_alley_factor(), target);
+    target = ::_pbi::WireFormatLite::WriteFloatToArray(
+        24, this->_internal_alley_factor(), target);
   }
 
   // float driveway_factor = 25;
-  if (_internal_has_driveway_factor()) {
+  if (has_driveway_factor_case() == kDrivewayFactor) {
     target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteFloatToArray(25, this->_internal_driveway_factor(), target);
+    target = ::_pbi::WireFormatLite::WriteFloatToArray(
+        25, this->_internal_driveway_factor(), target);
   }
 
   // float driveway_penalty = 26;
-  if (_internal_has_driveway_penalty()) {
+  if (has_driveway_penalty_case() == kDrivewayPenalty) {
     target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteFloatToArray(26, this->_internal_driveway_penalty(), target);
+    target = ::_pbi::WireFormatLite::WriteFloatToArray(
+        26, this->_internal_driveway_penalty(), target);
   }
 
   // uint32 transit_start_end_max_distance = 27;
-  if (_internal_has_transit_start_end_max_distance()) {
+  if (has_transit_start_end_max_distance_case() == kTransitStartEndMaxDistance) {
     target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteUInt32ToArray(27, this->_internal_transit_start_end_max_distance(), target);
+    target = ::_pbi::WireFormatLite::WriteUInt32ToArray(
+        27, this->_internal_transit_start_end_max_distance(), target);
   }
 
   // uint32 transit_transfer_max_distance = 28;
-  if (_internal_has_transit_transfer_max_distance()) {
+  if (has_transit_transfer_max_distance_case() == kTransitTransferMaxDistance) {
     target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteUInt32ToArray(28, this->_internal_transit_transfer_max_distance(), target);
+    target = ::_pbi::WireFormatLite::WriteUInt32ToArray(
+        28, this->_internal_transit_transfer_max_distance(), target);
   }
 
   // string transport_type = 29;
-  if (_internal_has_transport_type()) {
-    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
-      this->_internal_transport_type().data(), static_cast<int>(this->_internal_transport_type().length()),
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "valhalla.Costing.Options.transport_type");
-    target = stream->WriteStringMaybeAliased(
-        29, this->_internal_transport_type(), target);
+  if (has_transport_type_case() == kTransportType) {
+    const std::string& _s = this->_internal_transport_type();
+    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+        _s.data(), static_cast<int>(_s.length()), ::google::protobuf::internal::WireFormatLite::SERIALIZE, "valhalla.Costing.Options.transport_type");
+    target = stream->WriteStringMaybeAliased(29, _s, target);
   }
 
   // float top_speed = 30;
-  if (_internal_has_top_speed()) {
+  if (has_top_speed_case() == kTopSpeed) {
     target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteFloatToArray(30, this->_internal_top_speed(), target);
+    target = ::_pbi::WireFormatLite::WriteFloatToArray(
+        30, this->_internal_top_speed(), target);
   }
 
   // float use_hills = 31;
-  if (_internal_has_use_hills()) {
+  if (has_use_hills_case() == kUseHills) {
     target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteFloatToArray(31, this->_internal_use_hills(), target);
+    target = ::_pbi::WireFormatLite::WriteFloatToArray(
+        31, this->_internal_use_hills(), target);
   }
 
   // float use_primary = 32;
-  if (_internal_has_use_primary()) {
+  if (has_use_primary_case() == kUsePrimary) {
     target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteFloatToArray(32, this->_internal_use_primary(), target);
+    target = ::_pbi::WireFormatLite::WriteFloatToArray(
+        32, this->_internal_use_primary(), target);
   }
 
   // float use_trails = 33;
-  if (_internal_has_use_trails()) {
+  if (has_use_trails_case() == kUseTrails) {
     target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteFloatToArray(33, this->_internal_use_trails(), target);
+    target = ::_pbi::WireFormatLite::WriteFloatToArray(
+        33, this->_internal_use_trails(), target);
   }
 
   // float low_class_penalty = 34;
-  if (_internal_has_low_class_penalty()) {
+  if (has_low_class_penalty_case() == kLowClassPenalty) {
     target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteFloatToArray(34, this->_internal_low_class_penalty(), target);
+    target = ::_pbi::WireFormatLite::WriteFloatToArray(
+        34, this->_internal_low_class_penalty(), target);
   }
 
   // bool hazmat = 35;
-  if (_internal_has_hazmat()) {
+  if (has_hazmat_case() == kHazmat) {
     target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteBoolToArray(35, this->_internal_hazmat(), target);
+    target = ::_pbi::WireFormatLite::WriteBoolToArray(
+        35, this->_internal_hazmat(), target);
   }
 
   // float weight = 36;
-  if (_internal_has_weight()) {
+  if (has_weight_case() == kWeight) {
     target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteFloatToArray(36, this->_internal_weight(), target);
+    target = ::_pbi::WireFormatLite::WriteFloatToArray(
+        36, this->_internal_weight(), target);
   }
 
   // float axle_load = 37;
-  if (_internal_has_axle_load()) {
+  if (has_axle_load_case() == kAxleLoad) {
     target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteFloatToArray(37, this->_internal_axle_load(), target);
+    target = ::_pbi::WireFormatLite::WriteFloatToArray(
+        37, this->_internal_axle_load(), target);
   }
 
   // float height = 38;
-  if (_internal_has_height()) {
+  if (has_height_case() == kHeight) {
     target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteFloatToArray(38, this->_internal_height(), target);
+    target = ::_pbi::WireFormatLite::WriteFloatToArray(
+        38, this->_internal_height(), target);
   }
 
   // float width = 39;
-  if (_internal_has_width()) {
+  if (has_width_case() == kWidth) {
     target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteFloatToArray(39, this->_internal_width(), target);
+    target = ::_pbi::WireFormatLite::WriteFloatToArray(
+        39, this->_internal_width(), target);
   }
 
   // float length = 40;
-  if (_internal_has_length()) {
+  if (has_length_case() == kLength) {
     target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteFloatToArray(40, this->_internal_length(), target);
+    target = ::_pbi::WireFormatLite::WriteFloatToArray(
+        40, this->_internal_length(), target);
   }
 
   // float cycling_speed = 41;
-  if (_internal_has_cycling_speed()) {
+  if (has_cycling_speed_case() == kCyclingSpeed) {
     target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteFloatToArray(41, this->_internal_cycling_speed(), target);
+    target = ::_pbi::WireFormatLite::WriteFloatToArray(
+        41, this->_internal_cycling_speed(), target);
   }
 
   // bool wheelchair = 42;
-  if (_internal_has_wheelchair()) {
+  if (has_wheelchair_case() == kWheelchair) {
     target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteBoolToArray(42, this->_internal_wheelchair(), target);
+    target = ::_pbi::WireFormatLite::WriteBoolToArray(
+        42, this->_internal_wheelchair(), target);
   }
 
   // bool bicycle = 43;
-  if (_internal_has_bicycle()) {
+  if (has_bicycle_case() == kBicycle) {
     target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteBoolToArray(43, this->_internal_bicycle(), target);
+    target = ::_pbi::WireFormatLite::WriteBoolToArray(
+        43, this->_internal_bicycle(), target);
   }
 
   // float use_bus = 44;
-  if (_internal_has_use_bus()) {
+  if (has_use_bus_case() == kUseBus) {
     target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteFloatToArray(44, this->_internal_use_bus(), target);
+    target = ::_pbi::WireFormatLite::WriteFloatToArray(
+        44, this->_internal_use_bus(), target);
   }
 
   // float use_rail = 45;
-  if (_internal_has_use_rail()) {
+  if (has_use_rail_case() == kUseRail) {
     target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteFloatToArray(45, this->_internal_use_rail(), target);
+    target = ::_pbi::WireFormatLite::WriteFloatToArray(
+        45, this->_internal_use_rail(), target);
   }
 
   // float use_transfers = 46;
-  if (_internal_has_use_transfers()) {
+  if (has_use_transfers_case() == kUseTransfers) {
     target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteFloatToArray(46, this->_internal_use_transfers(), target);
+    target = ::_pbi::WireFormatLite::WriteFloatToArray(
+        46, this->_internal_use_transfers(), target);
   }
 
   // float transfer_cost = 47;
-  if (_internal_has_transfer_cost()) {
+  if (has_transfer_cost_case() == kTransferCost) {
     target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteFloatToArray(47, this->_internal_transfer_cost(), target);
+    target = ::_pbi::WireFormatLite::WriteFloatToArray(
+        47, this->_internal_transfer_cost(), target);
   }
 
   // float transfer_penalty = 48;
-  if (_internal_has_transfer_penalty()) {
+  if (has_transfer_penalty_case() == kTransferPenalty) {
     target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteFloatToArray(48, this->_internal_transfer_penalty(), target);
+    target = ::_pbi::WireFormatLite::WriteFloatToArray(
+        48, this->_internal_transfer_penalty(), target);
   }
 
   // .valhalla.FilterAction filter_stop_action = 49;
   if (this->_internal_filter_stop_action() != 0) {
     target = stream->EnsureSpace(target);
     target = ::_pbi::WireFormatLite::WriteEnumToArray(
-      49, this->_internal_filter_stop_action(), target);
+        49, this->_internal_filter_stop_action(), target);
   }
 
   // repeated string filter_stop_ids = 50;
-  for (int i = 0, n = this->_internal_filter_stop_ids_size(); i < n; i++) {
-    const auto& s = this->_internal_filter_stop_ids(i);
-    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
-      s.data(), static_cast<int>(s.length()),
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "valhalla.Costing.Options.filter_stop_ids");
+  for (int i = 0, n = this->_internal_filter_stop_ids_size(); i < n; ++i) {
+    const auto& s = this->_internal_filter_stop_ids().Get(i);
+    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+        s.data(), static_cast<int>(s.length()), ::google::protobuf::internal::WireFormatLite::SERIALIZE, "valhalla.Costing.Options.filter_stop_ids");
     target = stream->WriteString(50, s, target);
   }
 
@@ -5454,16 +5074,14 @@ uint8_t* Costing_Options::_InternalSerialize(
   if (this->_internal_filter_operator_action() != 0) {
     target = stream->EnsureSpace(target);
     target = ::_pbi::WireFormatLite::WriteEnumToArray(
-      51, this->_internal_filter_operator_action(), target);
+        51, this->_internal_filter_operator_action(), target);
   }
 
   // repeated string filter_operator_ids = 52;
-  for (int i = 0, n = this->_internal_filter_operator_ids_size(); i < n; i++) {
-    const auto& s = this->_internal_filter_operator_ids(i);
-    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
-      s.data(), static_cast<int>(s.length()),
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "valhalla.Costing.Options.filter_operator_ids");
+  for (int i = 0, n = this->_internal_filter_operator_ids_size(); i < n; ++i) {
+    const auto& s = this->_internal_filter_operator_ids().Get(i);
+    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+        s.data(), static_cast<int>(s.length()), ::google::protobuf::internal::WireFormatLite::SERIALIZE, "valhalla.Costing.Options.filter_operator_ids");
     target = stream->WriteString(52, s, target);
   }
 
@@ -5471,296 +5089,316 @@ uint8_t* Costing_Options::_InternalSerialize(
   if (this->_internal_filter_route_action() != 0) {
     target = stream->EnsureSpace(target);
     target = ::_pbi::WireFormatLite::WriteEnumToArray(
-      53, this->_internal_filter_route_action(), target);
+        53, this->_internal_filter_route_action(), target);
   }
 
   // repeated string filter_route_ids = 54;
-  for (int i = 0, n = this->_internal_filter_route_ids_size(); i < n; i++) {
-    const auto& s = this->_internal_filter_route_ids(i);
-    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
-      s.data(), static_cast<int>(s.length()),
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "valhalla.Costing.Options.filter_route_ids");
+  for (int i = 0, n = this->_internal_filter_route_ids_size(); i < n; ++i) {
+    const auto& s = this->_internal_filter_route_ids().Get(i);
+    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+        s.data(), static_cast<int>(s.length()), ::google::protobuf::internal::WireFormatLite::SERIALIZE, "valhalla.Costing.Options.filter_route_ids");
     target = stream->WriteString(54, s, target);
   }
 
   // uint32 flow_mask = 55;
-  if (_internal_has_flow_mask()) {
+  if (has_flow_mask_case() == kFlowMask) {
     target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteUInt32ToArray(55, this->_internal_flow_mask(), target);
+    target = ::_pbi::WireFormatLite::WriteUInt32ToArray(
+        55, this->_internal_flow_mask(), target);
   }
 
   // float bike_share_cost = 56;
-  if (_internal_has_bike_share_cost()) {
+  if (has_bike_share_cost_case() == kBikeShareCost) {
     target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteFloatToArray(56, this->_internal_bike_share_cost(), target);
+    target = ::_pbi::WireFormatLite::WriteFloatToArray(
+        56, this->_internal_bike_share_cost(), target);
   }
 
   // float bike_share_penalty = 57;
-  if (_internal_has_bike_share_penalty()) {
+  if (has_bike_share_penalty_case() == kBikeSharePenalty) {
     target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteFloatToArray(57, this->_internal_bike_share_penalty(), target);
+    target = ::_pbi::WireFormatLite::WriteFloatToArray(
+        57, this->_internal_bike_share_penalty(), target);
   }
 
   // float rail_ferry_cost = 58;
-  if (_internal_has_rail_ferry_cost()) {
+  if (has_rail_ferry_cost_case() == kRailFerryCost) {
     target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteFloatToArray(58, this->_internal_rail_ferry_cost(), target);
+    target = ::_pbi::WireFormatLite::WriteFloatToArray(
+        58, this->_internal_rail_ferry_cost(), target);
   }
 
   // float use_rail_ferry = 59;
-  if (_internal_has_use_rail_ferry()) {
+  if (has_use_rail_ferry_case() == kUseRailFerry) {
     target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteFloatToArray(59, this->_internal_use_rail_ferry(), target);
+    target = ::_pbi::WireFormatLite::WriteFloatToArray(
+        59, this->_internal_use_rail_ferry(), target);
   }
 
   // bool ignore_restrictions = 60;
-  if (_internal_has_ignore_restrictions()) {
+  if (has_ignore_restrictions_case() == kIgnoreRestrictions) {
     target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteBoolToArray(60, this->_internal_ignore_restrictions(), target);
+    target = ::_pbi::WireFormatLite::WriteBoolToArray(
+        60, this->_internal_ignore_restrictions(), target);
   }
 
   // bool ignore_oneways = 61;
-  if (_internal_has_ignore_oneways()) {
+  if (has_ignore_oneways_case() == kIgnoreOneways) {
     target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteBoolToArray(61, this->_internal_ignore_oneways(), target);
+    target = ::_pbi::WireFormatLite::WriteBoolToArray(
+        61, this->_internal_ignore_oneways(), target);
   }
 
   // bool ignore_access = 62;
-  if (_internal_has_ignore_access()) {
+  if (has_ignore_access_case() == kIgnoreAccess) {
     target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteBoolToArray(62, this->_internal_ignore_access(), target);
+    target = ::_pbi::WireFormatLite::WriteBoolToArray(
+        62, this->_internal_ignore_access(), target);
   }
 
   // bool ignore_closures = 63;
-  if (_internal_has_ignore_closures()) {
+  if (has_ignore_closures_case() == kIgnoreClosures) {
     target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteBoolToArray(63, this->_internal_ignore_closures(), target);
+    target = ::_pbi::WireFormatLite::WriteBoolToArray(
+        63, this->_internal_ignore_closures(), target);
   }
 
   // bool shortest = 64;
-  if (_internal_has_shortest()) {
+  if (has_shortest_case() == kShortest) {
     target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteBoolToArray(64, this->_internal_shortest(), target);
+    target = ::_pbi::WireFormatLite::WriteBoolToArray(
+        64, this->_internal_shortest(), target);
   }
 
   // float service_penalty = 65;
-  if (_internal_has_service_penalty()) {
+  if (has_service_penalty_case() == kServicePenalty) {
     target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteFloatToArray(65, this->_internal_service_penalty(), target);
+    target = ::_pbi::WireFormatLite::WriteFloatToArray(
+        65, this->_internal_service_penalty(), target);
   }
 
   // float use_tracks = 66;
-  if (_internal_has_use_tracks()) {
+  if (has_use_tracks_case() == kUseTracks) {
     target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteFloatToArray(66, this->_internal_use_tracks(), target);
+    target = ::_pbi::WireFormatLite::WriteFloatToArray(
+        66, this->_internal_use_tracks(), target);
   }
 
   // float use_distance = 67;
-  if (_internal_has_use_distance()) {
+  if (has_use_distance_case() == kUseDistance) {
     target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteFloatToArray(67, this->_internal_use_distance(), target);
+    target = ::_pbi::WireFormatLite::WriteFloatToArray(
+        67, this->_internal_use_distance(), target);
   }
 
   // float use_living_streets = 68;
-  if (_internal_has_use_living_streets()) {
+  if (has_use_living_streets_case() == kUseLivingStreets) {
     target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteFloatToArray(68, this->_internal_use_living_streets(), target);
+    target = ::_pbi::WireFormatLite::WriteFloatToArray(
+        68, this->_internal_use_living_streets(), target);
   }
 
   // float service_factor = 69;
-  if (_internal_has_service_factor()) {
+  if (has_service_factor_case() == kServiceFactor) {
     target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteFloatToArray(69, this->_internal_service_factor(), target);
+    target = ::_pbi::WireFormatLite::WriteFloatToArray(
+        69, this->_internal_service_factor(), target);
   }
 
   // float closure_factor = 70;
-  if (_internal_has_closure_factor()) {
+  if (has_closure_factor_case() == kClosureFactor) {
     target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteFloatToArray(70, this->_internal_closure_factor(), target);
+    target = ::_pbi::WireFormatLite::WriteFloatToArray(
+        70, this->_internal_closure_factor(), target);
   }
 
   // float private_access_penalty = 71;
-  if (_internal_has_private_access_penalty()) {
+  if (has_private_access_penalty_case() == kPrivateAccessPenalty) {
     target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteFloatToArray(71, this->_internal_private_access_penalty(), target);
+    target = ::_pbi::WireFormatLite::WriteFloatToArray(
+        71, this->_internal_private_access_penalty(), target);
   }
 
   // bool exclude_unpaved = 72;
-  if (_internal_has_exclude_unpaved()) {
+  if (has_exclude_unpaved_case() == kExcludeUnpaved) {
     target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteBoolToArray(72, this->_internal_exclude_unpaved(), target);
+    target = ::_pbi::WireFormatLite::WriteBoolToArray(
+        72, this->_internal_exclude_unpaved(), target);
   }
 
   // bool include_hot = 73;
-  if (_internal_has_include_hot()) {
+  if (has_include_hot_case() == kIncludeHot) {
     target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteBoolToArray(73, this->_internal_include_hot(), target);
+    target = ::_pbi::WireFormatLite::WriteBoolToArray(
+        73, this->_internal_include_hot(), target);
   }
 
   // bool include_hov2 = 74;
-  if (_internal_has_include_hov2()) {
+  if (has_include_hov2_case() == kIncludeHov2) {
     target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteBoolToArray(74, this->_internal_include_hov2(), target);
+    target = ::_pbi::WireFormatLite::WriteBoolToArray(
+        74, this->_internal_include_hov2(), target);
   }
 
   // bool include_hov3 = 75;
-  if (_internal_has_include_hov3()) {
+  if (has_include_hov3_case() == kIncludeHov3) {
     target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteBoolToArray(75, this->_internal_include_hov3(), target);
+    target = ::_pbi::WireFormatLite::WriteBoolToArray(
+        75, this->_internal_include_hov3(), target);
   }
 
   // bool exclude_cash_only_tolls = 76;
-  if (_internal_has_exclude_cash_only_tolls()) {
+  if (has_exclude_cash_only_tolls_case() == kExcludeCashOnlyTolls) {
     target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteBoolToArray(76, this->_internal_exclude_cash_only_tolls(), target);
+    target = ::_pbi::WireFormatLite::WriteBoolToArray(
+        76, this->_internal_exclude_cash_only_tolls(), target);
   }
 
   // uint32 restriction_probability = 77;
-  if (_internal_has_restriction_probability()) {
+  if (has_restriction_probability_case() == kRestrictionProbability) {
     target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteUInt32ToArray(77, this->_internal_restriction_probability(), target);
+    target = ::_pbi::WireFormatLite::WriteUInt32ToArray(
+        77, this->_internal_restriction_probability(), target);
   }
 
   // repeated .valhalla.AvoidEdge exclude_edges = 78;
   for (unsigned i = 0,
       n = static_cast<unsigned>(this->_internal_exclude_edges_size()); i < n; i++) {
-    const auto& repfield = this->_internal_exclude_edges(i);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
+    const auto& repfield = this->_internal_exclude_edges().Get(i);
+    target = ::google::protobuf::internal::WireFormatLite::
         InternalWriteMessage(78, repfield, repfield.GetCachedSize(), target, stream);
   }
 
   // float elevator_penalty = 79;
-  if (_internal_has_elevator_penalty()) {
+  if (has_elevator_penalty_case() == kElevatorPenalty) {
     target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteFloatToArray(79, this->_internal_elevator_penalty(), target);
+    target = ::_pbi::WireFormatLite::WriteFloatToArray(
+        79, this->_internal_elevator_penalty(), target);
   }
 
   // uint32 fixed_speed = 80;
   if (this->_internal_fixed_speed() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteUInt32ToArray(80, this->_internal_fixed_speed(), target);
+    target = ::_pbi::WireFormatLite::WriteUInt32ToArray(
+        80, this->_internal_fixed_speed(), target);
   }
 
   // uint32 axle_count = 81;
   if (this->_internal_axle_count() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteUInt32ToArray(81, this->_internal_axle_count(), target);
+    target = ::_pbi::WireFormatLite::WriteUInt32ToArray(
+        81, this->_internal_axle_count(), target);
   }
 
   // float use_lit = 82;
-  static_assert(sizeof(uint32_t) == sizeof(float), "Code assumes uint32_t and float are the same size.");
+  static_assert(sizeof(::uint32_t) == sizeof(float),
+                "Code assumes ::uint32_t and float are the same size.");
   float tmp_use_lit = this->_internal_use_lit();
-  uint32_t raw_use_lit;
+  ::uint32_t raw_use_lit;
   memcpy(&raw_use_lit, &tmp_use_lit, sizeof(tmp_use_lit));
   if (raw_use_lit != 0) {
     target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteFloatToArray(82, this->_internal_use_lit(), target);
+    target = ::_pbi::WireFormatLite::WriteFloatToArray(
+        82, this->_internal_use_lit(), target);
   }
 
   // bool disable_hierarchy_pruning = 83;
   if (this->_internal_disable_hierarchy_pruning() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteBoolToArray(83, this->_internal_disable_hierarchy_pruning(), target);
+    target = ::_pbi::WireFormatLite::WriteBoolToArray(
+        83, this->_internal_disable_hierarchy_pruning(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target = stream->WriteRaw(_internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).data(),
-        static_cast<int>(_internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).size()), target);
+    target = stream->WriteRaw(
+        _internal_metadata_.unknown_fields<std::string>(::google::protobuf::internal::GetEmptyString).data(),
+        static_cast<int>(_internal_metadata_.unknown_fields<std::string>(::google::protobuf::internal::GetEmptyString).size()), target);
   }
   // @@protoc_insertion_point(serialize_to_array_end:valhalla.Costing.Options)
   return target;
 }
 
-size_t Costing_Options::ByteSizeLong() const {
+::size_t Costing_Options::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:valhalla.Costing.Options)
-  size_t total_size = 0;
+  ::size_t total_size = 0;
 
-  uint32_t cached_has_bits = 0;
+  ::uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
   // repeated string filter_stop_ids = 50;
-  total_size += 2 *
-      ::PROTOBUF_NAMESPACE_ID::internal::FromIntSize(_impl_.filter_stop_ids_.size());
-  for (int i = 0, n = _impl_.filter_stop_ids_.size(); i < n; i++) {
-    total_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
-      _impl_.filter_stop_ids_.Get(i));
+  total_size += 2 * ::google::protobuf::internal::FromIntSize(_internal_filter_stop_ids().size());
+  for (int i = 0, n = _internal_filter_stop_ids().size(); i < n; ++i) {
+    total_size += ::google::protobuf::internal::WireFormatLite::StringSize(
+        _internal_filter_stop_ids().Get(i));
   }
-
   // repeated string filter_operator_ids = 52;
-  total_size += 2 *
-      ::PROTOBUF_NAMESPACE_ID::internal::FromIntSize(_impl_.filter_operator_ids_.size());
-  for (int i = 0, n = _impl_.filter_operator_ids_.size(); i < n; i++) {
-    total_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
-      _impl_.filter_operator_ids_.Get(i));
+  total_size += 2 * ::google::protobuf::internal::FromIntSize(_internal_filter_operator_ids().size());
+  for (int i = 0, n = _internal_filter_operator_ids().size(); i < n; ++i) {
+    total_size += ::google::protobuf::internal::WireFormatLite::StringSize(
+        _internal_filter_operator_ids().Get(i));
   }
-
   // repeated string filter_route_ids = 54;
-  total_size += 2 *
-      ::PROTOBUF_NAMESPACE_ID::internal::FromIntSize(_impl_.filter_route_ids_.size());
-  for (int i = 0, n = _impl_.filter_route_ids_.size(); i < n; i++) {
-    total_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
-      _impl_.filter_route_ids_.Get(i));
+  total_size += 2 * ::google::protobuf::internal::FromIntSize(_internal_filter_route_ids().size());
+  for (int i = 0, n = _internal_filter_route_ids().size(); i < n; ++i) {
+    total_size += ::google::protobuf::internal::WireFormatLite::StringSize(
+        _internal_filter_route_ids().Get(i));
   }
-
   // repeated .valhalla.AvoidEdge exclude_edges = 78;
   total_size += 2UL * this->_internal_exclude_edges_size();
-  for (const auto& msg : this->_impl_.exclude_edges_) {
+  for (const auto& msg : this->_internal_exclude_edges()) {
     total_size +=
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(msg);
+      ::google::protobuf::internal::WireFormatLite::MessageSize(msg);
   }
-
   // .valhalla.FilterAction filter_stop_action = 49;
   if (this->_internal_filter_stop_action() != 0) {
     total_size += 2 +
-      ::_pbi::WireFormatLite::EnumSize(this->_internal_filter_stop_action());
+                  ::_pbi::WireFormatLite::EnumSize(this->_internal_filter_stop_action());
   }
 
   // .valhalla.FilterAction filter_operator_action = 51;
   if (this->_internal_filter_operator_action() != 0) {
     total_size += 2 +
-      ::_pbi::WireFormatLite::EnumSize(this->_internal_filter_operator_action());
+                  ::_pbi::WireFormatLite::EnumSize(this->_internal_filter_operator_action());
   }
 
   // .valhalla.FilterAction filter_route_action = 53;
   if (this->_internal_filter_route_action() != 0) {
     total_size += 2 +
-      ::_pbi::WireFormatLite::EnumSize(this->_internal_filter_route_action());
+                  ::_pbi::WireFormatLite::EnumSize(this->_internal_filter_route_action());
   }
 
   // uint32 fixed_speed = 80;
   if (this->_internal_fixed_speed() != 0) {
-    total_size += 2 +
-      ::_pbi::WireFormatLite::UInt32Size(
-        this->_internal_fixed_speed());
+    total_size += 2 + ::_pbi::WireFormatLite::UInt32Size(
+                                    this->_internal_fixed_speed());
   }
 
   // uint32 axle_count = 81;
   if (this->_internal_axle_count() != 0) {
-    total_size += 2 +
-      ::_pbi::WireFormatLite::UInt32Size(
-        this->_internal_axle_count());
+    total_size += 2 + ::_pbi::WireFormatLite::UInt32Size(
+                                    this->_internal_axle_count());
   }
 
   // float use_lit = 82;
-  static_assert(sizeof(uint32_t) == sizeof(float), "Code assumes uint32_t and float are the same size.");
+  static_assert(sizeof(::uint32_t) == sizeof(float),
+                "Code assumes ::uint32_t and float are the same size.");
   float tmp_use_lit = this->_internal_use_lit();
-  uint32_t raw_use_lit;
+  ::uint32_t raw_use_lit;
   memcpy(&raw_use_lit, &tmp_use_lit, sizeof(tmp_use_lit));
   if (raw_use_lit != 0) {
-    total_size += 2 + 4;
+    total_size += 6;
   }
 
   // bool disable_hierarchy_pruning = 83;
   if (this->_internal_disable_hierarchy_pruning() != 0) {
-    total_size += 2 + 1;
+    total_size += 3;
   }
 
   switch (has_maneuver_penalty_case()) {
     // float maneuver_penalty = 1;
     case kManeuverPenalty: {
-      total_size += 1 + 4;
+      total_size += 5;
       break;
     }
     case HAS_MANEUVER_PENALTY_NOT_SET: {
@@ -5770,7 +5408,7 @@ size_t Costing_Options::ByteSizeLong() const {
   switch (has_destination_only_penalty_case()) {
     // float destination_only_penalty = 2;
     case kDestinationOnlyPenalty: {
-      total_size += 1 + 4;
+      total_size += 5;
       break;
     }
     case HAS_DESTINATION_ONLY_PENALTY_NOT_SET: {
@@ -5780,7 +5418,7 @@ size_t Costing_Options::ByteSizeLong() const {
   switch (has_gate_cost_case()) {
     // float gate_cost = 3;
     case kGateCost: {
-      total_size += 1 + 4;
+      total_size += 5;
       break;
     }
     case HAS_GATE_COST_NOT_SET: {
@@ -5790,7 +5428,7 @@ size_t Costing_Options::ByteSizeLong() const {
   switch (has_gate_penalty_case()) {
     // float gate_penalty = 4;
     case kGatePenalty: {
-      total_size += 1 + 4;
+      total_size += 5;
       break;
     }
     case HAS_GATE_PENALTY_NOT_SET: {
@@ -5800,7 +5438,7 @@ size_t Costing_Options::ByteSizeLong() const {
   switch (has_toll_booth_cost_case()) {
     // float toll_booth_cost = 5;
     case kTollBoothCost: {
-      total_size += 1 + 4;
+      total_size += 5;
       break;
     }
     case HAS_TOLL_BOOTH_COST_NOT_SET: {
@@ -5810,7 +5448,7 @@ size_t Costing_Options::ByteSizeLong() const {
   switch (has_toll_booth_penalty_case()) {
     // float toll_booth_penalty = 6;
     case kTollBoothPenalty: {
-      total_size += 1 + 4;
+      total_size += 5;
       break;
     }
     case HAS_TOLL_BOOTH_PENALTY_NOT_SET: {
@@ -5820,7 +5458,7 @@ size_t Costing_Options::ByteSizeLong() const {
   switch (has_alley_penalty_case()) {
     // float alley_penalty = 7;
     case kAlleyPenalty: {
-      total_size += 1 + 4;
+      total_size += 5;
       break;
     }
     case HAS_ALLEY_PENALTY_NOT_SET: {
@@ -5830,7 +5468,7 @@ size_t Costing_Options::ByteSizeLong() const {
   switch (has_country_crossing_cost_case()) {
     // float country_crossing_cost = 8;
     case kCountryCrossingCost: {
-      total_size += 1 + 4;
+      total_size += 5;
       break;
     }
     case HAS_COUNTRY_CROSSING_COST_NOT_SET: {
@@ -5840,7 +5478,7 @@ size_t Costing_Options::ByteSizeLong() const {
   switch (has_country_crossing_penalty_case()) {
     // float country_crossing_penalty = 9;
     case kCountryCrossingPenalty: {
-      total_size += 1 + 4;
+      total_size += 5;
       break;
     }
     case HAS_COUNTRY_CROSSING_PENALTY_NOT_SET: {
@@ -5850,7 +5488,7 @@ size_t Costing_Options::ByteSizeLong() const {
   switch (has_ferry_cost_case()) {
     // float ferry_cost = 10;
     case kFerryCost: {
-      total_size += 1 + 4;
+      total_size += 5;
       break;
     }
     case HAS_FERRY_COST_NOT_SET: {
@@ -5860,7 +5498,7 @@ size_t Costing_Options::ByteSizeLong() const {
   switch (has_avoid_bad_surfaces_case()) {
     // float avoid_bad_surfaces = 11;
     case kAvoidBadSurfaces: {
-      total_size += 1 + 4;
+      total_size += 5;
       break;
     }
     case HAS_AVOID_BAD_SURFACES_NOT_SET: {
@@ -5870,7 +5508,7 @@ size_t Costing_Options::ByteSizeLong() const {
   switch (has_use_ferry_case()) {
     // float use_ferry = 12;
     case kUseFerry: {
-      total_size += 1 + 4;
+      total_size += 5;
       break;
     }
     case HAS_USE_FERRY_NOT_SET: {
@@ -5880,7 +5518,7 @@ size_t Costing_Options::ByteSizeLong() const {
   switch (has_use_highways_case()) {
     // float use_highways = 13;
     case kUseHighways: {
-      total_size += 1 + 4;
+      total_size += 5;
       break;
     }
     case HAS_USE_HIGHWAYS_NOT_SET: {
@@ -5890,7 +5528,7 @@ size_t Costing_Options::ByteSizeLong() const {
   switch (has_use_tolls_case()) {
     // float use_tolls = 14;
     case kUseTolls: {
-      total_size += 1 + 4;
+      total_size += 5;
       break;
     }
     case HAS_USE_TOLLS_NOT_SET: {
@@ -5900,7 +5538,7 @@ size_t Costing_Options::ByteSizeLong() const {
   switch (has_use_roads_case()) {
     // float use_roads = 15;
     case kUseRoads: {
-      total_size += 1 + 4;
+      total_size += 5;
       break;
     }
     case HAS_USE_ROADS_NOT_SET: {
@@ -5910,9 +5548,8 @@ size_t Costing_Options::ByteSizeLong() const {
   switch (has_max_distance_case()) {
     // uint32 max_distance = 16;
     case kMaxDistance: {
-      total_size += 2 +
-        ::_pbi::WireFormatLite::UInt32Size(
-          this->_internal_max_distance());
+      total_size += 2 + ::_pbi::WireFormatLite::UInt32Size(
+                                      this->_internal_max_distance());
       break;
     }
     case HAS_MAX_DISTANCE_NOT_SET: {
@@ -5922,7 +5559,7 @@ size_t Costing_Options::ByteSizeLong() const {
   switch (has_walking_speed_case()) {
     // float walking_speed = 17;
     case kWalkingSpeed: {
-      total_size += 2 + 4;
+      total_size += 6;
       break;
     }
     case HAS_WALKING_SPEED_NOT_SET: {
@@ -5932,7 +5569,7 @@ size_t Costing_Options::ByteSizeLong() const {
   switch (has_step_penalty_case()) {
     // float step_penalty = 18;
     case kStepPenalty: {
-      total_size += 2 + 4;
+      total_size += 6;
       break;
     }
     case HAS_STEP_PENALTY_NOT_SET: {
@@ -5942,9 +5579,8 @@ size_t Costing_Options::ByteSizeLong() const {
   switch (has_max_grade_case()) {
     // uint32 max_grade = 19;
     case kMaxGrade: {
-      total_size += 2 +
-        ::_pbi::WireFormatLite::UInt32Size(
-          this->_internal_max_grade());
+      total_size += 2 + ::_pbi::WireFormatLite::UInt32Size(
+                                      this->_internal_max_grade());
       break;
     }
     case HAS_MAX_GRADE_NOT_SET: {
@@ -5954,9 +5590,8 @@ size_t Costing_Options::ByteSizeLong() const {
   switch (has_max_hiking_difficulty_case()) {
     // uint32 max_hiking_difficulty = 20;
     case kMaxHikingDifficulty: {
-      total_size += 2 +
-        ::_pbi::WireFormatLite::UInt32Size(
-          this->_internal_max_hiking_difficulty());
+      total_size += 2 + ::_pbi::WireFormatLite::UInt32Size(
+                                      this->_internal_max_hiking_difficulty());
       break;
     }
     case HAS_MAX_HIKING_DIFFICULTY_NOT_SET: {
@@ -5966,7 +5601,7 @@ size_t Costing_Options::ByteSizeLong() const {
   switch (has_mode_factor_case()) {
     // float mode_factor = 21;
     case kModeFactor: {
-      total_size += 2 + 4;
+      total_size += 6;
       break;
     }
     case HAS_MODE_FACTOR_NOT_SET: {
@@ -5976,7 +5611,7 @@ size_t Costing_Options::ByteSizeLong() const {
   switch (has_walkway_factor_case()) {
     // float walkway_factor = 22;
     case kWalkwayFactor: {
-      total_size += 2 + 4;
+      total_size += 6;
       break;
     }
     case HAS_WALKWAY_FACTOR_NOT_SET: {
@@ -5986,7 +5621,7 @@ size_t Costing_Options::ByteSizeLong() const {
   switch (has_sidewalk_factor_case()) {
     // float sidewalk_factor = 23;
     case kSidewalkFactor: {
-      total_size += 2 + 4;
+      total_size += 6;
       break;
     }
     case HAS_SIDEWALK_FACTOR_NOT_SET: {
@@ -5996,7 +5631,7 @@ size_t Costing_Options::ByteSizeLong() const {
   switch (has_alley_factor_case()) {
     // float alley_factor = 24;
     case kAlleyFactor: {
-      total_size += 2 + 4;
+      total_size += 6;
       break;
     }
     case HAS_ALLEY_FACTOR_NOT_SET: {
@@ -6006,7 +5641,7 @@ size_t Costing_Options::ByteSizeLong() const {
   switch (has_driveway_factor_case()) {
     // float driveway_factor = 25;
     case kDrivewayFactor: {
-      total_size += 2 + 4;
+      total_size += 6;
       break;
     }
     case HAS_DRIVEWAY_FACTOR_NOT_SET: {
@@ -6016,7 +5651,7 @@ size_t Costing_Options::ByteSizeLong() const {
   switch (has_driveway_penalty_case()) {
     // float driveway_penalty = 26;
     case kDrivewayPenalty: {
-      total_size += 2 + 4;
+      total_size += 6;
       break;
     }
     case HAS_DRIVEWAY_PENALTY_NOT_SET: {
@@ -6026,9 +5661,8 @@ size_t Costing_Options::ByteSizeLong() const {
   switch (has_transit_start_end_max_distance_case()) {
     // uint32 transit_start_end_max_distance = 27;
     case kTransitStartEndMaxDistance: {
-      total_size += 2 +
-        ::_pbi::WireFormatLite::UInt32Size(
-          this->_internal_transit_start_end_max_distance());
+      total_size += 2 + ::_pbi::WireFormatLite::UInt32Size(
+                                      this->_internal_transit_start_end_max_distance());
       break;
     }
     case HAS_TRANSIT_START_END_MAX_DISTANCE_NOT_SET: {
@@ -6038,9 +5672,8 @@ size_t Costing_Options::ByteSizeLong() const {
   switch (has_transit_transfer_max_distance_case()) {
     // uint32 transit_transfer_max_distance = 28;
     case kTransitTransferMaxDistance: {
-      total_size += 2 +
-        ::_pbi::WireFormatLite::UInt32Size(
-          this->_internal_transit_transfer_max_distance());
+      total_size += 2 + ::_pbi::WireFormatLite::UInt32Size(
+                                      this->_internal_transit_transfer_max_distance());
       break;
     }
     case HAS_TRANSIT_TRANSFER_MAX_DISTANCE_NOT_SET: {
@@ -6050,9 +5683,8 @@ size_t Costing_Options::ByteSizeLong() const {
   switch (has_transport_type_case()) {
     // string transport_type = 29;
     case kTransportType: {
-      total_size += 2 +
-        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
-          this->_internal_transport_type());
+      total_size += 2 + ::google::protobuf::internal::WireFormatLite::StringSize(
+                                      this->_internal_transport_type());
       break;
     }
     case HAS_TRANSPORT_TYPE_NOT_SET: {
@@ -6062,7 +5694,7 @@ size_t Costing_Options::ByteSizeLong() const {
   switch (has_top_speed_case()) {
     // float top_speed = 30;
     case kTopSpeed: {
-      total_size += 2 + 4;
+      total_size += 6;
       break;
     }
     case HAS_TOP_SPEED_NOT_SET: {
@@ -6072,7 +5704,7 @@ size_t Costing_Options::ByteSizeLong() const {
   switch (has_use_hills_case()) {
     // float use_hills = 31;
     case kUseHills: {
-      total_size += 2 + 4;
+      total_size += 6;
       break;
     }
     case HAS_USE_HILLS_NOT_SET: {
@@ -6082,7 +5714,7 @@ size_t Costing_Options::ByteSizeLong() const {
   switch (has_use_primary_case()) {
     // float use_primary = 32;
     case kUsePrimary: {
-      total_size += 2 + 4;
+      total_size += 6;
       break;
     }
     case HAS_USE_PRIMARY_NOT_SET: {
@@ -6092,7 +5724,7 @@ size_t Costing_Options::ByteSizeLong() const {
   switch (has_use_trails_case()) {
     // float use_trails = 33;
     case kUseTrails: {
-      total_size += 2 + 4;
+      total_size += 6;
       break;
     }
     case HAS_USE_TRAILS_NOT_SET: {
@@ -6102,7 +5734,7 @@ size_t Costing_Options::ByteSizeLong() const {
   switch (has_low_class_penalty_case()) {
     // float low_class_penalty = 34;
     case kLowClassPenalty: {
-      total_size += 2 + 4;
+      total_size += 6;
       break;
     }
     case HAS_LOW_CLASS_PENALTY_NOT_SET: {
@@ -6112,7 +5744,7 @@ size_t Costing_Options::ByteSizeLong() const {
   switch (has_hazmat_case()) {
     // bool hazmat = 35;
     case kHazmat: {
-      total_size += 2 + 1;
+      total_size += 3;
       break;
     }
     case HAS_HAZMAT_NOT_SET: {
@@ -6122,7 +5754,7 @@ size_t Costing_Options::ByteSizeLong() const {
   switch (has_weight_case()) {
     // float weight = 36;
     case kWeight: {
-      total_size += 2 + 4;
+      total_size += 6;
       break;
     }
     case HAS_WEIGHT_NOT_SET: {
@@ -6132,7 +5764,7 @@ size_t Costing_Options::ByteSizeLong() const {
   switch (has_axle_load_case()) {
     // float axle_load = 37;
     case kAxleLoad: {
-      total_size += 2 + 4;
+      total_size += 6;
       break;
     }
     case HAS_AXLE_LOAD_NOT_SET: {
@@ -6142,7 +5774,7 @@ size_t Costing_Options::ByteSizeLong() const {
   switch (has_height_case()) {
     // float height = 38;
     case kHeight: {
-      total_size += 2 + 4;
+      total_size += 6;
       break;
     }
     case HAS_HEIGHT_NOT_SET: {
@@ -6152,7 +5784,7 @@ size_t Costing_Options::ByteSizeLong() const {
   switch (has_width_case()) {
     // float width = 39;
     case kWidth: {
-      total_size += 2 + 4;
+      total_size += 6;
       break;
     }
     case HAS_WIDTH_NOT_SET: {
@@ -6162,7 +5794,7 @@ size_t Costing_Options::ByteSizeLong() const {
   switch (has_length_case()) {
     // float length = 40;
     case kLength: {
-      total_size += 2 + 4;
+      total_size += 6;
       break;
     }
     case HAS_LENGTH_NOT_SET: {
@@ -6172,7 +5804,7 @@ size_t Costing_Options::ByteSizeLong() const {
   switch (has_cycling_speed_case()) {
     // float cycling_speed = 41;
     case kCyclingSpeed: {
-      total_size += 2 + 4;
+      total_size += 6;
       break;
     }
     case HAS_CYCLING_SPEED_NOT_SET: {
@@ -6182,7 +5814,7 @@ size_t Costing_Options::ByteSizeLong() const {
   switch (has_wheelchair_case()) {
     // bool wheelchair = 42;
     case kWheelchair: {
-      total_size += 2 + 1;
+      total_size += 3;
       break;
     }
     case HAS_WHEELCHAIR_NOT_SET: {
@@ -6192,7 +5824,7 @@ size_t Costing_Options::ByteSizeLong() const {
   switch (has_bicycle_case()) {
     // bool bicycle = 43;
     case kBicycle: {
-      total_size += 2 + 1;
+      total_size += 3;
       break;
     }
     case HAS_BICYCLE_NOT_SET: {
@@ -6202,7 +5834,7 @@ size_t Costing_Options::ByteSizeLong() const {
   switch (has_use_bus_case()) {
     // float use_bus = 44;
     case kUseBus: {
-      total_size += 2 + 4;
+      total_size += 6;
       break;
     }
     case HAS_USE_BUS_NOT_SET: {
@@ -6212,7 +5844,7 @@ size_t Costing_Options::ByteSizeLong() const {
   switch (has_use_rail_case()) {
     // float use_rail = 45;
     case kUseRail: {
-      total_size += 2 + 4;
+      total_size += 6;
       break;
     }
     case HAS_USE_RAIL_NOT_SET: {
@@ -6222,7 +5854,7 @@ size_t Costing_Options::ByteSizeLong() const {
   switch (has_use_transfers_case()) {
     // float use_transfers = 46;
     case kUseTransfers: {
-      total_size += 2 + 4;
+      total_size += 6;
       break;
     }
     case HAS_USE_TRANSFERS_NOT_SET: {
@@ -6232,7 +5864,7 @@ size_t Costing_Options::ByteSizeLong() const {
   switch (has_transfer_cost_case()) {
     // float transfer_cost = 47;
     case kTransferCost: {
-      total_size += 2 + 4;
+      total_size += 6;
       break;
     }
     case HAS_TRANSFER_COST_NOT_SET: {
@@ -6242,7 +5874,7 @@ size_t Costing_Options::ByteSizeLong() const {
   switch (has_transfer_penalty_case()) {
     // float transfer_penalty = 48;
     case kTransferPenalty: {
-      total_size += 2 + 4;
+      total_size += 6;
       break;
     }
     case HAS_TRANSFER_PENALTY_NOT_SET: {
@@ -6252,9 +5884,8 @@ size_t Costing_Options::ByteSizeLong() const {
   switch (has_flow_mask_case()) {
     // uint32 flow_mask = 55;
     case kFlowMask: {
-      total_size += 2 +
-        ::_pbi::WireFormatLite::UInt32Size(
-          this->_internal_flow_mask());
+      total_size += 2 + ::_pbi::WireFormatLite::UInt32Size(
+                                      this->_internal_flow_mask());
       break;
     }
     case HAS_FLOW_MASK_NOT_SET: {
@@ -6264,7 +5895,7 @@ size_t Costing_Options::ByteSizeLong() const {
   switch (has_bike_share_cost_case()) {
     // float bike_share_cost = 56;
     case kBikeShareCost: {
-      total_size += 2 + 4;
+      total_size += 6;
       break;
     }
     case HAS_BIKE_SHARE_COST_NOT_SET: {
@@ -6274,7 +5905,7 @@ size_t Costing_Options::ByteSizeLong() const {
   switch (has_bike_share_penalty_case()) {
     // float bike_share_penalty = 57;
     case kBikeSharePenalty: {
-      total_size += 2 + 4;
+      total_size += 6;
       break;
     }
     case HAS_BIKE_SHARE_PENALTY_NOT_SET: {
@@ -6284,7 +5915,7 @@ size_t Costing_Options::ByteSizeLong() const {
   switch (has_rail_ferry_cost_case()) {
     // float rail_ferry_cost = 58;
     case kRailFerryCost: {
-      total_size += 2 + 4;
+      total_size += 6;
       break;
     }
     case HAS_RAIL_FERRY_COST_NOT_SET: {
@@ -6294,7 +5925,7 @@ size_t Costing_Options::ByteSizeLong() const {
   switch (has_use_rail_ferry_case()) {
     // float use_rail_ferry = 59;
     case kUseRailFerry: {
-      total_size += 2 + 4;
+      total_size += 6;
       break;
     }
     case HAS_USE_RAIL_FERRY_NOT_SET: {
@@ -6304,7 +5935,7 @@ size_t Costing_Options::ByteSizeLong() const {
   switch (has_ignore_restrictions_case()) {
     // bool ignore_restrictions = 60;
     case kIgnoreRestrictions: {
-      total_size += 2 + 1;
+      total_size += 3;
       break;
     }
     case HAS_IGNORE_RESTRICTIONS_NOT_SET: {
@@ -6314,7 +5945,7 @@ size_t Costing_Options::ByteSizeLong() const {
   switch (has_ignore_oneways_case()) {
     // bool ignore_oneways = 61;
     case kIgnoreOneways: {
-      total_size += 2 + 1;
+      total_size += 3;
       break;
     }
     case HAS_IGNORE_ONEWAYS_NOT_SET: {
@@ -6324,7 +5955,7 @@ size_t Costing_Options::ByteSizeLong() const {
   switch (has_ignore_access_case()) {
     // bool ignore_access = 62;
     case kIgnoreAccess: {
-      total_size += 2 + 1;
+      total_size += 3;
       break;
     }
     case HAS_IGNORE_ACCESS_NOT_SET: {
@@ -6334,7 +5965,7 @@ size_t Costing_Options::ByteSizeLong() const {
   switch (has_ignore_closures_case()) {
     // bool ignore_closures = 63;
     case kIgnoreClosures: {
-      total_size += 2 + 1;
+      total_size += 3;
       break;
     }
     case HAS_IGNORE_CLOSURES_NOT_SET: {
@@ -6344,7 +5975,7 @@ size_t Costing_Options::ByteSizeLong() const {
   switch (has_shortest_case()) {
     // bool shortest = 64;
     case kShortest: {
-      total_size += 2 + 1;
+      total_size += 3;
       break;
     }
     case HAS_SHORTEST_NOT_SET: {
@@ -6354,7 +5985,7 @@ size_t Costing_Options::ByteSizeLong() const {
   switch (has_service_penalty_case()) {
     // float service_penalty = 65;
     case kServicePenalty: {
-      total_size += 2 + 4;
+      total_size += 6;
       break;
     }
     case HAS_SERVICE_PENALTY_NOT_SET: {
@@ -6364,7 +5995,7 @@ size_t Costing_Options::ByteSizeLong() const {
   switch (has_use_tracks_case()) {
     // float use_tracks = 66;
     case kUseTracks: {
-      total_size += 2 + 4;
+      total_size += 6;
       break;
     }
     case HAS_USE_TRACKS_NOT_SET: {
@@ -6374,7 +6005,7 @@ size_t Costing_Options::ByteSizeLong() const {
   switch (has_use_distance_case()) {
     // float use_distance = 67;
     case kUseDistance: {
-      total_size += 2 + 4;
+      total_size += 6;
       break;
     }
     case HAS_USE_DISTANCE_NOT_SET: {
@@ -6384,7 +6015,7 @@ size_t Costing_Options::ByteSizeLong() const {
   switch (has_use_living_streets_case()) {
     // float use_living_streets = 68;
     case kUseLivingStreets: {
-      total_size += 2 + 4;
+      total_size += 6;
       break;
     }
     case HAS_USE_LIVING_STREETS_NOT_SET: {
@@ -6394,7 +6025,7 @@ size_t Costing_Options::ByteSizeLong() const {
   switch (has_service_factor_case()) {
     // float service_factor = 69;
     case kServiceFactor: {
-      total_size += 2 + 4;
+      total_size += 6;
       break;
     }
     case HAS_SERVICE_FACTOR_NOT_SET: {
@@ -6404,7 +6035,7 @@ size_t Costing_Options::ByteSizeLong() const {
   switch (has_closure_factor_case()) {
     // float closure_factor = 70;
     case kClosureFactor: {
-      total_size += 2 + 4;
+      total_size += 6;
       break;
     }
     case HAS_CLOSURE_FACTOR_NOT_SET: {
@@ -6414,7 +6045,7 @@ size_t Costing_Options::ByteSizeLong() const {
   switch (has_private_access_penalty_case()) {
     // float private_access_penalty = 71;
     case kPrivateAccessPenalty: {
-      total_size += 2 + 4;
+      total_size += 6;
       break;
     }
     case HAS_PRIVATE_ACCESS_PENALTY_NOT_SET: {
@@ -6424,7 +6055,7 @@ size_t Costing_Options::ByteSizeLong() const {
   switch (has_exclude_unpaved_case()) {
     // bool exclude_unpaved = 72;
     case kExcludeUnpaved: {
-      total_size += 2 + 1;
+      total_size += 3;
       break;
     }
     case HAS_EXCLUDE_UNPAVED_NOT_SET: {
@@ -6434,7 +6065,7 @@ size_t Costing_Options::ByteSizeLong() const {
   switch (has_include_hot_case()) {
     // bool include_hot = 73;
     case kIncludeHot: {
-      total_size += 2 + 1;
+      total_size += 3;
       break;
     }
     case HAS_INCLUDE_HOT_NOT_SET: {
@@ -6444,7 +6075,7 @@ size_t Costing_Options::ByteSizeLong() const {
   switch (has_include_hov2_case()) {
     // bool include_hov2 = 74;
     case kIncludeHov2: {
-      total_size += 2 + 1;
+      total_size += 3;
       break;
     }
     case HAS_INCLUDE_HOV2_NOT_SET: {
@@ -6454,7 +6085,7 @@ size_t Costing_Options::ByteSizeLong() const {
   switch (has_include_hov3_case()) {
     // bool include_hov3 = 75;
     case kIncludeHov3: {
-      total_size += 2 + 1;
+      total_size += 3;
       break;
     }
     case HAS_INCLUDE_HOV3_NOT_SET: {
@@ -6464,7 +6095,7 @@ size_t Costing_Options::ByteSizeLong() const {
   switch (has_exclude_cash_only_tolls_case()) {
     // bool exclude_cash_only_tolls = 76;
     case kExcludeCashOnlyTolls: {
-      total_size += 2 + 1;
+      total_size += 3;
       break;
     }
     case HAS_EXCLUDE_CASH_ONLY_TOLLS_NOT_SET: {
@@ -6474,9 +6105,8 @@ size_t Costing_Options::ByteSizeLong() const {
   switch (has_restriction_probability_case()) {
     // uint32 restriction_probability = 77;
     case kRestrictionProbability: {
-      total_size += 2 +
-        ::_pbi::WireFormatLite::UInt32Size(
-          this->_internal_restriction_probability());
+      total_size += 2 + ::_pbi::WireFormatLite::UInt32Size(
+                                      this->_internal_restriction_probability());
       break;
     }
     case HAS_RESTRICTION_PROBABILITY_NOT_SET: {
@@ -6486,7 +6116,7 @@ size_t Costing_Options::ByteSizeLong() const {
   switch (has_elevator_penalty_case()) {
     // float elevator_penalty = 79;
     case kElevatorPenalty: {
-      total_size += 2 + 4;
+      total_size += 6;
       break;
     }
     case HAS_ELEVATOR_PENALTY_NOT_SET: {
@@ -6494,7 +6124,7 @@ size_t Costing_Options::ByteSizeLong() const {
     }
   }
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    total_size += _internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).size();
+    total_size += _internal_metadata_.unknown_fields<std::string>(::google::protobuf::internal::GetEmptyString).size();
   }
   int cached_size = ::_pbi::ToCachedSize(total_size);
   SetCachedSize(cached_size);
@@ -6502,7 +6132,7 @@ size_t Costing_Options::ByteSizeLong() const {
 }
 
 void Costing_Options::CheckTypeAndMergeFrom(
-    const ::PROTOBUF_NAMESPACE_ID::MessageLite& from) {
+    const ::google::protobuf::MessageLite& from) {
   MergeFrom(*::_pbi::DownCast<const Costing_Options*>(
       &from));
 }
@@ -6510,14 +6140,14 @@ void Costing_Options::CheckTypeAndMergeFrom(
 void Costing_Options::MergeFrom(const Costing_Options& from) {
   Costing_Options* const _this = this;
   // @@protoc_insertion_point(class_specific_merge_from_start:valhalla.Costing.Options)
-  GOOGLE_DCHECK_NE(&from, _this);
-  uint32_t cached_has_bits = 0;
+  ABSL_DCHECK_NE(&from, _this);
+  ::uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  _this->_impl_.filter_stop_ids_.MergeFrom(from._impl_.filter_stop_ids_);
-  _this->_impl_.filter_operator_ids_.MergeFrom(from._impl_.filter_operator_ids_);
-  _this->_impl_.filter_route_ids_.MergeFrom(from._impl_.filter_route_ids_);
-  _this->_impl_.exclude_edges_.MergeFrom(from._impl_.exclude_edges_);
+  _this->_internal_mutable_filter_stop_ids()->MergeFrom(from._internal_filter_stop_ids());
+  _this->_internal_mutable_filter_operator_ids()->MergeFrom(from._internal_filter_operator_ids());
+  _this->_internal_mutable_filter_route_ids()->MergeFrom(from._internal_filter_route_ids());
+  _this->_internal_mutable_exclude_edges()->MergeFrom(from._internal_exclude_edges());
   if (from._internal_filter_stop_action() != 0) {
     _this->_internal_set_filter_stop_action(from._internal_filter_stop_action());
   }
@@ -6533,9 +6163,10 @@ void Costing_Options::MergeFrom(const Costing_Options& from) {
   if (from._internal_axle_count() != 0) {
     _this->_internal_set_axle_count(from._internal_axle_count());
   }
-  static_assert(sizeof(uint32_t) == sizeof(float), "Code assumes uint32_t and float are the same size.");
+  static_assert(sizeof(::uint32_t) == sizeof(float),
+                "Code assumes ::uint32_t and float are the same size.");
   float tmp_use_lit = from._internal_use_lit();
-  uint32_t raw_use_lit;
+  ::uint32_t raw_use_lit;
   memcpy(&raw_use_lit, &tmp_use_lit, sizeof(tmp_use_lit));
   if (raw_use_lit != 0) {
     _this->_internal_set_use_lit(from._internal_use_lit());
@@ -7201,7 +6832,7 @@ void Costing_Options::CopyFrom(const Costing_Options& from) {
   MergeFrom(from);
 }
 
-bool Costing_Options::IsInitialized() const {
+PROTOBUF_NOINLINE bool Costing_Options::IsInitialized() const {
   return true;
 }
 
@@ -7212,7 +6843,7 @@ void Costing_Options::InternalSwap(Costing_Options* other) {
   _impl_.filter_operator_ids_.InternalSwap(&other->_impl_.filter_operator_ids_);
   _impl_.filter_route_ids_.InternalSwap(&other->_impl_.filter_route_ids_);
   _impl_.exclude_edges_.InternalSwap(&other->_impl_.exclude_edges_);
-  ::PROTOBUF_NAMESPACE_ID::internal::memswap<
+  ::google::protobuf::internal::memswap<
       PROTOBUF_FIELD_OFFSET(Costing_Options, _impl_.disable_hierarchy_pruning_)
       + sizeof(Costing_Options::_impl_.disable_hierarchy_pruning_)
       - PROTOBUF_FIELD_OFFSET(Costing_Options, _impl_.filter_stop_action_)>(
@@ -7368,26 +6999,26 @@ std::string Costing_Options::GetTypeName() const {
   return "valhalla.Costing.Options";
 }
 
-
 // ===================================================================
 
 class Costing::_Internal {
  public:
+  static constexpr ::int32_t kOneofCaseOffset =
+    PROTOBUF_FIELD_OFFSET(::valhalla::Costing, _impl_._oneof_case_);
   static const ::valhalla::Costing_Options& options(const Costing* msg);
 };
 
-const ::valhalla::Costing_Options&
-Costing::_Internal::options(const Costing* msg) {
+const ::valhalla::Costing_Options& Costing::_Internal::options(const Costing* msg) {
   return *msg->_impl_.has_options_.options_;
 }
 void Costing::set_allocated_options(::valhalla::Costing_Options* options) {
-  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
+  ::google::protobuf::Arena* message_arena = GetArenaForAllocation();
   clear_has_options();
   if (options) {
-    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
-      ::PROTOBUF_NAMESPACE_ID::Arena::InternalGetOwningArena(options);
+    ::google::protobuf::Arena* submessage_arena =
+      ::google::protobuf::Arena::InternalGetOwningArena(options);
     if (message_arena != submessage_arena) {
-      options = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
+      options = ::google::protobuf::internal::GetOwnedMessage(
           message_arena, options, submessage_arena);
     }
     set_has_options();
@@ -7395,24 +7026,24 @@ void Costing::set_allocated_options(::valhalla::Costing_Options* options) {
   }
   // @@protoc_insertion_point(field_set_allocated:valhalla.Costing.options)
 }
-Costing::Costing(::PROTOBUF_NAMESPACE_ID::Arena* arena,
-                         bool is_message_owned)
-  : ::PROTOBUF_NAMESPACE_ID::MessageLite(arena, is_message_owned) {
-  SharedCtor(arena, is_message_owned);
+Costing::Costing(::google::protobuf::Arena* arena)
+    : ::google::protobuf::MessageLite(arena) {
+  SharedCtor(arena);
   // @@protoc_insertion_point(arena_constructor:valhalla.Costing)
 }
-Costing::Costing(const Costing& from)
-  : ::PROTOBUF_NAMESPACE_ID::MessageLite() {
-  Costing* const _this = this; (void)_this;
+Costing::Costing(const Costing& from) : ::google::protobuf::MessageLite() {
+  Costing* const _this = this;
+  (void)_this;
   new (&_impl_) Impl_{
-      decltype(_impl_.type_){}
-    , decltype(_impl_.has_options_){}
-    , decltype(_impl_.has_name_){}
-    , decltype(_impl_.has_filter_closures_){}
-    , /*decltype(_impl_._cached_size_)*/{}
-    , /*decltype(_impl_._oneof_case_)*/{}};
-
-  _internal_metadata_.MergeFrom<std::string>(from._internal_metadata_);
+      decltype(_impl_.type_){},
+      decltype(_impl_.has_options_){},
+      decltype(_impl_.has_name_){},
+      decltype(_impl_.has_filter_closures_){},
+      /*decltype(_impl_._cached_size_)*/ {},
+      /*decltype(_impl_._oneof_case_)*/ {},
+  };
+  _internal_metadata_.MergeFrom<std::string>(
+      from._internal_metadata_);
   _this->_impl_.type_ = from._impl_.type_;
   clear_has_has_options();
   switch (from.has_options_case()) {
@@ -7445,37 +7076,30 @@ Costing::Costing(const Costing& from)
       break;
     }
   }
+
   // @@protoc_insertion_point(copy_constructor:valhalla.Costing)
 }
-
-inline void Costing::SharedCtor(
-    ::_pb::Arena* arena, bool is_message_owned) {
+inline void Costing::SharedCtor(::_pb::Arena* arena) {
   (void)arena;
-  (void)is_message_owned;
   new (&_impl_) Impl_{
-      decltype(_impl_.type_){0}
-    , decltype(_impl_.has_options_){}
-    , decltype(_impl_.has_name_){}
-    , decltype(_impl_.has_filter_closures_){}
-    , /*decltype(_impl_._cached_size_)*/{}
-    , /*decltype(_impl_._oneof_case_)*/{}
+      decltype(_impl_.type_){0},
+      decltype(_impl_.has_options_){},
+      decltype(_impl_.has_name_){},
+      decltype(_impl_.has_filter_closures_){},
+      /*decltype(_impl_._cached_size_)*/ {},
+      /*decltype(_impl_._oneof_case_)*/ {},
   };
   clear_has_has_options();
   clear_has_has_name();
   clear_has_has_filter_closures();
 }
-
 Costing::~Costing() {
   // @@protoc_insertion_point(destructor:valhalla.Costing)
-  if (auto *arena = _internal_metadata_.DeleteReturnArena<std::string>()) {
-  (void)arena;
-    return;
-  }
+  _internal_metadata_.Delete<std::string>();
   SharedDtor();
 }
-
 inline void Costing::SharedDtor() {
-  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
+  ABSL_DCHECK(GetArenaForAllocation() == nullptr);
   if (has_has_options()) {
     clear_has_options();
   }
@@ -7486,7 +7110,6 @@ inline void Costing::SharedDtor() {
     clear_has_filter_closures();
   }
 }
-
 void Costing::SetCachedSize(int size) const {
   _impl_._cached_size_.Set(size);
 }
@@ -7536,9 +7159,9 @@ void Costing::clear_has_filter_closures() {
 }
 
 
-void Costing::Clear() {
+PROTOBUF_NOINLINE void Costing::Clear() {
 // @@protoc_insertion_point(message_clear_start:valhalla.Costing)
-  uint32_t cached_has_bits = 0;
+  ::uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
@@ -7549,79 +7172,65 @@ void Costing::Clear() {
   _internal_metadata_.Clear<std::string>();
 }
 
-const char* Costing::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
-#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
-  while (!ctx->Done(&ptr)) {
-    uint32_t tag;
-    ptr = ::_pbi::ReadTag(ptr, &tag);
-    switch (tag >> 3) {
-      // .valhalla.Costing.Options options = 1;
-      case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
-          ptr = ctx->ParseMessage(_internal_mutable_options(), ptr);
-          CHK_(ptr);
-        } else
-          goto handle_unusual;
-        continue;
-      // .valhalla.Costing.Type type = 2;
-      case 2:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 16)) {
-          uint64_t val = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
-          CHK_(ptr);
-          _internal_set_type(static_cast<::valhalla::Costing_Type>(val));
-        } else
-          goto handle_unusual;
-        continue;
-      // string name = 3;
-      case 3:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 26)) {
-          auto str = _internal_mutable_name();
-          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(ptr);
-          CHK_(::_pbi::VerifyUTF8(str, nullptr));
-        } else
-          goto handle_unusual;
-        continue;
-      // bool filter_closures = 4;
-      case 4:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 32)) {
-          _internal_set_filter_closures(::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr));
-          CHK_(ptr);
-        } else
-          goto handle_unusual;
-        continue;
-      default:
-        goto handle_unusual;
-    }  // switch
-  handle_unusual:
-    if ((tag == 0) || ((tag & 7) == 4)) {
-      CHK_(ptr);
-      ctx->SetLastTag(tag);
-      goto message_done;
-    }
-    ptr = UnknownFieldParse(
-        tag,
-        _internal_metadata_.mutable_unknown_fields<std::string>(),
-        ptr, ctx);
-    CHK_(ptr != nullptr);
-  }  // while
-message_done:
+const char* Costing::_InternalParse(
+    const char* ptr, ::_pbi::ParseContext* ctx) {
+  ptr = ::_pbi::TcParser::ParseLoop(this, ptr, ctx, &_table_.header);
   return ptr;
-failure:
-  ptr = nullptr;
-  goto message_done;
-#undef CHK_
 }
 
-uint8_t* Costing::_InternalSerialize(
-    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+
+PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1
+const ::_pbi::TcParseTable<0, 4, 1, 29, 2> Costing::_table_ = {
+  {
+    0,  // no _has_bits_
+    0, // no _extensions_
+    4, 0,  // max_field_number, fast_idx_mask
+    offsetof(decltype(_table_), field_lookup_table),
+    4294967280,  // skipmap
+    offsetof(decltype(_table_), field_entries),
+    4,  // num_field_entries
+    1,  // num_aux_entries
+    offsetof(decltype(_table_), aux_entries),
+    &_Costing_default_instance_._instance,
+    ::_pbi::TcParser::GenericFallbackLite,  // fallback
+  }, {{
+    // .valhalla.Costing.Type type = 2;
+    {::_pbi::TcParser::FastV32S1,
+     {16, 63, 0, PROTOBUF_FIELD_OFFSET(Costing, _impl_.type_)}},
+  }}, {{
+    65535, 65535
+  }}, {{
+    // .valhalla.Costing.Options options = 1;
+    {PROTOBUF_FIELD_OFFSET(Costing, _impl_.has_options_.options_), _Internal::kOneofCaseOffset + 0, 0,
+    (0 | ::_fl::kFcOneof | ::_fl::kMessage | ::_fl::kTvTable)},
+    // .valhalla.Costing.Type type = 2;
+    {PROTOBUF_FIELD_OFFSET(Costing, _impl_.type_), 0, 0,
+    (0 | ::_fl::kFcSingular | ::_fl::kOpenEnum)},
+    // string name = 3;
+    {PROTOBUF_FIELD_OFFSET(Costing, _impl_.has_name_.name_), _Internal::kOneofCaseOffset + 4, 0,
+    (0 | ::_fl::kFcOneof | ::_fl::kUtf8String | ::_fl::kRepAString)},
+    // bool filter_closures = 4;
+    {PROTOBUF_FIELD_OFFSET(Costing, _impl_.has_filter_closures_.filter_closures_), _Internal::kOneofCaseOffset + 8, 0,
+    (0 | ::_fl::kFcOneof | ::_fl::kBool)},
+  }}, {{
+    {::_pbi::TcParser::GetTable<::valhalla::Costing_Options>()},
+  }}, {{
+    "\20\0\0\4\0\0\0\0"
+    "valhalla.Costing"
+    "name"
+  }},
+};
+
+::uint8_t* Costing::_InternalSerialize(
+    ::uint8_t* target,
+    ::google::protobuf::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:valhalla.Costing)
-  uint32_t cached_has_bits = 0;
-  (void) cached_has_bits;
+  ::uint32_t cached_has_bits = 0;
+  (void)cached_has_bits;
 
   // .valhalla.Costing.Options options = 1;
-  if (_internal_has_options()) {
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
+  if (has_options_case() == kOptions) {
+    target = ::google::protobuf::internal::WireFormatLite::
       InternalWriteMessage(1, _Internal::options(this),
         _Internal::options(this).GetCachedSize(), target, stream);
   }
@@ -7630,52 +7239,52 @@ uint8_t* Costing::_InternalSerialize(
   if (this->_internal_type() != 0) {
     target = stream->EnsureSpace(target);
     target = ::_pbi::WireFormatLite::WriteEnumToArray(
-      2, this->_internal_type(), target);
+        2, this->_internal_type(), target);
   }
 
   // string name = 3;
-  if (_internal_has_name()) {
-    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
-      this->_internal_name().data(), static_cast<int>(this->_internal_name().length()),
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "valhalla.Costing.name");
-    target = stream->WriteStringMaybeAliased(
-        3, this->_internal_name(), target);
+  if (has_name_case() == kName) {
+    const std::string& _s = this->_internal_name();
+    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+        _s.data(), static_cast<int>(_s.length()), ::google::protobuf::internal::WireFormatLite::SERIALIZE, "valhalla.Costing.name");
+    target = stream->WriteStringMaybeAliased(3, _s, target);
   }
 
   // bool filter_closures = 4;
-  if (_internal_has_filter_closures()) {
+  if (has_filter_closures_case() == kFilterClosures) {
     target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteBoolToArray(4, this->_internal_filter_closures(), target);
+    target = ::_pbi::WireFormatLite::WriteBoolToArray(
+        4, this->_internal_filter_closures(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target = stream->WriteRaw(_internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).data(),
-        static_cast<int>(_internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).size()), target);
+    target = stream->WriteRaw(
+        _internal_metadata_.unknown_fields<std::string>(::google::protobuf::internal::GetEmptyString).data(),
+        static_cast<int>(_internal_metadata_.unknown_fields<std::string>(::google::protobuf::internal::GetEmptyString).size()), target);
   }
   // @@protoc_insertion_point(serialize_to_array_end:valhalla.Costing)
   return target;
 }
 
-size_t Costing::ByteSizeLong() const {
+::size_t Costing::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:valhalla.Costing)
-  size_t total_size = 0;
+  ::size_t total_size = 0;
 
-  uint32_t cached_has_bits = 0;
+  ::uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
   // .valhalla.Costing.Type type = 2;
   if (this->_internal_type() != 0) {
     total_size += 1 +
-      ::_pbi::WireFormatLite::EnumSize(this->_internal_type());
+                  ::_pbi::WireFormatLite::EnumSize(this->_internal_type());
   }
 
   switch (has_options_case()) {
     // .valhalla.Costing.Options options = 1;
     case kOptions: {
       total_size += 1 +
-        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
+        ::google::protobuf::internal::WireFormatLite::MessageSize(
           *_impl_.has_options_.options_);
       break;
     }
@@ -7686,9 +7295,8 @@ size_t Costing::ByteSizeLong() const {
   switch (has_name_case()) {
     // string name = 3;
     case kName: {
-      total_size += 1 +
-        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
-          this->_internal_name());
+      total_size += 1 + ::google::protobuf::internal::WireFormatLite::StringSize(
+                                      this->_internal_name());
       break;
     }
     case HAS_NAME_NOT_SET: {
@@ -7698,7 +7306,7 @@ size_t Costing::ByteSizeLong() const {
   switch (has_filter_closures_case()) {
     // bool filter_closures = 4;
     case kFilterClosures: {
-      total_size += 1 + 1;
+      total_size += 2;
       break;
     }
     case HAS_FILTER_CLOSURES_NOT_SET: {
@@ -7706,7 +7314,7 @@ size_t Costing::ByteSizeLong() const {
     }
   }
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    total_size += _internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).size();
+    total_size += _internal_metadata_.unknown_fields<std::string>(::google::protobuf::internal::GetEmptyString).size();
   }
   int cached_size = ::_pbi::ToCachedSize(total_size);
   SetCachedSize(cached_size);
@@ -7714,7 +7322,7 @@ size_t Costing::ByteSizeLong() const {
 }
 
 void Costing::CheckTypeAndMergeFrom(
-    const ::PROTOBUF_NAMESPACE_ID::MessageLite& from) {
+    const ::google::protobuf::MessageLite& from) {
   MergeFrom(*::_pbi::DownCast<const Costing*>(
       &from));
 }
@@ -7722,8 +7330,8 @@ void Costing::CheckTypeAndMergeFrom(
 void Costing::MergeFrom(const Costing& from) {
   Costing* const _this = this;
   // @@protoc_insertion_point(class_specific_merge_from_start:valhalla.Costing)
-  GOOGLE_DCHECK_NE(&from, _this);
-  uint32_t cached_has_bits = 0;
+  ABSL_DCHECK_NE(&from, _this);
+  ::uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   if (from._internal_type() != 0) {
@@ -7767,7 +7375,7 @@ void Costing::CopyFrom(const Costing& from) {
   MergeFrom(from);
 }
 
-bool Costing::IsInitialized() const {
+PROTOBUF_NOINLINE bool Costing::IsInitialized() const {
   return true;
 }
 
@@ -7787,116 +7395,122 @@ std::string Costing::GetTypeName() const {
   return "valhalla.Costing";
 }
 
-
 // ===================================================================
 
 Options_CostingsEntry_DoNotUse::Options_CostingsEntry_DoNotUse() {}
-Options_CostingsEntry_DoNotUse::Options_CostingsEntry_DoNotUse(::PROTOBUF_NAMESPACE_ID::Arena* arena)
+Options_CostingsEntry_DoNotUse::Options_CostingsEntry_DoNotUse(::google::protobuf::Arena* arena)
     : SuperType(arena) {}
 void Options_CostingsEntry_DoNotUse::MergeFrom(const Options_CostingsEntry_DoNotUse& other) {
   MergeFromInternal(other);
 }
-
 // ===================================================================
 
 class Options::_Internal {
  public:
+  using HasBits = decltype(std::declval<Options>()._impl_._has_bits_);
+  static constexpr ::int32_t kHasBitsOffset =
+    8 * PROTOBUF_FIELD_OFFSET(Options, _impl_._has_bits_);
+  static constexpr ::int32_t kOneofCaseOffset =
+    PROTOBUF_FIELD_OFFSET(::valhalla::Options, _impl_._oneof_case_);
   static const ::valhalla::PbfFieldSelector& pbf_field_selector(const Options* msg);
+  static void set_has_pbf_field_selector(HasBits* has_bits) {
+    (*has_bits)[0] |= 1u;
+  }
 };
 
-const ::valhalla::PbfFieldSelector&
-Options::_Internal::pbf_field_selector(const Options* msg) {
+const ::valhalla::PbfFieldSelector& Options::_Internal::pbf_field_selector(const Options* msg) {
   return *msg->_impl_.pbf_field_selector_;
 }
 void Options::clear_locations() {
-  _impl_.locations_.Clear();
+  _internal_mutable_locations()->Clear();
 }
 void Options::clear_exclude_locations() {
-  _impl_.exclude_locations_.Clear();
+  _internal_mutable_exclude_locations()->Clear();
 }
 void Options::clear_sources() {
-  _impl_.sources_.Clear();
+  _internal_mutable_sources()->Clear();
 }
 void Options::clear_targets() {
-  _impl_.targets_.Clear();
+  _internal_mutable_targets()->Clear();
 }
 void Options::clear_shape() {
-  _impl_.shape_.Clear();
+  _internal_mutable_shape()->Clear();
 }
 void Options::clear_trace() {
-  _impl_.trace_.Clear();
+  _internal_mutable_trace()->Clear();
 }
-Options::Options(::PROTOBUF_NAMESPACE_ID::Arena* arena,
-                         bool is_message_owned)
-  : ::PROTOBUF_NAMESPACE_ID::MessageLite(arena, is_message_owned) {
-  SharedCtor(arena, is_message_owned);
+Options::Options(::google::protobuf::Arena* arena)
+    : ::google::protobuf::MessageLite(arena) {
+  SharedCtor(arena);
   // @@protoc_insertion_point(arena_constructor:valhalla.Options)
 }
-Options::Options(const Options& from)
-  : ::PROTOBUF_NAMESPACE_ID::MessageLite() {
-  Options* const _this = this; (void)_this;
+Options::Options(const Options& from) : ::google::protobuf::MessageLite() {
+  Options* const _this = this;
+  (void)_this;
   new (&_impl_) Impl_{
-      /*decltype(_impl_.costings_)*/{}
-    , decltype(_impl_.locations_){from._impl_.locations_}
-    , decltype(_impl_.exclude_locations_){from._impl_.exclude_locations_}
-    , decltype(_impl_.sources_){from._impl_.sources_}
-    , decltype(_impl_.targets_){from._impl_.targets_}
-    , decltype(_impl_.shape_){from._impl_.shape_}
-    , decltype(_impl_.contours_){from._impl_.contours_}
-    , decltype(_impl_.trace_){from._impl_.trace_}
-    , decltype(_impl_.filter_attributes_){from._impl_.filter_attributes_}
-    , decltype(_impl_.recostings_){from._impl_.recostings_}
-    , decltype(_impl_.exclude_polygons_){from._impl_.exclude_polygons_}
-    , decltype(_impl_.expansion_properties_){from._impl_.expansion_properties_}
-    , /*decltype(_impl_._expansion_properties_cached_byte_size_)*/{0}
-    , decltype(_impl_.pbf_field_selector_){nullptr}
-    , decltype(_impl_.units_){}
-    , decltype(_impl_.directions_type_){}
-    , decltype(_impl_.format_){}
-    , decltype(_impl_.action_){}
-    , decltype(_impl_.costing_type_){}
-    , decltype(_impl_.date_time_type_){}
-    , decltype(_impl_.shape_match_){}
-    , decltype(_impl_.filter_action_){}
-    , decltype(_impl_.shape_format_){}
-    , decltype(_impl_.reverse_){}
-    , decltype(_impl_.has_language_){}
-    , decltype(_impl_.has_id_){}
-    , decltype(_impl_.has_jsonp_){}
-    , decltype(_impl_.has_encoded_polyline_){}
-    , decltype(_impl_.has_range_){}
-    , decltype(_impl_.has_verbose_){}
-    , decltype(_impl_.has_date_time_){}
-    , decltype(_impl_.has_resample_distance_){}
-    , decltype(_impl_.has_polygons_){}
-    , decltype(_impl_.has_denoise_){}
-    , decltype(_impl_.has_generalize_){}
-    , decltype(_impl_.has_show_locations_){}
-    , decltype(_impl_.has_gps_accuracy_){}
-    , decltype(_impl_.has_search_radius_){}
-    , decltype(_impl_.has_turn_penalty_factor_){}
-    , decltype(_impl_.has_breakage_distance_){}
-    , decltype(_impl_.has_use_timestamps_){}
-    , decltype(_impl_.has_alternates_){}
-    , decltype(_impl_.has_interpolation_distance_){}
-    , decltype(_impl_.has_guidance_views_){}
-    , decltype(_impl_.has_height_precision_){}
-    , decltype(_impl_.has_roundabout_exits_){}
-    , decltype(_impl_.has_linear_references_){}
-    , decltype(_impl_.has_prioritize_bidirectional_){}
-    , decltype(_impl_.has_expansion_action_){}
-    , decltype(_impl_.has_skip_opposites_){}
-    , decltype(_impl_.has_matrix_locations_){}
-    , /*decltype(_impl_._cached_size_)*/{}
-    , /*decltype(_impl_._oneof_case_)*/{}};
-
-  _internal_metadata_.MergeFrom<std::string>(from._internal_metadata_);
+      decltype(_impl_._has_bits_){from._impl_._has_bits_},
+      /*decltype(_impl_._cached_size_)*/ {},
+      /* decltype(_impl_.costings_) */ {},
+      decltype(_impl_.locations_){from._impl_.locations_},
+      decltype(_impl_.exclude_locations_){from._impl_.exclude_locations_},
+      decltype(_impl_.sources_){from._impl_.sources_},
+      decltype(_impl_.targets_){from._impl_.targets_},
+      decltype(_impl_.shape_){from._impl_.shape_},
+      decltype(_impl_.contours_){from._impl_.contours_},
+      decltype(_impl_.trace_){from._impl_.trace_},
+      decltype(_impl_.filter_attributes_){from._impl_.filter_attributes_},
+      decltype(_impl_.recostings_){from._impl_.recostings_},
+      decltype(_impl_.exclude_polygons_){from._impl_.exclude_polygons_},
+      decltype(_impl_.expansion_properties_){from._internal_expansion_properties()},
+      /*decltype(_impl_._expansion_properties_cached_byte_size_)*/ {0},
+      decltype(_impl_.pbf_field_selector_){nullptr},
+      decltype(_impl_.units_){},
+      decltype(_impl_.directions_type_){},
+      decltype(_impl_.format_){},
+      decltype(_impl_.action_){},
+      decltype(_impl_.costing_type_){},
+      decltype(_impl_.date_time_type_){},
+      decltype(_impl_.shape_match_){},
+      decltype(_impl_.filter_action_){},
+      decltype(_impl_.shape_format_){},
+      decltype(_impl_.reverse_){},
+      decltype(_impl_.has_language_){},
+      decltype(_impl_.has_id_){},
+      decltype(_impl_.has_jsonp_){},
+      decltype(_impl_.has_encoded_polyline_){},
+      decltype(_impl_.has_range_){},
+      decltype(_impl_.has_verbose_){},
+      decltype(_impl_.has_date_time_){},
+      decltype(_impl_.has_resample_distance_){},
+      decltype(_impl_.has_polygons_){},
+      decltype(_impl_.has_denoise_){},
+      decltype(_impl_.has_generalize_){},
+      decltype(_impl_.has_show_locations_){},
+      decltype(_impl_.has_gps_accuracy_){},
+      decltype(_impl_.has_search_radius_){},
+      decltype(_impl_.has_turn_penalty_factor_){},
+      decltype(_impl_.has_breakage_distance_){},
+      decltype(_impl_.has_use_timestamps_){},
+      decltype(_impl_.has_alternates_){},
+      decltype(_impl_.has_interpolation_distance_){},
+      decltype(_impl_.has_guidance_views_){},
+      decltype(_impl_.has_height_precision_){},
+      decltype(_impl_.has_roundabout_exits_){},
+      decltype(_impl_.has_linear_references_){},
+      decltype(_impl_.has_prioritize_bidirectional_){},
+      decltype(_impl_.has_expansion_action_){},
+      decltype(_impl_.has_skip_opposites_){},
+      decltype(_impl_.has_matrix_locations_){},
+      /*decltype(_impl_._oneof_case_)*/ {},
+  };
+  _internal_metadata_.MergeFrom<std::string>(
+      from._internal_metadata_);
   _this->_impl_.costings_.MergeFrom(from._impl_.costings_);
-  if (from._internal_has_pbf_field_selector()) {
+  if ((from._impl_._has_bits_[0] & 0x00000001u) != 0) {
     _this->_impl_.pbf_field_selector_ = new ::valhalla::PbfFieldSelector(*from._impl_.pbf_field_selector_);
   }
   ::memcpy(&_impl_.units_, &from._impl_.units_,
-    static_cast<size_t>(reinterpret_cast<char*>(&_impl_.reverse_) -
+    static_cast<::size_t>(reinterpret_cast<char*>(&_impl_.reverse_) -
     reinterpret_cast<char*>(&_impl_.units_)) + sizeof(_impl_.reverse_));
   clear_has_has_language();
   switch (from.has_language_case()) {
@@ -8168,67 +7782,66 @@ Options::Options(const Options& from)
       break;
     }
   }
+
   // @@protoc_insertion_point(copy_constructor:valhalla.Options)
 }
-
-inline void Options::SharedCtor(
-    ::_pb::Arena* arena, bool is_message_owned) {
+inline void Options::SharedCtor(::_pb::Arena* arena) {
   (void)arena;
-  (void)is_message_owned;
   new (&_impl_) Impl_{
-      /*decltype(_impl_.costings_)*/{::_pbi::ArenaInitialized(), arena}
-    , decltype(_impl_.locations_){arena}
-    , decltype(_impl_.exclude_locations_){arena}
-    , decltype(_impl_.sources_){arena}
-    , decltype(_impl_.targets_){arena}
-    , decltype(_impl_.shape_){arena}
-    , decltype(_impl_.contours_){arena}
-    , decltype(_impl_.trace_){arena}
-    , decltype(_impl_.filter_attributes_){arena}
-    , decltype(_impl_.recostings_){arena}
-    , decltype(_impl_.exclude_polygons_){arena}
-    , decltype(_impl_.expansion_properties_){arena}
-    , /*decltype(_impl_._expansion_properties_cached_byte_size_)*/{0}
-    , decltype(_impl_.pbf_field_selector_){nullptr}
-    , decltype(_impl_.units_){0}
-    , decltype(_impl_.directions_type_){0}
-    , decltype(_impl_.format_){0}
-    , decltype(_impl_.action_){0}
-    , decltype(_impl_.costing_type_){0}
-    , decltype(_impl_.date_time_type_){0}
-    , decltype(_impl_.shape_match_){0}
-    , decltype(_impl_.filter_action_){0}
-    , decltype(_impl_.shape_format_){0}
-    , decltype(_impl_.reverse_){false}
-    , decltype(_impl_.has_language_){}
-    , decltype(_impl_.has_id_){}
-    , decltype(_impl_.has_jsonp_){}
-    , decltype(_impl_.has_encoded_polyline_){}
-    , decltype(_impl_.has_range_){}
-    , decltype(_impl_.has_verbose_){}
-    , decltype(_impl_.has_date_time_){}
-    , decltype(_impl_.has_resample_distance_){}
-    , decltype(_impl_.has_polygons_){}
-    , decltype(_impl_.has_denoise_){}
-    , decltype(_impl_.has_generalize_){}
-    , decltype(_impl_.has_show_locations_){}
-    , decltype(_impl_.has_gps_accuracy_){}
-    , decltype(_impl_.has_search_radius_){}
-    , decltype(_impl_.has_turn_penalty_factor_){}
-    , decltype(_impl_.has_breakage_distance_){}
-    , decltype(_impl_.has_use_timestamps_){}
-    , decltype(_impl_.has_alternates_){}
-    , decltype(_impl_.has_interpolation_distance_){}
-    , decltype(_impl_.has_guidance_views_){}
-    , decltype(_impl_.has_height_precision_){}
-    , decltype(_impl_.has_roundabout_exits_){}
-    , decltype(_impl_.has_linear_references_){}
-    , decltype(_impl_.has_prioritize_bidirectional_){}
-    , decltype(_impl_.has_expansion_action_){}
-    , decltype(_impl_.has_skip_opposites_){}
-    , decltype(_impl_.has_matrix_locations_){}
-    , /*decltype(_impl_._cached_size_)*/{}
-    , /*decltype(_impl_._oneof_case_)*/{}
+      decltype(_impl_._has_bits_){},
+      /*decltype(_impl_._cached_size_)*/ {},
+      /* decltype(_impl_.costings_) */ {::google::protobuf::internal::ArenaInitialized(), arena},
+      decltype(_impl_.locations_){arena},
+      decltype(_impl_.exclude_locations_){arena},
+      decltype(_impl_.sources_){arena},
+      decltype(_impl_.targets_){arena},
+      decltype(_impl_.shape_){arena},
+      decltype(_impl_.contours_){arena},
+      decltype(_impl_.trace_){arena},
+      decltype(_impl_.filter_attributes_){arena},
+      decltype(_impl_.recostings_){arena},
+      decltype(_impl_.exclude_polygons_){arena},
+      decltype(_impl_.expansion_properties_){arena},
+      /*decltype(_impl_._expansion_properties_cached_byte_size_)*/ {0},
+      decltype(_impl_.pbf_field_selector_){nullptr},
+      decltype(_impl_.units_){0},
+      decltype(_impl_.directions_type_){0},
+      decltype(_impl_.format_){0},
+      decltype(_impl_.action_){0},
+      decltype(_impl_.costing_type_){0},
+      decltype(_impl_.date_time_type_){0},
+      decltype(_impl_.shape_match_){0},
+      decltype(_impl_.filter_action_){0},
+      decltype(_impl_.shape_format_){0},
+      decltype(_impl_.reverse_){false},
+      decltype(_impl_.has_language_){},
+      decltype(_impl_.has_id_){},
+      decltype(_impl_.has_jsonp_){},
+      decltype(_impl_.has_encoded_polyline_){},
+      decltype(_impl_.has_range_){},
+      decltype(_impl_.has_verbose_){},
+      decltype(_impl_.has_date_time_){},
+      decltype(_impl_.has_resample_distance_){},
+      decltype(_impl_.has_polygons_){},
+      decltype(_impl_.has_denoise_){},
+      decltype(_impl_.has_generalize_){},
+      decltype(_impl_.has_show_locations_){},
+      decltype(_impl_.has_gps_accuracy_){},
+      decltype(_impl_.has_search_radius_){},
+      decltype(_impl_.has_turn_penalty_factor_){},
+      decltype(_impl_.has_breakage_distance_){},
+      decltype(_impl_.has_use_timestamps_){},
+      decltype(_impl_.has_alternates_){},
+      decltype(_impl_.has_interpolation_distance_){},
+      decltype(_impl_.has_guidance_views_){},
+      decltype(_impl_.has_height_precision_){},
+      decltype(_impl_.has_roundabout_exits_){},
+      decltype(_impl_.has_linear_references_){},
+      decltype(_impl_.has_prioritize_bidirectional_){},
+      decltype(_impl_.has_expansion_action_){},
+      decltype(_impl_.has_skip_opposites_){},
+      decltype(_impl_.has_matrix_locations_){},
+      /*decltype(_impl_._oneof_case_)*/ {},
   };
   clear_has_has_language();
   clear_has_has_id();
@@ -8258,19 +7871,13 @@ inline void Options::SharedCtor(
   clear_has_has_skip_opposites();
   clear_has_has_matrix_locations();
 }
-
 Options::~Options() {
   // @@protoc_insertion_point(destructor:valhalla.Options)
-  if (auto *arena = _internal_metadata_.DeleteReturnArena<std::string>()) {
-  (void)arena;
-    return;
-  }
+  _internal_metadata_.Delete<std::string>();
   SharedDtor();
 }
-
 inline void Options::SharedDtor() {
-  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
-  _impl_.costings_.Destruct();
+  ABSL_DCHECK(GetArenaForAllocation() == nullptr);
   _impl_.costings_.~MapFieldLite();
   _impl_.locations_.~RepeatedPtrField();
   _impl_.exclude_locations_.~RepeatedPtrField();
@@ -8279,10 +7886,10 @@ inline void Options::SharedDtor() {
   _impl_.shape_.~RepeatedPtrField();
   _impl_.contours_.~RepeatedPtrField();
   _impl_.trace_.~RepeatedPtrField();
-  _impl_.filter_attributes_.~RepeatedPtrField();
+  _internal_mutable_filter_attributes()->~RepeatedPtrField();
   _impl_.recostings_.~RepeatedPtrField();
   _impl_.exclude_polygons_.~RepeatedPtrField();
-  _impl_.expansion_properties_.~RepeatedField();
+  _internal_mutable_expansion_properties()->~RepeatedField();
   if (this != internal_default_instance()) delete _impl_.pbf_field_selector_;
   if (has_has_language()) {
     clear_has_language();
@@ -8366,7 +7973,6 @@ inline void Options::SharedDtor() {
     clear_has_matrix_locations();
   }
 }
-
 void Options::SetCachedSize(int size) const {
   _impl_._cached_size_.Set(size);
 }
@@ -8750,29 +8356,30 @@ void Options::clear_has_matrix_locations() {
 }
 
 
-void Options::Clear() {
+PROTOBUF_NOINLINE void Options::Clear() {
 // @@protoc_insertion_point(message_clear_start:valhalla.Options)
-  uint32_t cached_has_bits = 0;
+  ::uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
   _impl_.costings_.Clear();
-  _impl_.locations_.Clear();
-  _impl_.exclude_locations_.Clear();
-  _impl_.sources_.Clear();
-  _impl_.targets_.Clear();
-  _impl_.shape_.Clear();
-  _impl_.contours_.Clear();
-  _impl_.trace_.Clear();
-  _impl_.filter_attributes_.Clear();
-  _impl_.recostings_.Clear();
-  _impl_.exclude_polygons_.Clear();
-  _impl_.expansion_properties_.Clear();
-  if (GetArenaForAllocation() == nullptr && _impl_.pbf_field_selector_ != nullptr) {
-    delete _impl_.pbf_field_selector_;
+  _internal_mutable_locations()->Clear();
+  _internal_mutable_exclude_locations()->Clear();
+  _internal_mutable_sources()->Clear();
+  _internal_mutable_targets()->Clear();
+  _internal_mutable_shape()->Clear();
+  _internal_mutable_contours()->Clear();
+  _internal_mutable_trace()->Clear();
+  _internal_mutable_filter_attributes()->Clear();
+  _internal_mutable_recostings()->Clear();
+  _internal_mutable_exclude_polygons()->Clear();
+  _internal_mutable_expansion_properties()->Clear();
+  cached_has_bits = _impl_._has_bits_[0];
+  if (cached_has_bits & 0x00000001u) {
+    ABSL_DCHECK(_impl_.pbf_field_selector_ != nullptr);
+    _impl_.pbf_field_selector_->Clear();
   }
-  _impl_.pbf_field_selector_ = nullptr;
-  ::memset(&_impl_.units_, 0, static_cast<size_t>(
+  ::memset(&_impl_.units_, 0, static_cast<::size_t>(
       reinterpret_cast<char*>(&_impl_.reverse_) -
       reinterpret_cast<char*>(&_impl_.units_)) + sizeof(_impl_.reverse_));
   clear_has_language();
@@ -8802,625 +8409,383 @@ void Options::Clear() {
   clear_has_expansion_action();
   clear_has_skip_opposites();
   clear_has_matrix_locations();
+  _impl_._has_bits_.Clear();
   _internal_metadata_.Clear<std::string>();
 }
 
-const char* Options::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
-#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
-  while (!ctx->Done(&ptr)) {
-    uint32_t tag;
-    ptr = ::_pbi::ReadTag(ptr, &tag);
-    switch (tag >> 3) {
-      // .valhalla.Options.Units units = 1;
-      case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 8)) {
-          uint64_t val = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
-          CHK_(ptr);
-          _internal_set_units(static_cast<::valhalla::Options_Units>(val));
-        } else
-          goto handle_unusual;
-        continue;
-      // string language = 2;
-      case 2:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 18)) {
-          auto str = _internal_mutable_language();
-          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(ptr);
-          CHK_(::_pbi::VerifyUTF8(str, nullptr));
-        } else
-          goto handle_unusual;
-        continue;
-      // .valhalla.DirectionsType directions_type = 3;
-      case 3:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 24)) {
-          uint64_t val = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
-          CHK_(ptr);
-          _internal_set_directions_type(static_cast<::valhalla::DirectionsType>(val));
-        } else
-          goto handle_unusual;
-        continue;
-      // .valhalla.Options.Format format = 4;
-      case 4:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 32)) {
-          uint64_t val = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
-          CHK_(ptr);
-          _internal_set_format(static_cast<::valhalla::Options_Format>(val));
-        } else
-          goto handle_unusual;
-        continue;
-      // string id = 5;
-      case 5:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 42)) {
-          auto str = _internal_mutable_id();
-          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(ptr);
-          CHK_(::_pbi::VerifyUTF8(str, nullptr));
-        } else
-          goto handle_unusual;
-        continue;
-      // string jsonp = 6;
-      case 6:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 50)) {
-          auto str = _internal_mutable_jsonp();
-          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(ptr);
-          CHK_(::_pbi::VerifyUTF8(str, nullptr));
-        } else
-          goto handle_unusual;
-        continue;
-      // string encoded_polyline = 7;
-      case 7:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 58)) {
-          auto str = _internal_mutable_encoded_polyline();
-          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(ptr);
-          CHK_(::_pbi::VerifyUTF8(str, nullptr));
-        } else
-          goto handle_unusual;
-        continue;
-      // .valhalla.Options.Action action = 8;
-      case 8:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 64)) {
-          uint64_t val = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
-          CHK_(ptr);
-          _internal_set_action(static_cast<::valhalla::Options_Action>(val));
-        } else
-          goto handle_unusual;
-        continue;
-      // bool range = 10;
-      case 10:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 80)) {
-          _internal_set_range(::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr));
-          CHK_(ptr);
-        } else
-          goto handle_unusual;
-        continue;
-      // bool verbose = 11;
-      case 11:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 88)) {
-          _internal_set_verbose(::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr));
-          CHK_(ptr);
-        } else
-          goto handle_unusual;
-        continue;
-      // .valhalla.Costing.Type costing_type = 12;
-      case 12:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 96)) {
-          uint64_t val = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
-          CHK_(ptr);
-          _internal_set_costing_type(static_cast<::valhalla::Costing_Type>(val));
-        } else
-          goto handle_unusual;
-        continue;
-      // map<int32, .valhalla.Costing> costings = 13;
-      case 13:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 106)) {
-          ptr -= 1;
-          do {
-            ptr += 1;
-            ptr = ctx->ParseMessage(&_impl_.costings_, ptr);
-            CHK_(ptr);
-            if (!ctx->DataAvailable(ptr)) break;
-          } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<106>(ptr));
-        } else
-          goto handle_unusual;
-        continue;
-      // repeated .valhalla.Location locations = 14;
-      case 14:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 114)) {
-          ptr -= 1;
-          do {
-            ptr += 1;
-            ptr = ctx->ParseMessage(_internal_add_locations(), ptr);
-            CHK_(ptr);
-            if (!ctx->DataAvailable(ptr)) break;
-          } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<114>(ptr));
-        } else
-          goto handle_unusual;
-        continue;
-      // repeated .valhalla.Location exclude_locations = 15;
-      case 15:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 122)) {
-          ptr -= 1;
-          do {
-            ptr += 1;
-            ptr = ctx->ParseMessage(_internal_add_exclude_locations(), ptr);
-            CHK_(ptr);
-            if (!ctx->DataAvailable(ptr)) break;
-          } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<122>(ptr));
-        } else
-          goto handle_unusual;
-        continue;
-      // repeated .valhalla.Location sources = 16;
-      case 16:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 130)) {
-          ptr -= 2;
-          do {
-            ptr += 2;
-            ptr = ctx->ParseMessage(_internal_add_sources(), ptr);
-            CHK_(ptr);
-            if (!ctx->DataAvailable(ptr)) break;
-          } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<130>(ptr));
-        } else
-          goto handle_unusual;
-        continue;
-      // repeated .valhalla.Location targets = 17;
-      case 17:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 138)) {
-          ptr -= 2;
-          do {
-            ptr += 2;
-            ptr = ctx->ParseMessage(_internal_add_targets(), ptr);
-            CHK_(ptr);
-            if (!ctx->DataAvailable(ptr)) break;
-          } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<138>(ptr));
-        } else
-          goto handle_unusual;
-        continue;
-      // .valhalla.Options.DateTimeType date_time_type = 18;
-      case 18:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 144)) {
-          uint64_t val = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
-          CHK_(ptr);
-          _internal_set_date_time_type(static_cast<::valhalla::Options_DateTimeType>(val));
-        } else
-          goto handle_unusual;
-        continue;
-      // string date_time = 19;
-      case 19:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 154)) {
-          auto str = _internal_mutable_date_time();
-          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(ptr);
-          CHK_(::_pbi::VerifyUTF8(str, nullptr));
-        } else
-          goto handle_unusual;
-        continue;
-      // repeated .valhalla.Location shape = 20;
-      case 20:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 162)) {
-          ptr -= 2;
-          do {
-            ptr += 2;
-            ptr = ctx->ParseMessage(_internal_add_shape(), ptr);
-            CHK_(ptr);
-            if (!ctx->DataAvailable(ptr)) break;
-          } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<162>(ptr));
-        } else
-          goto handle_unusual;
-        continue;
-      // double resample_distance = 21;
-      case 21:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 169)) {
-          _internal_set_resample_distance(::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<double>(ptr));
-          ptr += sizeof(double);
-        } else
-          goto handle_unusual;
-        continue;
-      // repeated .valhalla.Contour contours = 22;
-      case 22:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 178)) {
-          ptr -= 2;
-          do {
-            ptr += 2;
-            ptr = ctx->ParseMessage(_internal_add_contours(), ptr);
-            CHK_(ptr);
-            if (!ctx->DataAvailable(ptr)) break;
-          } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<178>(ptr));
-        } else
-          goto handle_unusual;
-        continue;
-      // bool polygons = 23;
-      case 23:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 184)) {
-          _internal_set_polygons(::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr));
-          CHK_(ptr);
-        } else
-          goto handle_unusual;
-        continue;
-      // float denoise = 24;
-      case 24:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 197)) {
-          _internal_set_denoise(::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr));
-          ptr += sizeof(float);
-        } else
-          goto handle_unusual;
-        continue;
-      // float generalize = 25;
-      case 25:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 205)) {
-          _internal_set_generalize(::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr));
-          ptr += sizeof(float);
-        } else
-          goto handle_unusual;
-        continue;
-      // bool show_locations = 26;
-      case 26:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 208)) {
-          _internal_set_show_locations(::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr));
-          CHK_(ptr);
-        } else
-          goto handle_unusual;
-        continue;
-      // repeated .valhalla.Location trace = 27;
-      case 27:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 218)) {
-          ptr -= 2;
-          do {
-            ptr += 2;
-            ptr = ctx->ParseMessage(_internal_add_trace(), ptr);
-            CHK_(ptr);
-            if (!ctx->DataAvailable(ptr)) break;
-          } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<218>(ptr));
-        } else
-          goto handle_unusual;
-        continue;
-      // .valhalla.ShapeMatch shape_match = 28;
-      case 28:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 224)) {
-          uint64_t val = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
-          CHK_(ptr);
-          _internal_set_shape_match(static_cast<::valhalla::ShapeMatch>(val));
-        } else
-          goto handle_unusual;
-        continue;
-      // float gps_accuracy = 30;
-      case 30:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 245)) {
-          _internal_set_gps_accuracy(::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr));
-          ptr += sizeof(float);
-        } else
-          goto handle_unusual;
-        continue;
-      // float search_radius = 31;
-      case 31:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 253)) {
-          _internal_set_search_radius(::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr));
-          ptr += sizeof(float);
-        } else
-          goto handle_unusual;
-        continue;
-      // float turn_penalty_factor = 32;
-      case 32:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 5)) {
-          _internal_set_turn_penalty_factor(::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr));
-          ptr += sizeof(float);
-        } else
-          goto handle_unusual;
-        continue;
-      // .valhalla.FilterAction filter_action = 33;
-      case 33:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 8)) {
-          uint64_t val = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
-          CHK_(ptr);
-          _internal_set_filter_action(static_cast<::valhalla::FilterAction>(val));
-        } else
-          goto handle_unusual;
-        continue;
-      // repeated string filter_attributes = 34;
-      case 34:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 18)) {
-          ptr -= 2;
-          do {
-            ptr += 2;
-            auto str = _internal_add_filter_attributes();
-            ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
-            CHK_(ptr);
-            CHK_(::_pbi::VerifyUTF8(str, nullptr));
-            if (!ctx->DataAvailable(ptr)) break;
-          } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<274>(ptr));
-        } else
-          goto handle_unusual;
-        continue;
-      // float breakage_distance = 36;
-      case 36:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 37)) {
-          _internal_set_breakage_distance(::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr));
-          ptr += sizeof(float);
-        } else
-          goto handle_unusual;
-        continue;
-      // bool use_timestamps = 37;
-      case 37:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 40)) {
-          _internal_set_use_timestamps(::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr));
-          CHK_(ptr);
-        } else
-          goto handle_unusual;
-        continue;
-      // .valhalla.ShapeFormat shape_format = 38;
-      case 38:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 48)) {
-          uint64_t val = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
-          CHK_(ptr);
-          _internal_set_shape_format(static_cast<::valhalla::ShapeFormat>(val));
-        } else
-          goto handle_unusual;
-        continue;
-      // uint32 alternates = 39;
-      case 39:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 56)) {
-          _internal_set_alternates(::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr));
-          CHK_(ptr);
-        } else
-          goto handle_unusual;
-        continue;
-      // float interpolation_distance = 40;
-      case 40:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 69)) {
-          _internal_set_interpolation_distance(::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr));
-          ptr += sizeof(float);
-        } else
-          goto handle_unusual;
-        continue;
-      // bool guidance_views = 41;
-      case 41:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 72)) {
-          _internal_set_guidance_views(::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr));
-          CHK_(ptr);
-        } else
-          goto handle_unusual;
-        continue;
-      // uint32 height_precision = 43;
-      case 43:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 88)) {
-          _internal_set_height_precision(::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr));
-          CHK_(ptr);
-        } else
-          goto handle_unusual;
-        continue;
-      // bool roundabout_exits = 44;
-      case 44:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 96)) {
-          _internal_set_roundabout_exits(::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr));
-          CHK_(ptr);
-        } else
-          goto handle_unusual;
-        continue;
-      // bool linear_references = 45;
-      case 45:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 104)) {
-          _internal_set_linear_references(::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr));
-          CHK_(ptr);
-        } else
-          goto handle_unusual;
-        continue;
-      // repeated .valhalla.Costing recostings = 46;
-      case 46:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 114)) {
-          ptr -= 2;
-          do {
-            ptr += 2;
-            ptr = ctx->ParseMessage(_internal_add_recostings(), ptr);
-            CHK_(ptr);
-            if (!ctx->DataAvailable(ptr)) break;
-          } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<370>(ptr));
-        } else
-          goto handle_unusual;
-        continue;
-      // repeated .valhalla.Ring exclude_polygons = 47;
-      case 47:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 122)) {
-          ptr -= 2;
-          do {
-            ptr += 2;
-            ptr = ctx->ParseMessage(_internal_add_exclude_polygons(), ptr);
-            CHK_(ptr);
-            if (!ctx->DataAvailable(ptr)) break;
-          } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<378>(ptr));
-        } else
-          goto handle_unusual;
-        continue;
-      // bool prioritize_bidirectional = 48;
-      case 48:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 128)) {
-          _internal_set_prioritize_bidirectional(::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr));
-          CHK_(ptr);
-        } else
-          goto handle_unusual;
-        continue;
-      // .valhalla.Options.Action expansion_action = 49;
-      case 49:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 136)) {
-          uint64_t val = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
-          CHK_(ptr);
-          _internal_set_expansion_action(static_cast<::valhalla::Options_Action>(val));
-        } else
-          goto handle_unusual;
-        continue;
-      // bool skip_opposites = 50;
-      case 50:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 144)) {
-          _internal_set_skip_opposites(::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr));
-          CHK_(ptr);
-        } else
-          goto handle_unusual;
-        continue;
-      // repeated .valhalla.Options.ExpansionProperties expansion_properties = 51;
-      case 51:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 154)) {
-          ptr = ::PROTOBUF_NAMESPACE_ID::internal::PackedEnumParser(_internal_mutable_expansion_properties(), ptr, ctx);
-          CHK_(ptr);
-        } else if (static_cast<uint8_t>(tag) == 152) {
-          uint64_t val = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
-          CHK_(ptr);
-          _internal_add_expansion_properties(static_cast<::valhalla::Options_ExpansionProperties>(val));
-        } else
-          goto handle_unusual;
-        continue;
-      // .valhalla.PbfFieldSelector pbf_field_selector = 52;
-      case 52:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 162)) {
-          ptr = ctx->ParseMessage(_internal_mutable_pbf_field_selector(), ptr);
-          CHK_(ptr);
-        } else
-          goto handle_unusual;
-        continue;
-      // bool reverse = 53;
-      case 53:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 168)) {
-          _impl_.reverse_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
-          CHK_(ptr);
-        } else
-          goto handle_unusual;
-        continue;
-      // uint32 matrix_locations = 54;
-      case 54:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 176)) {
-          _internal_set_matrix_locations(::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr));
-          CHK_(ptr);
-        } else
-          goto handle_unusual;
-        continue;
-      default:
-        goto handle_unusual;
-    }  // switch
-  handle_unusual:
-    if ((tag == 0) || ((tag & 7) == 4)) {
-      CHK_(ptr);
-      ctx->SetLastTag(tag);
-      goto message_done;
-    }
-    ptr = UnknownFieldParse(
-        tag,
-        _internal_metadata_.mutable_unknown_fields<std::string>(),
-        ptr, ctx);
-    CHK_(ptr != nullptr);
-  }  // while
-message_done:
+const char* Options::_InternalParse(
+    const char* ptr, ::_pbi::ParseContext* ctx) {
+  ptr = ::_pbi::TcParser::ParseLoop(this, ptr, ctx, &_table_.header);
   return ptr;
-failure:
-  ptr = nullptr;
-  goto message_done;
-#undef CHK_
 }
 
-uint8_t* Options::_InternalSerialize(
-    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+
+PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1
+const ::_pbi::TcParseTable<5, 50, 12, 130, 9> Options::_table_ = {
+  {
+    PROTOBUF_FIELD_OFFSET(Options, _impl_._has_bits_),
+    0, // no _extensions_
+    54, 248,  // max_field_number, fast_idx_mask
+    offsetof(decltype(_table_), field_lookup_table),
+    268435712,  // skipmap
+    offsetof(decltype(_table_), field_entries),
+    50,  // num_field_entries
+    12,  // num_aux_entries
+    offsetof(decltype(_table_), aux_entries),
+    &_Options_default_instance_._instance,
+    ::_pbi::TcParser::GenericFallbackLite,  // fallback
+  }, {{
+    {::_pbi::TcParser::MiniParse, {}},
+    // .valhalla.Options.Units units = 1;
+    {::_pbi::TcParser::FastV32S1,
+     {8, 63, 0, PROTOBUF_FIELD_OFFSET(Options, _impl_.units_)}},
+    {::_pbi::TcParser::MiniParse, {}},
+    // .valhalla.DirectionsType directions_type = 3;
+    {::_pbi::TcParser::FastV32S1,
+     {24, 63, 0, PROTOBUF_FIELD_OFFSET(Options, _impl_.directions_type_)}},
+    // .valhalla.Options.Format format = 4;
+    {::_pbi::TcParser::FastV32S1,
+     {32, 63, 0, PROTOBUF_FIELD_OFFSET(Options, _impl_.format_)}},
+    {::_pbi::TcParser::MiniParse, {}},
+    {::_pbi::TcParser::MiniParse, {}},
+    {::_pbi::TcParser::MiniParse, {}},
+    // .valhalla.Options.Action action = 8;
+    {::_pbi::TcParser::FastV32S1,
+     {64, 63, 0, PROTOBUF_FIELD_OFFSET(Options, _impl_.action_)}},
+    {::_pbi::TcParser::MiniParse, {}},
+    {::_pbi::TcParser::MiniParse, {}},
+    {::_pbi::TcParser::MiniParse, {}},
+    // .valhalla.Costing.Type costing_type = 12;
+    {::_pbi::TcParser::FastV32S1,
+     {96, 63, 0, PROTOBUF_FIELD_OFFSET(Options, _impl_.costing_type_)}},
+    {::_pbi::TcParser::MiniParse, {}},
+    // repeated .valhalla.Location locations = 14;
+    {::_pbi::TcParser::FastMtR1,
+     {114, 63, 2, PROTOBUF_FIELD_OFFSET(Options, _impl_.locations_)}},
+    // repeated .valhalla.Location exclude_locations = 15;
+    {::_pbi::TcParser::FastMtR1,
+     {122, 63, 3, PROTOBUF_FIELD_OFFSET(Options, _impl_.exclude_locations_)}},
+    // repeated .valhalla.Location sources = 16;
+    {::_pbi::TcParser::FastMtR2,
+     {386, 63, 4, PROTOBUF_FIELD_OFFSET(Options, _impl_.sources_)}},
+    // repeated .valhalla.Location targets = 17;
+    {::_pbi::TcParser::FastMtR2,
+     {394, 63, 5, PROTOBUF_FIELD_OFFSET(Options, _impl_.targets_)}},
+    // .valhalla.Options.DateTimeType date_time_type = 18;
+    {::_pbi::TcParser::FastV32S2,
+     {400, 63, 0, PROTOBUF_FIELD_OFFSET(Options, _impl_.date_time_type_)}},
+    // repeated .valhalla.Options.ExpansionProperties expansion_properties = 51;
+    {::_pbi::TcParser::FastV32P2,
+     {922, 63, 0, PROTOBUF_FIELD_OFFSET(Options, _impl_.expansion_properties_)}},
+    // repeated .valhalla.Location shape = 20;
+    {::_pbi::TcParser::FastMtR2,
+     {418, 63, 6, PROTOBUF_FIELD_OFFSET(Options, _impl_.shape_)}},
+    // bool reverse = 53;
+    {::_pbi::TcParser::FastV8S2,
+     {936, 63, 0, PROTOBUF_FIELD_OFFSET(Options, _impl_.reverse_)}},
+    // repeated .valhalla.Contour contours = 22;
+    {::_pbi::TcParser::FastMtR2,
+     {434, 63, 7, PROTOBUF_FIELD_OFFSET(Options, _impl_.contours_)}},
+    {::_pbi::TcParser::MiniParse, {}},
+    {::_pbi::TcParser::MiniParse, {}},
+    {::_pbi::TcParser::MiniParse, {}},
+    {::_pbi::TcParser::MiniParse, {}},
+    // repeated .valhalla.Location trace = 27;
+    {::_pbi::TcParser::FastMtR2,
+     {474, 63, 8, PROTOBUF_FIELD_OFFSET(Options, _impl_.trace_)}},
+    // .valhalla.ShapeMatch shape_match = 28;
+    {::_pbi::TcParser::FastV32S2,
+     {480, 63, 0, PROTOBUF_FIELD_OFFSET(Options, _impl_.shape_match_)}},
+    {::_pbi::TcParser::MiniParse, {}},
+    // repeated .valhalla.Costing recostings = 46;
+    {::_pbi::TcParser::FastMtR2,
+     {754, 63, 9, PROTOBUF_FIELD_OFFSET(Options, _impl_.recostings_)}},
+    // repeated .valhalla.Ring exclude_polygons = 47;
+    {::_pbi::TcParser::FastMtR2,
+     {762, 63, 10, PROTOBUF_FIELD_OFFSET(Options, _impl_.exclude_polygons_)}},
+  }}, {{
+    33, 0, 2,
+    516, 30, 65472, 44,
+    65535, 65535
+  }}, {{
+    // .valhalla.Options.Units units = 1;
+    {PROTOBUF_FIELD_OFFSET(Options, _impl_.units_), -1, 0,
+    (0 | ::_fl::kFcSingular | ::_fl::kOpenEnum)},
+    // string language = 2;
+    {PROTOBUF_FIELD_OFFSET(Options, _impl_.has_language_.language_), _Internal::kOneofCaseOffset + 0, 0,
+    (0 | ::_fl::kFcOneof | ::_fl::kUtf8String | ::_fl::kRepAString)},
+    // .valhalla.DirectionsType directions_type = 3;
+    {PROTOBUF_FIELD_OFFSET(Options, _impl_.directions_type_), -1, 0,
+    (0 | ::_fl::kFcSingular | ::_fl::kOpenEnum)},
+    // .valhalla.Options.Format format = 4;
+    {PROTOBUF_FIELD_OFFSET(Options, _impl_.format_), -1, 0,
+    (0 | ::_fl::kFcSingular | ::_fl::kOpenEnum)},
+    // string id = 5;
+    {PROTOBUF_FIELD_OFFSET(Options, _impl_.has_id_.id_), _Internal::kOneofCaseOffset + 4, 0,
+    (0 | ::_fl::kFcOneof | ::_fl::kUtf8String | ::_fl::kRepAString)},
+    // string jsonp = 6;
+    {PROTOBUF_FIELD_OFFSET(Options, _impl_.has_jsonp_.jsonp_), _Internal::kOneofCaseOffset + 8, 0,
+    (0 | ::_fl::kFcOneof | ::_fl::kUtf8String | ::_fl::kRepAString)},
+    // string encoded_polyline = 7;
+    {PROTOBUF_FIELD_OFFSET(Options, _impl_.has_encoded_polyline_.encoded_polyline_), _Internal::kOneofCaseOffset + 12, 0,
+    (0 | ::_fl::kFcOneof | ::_fl::kUtf8String | ::_fl::kRepAString)},
+    // .valhalla.Options.Action action = 8;
+    {PROTOBUF_FIELD_OFFSET(Options, _impl_.action_), -1, 0,
+    (0 | ::_fl::kFcSingular | ::_fl::kOpenEnum)},
+    // bool range = 10;
+    {PROTOBUF_FIELD_OFFSET(Options, _impl_.has_range_.range_), _Internal::kOneofCaseOffset + 16, 0,
+    (0 | ::_fl::kFcOneof | ::_fl::kBool)},
+    // bool verbose = 11;
+    {PROTOBUF_FIELD_OFFSET(Options, _impl_.has_verbose_.verbose_), _Internal::kOneofCaseOffset + 20, 0,
+    (0 | ::_fl::kFcOneof | ::_fl::kBool)},
+    // .valhalla.Costing.Type costing_type = 12;
+    {PROTOBUF_FIELD_OFFSET(Options, _impl_.costing_type_), -1, 0,
+    (0 | ::_fl::kFcSingular | ::_fl::kOpenEnum)},
+    // map<int32, .valhalla.Costing> costings = 13;
+    {PROTOBUF_FIELD_OFFSET(Options, _impl_.costings_), -1, 0,
+    (0 | ::_fl::kFcRepeated | ::_fl::kMap)},
+    // repeated .valhalla.Location locations = 14;
+    {PROTOBUF_FIELD_OFFSET(Options, _impl_.locations_), -1, 2,
+    (0 | ::_fl::kFcRepeated | ::_fl::kMessage | ::_fl::kTvTable)},
+    // repeated .valhalla.Location exclude_locations = 15;
+    {PROTOBUF_FIELD_OFFSET(Options, _impl_.exclude_locations_), -1, 3,
+    (0 | ::_fl::kFcRepeated | ::_fl::kMessage | ::_fl::kTvTable)},
+    // repeated .valhalla.Location sources = 16;
+    {PROTOBUF_FIELD_OFFSET(Options, _impl_.sources_), -1, 4,
+    (0 | ::_fl::kFcRepeated | ::_fl::kMessage | ::_fl::kTvTable)},
+    // repeated .valhalla.Location targets = 17;
+    {PROTOBUF_FIELD_OFFSET(Options, _impl_.targets_), -1, 5,
+    (0 | ::_fl::kFcRepeated | ::_fl::kMessage | ::_fl::kTvTable)},
+    // .valhalla.Options.DateTimeType date_time_type = 18;
+    {PROTOBUF_FIELD_OFFSET(Options, _impl_.date_time_type_), -1, 0,
+    (0 | ::_fl::kFcSingular | ::_fl::kOpenEnum)},
+    // string date_time = 19;
+    {PROTOBUF_FIELD_OFFSET(Options, _impl_.has_date_time_.date_time_), _Internal::kOneofCaseOffset + 24, 0,
+    (0 | ::_fl::kFcOneof | ::_fl::kUtf8String | ::_fl::kRepAString)},
+    // repeated .valhalla.Location shape = 20;
+    {PROTOBUF_FIELD_OFFSET(Options, _impl_.shape_), -1, 6,
+    (0 | ::_fl::kFcRepeated | ::_fl::kMessage | ::_fl::kTvTable)},
+    // double resample_distance = 21;
+    {PROTOBUF_FIELD_OFFSET(Options, _impl_.has_resample_distance_.resample_distance_), _Internal::kOneofCaseOffset + 28, 0,
+    (0 | ::_fl::kFcOneof | ::_fl::kDouble)},
+    // repeated .valhalla.Contour contours = 22;
+    {PROTOBUF_FIELD_OFFSET(Options, _impl_.contours_), -1, 7,
+    (0 | ::_fl::kFcRepeated | ::_fl::kMessage | ::_fl::kTvTable)},
+    // bool polygons = 23;
+    {PROTOBUF_FIELD_OFFSET(Options, _impl_.has_polygons_.polygons_), _Internal::kOneofCaseOffset + 32, 0,
+    (0 | ::_fl::kFcOneof | ::_fl::kBool)},
+    // float denoise = 24;
+    {PROTOBUF_FIELD_OFFSET(Options, _impl_.has_denoise_.denoise_), _Internal::kOneofCaseOffset + 36, 0,
+    (0 | ::_fl::kFcOneof | ::_fl::kFloat)},
+    // float generalize = 25;
+    {PROTOBUF_FIELD_OFFSET(Options, _impl_.has_generalize_.generalize_), _Internal::kOneofCaseOffset + 40, 0,
+    (0 | ::_fl::kFcOneof | ::_fl::kFloat)},
+    // bool show_locations = 26;
+    {PROTOBUF_FIELD_OFFSET(Options, _impl_.has_show_locations_.show_locations_), _Internal::kOneofCaseOffset + 44, 0,
+    (0 | ::_fl::kFcOneof | ::_fl::kBool)},
+    // repeated .valhalla.Location trace = 27;
+    {PROTOBUF_FIELD_OFFSET(Options, _impl_.trace_), -1, 8,
+    (0 | ::_fl::kFcRepeated | ::_fl::kMessage | ::_fl::kTvTable)},
+    // .valhalla.ShapeMatch shape_match = 28;
+    {PROTOBUF_FIELD_OFFSET(Options, _impl_.shape_match_), -1, 0,
+    (0 | ::_fl::kFcSingular | ::_fl::kOpenEnum)},
+    // float gps_accuracy = 30;
+    {PROTOBUF_FIELD_OFFSET(Options, _impl_.has_gps_accuracy_.gps_accuracy_), _Internal::kOneofCaseOffset + 48, 0,
+    (0 | ::_fl::kFcOneof | ::_fl::kFloat)},
+    // float search_radius = 31;
+    {PROTOBUF_FIELD_OFFSET(Options, _impl_.has_search_radius_.search_radius_), _Internal::kOneofCaseOffset + 52, 0,
+    (0 | ::_fl::kFcOneof | ::_fl::kFloat)},
+    // float turn_penalty_factor = 32;
+    {PROTOBUF_FIELD_OFFSET(Options, _impl_.has_turn_penalty_factor_.turn_penalty_factor_), _Internal::kOneofCaseOffset + 56, 0,
+    (0 | ::_fl::kFcOneof | ::_fl::kFloat)},
+    // .valhalla.FilterAction filter_action = 33;
+    {PROTOBUF_FIELD_OFFSET(Options, _impl_.filter_action_), -1, 0,
+    (0 | ::_fl::kFcSingular | ::_fl::kOpenEnum)},
+    // repeated string filter_attributes = 34;
+    {PROTOBUF_FIELD_OFFSET(Options, _impl_.filter_attributes_), -1, 0,
+    (0 | ::_fl::kFcRepeated | ::_fl::kUtf8String | ::_fl::kRepSString)},
+    // float breakage_distance = 36;
+    {PROTOBUF_FIELD_OFFSET(Options, _impl_.has_breakage_distance_.breakage_distance_), _Internal::kOneofCaseOffset + 60, 0,
+    (0 | ::_fl::kFcOneof | ::_fl::kFloat)},
+    // bool use_timestamps = 37;
+    {PROTOBUF_FIELD_OFFSET(Options, _impl_.has_use_timestamps_.use_timestamps_), _Internal::kOneofCaseOffset + 64, 0,
+    (0 | ::_fl::kFcOneof | ::_fl::kBool)},
+    // .valhalla.ShapeFormat shape_format = 38;
+    {PROTOBUF_FIELD_OFFSET(Options, _impl_.shape_format_), -1, 0,
+    (0 | ::_fl::kFcSingular | ::_fl::kOpenEnum)},
+    // uint32 alternates = 39;
+    {PROTOBUF_FIELD_OFFSET(Options, _impl_.has_alternates_.alternates_), _Internal::kOneofCaseOffset + 68, 0,
+    (0 | ::_fl::kFcOneof | ::_fl::kUInt32)},
+    // float interpolation_distance = 40;
+    {PROTOBUF_FIELD_OFFSET(Options, _impl_.has_interpolation_distance_.interpolation_distance_), _Internal::kOneofCaseOffset + 72, 0,
+    (0 | ::_fl::kFcOneof | ::_fl::kFloat)},
+    // bool guidance_views = 41;
+    {PROTOBUF_FIELD_OFFSET(Options, _impl_.has_guidance_views_.guidance_views_), _Internal::kOneofCaseOffset + 76, 0,
+    (0 | ::_fl::kFcOneof | ::_fl::kBool)},
+    // uint32 height_precision = 43;
+    {PROTOBUF_FIELD_OFFSET(Options, _impl_.has_height_precision_.height_precision_), _Internal::kOneofCaseOffset + 80, 0,
+    (0 | ::_fl::kFcOneof | ::_fl::kUInt32)},
+    // bool roundabout_exits = 44;
+    {PROTOBUF_FIELD_OFFSET(Options, _impl_.has_roundabout_exits_.roundabout_exits_), _Internal::kOneofCaseOffset + 84, 0,
+    (0 | ::_fl::kFcOneof | ::_fl::kBool)},
+    // bool linear_references = 45;
+    {PROTOBUF_FIELD_OFFSET(Options, _impl_.has_linear_references_.linear_references_), _Internal::kOneofCaseOffset + 88, 0,
+    (0 | ::_fl::kFcOneof | ::_fl::kBool)},
+    // repeated .valhalla.Costing recostings = 46;
+    {PROTOBUF_FIELD_OFFSET(Options, _impl_.recostings_), -1, 9,
+    (0 | ::_fl::kFcRepeated | ::_fl::kMessage | ::_fl::kTvTable)},
+    // repeated .valhalla.Ring exclude_polygons = 47;
+    {PROTOBUF_FIELD_OFFSET(Options, _impl_.exclude_polygons_), -1, 10,
+    (0 | ::_fl::kFcRepeated | ::_fl::kMessage | ::_fl::kTvTable)},
+    // bool prioritize_bidirectional = 48;
+    {PROTOBUF_FIELD_OFFSET(Options, _impl_.has_prioritize_bidirectional_.prioritize_bidirectional_), _Internal::kOneofCaseOffset + 92, 0,
+    (0 | ::_fl::kFcOneof | ::_fl::kBool)},
+    // .valhalla.Options.Action expansion_action = 49;
+    {PROTOBUF_FIELD_OFFSET(Options, _impl_.has_expansion_action_.expansion_action_), _Internal::kOneofCaseOffset + 96, 0,
+    (0 | ::_fl::kFcOneof | ::_fl::kOpenEnum)},
+    // bool skip_opposites = 50;
+    {PROTOBUF_FIELD_OFFSET(Options, _impl_.has_skip_opposites_.skip_opposites_), _Internal::kOneofCaseOffset + 100, 0,
+    (0 | ::_fl::kFcOneof | ::_fl::kBool)},
+    // repeated .valhalla.Options.ExpansionProperties expansion_properties = 51;
+    {PROTOBUF_FIELD_OFFSET(Options, _impl_.expansion_properties_), -1, 0,
+    (0 | ::_fl::kFcRepeated | ::_fl::kPackedOpenEnum)},
+    // .valhalla.PbfFieldSelector pbf_field_selector = 52;
+    {PROTOBUF_FIELD_OFFSET(Options, _impl_.pbf_field_selector_), _Internal::kHasBitsOffset + 0, 11,
+    (0 | ::_fl::kFcOptional | ::_fl::kMessage | ::_fl::kTvTable)},
+    // bool reverse = 53;
+    {PROTOBUF_FIELD_OFFSET(Options, _impl_.reverse_), -1, 0,
+    (0 | ::_fl::kFcSingular | ::_fl::kBool)},
+    // uint32 matrix_locations = 54;
+    {PROTOBUF_FIELD_OFFSET(Options, _impl_.has_matrix_locations_.matrix_locations_), _Internal::kOneofCaseOffset + 104, 0,
+    (0 | ::_fl::kFcOneof | ::_fl::kUInt32)},
+  }}, {{
+    {::_pbi::TcParser::GetMapAuxInfo<decltype(Options()._impl_.costings_)>(1, 0, 0)},
+    {::_pbi::TcParser::CreateInArenaStorageCb<::valhalla::Costing>},
+    {::_pbi::TcParser::GetTable<::valhalla::Location>()},
+    {::_pbi::TcParser::GetTable<::valhalla::Location>()},
+    {::_pbi::TcParser::GetTable<::valhalla::Location>()},
+    {::_pbi::TcParser::GetTable<::valhalla::Location>()},
+    {::_pbi::TcParser::GetTable<::valhalla::Location>()},
+    {::_pbi::TcParser::GetTable<::valhalla::Contour>()},
+    {::_pbi::TcParser::GetTable<::valhalla::Location>()},
+    {::_pbi::TcParser::GetTable<::valhalla::Costing>()},
+    {::_pbi::TcParser::GetTable<::valhalla::Ring>()},
+    {::_pbi::TcParser::GetTable<::valhalla::PbfFieldSelector>()},
+  }}, {{
+    "\20\0\10\0\0\2\5\20\0\0\0\0\0\0\0\0\0\0\11\0\0\0\0\0\0\0\0\0\0\0\0\0\21\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0"
+    "valhalla.Options"
+    "language"
+    "id"
+    "jsonp"
+    "encoded_polyline"
+    "date_time"
+    "filter_attributes"
+  }},
+};
+
+::uint8_t* Options::_InternalSerialize(
+    ::uint8_t* target,
+    ::google::protobuf::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:valhalla.Options)
-  uint32_t cached_has_bits = 0;
-  (void) cached_has_bits;
+  ::uint32_t cached_has_bits = 0;
+  (void)cached_has_bits;
 
   // .valhalla.Options.Units units = 1;
   if (this->_internal_units() != 0) {
     target = stream->EnsureSpace(target);
     target = ::_pbi::WireFormatLite::WriteEnumToArray(
-      1, this->_internal_units(), target);
+        1, this->_internal_units(), target);
   }
 
   // string language = 2;
-  if (_internal_has_language()) {
-    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
-      this->_internal_language().data(), static_cast<int>(this->_internal_language().length()),
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "valhalla.Options.language");
-    target = stream->WriteStringMaybeAliased(
-        2, this->_internal_language(), target);
+  if (has_language_case() == kLanguage) {
+    const std::string& _s = this->_internal_language();
+    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+        _s.data(), static_cast<int>(_s.length()), ::google::protobuf::internal::WireFormatLite::SERIALIZE, "valhalla.Options.language");
+    target = stream->WriteStringMaybeAliased(2, _s, target);
   }
 
   // .valhalla.DirectionsType directions_type = 3;
   if (this->_internal_directions_type() != 0) {
     target = stream->EnsureSpace(target);
     target = ::_pbi::WireFormatLite::WriteEnumToArray(
-      3, this->_internal_directions_type(), target);
+        3, this->_internal_directions_type(), target);
   }
 
   // .valhalla.Options.Format format = 4;
   if (this->_internal_format() != 0) {
     target = stream->EnsureSpace(target);
     target = ::_pbi::WireFormatLite::WriteEnumToArray(
-      4, this->_internal_format(), target);
+        4, this->_internal_format(), target);
   }
 
   // string id = 5;
-  if (_internal_has_id()) {
-    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
-      this->_internal_id().data(), static_cast<int>(this->_internal_id().length()),
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "valhalla.Options.id");
-    target = stream->WriteStringMaybeAliased(
-        5, this->_internal_id(), target);
+  if (has_id_case() == kId) {
+    const std::string& _s = this->_internal_id();
+    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+        _s.data(), static_cast<int>(_s.length()), ::google::protobuf::internal::WireFormatLite::SERIALIZE, "valhalla.Options.id");
+    target = stream->WriteStringMaybeAliased(5, _s, target);
   }
 
   // string jsonp = 6;
-  if (_internal_has_jsonp()) {
-    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
-      this->_internal_jsonp().data(), static_cast<int>(this->_internal_jsonp().length()),
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "valhalla.Options.jsonp");
-    target = stream->WriteStringMaybeAliased(
-        6, this->_internal_jsonp(), target);
+  if (has_jsonp_case() == kJsonp) {
+    const std::string& _s = this->_internal_jsonp();
+    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+        _s.data(), static_cast<int>(_s.length()), ::google::protobuf::internal::WireFormatLite::SERIALIZE, "valhalla.Options.jsonp");
+    target = stream->WriteStringMaybeAliased(6, _s, target);
   }
 
   // string encoded_polyline = 7;
-  if (_internal_has_encoded_polyline()) {
-    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
-      this->_internal_encoded_polyline().data(), static_cast<int>(this->_internal_encoded_polyline().length()),
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "valhalla.Options.encoded_polyline");
-    target = stream->WriteStringMaybeAliased(
-        7, this->_internal_encoded_polyline(), target);
+  if (has_encoded_polyline_case() == kEncodedPolyline) {
+    const std::string& _s = this->_internal_encoded_polyline();
+    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+        _s.data(), static_cast<int>(_s.length()), ::google::protobuf::internal::WireFormatLite::SERIALIZE, "valhalla.Options.encoded_polyline");
+    target = stream->WriteStringMaybeAliased(7, _s, target);
   }
 
   // .valhalla.Options.Action action = 8;
   if (this->_internal_action() != 0) {
     target = stream->EnsureSpace(target);
     target = ::_pbi::WireFormatLite::WriteEnumToArray(
-      8, this->_internal_action(), target);
+        8, this->_internal_action(), target);
   }
 
   // bool range = 10;
-  if (_internal_has_range()) {
+  if (has_range_case() == kRange) {
     target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteBoolToArray(10, this->_internal_range(), target);
+    target = ::_pbi::WireFormatLite::WriteBoolToArray(
+        10, this->_internal_range(), target);
   }
 
   // bool verbose = 11;
-  if (_internal_has_verbose()) {
+  if (has_verbose_case() == kVerbose) {
     target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteBoolToArray(11, this->_internal_verbose(), target);
+    target = ::_pbi::WireFormatLite::WriteBoolToArray(
+        11, this->_internal_verbose(), target);
   }
 
   // .valhalla.Costing.Type costing_type = 12;
   if (this->_internal_costing_type() != 0) {
     target = stream->EnsureSpace(target);
     target = ::_pbi::WireFormatLite::WriteEnumToArray(
-      12, this->_internal_costing_type(), target);
+        12, this->_internal_costing_type(), target);
   }
 
   // map<int32, .valhalla.Costing> costings = 13;
-  if (!this->_internal_costings().empty()) {
-    using MapType = ::_pb::Map<int32_t, ::valhalla::Costing>;
+  if (!_internal_costings().empty()) {
+    using MapType = ::google::protobuf::Map<::int32_t, ::valhalla::Costing>;
     using WireHelper = Options_CostingsEntry_DoNotUse::Funcs;
-    const auto& map_field = this->_internal_costings();
+    const auto& field = _internal_costings();
 
-    if (stream->IsSerializationDeterministic() && map_field.size() > 1) {
-      for (const auto& entry : ::_pbi::MapSorterFlat<MapType>(map_field)) {
-        target = WireHelper::InternalSerialize(13, entry.first, entry.second, target, stream);
+    if (stream->IsSerializationDeterministic() && field.size() > 1) {
+      for (const auto& entry : ::google::protobuf::internal::MapSorterFlat<MapType>(field)) {
+        target = WireHelper::InternalSerialize(
+            13, entry.first, entry.second, target, stream);
       }
     } else {
-      for (const auto& entry : map_field) {
-        target = WireHelper::InternalSerialize(13, entry.first, entry.second, target, stream);
+      for (const auto& entry : field) {
+        target = WireHelper::InternalSerialize(
+            13, entry.first, entry.second, target, stream);
       }
     }
   }
@@ -9428,32 +8793,32 @@ uint8_t* Options::_InternalSerialize(
   // repeated .valhalla.Location locations = 14;
   for (unsigned i = 0,
       n = static_cast<unsigned>(this->_internal_locations_size()); i < n; i++) {
-    const auto& repfield = this->_internal_locations(i);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
+    const auto& repfield = this->_internal_locations().Get(i);
+    target = ::google::protobuf::internal::WireFormatLite::
         InternalWriteMessage(14, repfield, repfield.GetCachedSize(), target, stream);
   }
 
   // repeated .valhalla.Location exclude_locations = 15;
   for (unsigned i = 0,
       n = static_cast<unsigned>(this->_internal_exclude_locations_size()); i < n; i++) {
-    const auto& repfield = this->_internal_exclude_locations(i);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
+    const auto& repfield = this->_internal_exclude_locations().Get(i);
+    target = ::google::protobuf::internal::WireFormatLite::
         InternalWriteMessage(15, repfield, repfield.GetCachedSize(), target, stream);
   }
 
   // repeated .valhalla.Location sources = 16;
   for (unsigned i = 0,
       n = static_cast<unsigned>(this->_internal_sources_size()); i < n; i++) {
-    const auto& repfield = this->_internal_sources(i);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
+    const auto& repfield = this->_internal_sources().Get(i);
+    target = ::google::protobuf::internal::WireFormatLite::
         InternalWriteMessage(16, repfield, repfield.GetCachedSize(), target, stream);
   }
 
   // repeated .valhalla.Location targets = 17;
   for (unsigned i = 0,
       n = static_cast<unsigned>(this->_internal_targets_size()); i < n; i++) {
-    const auto& repfield = this->_internal_targets(i);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
+    const auto& repfield = this->_internal_targets().Get(i);
+    target = ::google::protobuf::internal::WireFormatLite::
         InternalWriteMessage(17, repfield, repfield.GetCachedSize(), target, stream);
   }
 
@@ -9461,70 +8826,73 @@ uint8_t* Options::_InternalSerialize(
   if (this->_internal_date_time_type() != 0) {
     target = stream->EnsureSpace(target);
     target = ::_pbi::WireFormatLite::WriteEnumToArray(
-      18, this->_internal_date_time_type(), target);
+        18, this->_internal_date_time_type(), target);
   }
 
   // string date_time = 19;
-  if (_internal_has_date_time()) {
-    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
-      this->_internal_date_time().data(), static_cast<int>(this->_internal_date_time().length()),
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "valhalla.Options.date_time");
-    target = stream->WriteStringMaybeAliased(
-        19, this->_internal_date_time(), target);
+  if (has_date_time_case() == kDateTime) {
+    const std::string& _s = this->_internal_date_time();
+    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+        _s.data(), static_cast<int>(_s.length()), ::google::protobuf::internal::WireFormatLite::SERIALIZE, "valhalla.Options.date_time");
+    target = stream->WriteStringMaybeAliased(19, _s, target);
   }
 
   // repeated .valhalla.Location shape = 20;
   for (unsigned i = 0,
       n = static_cast<unsigned>(this->_internal_shape_size()); i < n; i++) {
-    const auto& repfield = this->_internal_shape(i);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
+    const auto& repfield = this->_internal_shape().Get(i);
+    target = ::google::protobuf::internal::WireFormatLite::
         InternalWriteMessage(20, repfield, repfield.GetCachedSize(), target, stream);
   }
 
   // double resample_distance = 21;
-  if (_internal_has_resample_distance()) {
+  if (has_resample_distance_case() == kResampleDistance) {
     target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteDoubleToArray(21, this->_internal_resample_distance(), target);
+    target = ::_pbi::WireFormatLite::WriteDoubleToArray(
+        21, this->_internal_resample_distance(), target);
   }
 
   // repeated .valhalla.Contour contours = 22;
   for (unsigned i = 0,
       n = static_cast<unsigned>(this->_internal_contours_size()); i < n; i++) {
-    const auto& repfield = this->_internal_contours(i);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
+    const auto& repfield = this->_internal_contours().Get(i);
+    target = ::google::protobuf::internal::WireFormatLite::
         InternalWriteMessage(22, repfield, repfield.GetCachedSize(), target, stream);
   }
 
   // bool polygons = 23;
-  if (_internal_has_polygons()) {
+  if (has_polygons_case() == kPolygons) {
     target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteBoolToArray(23, this->_internal_polygons(), target);
+    target = ::_pbi::WireFormatLite::WriteBoolToArray(
+        23, this->_internal_polygons(), target);
   }
 
   // float denoise = 24;
-  if (_internal_has_denoise()) {
+  if (has_denoise_case() == kDenoise) {
     target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteFloatToArray(24, this->_internal_denoise(), target);
+    target = ::_pbi::WireFormatLite::WriteFloatToArray(
+        24, this->_internal_denoise(), target);
   }
 
   // float generalize = 25;
-  if (_internal_has_generalize()) {
+  if (has_generalize_case() == kGeneralize) {
     target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteFloatToArray(25, this->_internal_generalize(), target);
+    target = ::_pbi::WireFormatLite::WriteFloatToArray(
+        25, this->_internal_generalize(), target);
   }
 
   // bool show_locations = 26;
-  if (_internal_has_show_locations()) {
+  if (has_show_locations_case() == kShowLocations) {
     target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteBoolToArray(26, this->_internal_show_locations(), target);
+    target = ::_pbi::WireFormatLite::WriteBoolToArray(
+        26, this->_internal_show_locations(), target);
   }
 
   // repeated .valhalla.Location trace = 27;
   for (unsigned i = 0,
       n = static_cast<unsigned>(this->_internal_trace_size()); i < n; i++) {
-    const auto& repfield = this->_internal_trace(i);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
+    const auto& repfield = this->_internal_trace().Get(i);
+    target = ::google::protobuf::internal::WireFormatLite::
         InternalWriteMessage(27, repfield, repfield.GetCachedSize(), target, stream);
   }
 
@@ -9532,146 +8900,158 @@ uint8_t* Options::_InternalSerialize(
   if (this->_internal_shape_match() != 0) {
     target = stream->EnsureSpace(target);
     target = ::_pbi::WireFormatLite::WriteEnumToArray(
-      28, this->_internal_shape_match(), target);
+        28, this->_internal_shape_match(), target);
   }
 
   // float gps_accuracy = 30;
-  if (_internal_has_gps_accuracy()) {
+  if (has_gps_accuracy_case() == kGpsAccuracy) {
     target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteFloatToArray(30, this->_internal_gps_accuracy(), target);
+    target = ::_pbi::WireFormatLite::WriteFloatToArray(
+        30, this->_internal_gps_accuracy(), target);
   }
 
   // float search_radius = 31;
-  if (_internal_has_search_radius()) {
+  if (has_search_radius_case() == kSearchRadius) {
     target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteFloatToArray(31, this->_internal_search_radius(), target);
+    target = ::_pbi::WireFormatLite::WriteFloatToArray(
+        31, this->_internal_search_radius(), target);
   }
 
   // float turn_penalty_factor = 32;
-  if (_internal_has_turn_penalty_factor()) {
+  if (has_turn_penalty_factor_case() == kTurnPenaltyFactor) {
     target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteFloatToArray(32, this->_internal_turn_penalty_factor(), target);
+    target = ::_pbi::WireFormatLite::WriteFloatToArray(
+        32, this->_internal_turn_penalty_factor(), target);
   }
 
   // .valhalla.FilterAction filter_action = 33;
   if (this->_internal_filter_action() != 0) {
     target = stream->EnsureSpace(target);
     target = ::_pbi::WireFormatLite::WriteEnumToArray(
-      33, this->_internal_filter_action(), target);
+        33, this->_internal_filter_action(), target);
   }
 
   // repeated string filter_attributes = 34;
-  for (int i = 0, n = this->_internal_filter_attributes_size(); i < n; i++) {
-    const auto& s = this->_internal_filter_attributes(i);
-    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
-      s.data(), static_cast<int>(s.length()),
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "valhalla.Options.filter_attributes");
+  for (int i = 0, n = this->_internal_filter_attributes_size(); i < n; ++i) {
+    const auto& s = this->_internal_filter_attributes().Get(i);
+    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+        s.data(), static_cast<int>(s.length()), ::google::protobuf::internal::WireFormatLite::SERIALIZE, "valhalla.Options.filter_attributes");
     target = stream->WriteString(34, s, target);
   }
 
   // float breakage_distance = 36;
-  if (_internal_has_breakage_distance()) {
+  if (has_breakage_distance_case() == kBreakageDistance) {
     target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteFloatToArray(36, this->_internal_breakage_distance(), target);
+    target = ::_pbi::WireFormatLite::WriteFloatToArray(
+        36, this->_internal_breakage_distance(), target);
   }
 
   // bool use_timestamps = 37;
-  if (_internal_has_use_timestamps()) {
+  if (has_use_timestamps_case() == kUseTimestamps) {
     target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteBoolToArray(37, this->_internal_use_timestamps(), target);
+    target = ::_pbi::WireFormatLite::WriteBoolToArray(
+        37, this->_internal_use_timestamps(), target);
   }
 
   // .valhalla.ShapeFormat shape_format = 38;
   if (this->_internal_shape_format() != 0) {
     target = stream->EnsureSpace(target);
     target = ::_pbi::WireFormatLite::WriteEnumToArray(
-      38, this->_internal_shape_format(), target);
+        38, this->_internal_shape_format(), target);
   }
 
   // uint32 alternates = 39;
-  if (_internal_has_alternates()) {
+  if (has_alternates_case() == kAlternates) {
     target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteUInt32ToArray(39, this->_internal_alternates(), target);
+    target = ::_pbi::WireFormatLite::WriteUInt32ToArray(
+        39, this->_internal_alternates(), target);
   }
 
   // float interpolation_distance = 40;
-  if (_internal_has_interpolation_distance()) {
+  if (has_interpolation_distance_case() == kInterpolationDistance) {
     target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteFloatToArray(40, this->_internal_interpolation_distance(), target);
+    target = ::_pbi::WireFormatLite::WriteFloatToArray(
+        40, this->_internal_interpolation_distance(), target);
   }
 
   // bool guidance_views = 41;
-  if (_internal_has_guidance_views()) {
+  if (has_guidance_views_case() == kGuidanceViews) {
     target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteBoolToArray(41, this->_internal_guidance_views(), target);
+    target = ::_pbi::WireFormatLite::WriteBoolToArray(
+        41, this->_internal_guidance_views(), target);
   }
 
   // uint32 height_precision = 43;
-  if (_internal_has_height_precision()) {
+  if (has_height_precision_case() == kHeightPrecision) {
     target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteUInt32ToArray(43, this->_internal_height_precision(), target);
+    target = ::_pbi::WireFormatLite::WriteUInt32ToArray(
+        43, this->_internal_height_precision(), target);
   }
 
   // bool roundabout_exits = 44;
-  if (_internal_has_roundabout_exits()) {
+  if (has_roundabout_exits_case() == kRoundaboutExits) {
     target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteBoolToArray(44, this->_internal_roundabout_exits(), target);
+    target = ::_pbi::WireFormatLite::WriteBoolToArray(
+        44, this->_internal_roundabout_exits(), target);
   }
 
   // bool linear_references = 45;
-  if (_internal_has_linear_references()) {
+  if (has_linear_references_case() == kLinearReferences) {
     target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteBoolToArray(45, this->_internal_linear_references(), target);
+    target = ::_pbi::WireFormatLite::WriteBoolToArray(
+        45, this->_internal_linear_references(), target);
   }
 
   // repeated .valhalla.Costing recostings = 46;
   for (unsigned i = 0,
       n = static_cast<unsigned>(this->_internal_recostings_size()); i < n; i++) {
-    const auto& repfield = this->_internal_recostings(i);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
+    const auto& repfield = this->_internal_recostings().Get(i);
+    target = ::google::protobuf::internal::WireFormatLite::
         InternalWriteMessage(46, repfield, repfield.GetCachedSize(), target, stream);
   }
 
   // repeated .valhalla.Ring exclude_polygons = 47;
   for (unsigned i = 0,
       n = static_cast<unsigned>(this->_internal_exclude_polygons_size()); i < n; i++) {
-    const auto& repfield = this->_internal_exclude_polygons(i);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
+    const auto& repfield = this->_internal_exclude_polygons().Get(i);
+    target = ::google::protobuf::internal::WireFormatLite::
         InternalWriteMessage(47, repfield, repfield.GetCachedSize(), target, stream);
   }
 
   // bool prioritize_bidirectional = 48;
-  if (_internal_has_prioritize_bidirectional()) {
+  if (has_prioritize_bidirectional_case() == kPrioritizeBidirectional) {
     target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteBoolToArray(48, this->_internal_prioritize_bidirectional(), target);
+    target = ::_pbi::WireFormatLite::WriteBoolToArray(
+        48, this->_internal_prioritize_bidirectional(), target);
   }
 
   // .valhalla.Options.Action expansion_action = 49;
-  if (_internal_has_expansion_action()) {
+  if (has_expansion_action_case() == kExpansionAction) {
     target = stream->EnsureSpace(target);
     target = ::_pbi::WireFormatLite::WriteEnumToArray(
-      49, this->_internal_expansion_action(), target);
+        49, this->_internal_expansion_action(), target);
   }
 
   // bool skip_opposites = 50;
-  if (_internal_has_skip_opposites()) {
+  if (has_skip_opposites_case() == kSkipOpposites) {
     target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteBoolToArray(50, this->_internal_skip_opposites(), target);
+    target = ::_pbi::WireFormatLite::WriteBoolToArray(
+        50, this->_internal_skip_opposites(), target);
   }
 
   // repeated .valhalla.Options.ExpansionProperties expansion_properties = 51;
   {
-    int byte_size = _impl_._expansion_properties_cached_byte_size_.load(std::memory_order_relaxed);
+    int byte_size = _impl_._expansion_properties_cached_byte_size_.Get();
     if (byte_size > 0) {
-      target = stream->WriteEnumPacked(
-          51, _impl_.expansion_properties_, byte_size, target);
+      target = stream->WriteEnumPacked(51, _internal_expansion_properties(),
+                                       byte_size, target);
     }
   }
 
+  cached_has_bits = _impl_._has_bits_[0];
   // .valhalla.PbfFieldSelector pbf_field_selector = 52;
-  if (this->_internal_has_pbf_field_selector()) {
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
+  if (cached_has_bits & 0x00000001u) {
+    target = ::google::protobuf::internal::WireFormatLite::
       InternalWriteMessage(52, _Internal::pbf_field_selector(this),
         _Internal::pbf_field_selector(this).GetCachedSize(), target, stream);
   }
@@ -9679,200 +9059,188 @@ uint8_t* Options::_InternalSerialize(
   // bool reverse = 53;
   if (this->_internal_reverse() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteBoolToArray(53, this->_internal_reverse(), target);
+    target = ::_pbi::WireFormatLite::WriteBoolToArray(
+        53, this->_internal_reverse(), target);
   }
 
   // uint32 matrix_locations = 54;
-  if (_internal_has_matrix_locations()) {
+  if (has_matrix_locations_case() == kMatrixLocations) {
     target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteUInt32ToArray(54, this->_internal_matrix_locations(), target);
+    target = ::_pbi::WireFormatLite::WriteUInt32ToArray(
+        54, this->_internal_matrix_locations(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target = stream->WriteRaw(_internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).data(),
-        static_cast<int>(_internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).size()), target);
+    target = stream->WriteRaw(
+        _internal_metadata_.unknown_fields<std::string>(::google::protobuf::internal::GetEmptyString).data(),
+        static_cast<int>(_internal_metadata_.unknown_fields<std::string>(::google::protobuf::internal::GetEmptyString).size()), target);
   }
   // @@protoc_insertion_point(serialize_to_array_end:valhalla.Options)
   return target;
 }
 
-size_t Options::ByteSizeLong() const {
+::size_t Options::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:valhalla.Options)
-  size_t total_size = 0;
+  ::size_t total_size = 0;
 
-  uint32_t cached_has_bits = 0;
+  ::uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
   // map<int32, .valhalla.Costing> costings = 13;
-  total_size += 1 *
-      ::PROTOBUF_NAMESPACE_ID::internal::FromIntSize(this->_internal_costings_size());
-  for (::PROTOBUF_NAMESPACE_ID::Map< int32_t, ::valhalla::Costing >::const_iterator
-      it = this->_internal_costings().begin();
-      it != this->_internal_costings().end(); ++it) {
-    total_size += Options_CostingsEntry_DoNotUse::Funcs::ByteSizeLong(it->first, it->second);
+  total_size += 1 * ::google::protobuf::internal::FromIntSize(_internal_costings_size());
+  for (const auto& entry : _internal_costings()) {
+    total_size += Options_CostingsEntry_DoNotUse::Funcs::ByteSizeLong(entry.first, entry.second);
   }
-
   // repeated .valhalla.Location locations = 14;
   total_size += 1UL * this->_internal_locations_size();
-  for (const auto& msg : this->_impl_.locations_) {
+  for (const auto& msg : this->_internal_locations()) {
     total_size +=
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(msg);
+      ::google::protobuf::internal::WireFormatLite::MessageSize(msg);
   }
-
   // repeated .valhalla.Location exclude_locations = 15;
   total_size += 1UL * this->_internal_exclude_locations_size();
-  for (const auto& msg : this->_impl_.exclude_locations_) {
+  for (const auto& msg : this->_internal_exclude_locations()) {
     total_size +=
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(msg);
+      ::google::protobuf::internal::WireFormatLite::MessageSize(msg);
   }
-
   // repeated .valhalla.Location sources = 16;
   total_size += 2UL * this->_internal_sources_size();
-  for (const auto& msg : this->_impl_.sources_) {
+  for (const auto& msg : this->_internal_sources()) {
     total_size +=
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(msg);
+      ::google::protobuf::internal::WireFormatLite::MessageSize(msg);
   }
-
   // repeated .valhalla.Location targets = 17;
   total_size += 2UL * this->_internal_targets_size();
-  for (const auto& msg : this->_impl_.targets_) {
+  for (const auto& msg : this->_internal_targets()) {
     total_size +=
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(msg);
+      ::google::protobuf::internal::WireFormatLite::MessageSize(msg);
   }
-
   // repeated .valhalla.Location shape = 20;
   total_size += 2UL * this->_internal_shape_size();
-  for (const auto& msg : this->_impl_.shape_) {
+  for (const auto& msg : this->_internal_shape()) {
     total_size +=
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(msg);
+      ::google::protobuf::internal::WireFormatLite::MessageSize(msg);
   }
-
   // repeated .valhalla.Contour contours = 22;
   total_size += 2UL * this->_internal_contours_size();
-  for (const auto& msg : this->_impl_.contours_) {
+  for (const auto& msg : this->_internal_contours()) {
     total_size +=
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(msg);
+      ::google::protobuf::internal::WireFormatLite::MessageSize(msg);
   }
-
   // repeated .valhalla.Location trace = 27;
   total_size += 2UL * this->_internal_trace_size();
-  for (const auto& msg : this->_impl_.trace_) {
+  for (const auto& msg : this->_internal_trace()) {
     total_size +=
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(msg);
+      ::google::protobuf::internal::WireFormatLite::MessageSize(msg);
   }
-
   // repeated string filter_attributes = 34;
-  total_size += 2 *
-      ::PROTOBUF_NAMESPACE_ID::internal::FromIntSize(_impl_.filter_attributes_.size());
-  for (int i = 0, n = _impl_.filter_attributes_.size(); i < n; i++) {
-    total_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
-      _impl_.filter_attributes_.Get(i));
+  total_size += 2 * ::google::protobuf::internal::FromIntSize(_internal_filter_attributes().size());
+  for (int i = 0, n = _internal_filter_attributes().size(); i < n; ++i) {
+    total_size += ::google::protobuf::internal::WireFormatLite::StringSize(
+        _internal_filter_attributes().Get(i));
   }
-
   // repeated .valhalla.Costing recostings = 46;
   total_size += 2UL * this->_internal_recostings_size();
-  for (const auto& msg : this->_impl_.recostings_) {
+  for (const auto& msg : this->_internal_recostings()) {
     total_size +=
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(msg);
+      ::google::protobuf::internal::WireFormatLite::MessageSize(msg);
   }
-
   // repeated .valhalla.Ring exclude_polygons = 47;
   total_size += 2UL * this->_internal_exclude_polygons_size();
-  for (const auto& msg : this->_impl_.exclude_polygons_) {
+  for (const auto& msg : this->_internal_exclude_polygons()) {
     total_size +=
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(msg);
+      ::google::protobuf::internal::WireFormatLite::MessageSize(msg);
   }
-
   // repeated .valhalla.Options.ExpansionProperties expansion_properties = 51;
   {
-    size_t data_size = 0;
-    unsigned int count = static_cast<unsigned int>(this->_internal_expansion_properties_size());for (unsigned int i = 0; i < count; i++) {
-      data_size += ::_pbi::WireFormatLite::EnumSize(
-        this->_internal_expansion_properties(static_cast<int>(i)));
-    }
-    if (data_size > 0) {
-      total_size += 2 +
-        ::_pbi::WireFormatLite::Int32Size(static_cast<int32_t>(data_size));
-    }
-    int cached_size = ::_pbi::ToCachedSize(data_size);
-    _impl_._expansion_properties_cached_byte_size_.store(cached_size,
-                                    std::memory_order_relaxed);
-    total_size += data_size;
-  }
+    std::size_t data_size = 0;
+    auto count = static_cast<std::size_t>(this->_internal_expansion_properties_size());
 
+    for (std::size_t i = 0; i < count; ++i) {
+      data_size += ::_pbi::WireFormatLite::EnumSize(
+          this->_internal_expansion_properties().Get(static_cast<int>(i)));
+    }
+    total_size += data_size;
+    if (data_size > 0) {
+      total_size += 2;
+      total_size += ::_pbi::WireFormatLite::Int32Size(
+          static_cast<int32_t>(data_size));
+    }
+    _impl_._expansion_properties_cached_byte_size_.Set(::_pbi::ToCachedSize(data_size));
+  }
   // .valhalla.PbfFieldSelector pbf_field_selector = 52;
-  if (this->_internal_has_pbf_field_selector()) {
+  cached_has_bits = _impl_._has_bits_[0];
+  if (cached_has_bits & 0x00000001u) {
     total_size += 2 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
+      ::google::protobuf::internal::WireFormatLite::MessageSize(
         *_impl_.pbf_field_selector_);
   }
 
   // .valhalla.Options.Units units = 1;
   if (this->_internal_units() != 0) {
     total_size += 1 +
-      ::_pbi::WireFormatLite::EnumSize(this->_internal_units());
+                  ::_pbi::WireFormatLite::EnumSize(this->_internal_units());
   }
 
   // .valhalla.DirectionsType directions_type = 3;
   if (this->_internal_directions_type() != 0) {
     total_size += 1 +
-      ::_pbi::WireFormatLite::EnumSize(this->_internal_directions_type());
+                  ::_pbi::WireFormatLite::EnumSize(this->_internal_directions_type());
   }
 
   // .valhalla.Options.Format format = 4;
   if (this->_internal_format() != 0) {
     total_size += 1 +
-      ::_pbi::WireFormatLite::EnumSize(this->_internal_format());
+                  ::_pbi::WireFormatLite::EnumSize(this->_internal_format());
   }
 
   // .valhalla.Options.Action action = 8;
   if (this->_internal_action() != 0) {
     total_size += 1 +
-      ::_pbi::WireFormatLite::EnumSize(this->_internal_action());
+                  ::_pbi::WireFormatLite::EnumSize(this->_internal_action());
   }
 
   // .valhalla.Costing.Type costing_type = 12;
   if (this->_internal_costing_type() != 0) {
     total_size += 1 +
-      ::_pbi::WireFormatLite::EnumSize(this->_internal_costing_type());
+                  ::_pbi::WireFormatLite::EnumSize(this->_internal_costing_type());
   }
 
   // .valhalla.Options.DateTimeType date_time_type = 18;
   if (this->_internal_date_time_type() != 0) {
     total_size += 2 +
-      ::_pbi::WireFormatLite::EnumSize(this->_internal_date_time_type());
+                  ::_pbi::WireFormatLite::EnumSize(this->_internal_date_time_type());
   }
 
   // .valhalla.ShapeMatch shape_match = 28;
   if (this->_internal_shape_match() != 0) {
     total_size += 2 +
-      ::_pbi::WireFormatLite::EnumSize(this->_internal_shape_match());
+                  ::_pbi::WireFormatLite::EnumSize(this->_internal_shape_match());
   }
 
   // .valhalla.FilterAction filter_action = 33;
   if (this->_internal_filter_action() != 0) {
     total_size += 2 +
-      ::_pbi::WireFormatLite::EnumSize(this->_internal_filter_action());
+                  ::_pbi::WireFormatLite::EnumSize(this->_internal_filter_action());
   }
 
   // .valhalla.ShapeFormat shape_format = 38;
   if (this->_internal_shape_format() != 0) {
     total_size += 2 +
-      ::_pbi::WireFormatLite::EnumSize(this->_internal_shape_format());
+                  ::_pbi::WireFormatLite::EnumSize(this->_internal_shape_format());
   }
 
   // bool reverse = 53;
   if (this->_internal_reverse() != 0) {
-    total_size += 2 + 1;
+    total_size += 3;
   }
 
   switch (has_language_case()) {
     // string language = 2;
     case kLanguage: {
-      total_size += 1 +
-        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
-          this->_internal_language());
+      total_size += 1 + ::google::protobuf::internal::WireFormatLite::StringSize(
+                                      this->_internal_language());
       break;
     }
     case HAS_LANGUAGE_NOT_SET: {
@@ -9882,9 +9250,8 @@ size_t Options::ByteSizeLong() const {
   switch (has_id_case()) {
     // string id = 5;
     case kId: {
-      total_size += 1 +
-        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
-          this->_internal_id());
+      total_size += 1 + ::google::protobuf::internal::WireFormatLite::StringSize(
+                                      this->_internal_id());
       break;
     }
     case HAS_ID_NOT_SET: {
@@ -9894,9 +9261,8 @@ size_t Options::ByteSizeLong() const {
   switch (has_jsonp_case()) {
     // string jsonp = 6;
     case kJsonp: {
-      total_size += 1 +
-        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
-          this->_internal_jsonp());
+      total_size += 1 + ::google::protobuf::internal::WireFormatLite::StringSize(
+                                      this->_internal_jsonp());
       break;
     }
     case HAS_JSONP_NOT_SET: {
@@ -9906,9 +9272,8 @@ size_t Options::ByteSizeLong() const {
   switch (has_encoded_polyline_case()) {
     // string encoded_polyline = 7;
     case kEncodedPolyline: {
-      total_size += 1 +
-        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
-          this->_internal_encoded_polyline());
+      total_size += 1 + ::google::protobuf::internal::WireFormatLite::StringSize(
+                                      this->_internal_encoded_polyline());
       break;
     }
     case HAS_ENCODED_POLYLINE_NOT_SET: {
@@ -9918,7 +9283,7 @@ size_t Options::ByteSizeLong() const {
   switch (has_range_case()) {
     // bool range = 10;
     case kRange: {
-      total_size += 1 + 1;
+      total_size += 2;
       break;
     }
     case HAS_RANGE_NOT_SET: {
@@ -9928,7 +9293,7 @@ size_t Options::ByteSizeLong() const {
   switch (has_verbose_case()) {
     // bool verbose = 11;
     case kVerbose: {
-      total_size += 1 + 1;
+      total_size += 2;
       break;
     }
     case HAS_VERBOSE_NOT_SET: {
@@ -9938,9 +9303,8 @@ size_t Options::ByteSizeLong() const {
   switch (has_date_time_case()) {
     // string date_time = 19;
     case kDateTime: {
-      total_size += 2 +
-        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
-          this->_internal_date_time());
+      total_size += 2 + ::google::protobuf::internal::WireFormatLite::StringSize(
+                                      this->_internal_date_time());
       break;
     }
     case HAS_DATE_TIME_NOT_SET: {
@@ -9950,7 +9314,7 @@ size_t Options::ByteSizeLong() const {
   switch (has_resample_distance_case()) {
     // double resample_distance = 21;
     case kResampleDistance: {
-      total_size += 2 + 8;
+      total_size += 10;
       break;
     }
     case HAS_RESAMPLE_DISTANCE_NOT_SET: {
@@ -9960,7 +9324,7 @@ size_t Options::ByteSizeLong() const {
   switch (has_polygons_case()) {
     // bool polygons = 23;
     case kPolygons: {
-      total_size += 2 + 1;
+      total_size += 3;
       break;
     }
     case HAS_POLYGONS_NOT_SET: {
@@ -9970,7 +9334,7 @@ size_t Options::ByteSizeLong() const {
   switch (has_denoise_case()) {
     // float denoise = 24;
     case kDenoise: {
-      total_size += 2 + 4;
+      total_size += 6;
       break;
     }
     case HAS_DENOISE_NOT_SET: {
@@ -9980,7 +9344,7 @@ size_t Options::ByteSizeLong() const {
   switch (has_generalize_case()) {
     // float generalize = 25;
     case kGeneralize: {
-      total_size += 2 + 4;
+      total_size += 6;
       break;
     }
     case HAS_GENERALIZE_NOT_SET: {
@@ -9990,7 +9354,7 @@ size_t Options::ByteSizeLong() const {
   switch (has_show_locations_case()) {
     // bool show_locations = 26;
     case kShowLocations: {
-      total_size += 2 + 1;
+      total_size += 3;
       break;
     }
     case HAS_SHOW_LOCATIONS_NOT_SET: {
@@ -10000,7 +9364,7 @@ size_t Options::ByteSizeLong() const {
   switch (has_gps_accuracy_case()) {
     // float gps_accuracy = 30;
     case kGpsAccuracy: {
-      total_size += 2 + 4;
+      total_size += 6;
       break;
     }
     case HAS_GPS_ACCURACY_NOT_SET: {
@@ -10010,7 +9374,7 @@ size_t Options::ByteSizeLong() const {
   switch (has_search_radius_case()) {
     // float search_radius = 31;
     case kSearchRadius: {
-      total_size += 2 + 4;
+      total_size += 6;
       break;
     }
     case HAS_SEARCH_RADIUS_NOT_SET: {
@@ -10020,7 +9384,7 @@ size_t Options::ByteSizeLong() const {
   switch (has_turn_penalty_factor_case()) {
     // float turn_penalty_factor = 32;
     case kTurnPenaltyFactor: {
-      total_size += 2 + 4;
+      total_size += 6;
       break;
     }
     case HAS_TURN_PENALTY_FACTOR_NOT_SET: {
@@ -10030,7 +9394,7 @@ size_t Options::ByteSizeLong() const {
   switch (has_breakage_distance_case()) {
     // float breakage_distance = 36;
     case kBreakageDistance: {
-      total_size += 2 + 4;
+      total_size += 6;
       break;
     }
     case HAS_BREAKAGE_DISTANCE_NOT_SET: {
@@ -10040,7 +9404,7 @@ size_t Options::ByteSizeLong() const {
   switch (has_use_timestamps_case()) {
     // bool use_timestamps = 37;
     case kUseTimestamps: {
-      total_size += 2 + 1;
+      total_size += 3;
       break;
     }
     case HAS_USE_TIMESTAMPS_NOT_SET: {
@@ -10050,9 +9414,8 @@ size_t Options::ByteSizeLong() const {
   switch (has_alternates_case()) {
     // uint32 alternates = 39;
     case kAlternates: {
-      total_size += 2 +
-        ::_pbi::WireFormatLite::UInt32Size(
-          this->_internal_alternates());
+      total_size += 2 + ::_pbi::WireFormatLite::UInt32Size(
+                                      this->_internal_alternates());
       break;
     }
     case HAS_ALTERNATES_NOT_SET: {
@@ -10062,7 +9425,7 @@ size_t Options::ByteSizeLong() const {
   switch (has_interpolation_distance_case()) {
     // float interpolation_distance = 40;
     case kInterpolationDistance: {
-      total_size += 2 + 4;
+      total_size += 6;
       break;
     }
     case HAS_INTERPOLATION_DISTANCE_NOT_SET: {
@@ -10072,7 +9435,7 @@ size_t Options::ByteSizeLong() const {
   switch (has_guidance_views_case()) {
     // bool guidance_views = 41;
     case kGuidanceViews: {
-      total_size += 2 + 1;
+      total_size += 3;
       break;
     }
     case HAS_GUIDANCE_VIEWS_NOT_SET: {
@@ -10082,9 +9445,8 @@ size_t Options::ByteSizeLong() const {
   switch (has_height_precision_case()) {
     // uint32 height_precision = 43;
     case kHeightPrecision: {
-      total_size += 2 +
-        ::_pbi::WireFormatLite::UInt32Size(
-          this->_internal_height_precision());
+      total_size += 2 + ::_pbi::WireFormatLite::UInt32Size(
+                                      this->_internal_height_precision());
       break;
     }
     case HAS_HEIGHT_PRECISION_NOT_SET: {
@@ -10094,7 +9456,7 @@ size_t Options::ByteSizeLong() const {
   switch (has_roundabout_exits_case()) {
     // bool roundabout_exits = 44;
     case kRoundaboutExits: {
-      total_size += 2 + 1;
+      total_size += 3;
       break;
     }
     case HAS_ROUNDABOUT_EXITS_NOT_SET: {
@@ -10104,7 +9466,7 @@ size_t Options::ByteSizeLong() const {
   switch (has_linear_references_case()) {
     // bool linear_references = 45;
     case kLinearReferences: {
-      total_size += 2 + 1;
+      total_size += 3;
       break;
     }
     case HAS_LINEAR_REFERENCES_NOT_SET: {
@@ -10114,7 +9476,7 @@ size_t Options::ByteSizeLong() const {
   switch (has_prioritize_bidirectional_case()) {
     // bool prioritize_bidirectional = 48;
     case kPrioritizeBidirectional: {
-      total_size += 2 + 1;
+      total_size += 3;
       break;
     }
     case HAS_PRIORITIZE_BIDIRECTIONAL_NOT_SET: {
@@ -10125,7 +9487,7 @@ size_t Options::ByteSizeLong() const {
     // .valhalla.Options.Action expansion_action = 49;
     case kExpansionAction: {
       total_size += 2 +
-        ::_pbi::WireFormatLite::EnumSize(this->_internal_expansion_action());
+                    ::_pbi::WireFormatLite::EnumSize(this->_internal_expansion_action());
       break;
     }
     case HAS_EXPANSION_ACTION_NOT_SET: {
@@ -10135,7 +9497,7 @@ size_t Options::ByteSizeLong() const {
   switch (has_skip_opposites_case()) {
     // bool skip_opposites = 50;
     case kSkipOpposites: {
-      total_size += 2 + 1;
+      total_size += 3;
       break;
     }
     case HAS_SKIP_OPPOSITES_NOT_SET: {
@@ -10145,9 +9507,8 @@ size_t Options::ByteSizeLong() const {
   switch (has_matrix_locations_case()) {
     // uint32 matrix_locations = 54;
     case kMatrixLocations: {
-      total_size += 2 +
-        ::_pbi::WireFormatLite::UInt32Size(
-          this->_internal_matrix_locations());
+      total_size += 2 + ::_pbi::WireFormatLite::UInt32Size(
+                                      this->_internal_matrix_locations());
       break;
     }
     case HAS_MATRIX_LOCATIONS_NOT_SET: {
@@ -10155,7 +9516,7 @@ size_t Options::ByteSizeLong() const {
     }
   }
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    total_size += _internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).size();
+    total_size += _internal_metadata_.unknown_fields<std::string>(::google::protobuf::internal::GetEmptyString).size();
   }
   int cached_size = ::_pbi::ToCachedSize(total_size);
   SetCachedSize(cached_size);
@@ -10163,7 +9524,7 @@ size_t Options::ByteSizeLong() const {
 }
 
 void Options::CheckTypeAndMergeFrom(
-    const ::PROTOBUF_NAMESPACE_ID::MessageLite& from) {
+    const ::google::protobuf::MessageLite& from) {
   MergeFrom(*::_pbi::DownCast<const Options*>(
       &from));
 }
@@ -10171,23 +9532,23 @@ void Options::CheckTypeAndMergeFrom(
 void Options::MergeFrom(const Options& from) {
   Options* const _this = this;
   // @@protoc_insertion_point(class_specific_merge_from_start:valhalla.Options)
-  GOOGLE_DCHECK_NE(&from, _this);
-  uint32_t cached_has_bits = 0;
+  ABSL_DCHECK_NE(&from, _this);
+  ::uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   _this->_impl_.costings_.MergeFrom(from._impl_.costings_);
-  _this->_impl_.locations_.MergeFrom(from._impl_.locations_);
-  _this->_impl_.exclude_locations_.MergeFrom(from._impl_.exclude_locations_);
-  _this->_impl_.sources_.MergeFrom(from._impl_.sources_);
-  _this->_impl_.targets_.MergeFrom(from._impl_.targets_);
-  _this->_impl_.shape_.MergeFrom(from._impl_.shape_);
-  _this->_impl_.contours_.MergeFrom(from._impl_.contours_);
-  _this->_impl_.trace_.MergeFrom(from._impl_.trace_);
-  _this->_impl_.filter_attributes_.MergeFrom(from._impl_.filter_attributes_);
-  _this->_impl_.recostings_.MergeFrom(from._impl_.recostings_);
-  _this->_impl_.exclude_polygons_.MergeFrom(from._impl_.exclude_polygons_);
-  _this->_impl_.expansion_properties_.MergeFrom(from._impl_.expansion_properties_);
-  if (from._internal_has_pbf_field_selector()) {
+  _this->_internal_mutable_locations()->MergeFrom(from._internal_locations());
+  _this->_internal_mutable_exclude_locations()->MergeFrom(from._internal_exclude_locations());
+  _this->_internal_mutable_sources()->MergeFrom(from._internal_sources());
+  _this->_internal_mutable_targets()->MergeFrom(from._internal_targets());
+  _this->_internal_mutable_shape()->MergeFrom(from._internal_shape());
+  _this->_internal_mutable_contours()->MergeFrom(from._internal_contours());
+  _this->_internal_mutable_trace()->MergeFrom(from._internal_trace());
+  _this->_internal_mutable_filter_attributes()->MergeFrom(from._internal_filter_attributes());
+  _this->_internal_mutable_recostings()->MergeFrom(from._internal_recostings());
+  _this->_internal_mutable_exclude_polygons()->MergeFrom(from._internal_exclude_polygons());
+  _this->_internal_mutable_expansion_properties()->MergeFrom(from._internal_expansion_properties());
+  if ((from._impl_._has_bits_[0] & 0x00000001u) != 0) {
     _this->_internal_mutable_pbf_field_selector()->::valhalla::PbfFieldSelector::MergeFrom(
         from._internal_pbf_field_selector());
   }
@@ -10474,13 +9835,14 @@ void Options::CopyFrom(const Options& from) {
   MergeFrom(from);
 }
 
-bool Options::IsInitialized() const {
+PROTOBUF_NOINLINE bool Options::IsInitialized() const {
   return true;
 }
 
 void Options::InternalSwap(Options* other) {
   using std::swap;
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  swap(_impl_._has_bits_[0], other->_impl_._has_bits_[0]);
   _impl_.costings_.InternalSwap(&other->_impl_.costings_);
   _impl_.locations_.InternalSwap(&other->_impl_.locations_);
   _impl_.exclude_locations_.InternalSwap(&other->_impl_.exclude_locations_);
@@ -10493,7 +9855,7 @@ void Options::InternalSwap(Options* other) {
   _impl_.recostings_.InternalSwap(&other->_impl_.recostings_);
   _impl_.exclude_polygons_.InternalSwap(&other->_impl_.exclude_polygons_);
   _impl_.expansion_properties_.InternalSwap(&other->_impl_.expansion_properties_);
-  ::PROTOBUF_NAMESPACE_ID::internal::memswap<
+  ::google::protobuf::internal::memswap<
       PROTOBUF_FIELD_OFFSET(Options, _impl_.reverse_)
       + sizeof(Options::_impl_.reverse_)
       - PROTOBUF_FIELD_OFFSET(Options, _impl_.pbf_field_selector_)>(
@@ -10559,43 +9921,11 @@ std::string Options::GetTypeName() const {
   return "valhalla.Options";
 }
 
-
 // @@protoc_insertion_point(namespace_scope)
 }  // namespace valhalla
-PROTOBUF_NAMESPACE_OPEN
-template<> PROTOBUF_NOINLINE ::valhalla::Contour*
-Arena::CreateMaybeMessage< ::valhalla::Contour >(Arena* arena) {
-  return Arena::CreateMessageInternal< ::valhalla::Contour >(arena);
-}
-template<> PROTOBUF_NOINLINE ::valhalla::Ring*
-Arena::CreateMaybeMessage< ::valhalla::Ring >(Arena* arena) {
-  return Arena::CreateMessageInternal< ::valhalla::Ring >(arena);
-}
-template<> PROTOBUF_NOINLINE ::valhalla::PbfFieldSelector*
-Arena::CreateMaybeMessage< ::valhalla::PbfFieldSelector >(Arena* arena) {
-  return Arena::CreateMessageInternal< ::valhalla::PbfFieldSelector >(arena);
-}
-template<> PROTOBUF_NOINLINE ::valhalla::AvoidEdge*
-Arena::CreateMaybeMessage< ::valhalla::AvoidEdge >(Arena* arena) {
-  return Arena::CreateMessageInternal< ::valhalla::AvoidEdge >(arena);
-}
-template<> PROTOBUF_NOINLINE ::valhalla::Costing_Options*
-Arena::CreateMaybeMessage< ::valhalla::Costing_Options >(Arena* arena) {
-  return Arena::CreateMessageInternal< ::valhalla::Costing_Options >(arena);
-}
-template<> PROTOBUF_NOINLINE ::valhalla::Costing*
-Arena::CreateMaybeMessage< ::valhalla::Costing >(Arena* arena) {
-  return Arena::CreateMessageInternal< ::valhalla::Costing >(arena);
-}
-template<> PROTOBUF_NOINLINE ::valhalla::Options_CostingsEntry_DoNotUse*
-Arena::CreateMaybeMessage< ::valhalla::Options_CostingsEntry_DoNotUse >(Arena* arena) {
-  return Arena::CreateMessageInternal< ::valhalla::Options_CostingsEntry_DoNotUse >(arena);
-}
-template<> PROTOBUF_NOINLINE ::valhalla::Options*
-Arena::CreateMaybeMessage< ::valhalla::Options >(Arena* arena) {
-  return Arena::CreateMessageInternal< ::valhalla::Options >(arena);
-}
-PROTOBUF_NAMESPACE_CLOSE
-
+namespace google {
+namespace protobuf {
+}  // namespace protobuf
+}  // namespace google
 // @@protoc_insertion_point(global_scope)
-#include <google/protobuf/port_undef.inc>
+#include "google/protobuf/port_undef.inc"

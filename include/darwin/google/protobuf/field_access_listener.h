@@ -33,8 +33,8 @@
 
 #include <cstddef>
 
-#include <google/protobuf/stubs/common.h>
-#include <google/protobuf/message_lite.h>
+#include "google/protobuf/message_lite.h"
+#include "google/protobuf/port.h"
 
 
 namespace google {
@@ -57,7 +57,7 @@ struct NoOpAccessListener {
   // to differentiate the protos during the runtime before the start of the
   // program, use this functor to get its name. We either way need it for
   // LITE_RUNTIME protos as they don't have descriptors at all.
-  explicit NoOpAccessListener(StringPiece (*name_extractor)()) {}
+  explicit NoOpAccessListener(absl::string_view (*name_extractor)()) {}
   // called repeatedly during serialization/deserialization/ByteSize of
   // Reflection as:
   //   AccessListener<MessageT>::OnSerialize(this);
@@ -127,6 +127,12 @@ struct NoOpAccessListener {
   // <repeated_field>_size()
   template <int kFieldNum>
   static void OnSize(const MessageLite* msg, const void* field) {}
+
+  // unknown_fields()
+  static void OnUnknownFields(const MessageLite* msg) {}
+
+  // mutable_unknown_fields()
+  static void OnMutableUnknownFields(const MessageLite* msg) {}
 
   static void OnHasExtension(const MessageLite* msg, int extension_tag,
                              const void* field) {}

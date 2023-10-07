@@ -18,7 +18,7 @@ include_dirs = [
 ]
 
 # For macOS ARM on homebrew
-include_dirs.append('/opt/homebrew/include')
+# include_dirs.append('/opt/homebrew/include')
 
 library_dirs = [str(THIS_DIR.joinpath("lib", platform.system().lower()))]
 libraries = list()

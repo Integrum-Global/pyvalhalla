@@ -4,365 +4,368 @@
 #include "api.pb.h"
 
 #include <algorithm>
-
-#include <google/protobuf/io/coded_stream.h>
-#include <google/protobuf/extension_set.h>
-#include <google/protobuf/wire_format_lite.h>
-#include <google/protobuf/io/zero_copy_stream_impl_lite.h>
+#include "google/protobuf/io/coded_stream.h"
+#include "google/protobuf/extension_set.h"
+#include "google/protobuf/wire_format_lite.h"
+#include "google/protobuf/io/zero_copy_stream_impl_lite.h"
+#include "google/protobuf/generated_message_tctable_impl.h"
 // @@protoc_insertion_point(includes)
-#include <google/protobuf/port_def.inc>
 
+// Must be included last.
+#include "google/protobuf/port_def.inc"
 PROTOBUF_PRAGMA_INIT_SEG
-
-namespace _pb = ::PROTOBUF_NAMESPACE_ID;
-namespace _pbi = _pb::internal;
-
+namespace _pb = ::google::protobuf;
+namespace _pbi = ::google::protobuf::internal;
+namespace _fl = ::google::protobuf::internal::field_layout;
 namespace valhalla {
-PROTOBUF_CONSTEXPR Api::Api(
-    ::_pbi::ConstantInitialized): _impl_{
-    /*decltype(_impl_.options_)*/nullptr
-  , /*decltype(_impl_.trip_)*/nullptr
-  , /*decltype(_impl_.directions_)*/nullptr
-  , /*decltype(_impl_.status_)*/nullptr
-  , /*decltype(_impl_.info_)*/nullptr
-  , /*decltype(_impl_._cached_size_)*/{}} {}
+        template <typename>
+PROTOBUF_CONSTEXPR Api::Api(::_pbi::ConstantInitialized)
+    : _impl_{
+      /*decltype(_impl_._has_bits_)*/ {},
+      /*decltype(_impl_._cached_size_)*/ {},
+      /*decltype(_impl_.options_)*/ nullptr,
+      /*decltype(_impl_.trip_)*/ nullptr,
+      /*decltype(_impl_.directions_)*/ nullptr,
+      /*decltype(_impl_.status_)*/ nullptr,
+      /*decltype(_impl_.info_)*/ nullptr,
+    } {}
 struct ApiDefaultTypeInternal {
-  PROTOBUF_CONSTEXPR ApiDefaultTypeInternal()
-      : _instance(::_pbi::ConstantInitialized{}) {}
+  PROTOBUF_CONSTEXPR ApiDefaultTypeInternal() : _instance(::_pbi::ConstantInitialized{}) {}
   ~ApiDefaultTypeInternal() {}
   union {
     Api _instance;
   };
 };
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 ApiDefaultTypeInternal _Api_default_instance_;
+
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
+    PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 ApiDefaultTypeInternal _Api_default_instance_;
 }  // namespace valhalla
 namespace valhalla {
-
 // ===================================================================
 
 class Api::_Internal {
  public:
+  using HasBits = decltype(std::declval<Api>()._impl_._has_bits_);
+  static constexpr ::int32_t kHasBitsOffset =
+    8 * PROTOBUF_FIELD_OFFSET(Api, _impl_._has_bits_);
   static const ::valhalla::Options& options(const Api* msg);
+  static void set_has_options(HasBits* has_bits) {
+    (*has_bits)[0] |= 1u;
+  }
   static const ::valhalla::Trip& trip(const Api* msg);
+  static void set_has_trip(HasBits* has_bits) {
+    (*has_bits)[0] |= 2u;
+  }
   static const ::valhalla::Directions& directions(const Api* msg);
+  static void set_has_directions(HasBits* has_bits) {
+    (*has_bits)[0] |= 4u;
+  }
   static const ::valhalla::Status& status(const Api* msg);
+  static void set_has_status(HasBits* has_bits) {
+    (*has_bits)[0] |= 8u;
+  }
   static const ::valhalla::Info& info(const Api* msg);
+  static void set_has_info(HasBits* has_bits) {
+    (*has_bits)[0] |= 16u;
+  }
 };
 
-const ::valhalla::Options&
-Api::_Internal::options(const Api* msg) {
+const ::valhalla::Options& Api::_Internal::options(const Api* msg) {
   return *msg->_impl_.options_;
 }
-const ::valhalla::Trip&
-Api::_Internal::trip(const Api* msg) {
+const ::valhalla::Trip& Api::_Internal::trip(const Api* msg) {
   return *msg->_impl_.trip_;
 }
-const ::valhalla::Directions&
-Api::_Internal::directions(const Api* msg) {
+const ::valhalla::Directions& Api::_Internal::directions(const Api* msg) {
   return *msg->_impl_.directions_;
 }
-const ::valhalla::Status&
-Api::_Internal::status(const Api* msg) {
+const ::valhalla::Status& Api::_Internal::status(const Api* msg) {
   return *msg->_impl_.status_;
 }
-const ::valhalla::Info&
-Api::_Internal::info(const Api* msg) {
+const ::valhalla::Info& Api::_Internal::info(const Api* msg) {
   return *msg->_impl_.info_;
 }
 void Api::clear_options() {
-  if (GetArenaForAllocation() == nullptr && _impl_.options_ != nullptr) {
-    delete _impl_.options_;
-  }
-  _impl_.options_ = nullptr;
+  if (_impl_.options_ != nullptr) _impl_.options_->Clear();
+  _impl_._has_bits_[0] &= ~0x00000001u;
 }
 void Api::clear_trip() {
-  if (GetArenaForAllocation() == nullptr && _impl_.trip_ != nullptr) {
-    delete _impl_.trip_;
-  }
-  _impl_.trip_ = nullptr;
+  if (_impl_.trip_ != nullptr) _impl_.trip_->Clear();
+  _impl_._has_bits_[0] &= ~0x00000002u;
 }
 void Api::clear_directions() {
-  if (GetArenaForAllocation() == nullptr && _impl_.directions_ != nullptr) {
-    delete _impl_.directions_;
-  }
-  _impl_.directions_ = nullptr;
+  if (_impl_.directions_ != nullptr) _impl_.directions_->Clear();
+  _impl_._has_bits_[0] &= ~0x00000004u;
 }
 void Api::clear_status() {
-  if (GetArenaForAllocation() == nullptr && _impl_.status_ != nullptr) {
-    delete _impl_.status_;
-  }
-  _impl_.status_ = nullptr;
+  if (_impl_.status_ != nullptr) _impl_.status_->Clear();
+  _impl_._has_bits_[0] &= ~0x00000008u;
 }
 void Api::clear_info() {
-  if (GetArenaForAllocation() == nullptr && _impl_.info_ != nullptr) {
-    delete _impl_.info_;
-  }
-  _impl_.info_ = nullptr;
+  if (_impl_.info_ != nullptr) _impl_.info_->Clear();
+  _impl_._has_bits_[0] &= ~0x00000010u;
 }
-Api::Api(::PROTOBUF_NAMESPACE_ID::Arena* arena,
-                         bool is_message_owned)
-  : ::PROTOBUF_NAMESPACE_ID::MessageLite(arena, is_message_owned) {
-  SharedCtor(arena, is_message_owned);
+Api::Api(::google::protobuf::Arena* arena)
+    : ::google::protobuf::MessageLite(arena) {
+  SharedCtor(arena);
   // @@protoc_insertion_point(arena_constructor:valhalla.Api)
 }
-Api::Api(const Api& from)
-  : ::PROTOBUF_NAMESPACE_ID::MessageLite() {
-  Api* const _this = this; (void)_this;
+Api::Api(const Api& from) : ::google::protobuf::MessageLite() {
+  Api* const _this = this;
+  (void)_this;
   new (&_impl_) Impl_{
-      decltype(_impl_.options_){nullptr}
-    , decltype(_impl_.trip_){nullptr}
-    , decltype(_impl_.directions_){nullptr}
-    , decltype(_impl_.status_){nullptr}
-    , decltype(_impl_.info_){nullptr}
-    , /*decltype(_impl_._cached_size_)*/{}};
-
-  _internal_metadata_.MergeFrom<std::string>(from._internal_metadata_);
-  if (from._internal_has_options()) {
+      decltype(_impl_._has_bits_){from._impl_._has_bits_},
+      /*decltype(_impl_._cached_size_)*/ {},
+      decltype(_impl_.options_){nullptr},
+      decltype(_impl_.trip_){nullptr},
+      decltype(_impl_.directions_){nullptr},
+      decltype(_impl_.status_){nullptr},
+      decltype(_impl_.info_){nullptr},
+  };
+  _internal_metadata_.MergeFrom<std::string>(
+      from._internal_metadata_);
+  if ((from._impl_._has_bits_[0] & 0x00000001u) != 0) {
     _this->_impl_.options_ = new ::valhalla::Options(*from._impl_.options_);
   }
-  if (from._internal_has_trip()) {
+  if ((from._impl_._has_bits_[0] & 0x00000002u) != 0) {
     _this->_impl_.trip_ = new ::valhalla::Trip(*from._impl_.trip_);
   }
-  if (from._internal_has_directions()) {
+  if ((from._impl_._has_bits_[0] & 0x00000004u) != 0) {
     _this->_impl_.directions_ = new ::valhalla::Directions(*from._impl_.directions_);
   }
-  if (from._internal_has_status()) {
+  if ((from._impl_._has_bits_[0] & 0x00000008u) != 0) {
     _this->_impl_.status_ = new ::valhalla::Status(*from._impl_.status_);
   }
-  if (from._internal_has_info()) {
+  if ((from._impl_._has_bits_[0] & 0x00000010u) != 0) {
     _this->_impl_.info_ = new ::valhalla::Info(*from._impl_.info_);
   }
+
   // @@protoc_insertion_point(copy_constructor:valhalla.Api)
 }
-
-inline void Api::SharedCtor(
-    ::_pb::Arena* arena, bool is_message_owned) {
+inline void Api::SharedCtor(::_pb::Arena* arena) {
   (void)arena;
-  (void)is_message_owned;
   new (&_impl_) Impl_{
-      decltype(_impl_.options_){nullptr}
-    , decltype(_impl_.trip_){nullptr}
-    , decltype(_impl_.directions_){nullptr}
-    , decltype(_impl_.status_){nullptr}
-    , decltype(_impl_.info_){nullptr}
-    , /*decltype(_impl_._cached_size_)*/{}
+      decltype(_impl_._has_bits_){},
+      /*decltype(_impl_._cached_size_)*/ {},
+      decltype(_impl_.options_){nullptr},
+      decltype(_impl_.trip_){nullptr},
+      decltype(_impl_.directions_){nullptr},
+      decltype(_impl_.status_){nullptr},
+      decltype(_impl_.info_){nullptr},
   };
 }
-
 Api::~Api() {
   // @@protoc_insertion_point(destructor:valhalla.Api)
-  if (auto *arena = _internal_metadata_.DeleteReturnArena<std::string>()) {
-  (void)arena;
-    return;
-  }
+  _internal_metadata_.Delete<std::string>();
   SharedDtor();
 }
-
 inline void Api::SharedDtor() {
-  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
+  ABSL_DCHECK(GetArenaForAllocation() == nullptr);
   if (this != internal_default_instance()) delete _impl_.options_;
   if (this != internal_default_instance()) delete _impl_.trip_;
   if (this != internal_default_instance()) delete _impl_.directions_;
   if (this != internal_default_instance()) delete _impl_.status_;
   if (this != internal_default_instance()) delete _impl_.info_;
 }
-
 void Api::SetCachedSize(int size) const {
   _impl_._cached_size_.Set(size);
 }
 
-void Api::Clear() {
+PROTOBUF_NOINLINE void Api::Clear() {
 // @@protoc_insertion_point(message_clear_start:valhalla.Api)
-  uint32_t cached_has_bits = 0;
+  ::uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  if (GetArenaForAllocation() == nullptr && _impl_.options_ != nullptr) {
-    delete _impl_.options_;
+  cached_has_bits = _impl_._has_bits_[0];
+  if (cached_has_bits & 0x0000001fu) {
+    if (cached_has_bits & 0x00000001u) {
+      ABSL_DCHECK(_impl_.options_ != nullptr);
+      _impl_.options_->Clear();
+    }
+    if (cached_has_bits & 0x00000002u) {
+      ABSL_DCHECK(_impl_.trip_ != nullptr);
+      _impl_.trip_->Clear();
+    }
+    if (cached_has_bits & 0x00000004u) {
+      ABSL_DCHECK(_impl_.directions_ != nullptr);
+      _impl_.directions_->Clear();
+    }
+    if (cached_has_bits & 0x00000008u) {
+      ABSL_DCHECK(_impl_.status_ != nullptr);
+      _impl_.status_->Clear();
+    }
+    if (cached_has_bits & 0x00000010u) {
+      ABSL_DCHECK(_impl_.info_ != nullptr);
+      _impl_.info_->Clear();
+    }
   }
-  _impl_.options_ = nullptr;
-  if (GetArenaForAllocation() == nullptr && _impl_.trip_ != nullptr) {
-    delete _impl_.trip_;
-  }
-  _impl_.trip_ = nullptr;
-  if (GetArenaForAllocation() == nullptr && _impl_.directions_ != nullptr) {
-    delete _impl_.directions_;
-  }
-  _impl_.directions_ = nullptr;
-  if (GetArenaForAllocation() == nullptr && _impl_.status_ != nullptr) {
-    delete _impl_.status_;
-  }
-  _impl_.status_ = nullptr;
-  if (GetArenaForAllocation() == nullptr && _impl_.info_ != nullptr) {
-    delete _impl_.info_;
-  }
-  _impl_.info_ = nullptr;
+  _impl_._has_bits_.Clear();
   _internal_metadata_.Clear<std::string>();
 }
 
-const char* Api::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
-#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
-  while (!ctx->Done(&ptr)) {
-    uint32_t tag;
-    ptr = ::_pbi::ReadTag(ptr, &tag);
-    switch (tag >> 3) {
-      // .valhalla.Options options = 1;
-      case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
-          ptr = ctx->ParseMessage(_internal_mutable_options(), ptr);
-          CHK_(ptr);
-        } else
-          goto handle_unusual;
-        continue;
-      // .valhalla.Trip trip = 2;
-      case 2:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 18)) {
-          ptr = ctx->ParseMessage(_internal_mutable_trip(), ptr);
-          CHK_(ptr);
-        } else
-          goto handle_unusual;
-        continue;
-      // .valhalla.Directions directions = 3;
-      case 3:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 26)) {
-          ptr = ctx->ParseMessage(_internal_mutable_directions(), ptr);
-          CHK_(ptr);
-        } else
-          goto handle_unusual;
-        continue;
-      // .valhalla.Status status = 4;
-      case 4:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 34)) {
-          ptr = ctx->ParseMessage(_internal_mutable_status(), ptr);
-          CHK_(ptr);
-        } else
-          goto handle_unusual;
-        continue;
-      // .valhalla.Info info = 20;
-      case 20:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 162)) {
-          ptr = ctx->ParseMessage(_internal_mutable_info(), ptr);
-          CHK_(ptr);
-        } else
-          goto handle_unusual;
-        continue;
-      default:
-        goto handle_unusual;
-    }  // switch
-  handle_unusual:
-    if ((tag == 0) || ((tag & 7) == 4)) {
-      CHK_(ptr);
-      ctx->SetLastTag(tag);
-      goto message_done;
-    }
-    ptr = UnknownFieldParse(
-        tag,
-        _internal_metadata_.mutable_unknown_fields<std::string>(),
-        ptr, ctx);
-    CHK_(ptr != nullptr);
-  }  // while
-message_done:
+const char* Api::_InternalParse(
+    const char* ptr, ::_pbi::ParseContext* ctx) {
+  ptr = ::_pbi::TcParser::ParseLoop(this, ptr, ctx, &_table_.header);
   return ptr;
-failure:
-  ptr = nullptr;
-  goto message_done;
-#undef CHK_
 }
 
-uint8_t* Api::_InternalSerialize(
-    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
-  // @@protoc_insertion_point(serialize_to_array_start:valhalla.Api)
-  uint32_t cached_has_bits = 0;
-  (void) cached_has_bits;
 
+PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1
+const ::_pbi::TcParseTable<2, 5, 5, 0, 2> Api::_table_ = {
+  {
+    PROTOBUF_FIELD_OFFSET(Api, _impl_._has_bits_),
+    0, // no _extensions_
+    20, 24,  // max_field_number, fast_idx_mask
+    offsetof(decltype(_table_), field_lookup_table),
+    4294442992,  // skipmap
+    offsetof(decltype(_table_), field_entries),
+    5,  // num_field_entries
+    5,  // num_aux_entries
+    offsetof(decltype(_table_), aux_entries),
+    &_Api_default_instance_._instance,
+    ::_pbi::TcParser::GenericFallbackLite,  // fallback
+  }, {{
+    // .valhalla.Status status = 4;
+    {::_pbi::TcParser::FastMtS1,
+     {34, 3, 3, PROTOBUF_FIELD_OFFSET(Api, _impl_.status_)}},
+    // .valhalla.Options options = 1;
+    {::_pbi::TcParser::FastMtS1,
+     {10, 0, 0, PROTOBUF_FIELD_OFFSET(Api, _impl_.options_)}},
+    // .valhalla.Trip trip = 2;
+    {::_pbi::TcParser::FastMtS1,
+     {18, 1, 1, PROTOBUF_FIELD_OFFSET(Api, _impl_.trip_)}},
+    // .valhalla.Directions directions = 3;
+    {::_pbi::TcParser::FastMtS1,
+     {26, 2, 2, PROTOBUF_FIELD_OFFSET(Api, _impl_.directions_)}},
+  }}, {{
+    65535, 65535
+  }}, {{
+    // .valhalla.Options options = 1;
+    {PROTOBUF_FIELD_OFFSET(Api, _impl_.options_), _Internal::kHasBitsOffset + 0, 0,
+    (0 | ::_fl::kFcOptional | ::_fl::kMessage | ::_fl::kTvTable)},
+    // .valhalla.Trip trip = 2;
+    {PROTOBUF_FIELD_OFFSET(Api, _impl_.trip_), _Internal::kHasBitsOffset + 1, 1,
+    (0 | ::_fl::kFcOptional | ::_fl::kMessage | ::_fl::kTvTable)},
+    // .valhalla.Directions directions = 3;
+    {PROTOBUF_FIELD_OFFSET(Api, _impl_.directions_), _Internal::kHasBitsOffset + 2, 2,
+    (0 | ::_fl::kFcOptional | ::_fl::kMessage | ::_fl::kTvTable)},
+    // .valhalla.Status status = 4;
+    {PROTOBUF_FIELD_OFFSET(Api, _impl_.status_), _Internal::kHasBitsOffset + 3, 3,
+    (0 | ::_fl::kFcOptional | ::_fl::kMessage | ::_fl::kTvTable)},
+    // .valhalla.Info info = 20;
+    {PROTOBUF_FIELD_OFFSET(Api, _impl_.info_), _Internal::kHasBitsOffset + 4, 4,
+    (0 | ::_fl::kFcOptional | ::_fl::kMessage | ::_fl::kTvTable)},
+  }}, {{
+    {::_pbi::TcParser::GetTable<::valhalla::Options>()},
+    {::_pbi::TcParser::GetTable<::valhalla::Trip>()},
+    {::_pbi::TcParser::GetTable<::valhalla::Directions>()},
+    {::_pbi::TcParser::GetTable<::valhalla::Status>()},
+    {::_pbi::TcParser::GetTable<::valhalla::Info>()},
+  }}, {{
+  }},
+};
+
+::uint8_t* Api::_InternalSerialize(
+    ::uint8_t* target,
+    ::google::protobuf::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:valhalla.Api)
+  ::uint32_t cached_has_bits = 0;
+  (void)cached_has_bits;
+
+  cached_has_bits = _impl_._has_bits_[0];
   // .valhalla.Options options = 1;
-  if (this->_internal_has_options()) {
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
+  if (cached_has_bits & 0x00000001u) {
+    target = ::google::protobuf::internal::WireFormatLite::
       InternalWriteMessage(1, _Internal::options(this),
         _Internal::options(this).GetCachedSize(), target, stream);
   }
 
   // .valhalla.Trip trip = 2;
-  if (this->_internal_has_trip()) {
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
+  if (cached_has_bits & 0x00000002u) {
+    target = ::google::protobuf::internal::WireFormatLite::
       InternalWriteMessage(2, _Internal::trip(this),
         _Internal::trip(this).GetCachedSize(), target, stream);
   }
 
   // .valhalla.Directions directions = 3;
-  if (this->_internal_has_directions()) {
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
+  if (cached_has_bits & 0x00000004u) {
+    target = ::google::protobuf::internal::WireFormatLite::
       InternalWriteMessage(3, _Internal::directions(this),
         _Internal::directions(this).GetCachedSize(), target, stream);
   }
 
   // .valhalla.Status status = 4;
-  if (this->_internal_has_status()) {
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
+  if (cached_has_bits & 0x00000008u) {
+    target = ::google::protobuf::internal::WireFormatLite::
       InternalWriteMessage(4, _Internal::status(this),
         _Internal::status(this).GetCachedSize(), target, stream);
   }
 
   // .valhalla.Info info = 20;
-  if (this->_internal_has_info()) {
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
+  if (cached_has_bits & 0x00000010u) {
+    target = ::google::protobuf::internal::WireFormatLite::
       InternalWriteMessage(20, _Internal::info(this),
         _Internal::info(this).GetCachedSize(), target, stream);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target = stream->WriteRaw(_internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).data(),
-        static_cast<int>(_internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).size()), target);
+    target = stream->WriteRaw(
+        _internal_metadata_.unknown_fields<std::string>(::google::protobuf::internal::GetEmptyString).data(),
+        static_cast<int>(_internal_metadata_.unknown_fields<std::string>(::google::protobuf::internal::GetEmptyString).size()), target);
   }
   // @@protoc_insertion_point(serialize_to_array_end:valhalla.Api)
   return target;
 }
 
-size_t Api::ByteSizeLong() const {
+::size_t Api::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:valhalla.Api)
-  size_t total_size = 0;
+  ::size_t total_size = 0;
 
-  uint32_t cached_has_bits = 0;
+  ::uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // .valhalla.Options options = 1;
-  if (this->_internal_has_options()) {
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
-        *_impl_.options_);
-  }
+  cached_has_bits = _impl_._has_bits_[0];
+  if (cached_has_bits & 0x0000001fu) {
+    // .valhalla.Options options = 1;
+    if (cached_has_bits & 0x00000001u) {
+      total_size += 1 +
+        ::google::protobuf::internal::WireFormatLite::MessageSize(
+          *_impl_.options_);
+    }
 
-  // .valhalla.Trip trip = 2;
-  if (this->_internal_has_trip()) {
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
-        *_impl_.trip_);
-  }
+    // .valhalla.Trip trip = 2;
+    if (cached_has_bits & 0x00000002u) {
+      total_size += 1 +
+        ::google::protobuf::internal::WireFormatLite::MessageSize(
+          *_impl_.trip_);
+    }
 
-  // .valhalla.Directions directions = 3;
-  if (this->_internal_has_directions()) {
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
-        *_impl_.directions_);
-  }
+    // .valhalla.Directions directions = 3;
+    if (cached_has_bits & 0x00000004u) {
+      total_size += 1 +
+        ::google::protobuf::internal::WireFormatLite::MessageSize(
+          *_impl_.directions_);
+    }
 
-  // .valhalla.Status status = 4;
-  if (this->_internal_has_status()) {
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
-        *_impl_.status_);
-  }
+    // .valhalla.Status status = 4;
+    if (cached_has_bits & 0x00000008u) {
+      total_size += 1 +
+        ::google::protobuf::internal::WireFormatLite::MessageSize(
+          *_impl_.status_);
+    }
 
-  // .valhalla.Info info = 20;
-  if (this->_internal_has_info()) {
-    total_size += 2 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
-        *_impl_.info_);
-  }
+    // .valhalla.Info info = 20;
+    if (cached_has_bits & 0x00000010u) {
+      total_size += 2 +
+        ::google::protobuf::internal::WireFormatLite::MessageSize(
+          *_impl_.info_);
+    }
 
+  }
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    total_size += _internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).size();
+    total_size += _internal_metadata_.unknown_fields<std::string>(::google::protobuf::internal::GetEmptyString).size();
   }
   int cached_size = ::_pbi::ToCachedSize(total_size);
   SetCachedSize(cached_size);
@@ -370,7 +373,7 @@ size_t Api::ByteSizeLong() const {
 }
 
 void Api::CheckTypeAndMergeFrom(
-    const ::PROTOBUF_NAMESPACE_ID::MessageLite& from) {
+    const ::google::protobuf::MessageLite& from) {
   MergeFrom(*::_pbi::DownCast<const Api*>(
       &from));
 }
@@ -378,29 +381,32 @@ void Api::CheckTypeAndMergeFrom(
 void Api::MergeFrom(const Api& from) {
   Api* const _this = this;
   // @@protoc_insertion_point(class_specific_merge_from_start:valhalla.Api)
-  GOOGLE_DCHECK_NE(&from, _this);
-  uint32_t cached_has_bits = 0;
+  ABSL_DCHECK_NE(&from, _this);
+  ::uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  if (from._internal_has_options()) {
-    _this->_internal_mutable_options()->::valhalla::Options::MergeFrom(
-        from._internal_options());
-  }
-  if (from._internal_has_trip()) {
-    _this->_internal_mutable_trip()->::valhalla::Trip::MergeFrom(
-        from._internal_trip());
-  }
-  if (from._internal_has_directions()) {
-    _this->_internal_mutable_directions()->::valhalla::Directions::MergeFrom(
-        from._internal_directions());
-  }
-  if (from._internal_has_status()) {
-    _this->_internal_mutable_status()->::valhalla::Status::MergeFrom(
-        from._internal_status());
-  }
-  if (from._internal_has_info()) {
-    _this->_internal_mutable_info()->::valhalla::Info::MergeFrom(
-        from._internal_info());
+  cached_has_bits = from._impl_._has_bits_[0];
+  if (cached_has_bits & 0x0000001fu) {
+    if (cached_has_bits & 0x00000001u) {
+      _this->_internal_mutable_options()->::valhalla::Options::MergeFrom(
+          from._internal_options());
+    }
+    if (cached_has_bits & 0x00000002u) {
+      _this->_internal_mutable_trip()->::valhalla::Trip::MergeFrom(
+          from._internal_trip());
+    }
+    if (cached_has_bits & 0x00000004u) {
+      _this->_internal_mutable_directions()->::valhalla::Directions::MergeFrom(
+          from._internal_directions());
+    }
+    if (cached_has_bits & 0x00000008u) {
+      _this->_internal_mutable_status()->::valhalla::Status::MergeFrom(
+          from._internal_status());
+    }
+    if (cached_has_bits & 0x00000010u) {
+      _this->_internal_mutable_info()->::valhalla::Info::MergeFrom(
+          from._internal_info());
+    }
   }
   _this->_internal_metadata_.MergeFrom<std::string>(from._internal_metadata_);
 }
@@ -412,14 +418,15 @@ void Api::CopyFrom(const Api& from) {
   MergeFrom(from);
 }
 
-bool Api::IsInitialized() const {
+PROTOBUF_NOINLINE bool Api::IsInitialized() const {
   return true;
 }
 
 void Api::InternalSwap(Api* other) {
   using std::swap;
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
-  ::PROTOBUF_NAMESPACE_ID::internal::memswap<
+  swap(_impl_._has_bits_[0], other->_impl_._has_bits_[0]);
+  ::google::protobuf::internal::memswap<
       PROTOBUF_FIELD_OFFSET(Api, _impl_.info_)
       + sizeof(Api::_impl_.info_)
       - PROTOBUF_FIELD_OFFSET(Api, _impl_.options_)>(
@@ -431,15 +438,11 @@ std::string Api::GetTypeName() const {
   return "valhalla.Api";
 }
 
-
 // @@protoc_insertion_point(namespace_scope)
 }  // namespace valhalla
-PROTOBUF_NAMESPACE_OPEN
-template<> PROTOBUF_NOINLINE ::valhalla::Api*
-Arena::CreateMaybeMessage< ::valhalla::Api >(Arena* arena) {
-  return Arena::CreateMessageInternal< ::valhalla::Api >(arena);
-}
-PROTOBUF_NAMESPACE_CLOSE
-
+namespace google {
+namespace protobuf {
+}  // namespace protobuf
+}  // namespace google
 // @@protoc_insertion_point(global_scope)
-#include <google/protobuf/port_undef.inc>
+#include "google/protobuf/port_undef.inc"
